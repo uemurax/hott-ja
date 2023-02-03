@@ -1,0 +1,28 @@
+\newenvironment{myShiftSections}{%
+  \let\orig@section\section
+  \let\orig@sectionI\sectionI
+  \let\orig@sectionII\sectionII
+  \let\orig@sectionIII\sectionIII
+  \let\orig@sectionIV\sectionIV
+  \let\orig@sectionX\sectionX
+  \let\section\orig@sectionI
+  \let\sectionI\orig@sectionII
+  \let\sectionII\orig@sectionIII
+  \let\sectionIII\orig@sectionIV
+  \let\sectionIV\orig@sectionX
+}{}
+
+\newcommand{\mySetupSections}[6]{
+  \let\orig@section#1
+  \let\orig@sectionI#2
+  \let\orig@sectionII#3
+  \let\orig@sectionIII#4
+  \let\orig@sectionIV#5
+  \let\orig@sectionX#6
+  \let\section\orig@section
+  \let\sectionI\orig@sectionI
+  \let\sectionII\orig@sectionII
+  \let\sectionIII\orig@sectionIII
+  \let\sectionIV\orig@sectionIV
+  \let\sectionX\orig@sectionX
+}
