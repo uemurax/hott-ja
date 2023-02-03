@@ -15,19 +15,20 @@
 % --- LWARP IS LOADED NEXT ---
 \usepackage[
 %   HomeHTMLFilename=index,     % Filename of the homepage.
-%   HTMLFilename={node-},       % Filename prefix of other pages.
+%   HTMLFilename={},       % Filename prefix of other pages.
 %   IndexLanguage=english,      % Language for xindy index, glossary.
   latexmk,                    % Use latexmk to compile.
 %   OSWindows,                  % Force Windows. (Usually automatic.)
 %   mathjax,                    % Use MathJax to display math.
 ]{lwarp}
-% \boolfalse{FileSectionNames}  % If false, numbers the files.
+\boolfalse{FileSectionNames}  % If false, numbers the files.
 
 % --- LOAD PDFLATEX MATH FONTS HERE ---
 
 % --- OTHER PACKAGES ARE LOADED AFTER LWARP ---
 \usepackage{makeidx} \makeindex
-\usepackage{xcolor}             % (Demonstration purposes only.)
+% \usepackage{xcolor}             % (Demonstration purposes only.)
+\usepackage{subfiles}
 \usepackage{hyperref,cleveref}  % LOAD THESE LAST!
 \usepackage{my-preamble}
 
@@ -56,6 +57,8 @@
 
 \tableofcontents                % MUST BE BEFORE THE FIRST SECTION BREAK!
 \listoffigures
+
+\subfile{main}
 
 \begin{warpprint}   % For print output ...
 \cleardoublepage    % ... a common method to place index entry into TOC.

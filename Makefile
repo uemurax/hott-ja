@@ -3,10 +3,11 @@
 SOURCE_DIR = src
 BUILD_DIR = _build
 SITE_DIR = _site
-FILES = index.tex my-preamble.sty latexmkrc
+FILES = index.tex main.tex dependent-type-theory.tex my-preamble.sty latexmkrc
 SOURCE_FILES = $(foreach X,$(FILES),$(SOURCE_DIR)/$(X))
 BUILD_FILES = $(foreach X,$(FILES),$(BUILD_DIR)/$(X))
 CSS_FILE = lwarp.css
+NODE_PREFIX = node-
 
 .PHONY: all
 all: publish
@@ -15,7 +16,11 @@ all: publish
 prebuild: $(BUILD_FILES)
 
 $(BUILD_DIR)/index.tex: $(SOURCE_DIR)/index.tex
-	cat $< | sed -e 's/% \\CSSFilename{}/\\CSSFilename{$(CSS_FILE)}/' > $@
+	mkdir -p $(BUILD_DIR)
+	cat $< \
+	| sed -e 's/%[[:space:]]*\\CSSFilename{}/\\CSSFilename{$(CSS_FILE)}/' \
+	| sed -e 's/%[[:space:]]*HTMLFilename={}/HTMLFilename={$(NODE_PREFIX)}/' \
+	> $@
 
 $(BUILD_DIR)/%: $(SOURCE_DIR)/%
 	mkdir -p $(BUILD_DIR)
@@ -32,4 +37,4 @@ build: prebuild
 .PHONY: publish
 publish: build
 	mkdir -p $(SITE_DIR)
-	cp -t $(SITE_DIR) $(BUILD_DIR)/index.html $(BUILD_DIR)/$(CSS_FILE)
+	cp -t $(SITE_DIR) $(BUILD_DIR)/index.html $(BUILD_DIR)/$(NODE_PREFIX)*.html $(BUILD_DIR)/$(CSS_FILE)
