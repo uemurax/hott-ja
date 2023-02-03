@@ -1,0 +1,69 @@
+\documentclass{ltjsbook}
+
+\usepackage{iftex}
+
+% --- LOAD FONT SELECTION AND ENCODING BEFORE LOADING LWARP ---
+
+\ifPDFTeX
+\usepackage{lmodern}            % pdflatex or dvi latex
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\else
+\usepackage{fontspec}           % XeLaTeX or LuaLaTeX
+\fi
+
+% --- LWARP IS LOADED NEXT ---
+\usepackage[
+%   HomeHTMLFilename=index,     % Filename of the homepage.
+%   HTMLFilename={node-},       % Filename prefix of other pages.
+%   IndexLanguage=english,      % Language for xindy index, glossary.
+  latexmk,                    % Use latexmk to compile.
+%   OSWindows,                  % Force Windows. (Usually automatic.)
+%   mathjax,                    % Use MathJax to display math.
+]{lwarp}
+% \boolfalse{FileSectionNames}  % If false, numbers the files.
+
+% --- LOAD PDFLATEX MATH FONTS HERE ---
+
+% --- OTHER PACKAGES ARE LOADED AFTER LWARP ---
+\usepackage{makeidx} \makeindex
+\usepackage{xcolor}             % (Demonstration purposes only.)
+\usepackage{hyperref,cleveref}  % LOAD THESE LAST!
+\usepackage{my-preamble}
+
+% --- LATEX AND HTML CUSTOMIZATION ---
+\title{\myTitle}
+\author{\myAuthor}
+\setcounter{tocdepth}{2}        % Include subsections in the \TOC.
+\setcounter{secnumdepth}{2}     % Number down to subsections.
+\setcounter{FileDepth}{1}       % Split \HTML\ files at sections
+\booltrue{CombineHigherDepths}  % Combine parts/chapters/sections
+\setcounter{SideTOCDepth}{1}    % Include subsections in the side\TOC
+\HTMLTitle{\myTitle}       % Overrides \title for the web page.
+\HTMLAuthor{\myAuthor}        % Sets the HTML meta author tag.
+\HTMLLanguage{ja}            % Sets the HTML meta language.
+\HTMLDescription{ホモトピー型理論についての文書}% Sets the HTML meta description.
+\HTMLFirstPageTop{\myTitle}
+\HTMLPageTop{}
+\HTMLPageBottom{}
+% \CSSFilename{}
+
+\begin{document}
+
+\maketitle                      % Or titlepage/titlingpage environment.
+
+% An article abstract would go here.
+
+\tableofcontents                % MUST BE BEFORE THE FIRST SECTION BREAK!
+\listoffigures
+
+\begin{warpprint}   % For print output ...
+\cleardoublepage    % ... a common method to place index entry into TOC.
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}
+\end{warpprint}
+\ForceHTMLPage      % HTML index will be on its own page.
+\ForceHTMLTOC       % HTML index will have its own toc entry.
+\printindex
+
+\end{document}
