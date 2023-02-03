@@ -6,4 +6,4 @@
 
 ## プリアンブル ##
 
-ファイル名 `my-<name>.sty` でファイルを作り、 `my-preamble.sty` から読み込む。
+ファイル名 `src/my-<name>.sty` でファイルを作り、 `src/my-preamble.sty` から読み込む。
