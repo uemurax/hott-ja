@@ -1,0 +1,19 @@
+name: build
+
+on:
+  push:
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Install dependency
+        run: sudo apt install texlive texlive-lang-japanese latexmk
+
+      - name: Build
+        run: make
