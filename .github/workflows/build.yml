@@ -13,7 +13,7 @@ jobs:
           submodules: true
 
       - name: Install dependency
-        run: sudo apt install texlive texlive-luatex texlive-lang-japanese latexmk
+        run: sudo apt install texlive texlive-latex-extra texlive-luatex texlive-lang-japanese latexmk
 
       - name: Build
         run: make
