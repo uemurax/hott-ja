@@ -46,3 +46,8 @@ site_dir:
 .PHONY: publish
 publish: build site_dir
 	cp -t $(SITE_DIR) $(BUILD_DIR)/index.html $(BUILD_DIR)/$(NODE_PREFIX)*.html $(BUILD_DIR)/$(CSS_FILE)
+
+.PHONY: clean
+clean:
+	rm -r $(BUILD_DIR)
+	rm -r $(SITE_DIR)
