@@ -22,7 +22,7 @@
 %   OSWindows,                  % Force Windows. (Usually automatic.)
 %   mathjax,                    % Use MathJax to display math.
 ]{lwarp}
-\boolfalse{FileSectionNames}  % If false, numbers the files.
+\booltrue{FileSectionNames}  % If false, numbers the files.
 
 % --- LOAD PDFLATEX MATH FONTS HERE ---
 
@@ -51,6 +51,9 @@
 % \CSSFilename{}
 
 \mySetupSections{\chapter}{\section}{\subsection}{\subsubsection}{\paragraph}{\subparagraph}
+\FilenameNullify{%
+  \renewcommand*{\mySectionName}[2]{#1}%
+}
 
 \begin{document}
 
