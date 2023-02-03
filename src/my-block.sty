@@ -1,0 +1,9 @@
+\usepackage{xparse}
+\usepackage{my-node,my-label}
+
+\NewDocumentEnvironment{myBlock}{m m O{} +b}{%
+  \begin{#2}[\myNodeName{#1}{#3}]
+    \myNodeLabel{#1}
+    #4
+  \end{#2}%
+}{}
