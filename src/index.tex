@@ -38,8 +38,8 @@
 \author{\myAuthor}
 \setcounter{tocdepth}{2}        % Include subsections in the \TOC.
 \setcounter{secnumdepth}{2}     % Number down to subsections.
-\setcounter{FileDepth}{1}       % Split \HTML\ files at sections
-\booltrue{CombineHigherDepths}  % Combine parts/chapters/sections
+\setcounter{FileDepth}{2}       % Split \HTML\ files at sections
+\boolfalse{CombineHigherDepths}  % Combine parts/chapters/sections
 \setcounter{SideTOCDepth}{1}    % Include subsections in the side\TOC
 \HTMLTitle{\myTitle}       % Overrides \title for the web page.
 \HTMLAuthor{\myAuthor}        % Sets the HTML meta author tag.
@@ -49,6 +49,8 @@
 \HTMLPageTop{}
 \HTMLPageBottom{}
 % \CSSFilename{}
+
+\mySetupSections{\chapter}{\section}{\subsection}{\subsubsection}{\paragraph}{\subparagraph}
 
 \begin{document}
 

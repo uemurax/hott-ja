@@ -3,7 +3,7 @@
 SOURCE_DIR = src
 BUILD_DIR = _build
 SITE_DIR = _site
-FILES = index.tex main.tex dependent-type-theory.tex my-preamble.sty latexmkrc
+FILES = index.tex main.tex dependent-type-theory.tex function-type.tex my-preamble.sty latexmkrc
 SOURCE_FILES = $(foreach X,$(FILES),$(SOURCE_DIR)/$(X))
 BUILD_FILES = $(foreach X,$(FILES),$(BUILD_DIR)/$(X))
 CSS_FILE = lwarp.css
