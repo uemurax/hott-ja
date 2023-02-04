@@ -3,6 +3,7 @@
 SOURCE_DIR = src
 BUILD_DIR = _build
 SITE_DIR = _site
+IMAGE_DIR = index-images
 CORE_FILES = index.tex main.tex latexmkrc
 SOURCE_NODE_FILES = $(wildcard $(SOURCE_DIR)/node-*.tex)
 SOURCE_STYLE_FILES = $(wildcard $(SOURCE_DIR)/my-*.sty)
@@ -42,12 +43,25 @@ build: prebuild
 .PHONY: site_dir
 site_dir:
 	@mkdir -p $(SITE_DIR)
+	@mkdir -p $(SITE_DIR)/$(IMAGE_DIR)
 
 .PHONY: publish
 publish: build site_dir
 	cp -t $(SITE_DIR) $(BUILD_DIR)/index.html $(BUILD_DIR)/$(NODE_PREFIX)*.html $(BUILD_DIR)/$(CSS_FILE)
+	cat $(BUILD_DIR)/index-images.txt \
+	| cut -s -d '|' -f 4 \
+	| sed -e '/^end$$/d' \
+	| sort | uniq \
+	| sed -e 's/^\(.*\)$$/$(BUILD_DIR)\/$(IMAGE_DIR)\/\1.svg/' \
+	| xargs cp -t $(SITE_DIR)/$(IMAGE_DIR)
+
+.PHONY: clean-build
+clean-build:
+	rm -rf $(BUILD_DIR)
+
+.PHONY: clean-site
+clean-site:
+	rm -rf $(SITE_DIR)
 
 .PHONY: clean
-clean:
-	rm -r $(BUILD_DIR)
-	rm -r $(SITE_DIR)
+clean: clean-site clean-build
