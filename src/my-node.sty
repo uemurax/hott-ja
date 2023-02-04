@@ -1,1 +1,7 @@
-\newcommand{\myNodeName}[2]{#2\textsf{[#1]}}
+\usepackage{xparse}
+
+\newcommand{\myNodeText}[1]{\textsf{[#1]}}
+
+\newcommand{\myNodeTitle}[2]{#2\myNodeText{#1}}
+
+\NewDocumentCommand{\myNodeTitleOpt}{m O{}}{\myNodeTitle{#1}{#2}}

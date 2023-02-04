@@ -6,15 +6,15 @@
   \begin{enumerate}
   \item 型\(A\)と\(B\)に対して、\emph{関数型}\(A \myFunType B\)を構成できる。
     \(A \myFunType B\)の要素は\(A\)から\(B\)への\emph{関数}と呼ばれる。
-  \item \(A\)と\(B\) を型とする。
+  \item \(A\)と\(B\)を型とする。
     仮定\(x \myElemOf A\)の下での要素\(b \myElemOf B\)に対して、
-    \emph{\(\lambda\)-抽象}\(\myAbs{x}{b} \myElemOf A \myFunType B\)を構成できる。
+    \emph{ラムダ抽象}\(\myAbs{x}{b} \myElemOf A \myFunType B\)を構成できる。
   \item \(A\)と\(B\)を型とする。
     要素\(f \myElemOf A \myFunType B\)と\(a \myElemOf A\)に対して、
     \emph{関数適用}\(f\myAppParen{a} \myElemOf B\)を構成できる。
   \item \(A\)と\(B\)を型、\(b \myElemOf B\)を仮定\(x \myElemOf A\)の下での要素、\(a \myElemOf A\)を要素とする。
     \((\myAbs{x}{b})\myAppParen{a} \myDefEq b\mySubstParen{x \mySubst a}\)と定義される。
-  \item \(A\) と \(B\) を型、\(f \myElemOf A \myFunType B\)を要素とする。
+  \item \(A\)と\(B\)を型、\(f \myElemOf A \myFunType B\)を要素とする。
     \(f \myDefEq \myAbs{x}{f\myAppParen{x}}\)と定義される。
   \end{enumerate}
 \end{myBlock}
