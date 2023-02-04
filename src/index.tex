@@ -1,4 +1,5 @@
 \input{hyperref-usetitle.sty}
+\PassOptionsToPackage{makeindex}{imakeindex}
 \documentclass{ltjsbook}
 
 \usepackage{iftex}
@@ -21,6 +22,7 @@
   latexmk,                    % Use latexmk to compile.
 %   OSWindows,                  % Force Windows. (Usually automatic.)
 %   mathjax,                    % Use MathJax to display math.
+  makeindex
 ]{lwarp}
 \boolfalse{FileSectionNames}  % If false, numbers the files.
 
@@ -49,6 +51,7 @@
 % \CSSFilename{}
 
 \mySetupSections{\chapter}{\section}{\subsection}{\subsubsection}{\paragraph}{\subparagraph}
+\myMakeNodeIndex{options={-s lwarp.ist}}
 
 \begin{document}
 

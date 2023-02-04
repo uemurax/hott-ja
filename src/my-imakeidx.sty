@@ -2,4 +2,7 @@
 \usepackage{my-node}
 
 \newcommand{\myNodeIndexTitle}{\myNodeTitle{ListOfNodes}{ノード一覧}}
-\makeindex[name=node,title={\myNodeIndexTitle}]
+
+\newcommand{\myMakeNodeIndex}[1]{%
+  \makeindex[name=node,title={\myNodeIndexTitle},#1]%
+}
