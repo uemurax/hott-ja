@@ -4,18 +4,18 @@
 
 \begin{myBlock}{0002}{myRule}
   \begin{enumerate}
-  \item 型\(A\)と\(B\)に対して、\emph{関数型}\(A \myFunType B\)を構成できる。
-    \(A \myFunType B\)の要素は\(A\)から\(B\)への\emph{関数}と呼ばれる。
-  \item \(A\)と\(B\)を型とする。
-    仮定\(x \myElemOf A\)の下での要素\(b \myElemOf B\)に対して、
-    \emph{ラムダ抽象}\(\myAbs{x}{b} \myElemOf A \myFunType B\)を構成できる。
-  \item \(A\)と\(B\)を型とする。
-    要素\(f \myElemOf A \myFunType B\)と\(a \myElemOf A\)に対して、
-    \emph{関数適用}\(f\myAppParen{a} \myElemOf B\)を構成できる。
-  \item \(A\)と\(B\)を型、\(b \myElemOf B\)を仮定\(x \myElemOf A\)の下での要素、\(a \myElemOf A\)を要素とする。
-    \((\myAbs{x}{b})\myAppParen{a} \myDefEq b\mySubstParen{x \mySubst a}\)と定義される。
-  \item \(A\)と\(B\)を型、\(f \myElemOf A \myFunType B\)を要素とする。
-    \(f \myDefEq \myAbs{x}{f\myAppParen{x}}\)と定義される。
+  \item 型\myInlineMath{A}と\myInlineMath{B}に対して、\emph{関数型}\myInlineMath{A \myFunType B}を構成できる。
+    \myInlineMath{A \myFunType B}の要素は\myInlineMath{A}から\myInlineMath{B}への\emph{関数}と呼ばれる。
+  \item \myInlineMath{A}と\myInlineMath{B}を型とする。
+    仮定\myInlineMath{x \myElemOf A}の下での要素\myInlineMath{b \myElemOf B}に対して、
+    \emph{ラムダ抽象}\myInlineMath{\myAbs{x}{b} \myElemOf A \myFunType B}を構成できる。
+  \item \myInlineMath{A}と\myInlineMath{B}を型とする。
+    要素\myInlineMath{f \myElemOf A \myFunType B}と\myInlineMath{a \myElemOf A}に対して、
+    \emph{関数適用}\myInlineMath{f\myAppParen{a} \myElemOf B}を構成できる。
+  \item \myInlineMath{A}と\myInlineMath{B}を型、\myInlineMath{b \myElemOf B}を仮定\myInlineMath{x \myElemOf A}の下での要素、\myInlineMath{a \myElemOf A}を要素とする。
+    \myInlineMath{(\myAbs{x}{b})\myAppParen{a} \myDefEq b\mySubstParen{x \mySubst a}}と定義される。
+  \item \myInlineMath{A}と\myInlineMath{B}を型、\myInlineMath{f \myElemOf A \myFunType B}を要素とする。
+    \myInlineMath{f \myDefEq \myAbs{x}{f\myAppParen{x}}}と定義される。
   \end{enumerate}
 \end{myBlock}
 
