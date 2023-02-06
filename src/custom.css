@@ -1,0 +1,17 @@
+/* ( --- Start of project.css --- ) */
+/* ( --- A sample project-specific CSS file for lwarp --- ) */
+
+/* Uncomment one of the following: */
+@import url("lwarp.css") ;
+/* @import url("lwarp_formal.css") ; */
+/* @import url("lwarp_sagebrush.css") ; */
+
+/* Project-specific CSS setting follow here. */
+/* . . . */
+
+span.lateximagesource {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+/* ( --- End of project.css --- ) */
