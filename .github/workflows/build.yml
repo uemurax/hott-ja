@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          submodules: true
 
       - name: Install dependency
         run: sudo apt install texlive texlive-latex-extra texlive-extra-utils texlive-luatex texlive-lang-japanese latexmk
