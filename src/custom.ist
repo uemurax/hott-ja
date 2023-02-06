@@ -1,0 +1,10 @@
+preamble
+"\\begin{theindex}
+"
+delim_0 ", \\hyperindexref{"
+delim_1 ", \\hyperindexref{"
+delim_2 ", \\hyperindexref{"
+delim_n "}, \\hyperindexref{"
+delim_r "} -- \\hyperindexref{"
+delim_t "}"
+page_compositor "."
