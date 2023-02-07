@@ -1,6 +1,6 @@
-\usepackage{xparse,xcolor}
+\usepackage{xparse,xcolor,lwarp}
 
-\newcommand{\myNodeText}[1]{\textcolor{gray}{\textsf{[#1]}}}
+\newcommand{\myNodeText}[1]{\InlineClass{node-id}{\textcolor{gray}{\textsf{[#1]}}}}
 
 \newcommand{\myNodeTitle}[2]{#2\myNodeText{#1}}
 
