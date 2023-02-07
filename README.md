@@ -11,3 +11,7 @@
 ## ビルド
 
 `make` を実行すると `_build/` 内で pdf 版 (`index.pdf`) と html 版を生成し、 `_site/` に html 版をコピーします。
+
+## ライセンス
+
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
