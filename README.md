@@ -10,7 +10,7 @@
 
 ## ビルド
 
-`make` を実行すると `_build/` 内で pdf 版 (`index.pdf`) と html 版を生成し、 `_site/` に html 版をコピーします。
+`make` を実行すると `_build/` 内で pdf 版と html 版を生成し、 `_site/` に必要なファイルをコピーします。
 
 ## ライセンス
 
