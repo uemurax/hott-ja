@@ -1,0 +1,3 @@
+\usepackage{xparse}
+
+\NewDocumentCommand{\myNewTerm}{o m}{\index{\IfValueT{#1}{#1@}#2}\emph{#2}}

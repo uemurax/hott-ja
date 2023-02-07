@@ -22,6 +22,14 @@
 
 `src/my-references.bib` に文献情報を置き、 `\myCiteParen`, `\myCiteText`, `\myCiteAuthor` で参照する。これらのマクロはそれぞれ `biblatex` パッケージの `\parencite`, `\textcite`, `\citeauthor` の別名であるが、恒久的に `biblatex` を使う保証はない。
 
+# 用語
+
+新しい用語を導入する際は `\myNewTerm[<読み>]{<語>}` を使う。内部で `<語>` を索引に登録するので `\index` は使わない。
+
+## 訳語
+
+できるだけ用語は日本語に訳す。導入の際に英語名を併記する。
+
 # 名前
 
 ## マクロ名
