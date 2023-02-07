@@ -6,7 +6,7 @@
 
 ### Debian/Ubuntu
 
-`texlive`, `texlive-latex-extra`, `texlive-extra-utils`, `texlive-luatex`, `texlive-lang-japanese`, `latexmk` をインストールします。
+`texlive`, `texlive-latex-extra`, `texlive-extra-utils`, `texlive-luatex`, `texlive-lang-japanese`, `texlive-bibtex-extra`, `latexmk` をインストールします。
 
 ## ビルド
 
