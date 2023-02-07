@@ -18,6 +18,10 @@
 
 ファイル名 `src/my-<name>.sty` でファイルを作り、 `src/my-preamble.sty` から `\usepackage{my-<name>}` で読み込む。
 
+# 参考文献
+
+`src/my-references.bib` に文献情報を置き、 `\myCiteParen`, `\myCiteText`, `\myCiteAuthor` で参照する。これらのマクロはそれぞれ `biblatex` パッケージの `\parencite`, `\textcite`, `\citeauthor` の別名であるが、恒久的に `biblatex` を使う保証はない。
+
 # 名前
 
 ## マクロ名
