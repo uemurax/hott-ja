@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependency
-        run: sudo apt install texlive texlive-latex-extra texlive-extra-utils texlive-luatex texlive-lang-japanese texlive-bibtex-extra latexmk
+        run: sudo apt install texlive texlive-latex-extra texlive-extra-utils texlive-luatex texlive-lang-japanese texlive-bibtex-extra biber latexmk
 
       - name: Build
         run: make
