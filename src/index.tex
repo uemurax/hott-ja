@@ -1,5 +1,5 @@
 \PassOptionsToPackage{pdfusetitle,pdfencoding=auto,psdextra}{hyperref}
-\documentclass{ltjsbook}
+\documentclass[b5paper]{ltjsbook}
 
 \usepackage{iftex}
 
@@ -69,12 +69,31 @@
 
 \begin{document}
 
+\frontmatter
+
 \maketitle                      % Or titlepage/titlingpage environment.
+
+\pagebreak
+\hspace{0pt}
+\vfill
+\noindent 「\myTitle」
+\par\noindent \copyright{} 2023 \myAuthor
+\par\vspace{1em}
+\noindent HTML版: \url{https://uemurax.github.io/hott-ja/index.html}
+\par\noindent PDF版: \url{https://uemurax.github.io/hott-ja/index.pdf}
+\par\vspace{1em}
+\noindent この作品は\myHRef{http://creativecommons.org/licenses/by/4.0/}{クリエイティブ・コモンズ表示4.0国際ライセンス}の下に提供されています。
+\vfill
+\hspace{0pt}
+\thispagestyle{empty}
+\pagebreak
 
 % An article abstract would go here.
 
 \tableofcontents                % MUST BE BEFORE THE FIRST SECTION BREAK!
 \listoffigures
+
+\mainmatter
 
 \subfile{main}
 

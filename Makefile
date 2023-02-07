@@ -42,7 +42,7 @@ build: $(BUILD_DIR)/lwarpmk.conf
 	sleep 1
 	cd $(ROOT_DIR)
 	mkdir -p $(SITE_DIR)
-	cp -r -t $(SITE_DIR) $(BUILD_DIR)/index.html $(BUILD_DIR)/$(NODE_PREFIX)*.html $(BUILD_CSS_FILES) $(BUILD_DIR)/$(IMAGE_DIR)
+	cp -r -t $(SITE_DIR) $(BUILD_DIR)/index.html $(BUILD_DIR)/$(NODE_PREFIX)*.html $(BUILD_CSS_FILES) $(BUILD_DIR)/$(IMAGE_DIR) $(BUILD_DIR)/index.pdf
 
 .PHONY: clean-build
 clean-build:
