@@ -32,7 +32,7 @@
 
 # 相互参照
 
-`\myRef`, `\myRefLabel` を使う。それぞれ `cleveref` パッケージの `\cref`, `\labelcref` と同等。
+`\myRef`, `\myRefLabel` を使う。それぞれ `cleveref` パッケージの `\cref`, `\labelcref` と同等。ノードの参照には `\myRef{<id>}` を使う。その他の参照に使うラベルは衝突が無ければ特に制約は無い。
 
 # 名前
 
