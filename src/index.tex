@@ -58,6 +58,8 @@
 \crefformat{subsection}{#2#1項#3}
 \crefformat{subsubsection}{#2#1#3}
 
+\newcommand{\myIgnoreI}[1]{}
+\indexsetup{level=\myIgnoreI,noclearpage}
 \makeindex[options={-s custom.ist}]
 \myMakeNodeIndex{options={-s custom.ist}}
 
@@ -76,30 +78,35 @@
 
 \subfile{main}
 
+\begin{warpHTML}
+  \ForceHTMLPage
+  \ForceHTMLTOC
+\end{warpHTML}
+\chapter*{\myBibliographyTitle}
 \begin{warpprint}
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\myBibliographyTitle}
+  \addcontentsline{toc}{chapter}{\myBibliographyTitle}
 \end{warpprint}
-\ForceHTMLPage
-\ForceHTMLTOC
-\printbibliography[title={\myBibliographyTitle}]
-\begin{warpprint}   % For print output ...
-\cleardoublepage    % ... a common method to place index entry into TOC.
-\phantomsection
-\addcontentsline{toc}{chapter}{\indexname}
+\printbibliography[heading=none]
+
+\begin{warpHTML}
+  \ForceHTMLPage
+  \ForceHTMLTOC
+\end{warpHTML}
+\chapter*{\indexname}
+\begin{warpprint}
+  \addcontentsline{toc}{chapter}{\indexname}
 \end{warpprint}
-\ForceHTMLPage      % HTML index will be on its own page.
-\ForceHTMLTOC       % HTML index will have its own toc entry.
 \printindex
-\begin{warpprint}   % For print output ...
-\cleardoublepage    % ... a common method to place index entry into TOC.
-\phantomsection
-\addcontentsline{toc}{chapter}{\myNodeIndexTitle}
+
+\begin{warpHTML}
+  \ForceHTMLPage
+  \ForceHTMLTOC
+\end{warpHTML}
+\chapter*{\myNodeIndexTitle}
+\begin{warpprint}
+  \addcontentsline{toc}{chapter}{\myNodeIndexTitle}
 \end{warpprint}
-\ForceHTMLPage      % HTML index will be on its own page.
-\ForceHTMLTOC       % HTML index will have its own toc entry.
 \hypertarget{ListOfNodes}{}
-\printindex[node]
+\myPrintNodeIndex
 
 \end{document}
