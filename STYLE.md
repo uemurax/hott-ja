@@ -20,7 +20,7 @@
 
 # 参考文献
 
-`src/my-references.bib` に文献情報を置き、 `\myCiteParen`, `\myCiteText`, `\myCiteAuthor` で参照する。これらのマクロはそれぞれ `biblatex` パッケージの `\parencite`, `\textcite`, `\citeauthor` の別名であるが、恒久的に `biblatex` を使う保証はない。
+`src/my-references.bib` に文献情報を置き、 `\myCiteParen`, `\myCiteText`, `\myCiteAuthor` で参照する。これらのマクロはそれぞれ `biblatex` パッケージの `\parencite`, `\textcite`, `\citeauthor` と同等。
 
 # 用語
 
@@ -29,6 +29,10 @@
 ## 訳語
 
 できるだけ用語は日本語に訳す。導入の際に英語名を併記する。
+
+# 相互参照
+
+`\myRef`, `\myRefLabel` を使う。それぞれ `cleveref` パッケージの `\cref`, `\labelcref` と同等。
 
 # 名前
 
