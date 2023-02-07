@@ -16,3 +16,7 @@ comment_*.cut
 *_html.tex
 lwarp*
 sample_project.css
+*.bbl
+*.bcf
+*.blg
+*.run.xml

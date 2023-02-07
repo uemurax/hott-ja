@@ -31,7 +31,7 @@
 % --- OTHER PACKAGES ARE LOADED AFTER LWARP ---
 % \usepackage{xcolor}             % (Demonstration purposes only.)
 \usepackage{subfiles}
-\usepackage{graphicx,imakeidx}
+\usepackage{graphicx,imakeidx,biblatex}
 \usepackage{my-preamble}
 
 % --- LATEX AND HTML CUSTOMIZATION ---
@@ -56,6 +56,10 @@
 \makeindex[options={-s custom.ist}]
 \myMakeNodeIndex{options={-s custom.ist}}
 
+\mySetupBibCommands{\parencite}{\textcite}{\citeauthor}
+\addbibresource{my-references.bib}
+\newcommand{\myBibliographyTitle}{参考文献}
+
 \begin{document}
 
 \maketitle                      % Or titlepage/titlingpage environment.
@@ -67,6 +71,14 @@
 
 \subfile{main}
 
+\begin{warpprint}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\myBibliographyTitle}
+\end{warpprint}
+\ForceHTMLPage
+\ForceHTMLTOC
+\printbibliography[title={\myBibliographyTitle}]
 \begin{warpprint}   % For print output ...
 \cleardoublepage    % ... a common method to place index entry into TOC.
 \phantomsection

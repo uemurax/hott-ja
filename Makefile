@@ -7,11 +7,13 @@ SITE_DIR = _site
 IMAGE_DIR = index-images
 CORE_FILES = main.tex custom.ist latexmkrc
 CSS_FILES = custom.css
+BIB_FILES = my-references.bib
 SOURCE_NODE_FILES = $(wildcard $(SOURCE_DIR)/node-*.tex)
 SOURCE_STYLE_FILES = $(wildcard $(SOURCE_DIR)/my-*.sty)
 SOURCE_CORE_FILES = $(patsubst %,$(SOURCE_DIR)/%,$(CORE_FILES))
 SOURCE_CSS_FILES = $(patsubst %,$(SOURCE_DIR)/%,$(CSS_FILES))
-SOURCE_FILES = $(SOURCE_CORE_FILES) $(SOURCE_NODE_FILES) $(SOURCE_STYLE_FILES) $(SOURCE_CSS_FILES)
+SOURCE_BIB_FILES = $(patsubst %,$(SOURCE_DIR)/%,$(BIB_FILES))
+SOURCE_FILES = $(SOURCE_CORE_FILES) $(SOURCE_NODE_FILES) $(SOURCE_STYLE_FILES) $(SOURCE_CSS_FILES) $(SOURCE_BIB_FILES)
 BUILD_CSS_FILES = $(patsubst %,$(BUILD_DIR)/%,$(CSS_FILES)) $(BUILD_DIR)/lwarp.css
 NODE_PREFIX = node-
 

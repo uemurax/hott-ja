@@ -1,5 +1,3 @@
-\usepackage{etextools}
-
 \newcommand{\myInlineMath@raw}[1]{\(#1\)}
 
-\newcommand{\myInlineMath}[1]{\edef\myInlineMath@tmp@expression{#1}\expandnext{\myInlineMath@raw}{\myInlineMath@tmp@expression}}
+\newcommand{\myInlineMath}[1]{\edef\myInlineMath@tmp@expression{{#1}}\expandafter\myInlineMath@raw\myInlineMath@tmp@expression}
