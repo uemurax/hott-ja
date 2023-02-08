@@ -1,28 +1,16 @@
 name: build
 
 on:
-  push:
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build_latex:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install dependency
-        run: sudo apt install texlive texlive-latex-extra texlive-extra-utils texlive-luatex texlive-lang-japanese texlive-bibtex-extra biber latexmk
-
       - name: Build
-        run: make
-
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: gh-pages
-          build_dir: _site
-          jekyll: false
-          dry_run: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: .github/actions/build
