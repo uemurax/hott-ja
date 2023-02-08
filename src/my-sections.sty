@@ -1,0 +1,22 @@
+\usepackage{my-node,my-label,cleveref}
+
+\newcommand{\mySection}[2]{\mySection@A{\myNodeTitle{#1}{#2}}\myNodeLabel{#1}}
+
+\newenvironment{myShiftSections}{%
+  \let\mySection@A\mySection@B
+  \let\mySection@B\mySection@C
+  \let\mySection@C\mySection@D
+  \let\mySection@D\mySection@fallback
+}{}
+
+\let\mySection@A\chapter
+\let\mySection@B\section
+\let\mySection@C\subsection
+\let\mySection@D\subsubsection
+
+\newcommand{\mySection@fallback}[1]{\PackageError{my-sections}{Too deep nest}{}}
+
+\crefformat{chapter}{#2#1章#3}
+\crefformat{section}{#2#1節#3}
+\crefformat{subsection}{#2#1項#3}
+\crefformat{subsubsection}{#2#1#3}

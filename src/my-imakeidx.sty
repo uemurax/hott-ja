@@ -1,0 +1,26 @@
+\usepackage{imakeidx,hyperref}
+
+\newcommand{\myNodeIndex}[1]{\index[node]{#1}}
+
+\newcommand{\myPrintNodeIndex}{
+  \chapter{\myNodeIndex@Title}
+  \hypertarget{ListOfNodes}{}
+  \printindex[node]
+}
+
+\newcommand{\myLinkNodeIndex}{\hyperlink{ListOfNodes}{\myNodeIndex@Title}}
+
+\newcommand{\myPrintIndex}{
+  \chapter{\indexname}
+  \printindex
+}
+
+\newcommand{\myNodeIndex@Title}{識別子一覧}
+
+\newcommand{\myIndex@IgnoreI}[1]{}
+\newcommand{\myIndex@Options}{-s custom.ist}
+
+\indexsetup{level=\myIndex@IgnoreI,noclearpage}
+
+\makeindex[options={\myIndex@Options}]
+\makeindex[name=node,title={\myNodeIndex@Title},options={\myIndex@Options}]

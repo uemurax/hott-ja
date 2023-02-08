@@ -1,0 +1,93 @@
+\PassOptionsToPackage{pdfusetitle,pdfencoding=auto,psdextra}{hyperref}
+\documentclass[b5paper]{ltjsbook}
+
+\usepackage{iftex}
+
+% --- LOAD FONT SELECTION AND ENCODING BEFORE LOADING LWARP ---
+
+\ifPDFTeX
+\usepackage{lmodern}            % pdflatex or dvi latex
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\else
+\usepackage{fontspec}           % XeLaTeX or LuaLaTeX
+\fi
+
+% --- LWARP IS LOADED NEXT ---
+\usepackage[
+%   HomeHTMLFilename=index,     % Filename of the homepage.
+%   HTMLFilename={},       % Filename prefix of other pages.
+%   IndexLanguage=english,      % Language for xindy index, glossary.
+  latexmk,                    % Use latexmk to compile.
+%   OSWindows,                  % Force Windows. (Usually automatic.)
+%   mathjax,                    % Use MathJax to display math.
+  makeindex,
+  makeindexStyle=custom.ist,
+]{lwarp}
+\boolfalse{FileSectionNames}  % If false, numbers the files.
+
+% --- LOAD PDFLATEX MATH FONTS HERE ---
+
+% --- OTHER PACKAGES ARE LOADED AFTER LWARP ---
+% \usepackage{xcolor}             % (Demonstration purposes only.)
+\usepackage{subfiles}
+\usepackage{graphicx,imakeidx,biblatex}
+\usepackage{hyperref,amsthm,mathtools,cleveref}
+\usepackage{my-preamble}
+
+% --- LATEX AND HTML CUSTOMIZATION ---
+\title{\myTitle}
+\author{\myAuthor}
+\setcounter{tocdepth}{4}        % Include subsections in the \TOC.
+\setcounter{secnumdepth}{4}     % Number down to subsections.
+\setcounter{FileDepth}{4}       % Split \HTML\ files at sections
+\boolfalse{CombineHigherDepths}  % Combine parts/chapters/sections
+\setcounter{SideTOCDepth}{4}    % Include subsections in the side\TOC
+\HTMLTitle{\myTitle}       % Overrides \title for the web page.
+\HTMLAuthor{\myAuthor}        % Sets the HTML meta author tag.
+\HTMLLanguage{ja}            % Sets the HTML meta language.
+\HTMLDescription{ホモトピー型理論についての文書}% Sets the HTML meta description.
+\HTMLFirstPageTop{}
+\HTMLPageTop{\LinkPrevious \LinkNext}
+\HTMLPageBottom{}
+\CSSFilename{custom.css}
+
+\begin{document}
+
+\frontmatter
+
+\maketitle                      % Or titlepage/titlingpage environment.
+
+\pagebreak
+\hspace{0pt}
+\vfill
+\noindent 「\myTitle」
+\par\noindent \copyright{} 2023 \myAuthor
+\par\vspace{1em}
+\noindent HTML版: \url{https://uemurax.github.io/hott-ja/index.html}
+\par\noindent PDF版: \url{https://uemurax.github.io/hott-ja/index.pdf}
+\par\vspace{1em}
+\noindent この作品は\myHRef{http://creativecommons.org/licenses/by/4.0/}{クリエイティブ・コモンズ表示4.0国際ライセンス}の下に提供されています。
+\vfill
+\hspace{0pt}
+\thispagestyle{empty}
+\pagebreak
+
+% An article abstract would go here.
+
+\tableofcontents                % MUST BE BEFORE THE FIRST SECTION BREAK!
+\listoffigures
+
+\mainmatter
+
+\subfile{main}
+
+\backmatter
+
+\myPrintBibliography
+
+\myPrintIndex
+
+\myPrintNodeIndex
+
+\end{document}

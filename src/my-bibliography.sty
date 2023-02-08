@@ -1,0 +1,13 @@
+\usepackage{biblatex}
+
+\let\myCiteParen\parencite
+\let\myCiteText\textcite
+\let\myCiteAuthor\citeauthor
+
+\newcommand{\myPrintBibliography}{
+  \chapter{\myBibliography@Title}
+  \printbibliography[heading=none]
+}
+
+\addbibresource{my-references.bib}
+\newcommand{\myBibliography@Title}{参考文献}

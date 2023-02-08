@@ -1,0 +1,7 @@
+\usepackage{xparse,xcolor,lwarp,hyperref}
+
+\newcommand{\myNodeText}[1]{\InlineClass{node-id}{\textcolor{gray}{\textsf{[#1]}}}}
+
+\newcommand{\myNodeTitle}[2]{\texorpdfstring{#2\myNodeText{#1}}{#2}}
+
+\NewDocumentCommand{\myNodeTitleOpt}{m O{}}{\myNodeTitle{#1}{#2}}
