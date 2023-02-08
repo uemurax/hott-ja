@@ -52,21 +52,6 @@
 \HTMLPageBottom{}
 \CSSFilename{custom.css}
 
-\mySetupSections{\chapter}{\section}{\subsection}{\subsubsection}
-\crefformat{chapter}{#2#1章#3}
-\crefformat{section}{#2#1節#3}
-\crefformat{subsection}{#2#1項#3}
-\crefformat{subsubsection}{#2#1#3}
-
-\newcommand{\myIgnoreI}[1]{}
-\indexsetup{level=\myIgnoreI,noclearpage}
-\makeindex[options={-s custom.ist}]
-\myMakeNodeIndex{options={-s custom.ist}}
-
-\mySetupBibCommands{\parencite}{\textcite}{\citeauthor}
-\addbibresource{my-references.bib}
-\newcommand{\myBibliographyTitle}{参考文献}
-
 \begin{document}
 
 \frontmatter
@@ -97,35 +82,12 @@
 
 \subfile{main}
 
-\begin{warpHTML}
-  \ForceHTMLPage
-  \ForceHTMLTOC
-\end{warpHTML}
-\chapter*{\myBibliographyTitle}
-\begin{warpprint}
-  \addcontentsline{toc}{chapter}{\myBibliographyTitle}
-\end{warpprint}
-\printbibliography[heading=none]
+\backmatter
 
-\begin{warpHTML}
-  \ForceHTMLPage
-  \ForceHTMLTOC
-\end{warpHTML}
-\chapter*{\indexname}
-\begin{warpprint}
-  \addcontentsline{toc}{chapter}{\indexname}
-\end{warpprint}
-\printindex
+\myPrintBibliography
 
-\begin{warpHTML}
-  \ForceHTMLPage
-  \ForceHTMLTOC
-\end{warpHTML}
-\chapter*{\myNodeIndexTitle}
-\begin{warpprint}
-  \addcontentsline{toc}{chapter}{\myNodeIndexTitle}
-\end{warpprint}
-\hypertarget{ListOfNodes}{}
+\myPrintIndex
+
 \myPrintNodeIndex
 
 \end{document}

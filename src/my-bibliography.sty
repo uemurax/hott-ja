@@ -1,5 +1,13 @@
-\newcommand{\mySetupBibCommands}[3]{
-  \let\myCiteParen#1
-  \let\myCiteText#2
-  \let\myCiteAuthor#3
+\usepackage{biblatex}
+
+\let\myCiteParen\parencite
+\let\myCiteText\textcite
+\let\myCiteAuthor\citeauthor
+
+\newcommand{\myPrintBibliography}{
+  \chapter{\myBibliography@Title}
+  \printbibliography[heading=none]
 }
+
+\addbibresource{my-references.bib}
+\newcommand{\myBibliography@Title}{参考文献}
