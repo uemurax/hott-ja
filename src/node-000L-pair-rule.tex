@@ -1,0 +1,33 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000L}{myRule}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族とする。
+  \begin{enumerate}
+  \item 型\myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}
+      \myElemOf \myUniverse{i}}を構成できる。
+  \item 要素\myInlineMath{a \myElemOf A}と
+    \myInlineMath{b \myElemOf B\myAppParen{a}}に対し、
+    要素\myInlineMath{\myPair{a}{b} \myElemOf
+      \myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+    を構成できる。
+  \item 要素\myInlineMath{c \myElemOf
+      \myDPairType{x \myElemOf A}{B\myAppParen{x}}}に対し、
+    要素\myInlineMath{\myProjI{c} \myElemOf A}と
+    \myInlineMath{\myProjII{c} \myElemOf B\myAppParen{\myProjI{c}}}
+    を構成できる。
+  \item 要素\myInlineMath{a \myElemOf A}と
+    \myInlineMath{b \myElemOf B\myAppParen{a}}に対し、
+    \myInlineMath{\myProjI{\myPair{a}{b}} \myDefEq a},
+    \myInlineMath{\myProjII{\myPair{a}{b}} \myDefEq b}と定義される。
+  \item 要素\myInlineMath{c \myElemOf
+      \myDPairType{x \myElemOf A}{B\myAppParen{x}}}に対し、
+    \myInlineMath{c \myDefEq \myPair{\myProjI{c}}{\myProjII{c}}}
+    と定義される。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
