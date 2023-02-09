@@ -5,28 +5,29 @@
 \begin{myBlock}{000H}{myRule}
   \myInlineMath{i}を階数、
   \myInlineMath{A \myElemOf \myUniverse{i}}を型、
-  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族とする。
+  \myInlineMath{B \myElemOf \myUniverse{i}}を
+  仮定\myInlineMath{x \myElemOf A}の下での型とする。
   \begin{enumerate}
-  \item \myNewTerm[いぞんかんすうがた]{依存関数型}(dependent function type)
-    \myInlineMath{\myDFunTypeOp{A}{B} \myElemOf \myUniverse{i}}
+  \item \myNewTerm[かんすうがた]{関数型}(function type)
+    \myInlineMath{\myDFunType{x \myElemOf A}{B} \myElemOf \myUniverse{i}}
     を構成できる。
-    \myInlineMath{\myDFunTypeOp{A}{B}}の要素を
-    \myNewTerm[いぞんかんすう]{依存関数}(dependent function)と呼ぶ。
+    \myInlineMath{\myDFunType{x \myElemOf A}{B}}の要素を
+    \myNewTerm[かんすう]{関数}(function)と呼ぶ。
   \item 仮定\myInlineMath{x \myElemOf A}の下での要素
-    \myInlineMath{b \myElemOf B\myAppParen{x}}に対し、
+    \myInlineMath{b \myElemOf B}に対し、
     \myNewTerm[らむだちゅうしょう]{ラムダ抽象}(lambda abstraction)
-    \myInlineMath{\myAbs{x}{b} \myElemOf \myDFunTypeOp{A}{B}}
+    \myInlineMath{\myAbs{x}{b} \myElemOf \myDFunType{x \myElemOf A}{B}}
     を構成できる。
-  \item 要素\myInlineMath{f \myElemOf \myDFunTypeOp{A}{B}}と
+  \item 要素\myInlineMath{f \myElemOf \myDFunType{x \myElemOf A}{B}}と
     \myInlineMath{a \myElemOf A}に対し、
     \myNewTerm[かんすうてきよう]{関数適用}(function application)
-    \myInlineMath{f\myAppParen{a} \myElemOf B\myAppParen{a}}を構成できる。
-  \item \myInlineMath{b \myElemOf B\myAppParen{x}}を
+    \myInlineMath{f\myAppParen{a} \myElemOf B\mySubstParen{x \mySubst a}}を構成できる。
+  \item \myInlineMath{b \myElemOf B}を
     仮定\myInlineMath{x \myElemOf A}の下での要素、
     \myInlineMath{a \myElemOf A}を要素とする。
     このとき、\myInlineMath{(\myAbs{x}{b})\myAppParen{a} \myDefEq
       b\mySubstParen{x \mySubst a}}と定義される。
-  \item 要素\myInlineMath{f \myElemOf \myDFunTypeOp{A}{B}}に対し、
+  \item 要素\myInlineMath{f \myElemOf \myDFunType{x \myElemOf A}{B}}に対し、
     \myInlineMath{f \myDefEq \myAbs{x}{f\myAppParen{x}}}と定義される。
   \end{enumerate}
 \end{myBlock}
