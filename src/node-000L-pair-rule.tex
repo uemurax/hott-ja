@@ -7,16 +7,19 @@
   \myInlineMath{A \myElemOf \myUniverse{i}}を型、
   \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族とする。
   \begin{enumerate}
-  \item 型\myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}
+  \item \myNewTerm[ついがた]{対型}(pair type)
+    \myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}
       \myElemOf \myUniverse{i}}を構成できる。
   \item 要素\myInlineMath{a \myElemOf A}と
     \myInlineMath{b \myElemOf B\myAppParen{a}}に対し、
-    要素\myInlineMath{\myPair{a}{b} \myElemOf
+    \myNewTerm[つい]{対}(pair)
+    \myInlineMath{\myPair{a}{b} \myElemOf
       \myDPairType{x \myElemOf A}{B\myAppParen{x}}}
     を構成できる。
   \item 要素\myInlineMath{c \myElemOf
       \myDPairType{x \myElemOf A}{B\myAppParen{x}}}に対し、
-    要素\myInlineMath{\myProjI{c} \myElemOf A}と
+    \myNewTerm[しゃえい]{射影}(projection)
+    \myInlineMath{\myProjI{c} \myElemOf A}と
     \myInlineMath{\myProjII{c} \myElemOf B\myAppParen{\myProjI{c}}}
     を構成できる。
   \item 要素\myInlineMath{a \myElemOf A}と
