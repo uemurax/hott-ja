@@ -4,6 +4,27 @@
 
 \mySection{0001}{型理論}
 
+ホモトピー型理論は\emph{型理論}の一種であり、
+型理論は一般になんらかの対象を\emph{構成}するための規則群と
+構成されたものに関する\emph{定義}を表す規則群によって定められる。
+この\myRefName{0001}では、ホモトピー型理論の基礎となる構成規則を導入する。
+
+型理論一般における概念や表記をいくつか導入する。
+以下の用語は形式的に定義することもできるが、
+当面は普通の自然言語の意味で解釈して問題ない。
+同じ種類の対象\myInlineMath{\alpha}と\myInlineMath{\beta}が\emph{定義により等しい}ことを
+\myInlineMath{\alpha \myDefEq \beta}と書く。
+構成にはいくつかの\emph{仮定}が置かれることもある。
+\myInlineMath{\alpha}を仮定\myInlineMath{x_{1}, \dots, x_{n}}の下での対象、
+\myInlineMath{a_{i}}を\myInlineMath{x_{i}}と同じ種類の対象とするとき、
+\myInlineMath{\alpha}の構成において各\myInlineMath{x_{i}}を\myInlineMath{a_{i}}に
+\emph{置き換える}ことができ、その結果得られる対象を
+\myInlineMath{\alpha\mySubstParen{x_{1} \mySubst a_{1}, \dots, x_{n} \mySubst a_{n}}}と書く。
+どのような種類の対象を構成できるかは型理論によって異なるが、
+通常は\emph{型}とその\emph{要素}が最も興味のある対象である。
+各要素には型が割り当てられており、要素\myInlineMath{a}の型が\myInlineMath{A}であることを明示するときは
+\myInlineMath{a \myElemOf A}と書く。
+
 \begin{myShiftSections}
   \subfile{node-0009-universe}
   \subfile{node-000A-function}
