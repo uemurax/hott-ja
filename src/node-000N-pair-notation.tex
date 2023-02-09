@@ -1,0 +1,18 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000N}{myNotation}
+  \begin{enumerate}
+  \item \myInlineMath{\myPairType}は右結合の演算子である。
+    例えば、\myInlineMath{A \myPairType B \myPairType C}は
+    \myInlineMath{A \myPairType (B \myPairType C)}と読む。
+  \item \myInlineMath{\myDPairType{x \myElemOf A}{}}の結合は弱い。
+    例えば、\myInlineMath{\myDPairType{x \myElemOf A}
+      {\myDPairType{y \myElemOf B}{C \myPairType D}}}は
+    \myInlineMath{\myDPairType{x \myElemOf A}
+      {(\myDPairType{y \myElemOf B}{(C \myPairType D)})}}と読む。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
