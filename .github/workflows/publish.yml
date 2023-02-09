@@ -8,6 +8,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
+    container: texlive/texlive
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
