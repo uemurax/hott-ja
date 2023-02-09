@@ -1,5 +1,7 @@
 \usepackage{amsmath,amssymb}
 
+\newcommand{\myConst}[1]{\mathord{\noexpand\text{\noexpand\textsf{#1}}}}
+
 \newcommand{\myElemOf}{:}
 \newcommand{\myDefEq}{\noexpand\equiv}
 \newcommand{\mySubstParen}[1]{[#1]}
@@ -7,3 +9,5 @@
 \newcommand{\myUniverse}{\noexpand\mathcal{U}}
 \newcommand{\myAppParen}[1]{(#1)}
 \newcommand{\myDots}{\noexpand\dots}
+\newcommand{\myLevelZero}{0}
+\newcommand{\myLevelSucc}{\myConst{suc}}
