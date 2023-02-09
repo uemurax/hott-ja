@@ -6,8 +6,13 @@
 \newcommand{\myDefEq}{\noexpand\equiv}
 \newcommand{\mySubstParen}[1]{[#1]}
 \newcommand{\mySubst}{\noexpand\mapsto}
-\newcommand{\myUniverse}{\noexpand\mathcal{U}}
+\newcommand{\myUniverse@char}{\noexpand\mathcal{U}}
+\newcommand{\myUniverse}[1]{\myUniverse@char\myAppParen{#1}}
+\newcommand{\myUniverseEl}[1]{\myConst{El}\myAppParen{#1}}
+\newcommand{\myNameOf}[1]{\lceil#1\rceil}
+\newcommand{\myUniverseName}[1]{\myNameOf{\myUniverse@char}\myAppParen{#1}}
+\newcommand{\myUniverseLift}[1]{\myConst{Lift}\myAppParen{#1}}
 \newcommand{\myAppParen}[1]{(#1)}
 \newcommand{\myDots}{\noexpand\dots}
 \newcommand{\myLevelZero}{0}
-\newcommand{\myLevelSucc}{\myConst{suc}}
+\newcommand{\myLevelSucc}[1]{\myConst{suc}\myAppParen{#1}}
