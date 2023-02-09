@@ -1,0 +1,30 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000E}{myRule}
+  \begin{enumerate}
+  \item 階数\myInlineMath{i}に対して、
+    型\myInlineMath{\myUniverse{i}}を構成できる。
+  \item 階数\myInlineMath{i}と
+    要素\myInlineMath{A \myElemOf \myUniverse{i}}に対して、
+    型\myInlineMath{\myUniverseEl{A}}を構成できる。
+  \item 階数\myInlineMath{i}に対して、
+    要素\myInlineMath{\myUniverseName{i} \myElemOf
+      \myUniverse{\myLevelSucc{i}}}
+    を構成できる。
+  \item 階数\myInlineMath{i}に対して、
+    \myInlineMath{\myUniverseEl{\myUniverseName{i}} \myDefEq
+      \myUniverse{i}}と定義される。
+  \item 階数\myInlineMath{i}と
+    要素\myInlineMath{A \myElemOf \myUniverse{i}}に対して、
+    \myInlineMath{\myUniverseLift{A} \myElemOf \myUniverse{\myLevelSucc{i}}}
+    を構成できる。
+  \item 階数\myInlineMath{i}と
+    要素\myInlineMath{A \myElemOf \myUniverse{i}}に対して、
+    \myInlineMath{\myUniverseEl{\myUniverseLift{A}} \myDefEq A}
+    と定義される。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}

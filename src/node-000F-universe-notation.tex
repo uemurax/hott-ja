@@ -1,0 +1,20 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000F}{myNotation}
+  \begin{enumerate}
+  \item \myInlineMath{\myUniverseEl{\myBlank}}はよく省略する。
+    つまり、要素\myInlineMath{A \myElemOf \myUniverse{i}}
+    そのものを型とみなす。
+  \item \myInlineMath{\myUniverseLift{\myBlank}}はよく省略する。
+    つまり、要素\myInlineMath{A \myElemOf \myUniverse{i}}
+    は\myInlineMath{\myUniverse{\myLevelSucc{i}}}の要素でもあるとみなす。
+  \item \myInlineMath{\myUniverse{i}}と
+    \myInlineMath{\myUniverseName{i}}を表記上区別しない。
+    つまり、\myInlineMath{\myUniverse{i}}そのものを
+    \myInlineMath{\myUniverse{\myLevelSucc{i}}}の要素とみなす。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
