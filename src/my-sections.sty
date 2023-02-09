@@ -9,13 +9,14 @@
   \let\mySection@D\mySection@fallback
 }{}
 
-\let\mySection@A\chapter
-\let\mySection@B\section
-\let\mySection@C\subsection
-\let\mySection@D\subsubsection
+\let\mySection@A\part
+\let\mySection@B\chapter
+\let\mySection@C\section
+\let\mySection@D\subsection
 
 \newcommand{\mySection@fallback}[1]{\PackageError{my-sections}{Too deep nest}{}}
 
+\crefformat{part}{#2#1部#3}
 \crefformat{chapter}{#2#1章#3}
 \crefformat{section}{#2#1節#3}
 \crefformat{subsection}{#2#1項#3}
