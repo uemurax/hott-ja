@@ -1,0 +1,35 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000H}{myRule}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf \myUniverse{i}}を
+  仮定\myInlineMath{x \myElemOf A}の下での型とする。
+  \begin{enumerate}
+  \item \myNewTerm[かんすうがた]{関数型}(function type)
+    \myInlineMath{\myDFunType{x \myElemOf A}{B} \myElemOf \myUniverse{i}}
+    を構成できる。
+    \myInlineMath{\myDFunType{x \myElemOf A}{B}}の要素を
+    \myNewTerm[かんすう]{関数}(function)と呼ぶ。
+  \item 仮定\myInlineMath{x \myElemOf A}の下での要素
+    \myInlineMath{b \myElemOf B}に対し、
+    \myNewTerm[らむだちゅうしょう]{ラムダ抽象}(lambda abstraction)
+    \myInlineMath{\myAbs{x}{b} \myElemOf \myDFunType{x \myElemOf A}{B}}
+    を構成できる。
+  \item 要素\myInlineMath{f \myElemOf \myDFunType{x \myElemOf A}{B}}と
+    \myInlineMath{a \myElemOf A}に対し、
+    \myNewTerm[かんすうてきよう]{関数適用}(function application)
+    \myInlineMath{f\myAppParen{a} \myElemOf B\mySubstParen{x \mySubst a}}を構成できる。
+  \item \myInlineMath{b \myElemOf B}を
+    仮定\myInlineMath{x \myElemOf A}の下での要素、
+    \myInlineMath{a \myElemOf A}を要素とする。
+    このとき、\myInlineMath{(\myAbs{x}{b})\myAppParen{a} \myDefEq
+      b\mySubstParen{x \mySubst a}}と定義される。
+  \item 要素\myInlineMath{f \myElemOf \myDFunType{x \myElemOf A}{B}}に対し、
+    \myInlineMath{f \myDefEq \myAbs{x}{f\myAppParen{x}}}と定義される。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
