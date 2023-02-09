@@ -1,0 +1,38 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000O}{myNotation}
+  記法\myInlineMath{\myRecordType{x_{n} \myElemOf A_{n}, \myDots, x_{1} \myElemOf A_{1}}}
+  を次のように定める。
+  \begin{itemize}
+  \item \myInlineMath{\myRecordType{}}は
+    \myInlineMath{\myUnitType}のこととする。
+  \item \myInlineMath{\myRecordType{x_{n + 1} \myElemOf A_{n + 1}, \myDots, x_{1} \myElemOf A_{1}}}は
+    \myInlineMath{\myDPairType{x_{n + 1} \myElemOf A_{n + 1}}
+      {\myRecordType{x_{n} \myElemOf A_{n}, \myDots, x_{1} \myElemOf A_{1}}}}のこととする。
+  \end{itemize}
+  また、記法\myInlineMath{\myRecordElem{x_{n} \myDefEq a_{n}, \myDots, x_{1} \myDefEq a_{1}}}
+  を次のように定める。
+  \begin{itemize}
+  \item \myInlineMath{\myRecordElem{}}は
+    \myInlineMath{\myUnitElem}のこととする。
+  \item \myInlineMath{\myRecordElem{x_{n + 1} \myDefEq a_{n + 1}, \myDots, x_{1} \myDefEq a_{1}}}は
+    \myInlineMath{\myPair{a_{n + 1}}
+      {\myRecordElem{x_{n} \myDefEq a_{n}, \myDots, x_{1} \myDefEq a_{1}}}}のこととする。
+  \end{itemize}
+  また、要素\myInlineMath{a \myElemOf \myRecordType{x_{n} \myElemOf A_{n}, \myDots, x_{1} \myElemOf A_{1}}}に対し、
+  記法\myInlineMath{a \myRecordField x_{i}}を次のように定める。
+  \begin{itemize}
+  \item \myInlineMath{i}が\myInlineMath{n}の時、
+    \myInlineMath{a \myRecordField x_{n}}は
+    \myInlineMath{\myProjI{a}}のこととする。
+  \item \myInlineMath{i}が\myInlineMath{1}から\myInlineMath{n - 1}の時、
+    \myInlineMath{a \myRecordField x_{i}}は
+    \myInlineMath{(\myProjII{a} \myElemOf
+      \myRecordType{x_{n - 1} \myElemOf A_{n - 1}, \myDots, x_{1} \myElemOf A_{1}})
+      \myRecordField x_{i}}のこととする。
+  \end{itemize}
+\end{myBlock}
+
+\end{document}
