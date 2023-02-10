@@ -3,6 +3,10 @@ description: Build site
 runs:
   using: "composite"
   steps:
+    - name: Install build tools
+      run: apt-get install -y build-essential
+      shell: sh
+
     - name: Build
       run: make
       shell: sh
