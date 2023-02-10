@@ -3,10 +3,6 @@ description: Build site
 runs:
   using: "composite"
   steps:
-    - name: Install dependency
-      run: sudo apt install texlive texlive-latex-extra texlive-extra-utils texlive-luatex texlive-lang-japanese texlive-bibtex-extra biber latexmk
-      shell: sh
-
     - name: Build
       run: make
       shell: sh
