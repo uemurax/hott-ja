@@ -4,7 +4,7 @@ runs:
   using: "composite"
   steps:
     - name: Install build tools
-      run: sudo apt-get install -y build-essential
+      run: apt-get install -y build-essential
       shell: sh
 
     - name: Build
