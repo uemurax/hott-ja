@@ -40,7 +40,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: site
-          path: _site.tar
 
       - name: Unarchive artifacts
         run: tar -xvf _site.tar
