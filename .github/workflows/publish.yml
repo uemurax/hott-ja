@@ -32,6 +32,9 @@ jobs:
 
     needs: build
 
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
