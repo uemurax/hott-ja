@@ -1,0 +1,57 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000O}{myNotation}
+  記法\myInlineMath{\myRecordType{x_{1} \myElemOf A_{1}, \myDots, x_{n} \myElemOf A_{n}}}
+  を次のように定める。
+  \begin{itemize}
+  \item \myInlineMath{\myRecordType{}}は
+    \myInlineMath{\myUnitType}のこととする。
+  \item \myInlineMath{\myRecordType{x_{1} \myElemOf A_{1}, \myDots, x_{n + 1} \myElemOf A_{n + 1}}}は
+    \myInlineMath{\myDPairType{x_{1} \myElemOf A_{1}}
+      {\myRecordType{x_{2} \myElemOf A_{2}, \myDots, x_{n + 1} \myElemOf A_{n + 1}}}}のこととする。
+  \end{itemize}
+  また、記法\myInlineMath{\myRecordElem{x_{1} \myDefEq a_{1}, \myDots, x_{n} \myDefEq a_{n}}}
+  を次のように定める。
+  \begin{itemize}
+  \item \myInlineMath{\myRecordElem{}}は
+    \myInlineMath{\myUnitElem}のこととする。
+  \item \myInlineMath{\myRecordElem{x_{1} \myDefEq a_{1}, \myDots, x_{n + 1} \myDefEq a_{n + 1}}}は
+    \myInlineMath{\myPair{a_{1}}
+      {\myRecordElem{x_{1} \myDefEq a_{1}, \myDots, x_{n + 1} \myDefEq a_{n + 1}}}}のこととする。
+  \end{itemize}
+  これらの記法は、各\myInlineMath{a_{i}}が
+  \myInlineMath{A_{i}\mySubstParen{x_{1} \mySubst a_{1}, \myDots, x_{i - 1} \mySubst a_{i - 1}}}
+  の要素の時に
+  \myInlineMath{\myRecordElem{x_{1} \myDefEq a_{1}, \myDots, x_{n} \myDefEq a_{n}}}が
+  \myInlineMath{\myRecordType{x_{1} \myElemOf A_{1}, \myDots, x_{n} \myElemOf A_{n}}}
+  の要素になるように設計されている。
+  さらに、
+  \myInlineMath{a \myElemOf \myRecordType{x_{1} \myElemOf A_{1}, \myDots, x_{n} \myElemOf A_{n}}}
+  要素、
+  \myInlineMath{y}を\myInlineMath{x_{1}}から\myInlineMath{x_{n}}
+  のいずれかとする時、
+  記法\myInlineMath{a \myRecordField y}を次のように定める。
+  \begin{itemize}
+  \item \myInlineMath{y}が\myInlineMath{x_{1}}の時、
+    \myInlineMath{a \myRecordField x_{1}}は
+    \myInlineMath{\myProjI{a}}のこととする。
+  \item \myInlineMath{y}が\myInlineMath{x_{2}}から\myInlineMath{x_{n}}のいずれかの時、
+    \myInlineMath{a \myRecordField y}は
+    \myInlineMath{(\myProjII{a} \myElemOf
+      \myRecordType{x_{2} \myElemOf A_{2}, \myDots, x_{n} \myElemOf A_{n}})
+      \myRecordField y}のこととする。
+  \end{itemize}
+  この記法は\myInlineMath{a \myRecordField x_{i} \myElemOf
+    A_{i}\mySubstParen{x_{1} \mySubst a \myRecordField x_{1}, \myDots
+      x_{i - 1} \mySubst a \myRecordField x_{i - 1}}}となるように設計されている。
+  また、\myInlineMath{\myRecordElem{x_{1} \myDefEq a_{1}, \myDots, x_{n} \myDefEq a_{n}}
+    \myRecordField x_{i} \myDefEq a_{i}}であることと
+  \myInlineMath{a \myDefEq
+    \myRecordElem{x_{1} \myDefEq a \myRecordField x_{1}, \myDots,
+      x_{n} \myDefEq a \myRecordField x_{n}}}
+  であることを確かめられる。
+\end{myBlock}
+
+\end{document}

@@ -1,4 +1,4 @@
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,newcomputermodern}
 
 \newcommand{\myConst}[1]{\mathord{\noexpand\text{\noexpand\textsf{#1}}}}
 
@@ -20,3 +20,14 @@
 \newcommand{\myFunType}{\to}
 \newcommand{\myAbs}[2]{\lambda {#1} . {#2}}
 \newcommand{\myDFunType}[2]{\prod_{#1}{#2}}
+\newcommand{\myUnitType}{\noexpand\mathbf{1}}
+\newcommand{\myUnitElem}{\mathord{\star}}
+\newcommand{\myDPairType}[2]{\sum_{#1}{#2}}
+\newcommand{\myPair}[2]{\myConst{pair}\myAppParen{{#1}, {#2}}}
+\newcommand{\myProj@char}{\myConst{pr}}
+\newcommand{\myProjI}[1]{\myProj@char_{1}\myAppParen{#1}}
+\newcommand{\myProjII}[1]{\myProj@char_{2}\myAppParen{#1}}
+\newcommand{\myPairType}{\times}
+\newcommand{\myRecordType}[1]{\lBrace {#1} \rBrace}
+\newcommand{\myRecordElem}[1]{\lParen {#1} \rParen}
+\newcommand{\myRecordField}{.}
