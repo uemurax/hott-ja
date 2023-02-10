@@ -4,6 +4,11 @@
 
 ## 準備
 
+### Docker
+
+[tuemura00/texlive](https://hub.docker.com/r/tuemura00/texlive)
+に必要なパッケージをインストールしたイメージを用意してあります。
+
 ### Debian/Ubuntu
 
 `texlive`, `texlive-latex-extra`, `texlive-extra-utils`, `texlive-luatex`, `texlive-lang-japanese`, `texlive-bibtex-extra`, `biber`, `latexmk` をインストールします。
