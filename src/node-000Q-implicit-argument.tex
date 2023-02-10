@@ -1,0 +1,17 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000Q}{myNotation}
+  \myInlineMath{f \myElemOf \myDFunType{\myImplicit{x \myElemOf A}}
+    {\myDFunType{y \myElemOf B}{C}}}
+  のように引数を\myInlineMath{\myImplicit{\myPhantom{x}}}で囲った場合、
+  その引数は\myNewTerm[あんもくてき]{暗黙的}(implicit)であると約束する。
+  つまり、要素\myInlineMath{a \myElemOf A}と
+  \myInlineMath{b \myElemOf B\mySubstParen{x \mySubst a}}に対して、
+  関数適用を\myInlineMath{f\myAppParen{a, b}}の代わりに
+  \myInlineMath{a}を省略して\myInlineMath{f\myAppParen{b}}と書く。
+  \myInlineMath{B}の構成で\myInlineMath{x}を明示的に使う場合には実用上は曖昧性は無い。
+\end{myBlock}
+
+\end{document}

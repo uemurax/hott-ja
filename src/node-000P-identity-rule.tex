@@ -1,0 +1,35 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000P}{myRule}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{a_{1} \myElemOf A}を要素とする。
+  \begin{enumerate}
+  \item 要素\myInlineMath{a_{2} \myElemOf A}に対し、
+    \myNewTerm[どういつしがた]{同一視型}(identity type)
+    \myInlineMath{a_{1} \myIdType a_{2} \myElemOf \myUniverse{i}}
+    を構成できる。
+    \myInlineMath{a_{1} \myIdType a_{2}}の要素を
+    \myInlineMath{a_{1}}と\myInlineMath{a_{2}}の
+    \myNewTerm[どういつし]{同一視}(identification)と呼ぶ。
+  \item 要素\myInlineMath{\myRefl{a_{1}} \myElemOf a_{1} \myIdType a_{1}}
+    を構成できる。
+  \item \myInlineMath{a_{2} \myElemOf A}と
+    \myInlineMath{p \myElemOf a_{1} \myIdType a_{2}}を要素、
+    \myInlineMath{j}を階数、
+    \myInlineMath{B \myElemOf \myDFunType{\myImplicit{x \myElemOf A}}
+      {a_{1} \myIdType x \myFunType \myUniverse{j}}}を型の族、
+    \myInlineMath{b \myElemOf B\myAppParen{\myRefl{a_{1}}}}を要素とすると、
+    要素\myInlineMath{\myIdInd{p}{B}{b} \myElemOf B\myAppParen{p}}
+    を構成できる。
+  \item \myInlineMath{j}を階数、
+    \myInlineMath{B \myElemOf \myDFunType{\myImplicit{x \myElemOf A}}
+      {a_{1} \myIdType x \myFunType \myUniverse{j}}}を型の族、
+    \myInlineMath{b \myElemOf B\myAppParen{\myRefl{a_{1}}}}を要素とすると、
+    \myInlineMath{\myIdInd{\myRefl{a_{1}}}{B}{b} \myDefEq b}と定義される。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}

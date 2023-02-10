@@ -4,4 +4,36 @@
 
 \mySection{000C}{同一視型}
 
+\emph{同一視型}はホモトピー型理論において最も特徴的な型である。
+
+\subfile{node-000P-identity-rule}
+
+\myCiteParen{hottbook}にならって同一視型に等号の記号を使うが、
+その意味は従来の数学の等号とは大きく異なる。
+従来の数学では、\myInlineMath{a_{1} = a_{2}}といえば
+\myInlineMath{a_{1}}と\myInlineMath{a_{2}}が等しいという命題であるが、
+型理論では\myInlineMath{a_{1} = a_{2}}はあくまで型である。
+従って、\myInlineMath{a_{1} = a_{2}}の要素というものを考えることができ、
+それは非形式的には\myInlineMath{a_{1}}と\myInlineMath{a_{2}}の
+同一視のしかたと解釈される。
+
+\myRef{000P}について説明する。
+\myInlineMath{\myRefl{a_{1}} \myElemOf a_{1} \myIdType a_{1}}
+は\myInlineMath{a_{1}}とそれ自身の自明な同一視を表す。
+残りの規則はいわゆる\emph{帰納法原理}の一例で、
+任意の\myInlineMath{a_{2} \myElemOf A}と
+同一視型の要素\myInlineMath{p \myElemOf a_{1} \myIdType a_{2}}を使って
+なんらかを構成するためには
+\myInlineMath{p}が\myInlineMath{\myRefl{a_{1}}}
+の場合の構成(\myInlineMath{b \myElemOf B\myAppParen{\myRefl{a_{1}}}})
+を与えれば十分であると読める。
+注意するべきこととして、この帰納法原理から\myInlineMath{a_{1} \myIdType a_{1}}の要素は
+\myInlineMath{\myRefl{a_{1}}}しか無いことは\emph{導出されない}。
+同一視型の規則の正しい読み方は
+型の族\myInlineMath{\myAbs{x}{a_{1} \myIdType x}
+  \myElemOf A \myFunType \myUniverse{i}}
+が\myInlineMath{\myRefl{a_{1}} \myElemOf a_{1} \myIdType a_{1}}
+で自由に生成されることであって、
+個々の型\myInlineMath{a_{1} \myIdType a_{2}}については特に言えることはない。
+
 \end{document}
