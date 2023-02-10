@@ -31,3 +31,8 @@
 \newcommand{\myRecordType}[1]{\lBrace {#1} \rBrace}
 \newcommand{\myRecordElem}[1]{\lParen {#1} \rParen}
 \newcommand{\myRecordField}{.}
+\newcommand{\myIdType}{=}
+\newcommand{\myRefl}[1]{\myConst{refl}\myAppParen{#1}}
+\newcommand{\myImplicit}[1]{\lbrack #1 \rbrack}
+\newcommand{\myInd@char}{\myConst{ind}}
+\newcommand{\myIdInd}[3]{\myInd@char_{\myIdType}\myAppParen{{#1}, {#2}, {#3}}}
