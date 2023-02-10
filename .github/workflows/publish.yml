@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
 
     container: tuemura00/texlive
@@ -17,6 +17,32 @@ jobs:
 
       - name: Build
         uses: ./.github/actions/build
+
+      - name: Archive artifacts
+        run: tar -cvf _site.tar _site
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: _site.tar
+
+  publish:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: site
+
+      - name: Unarchive artifacts
+        run: tar -xvf _site.tar
 
       - name: Deploy to GitHub Pages
         if: success()
