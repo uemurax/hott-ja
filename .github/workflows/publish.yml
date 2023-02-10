@@ -2,14 +2,14 @@ name: publish
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    container: tuemura00/texlive
+    container: ghcr.io/uemurax/docker-texlive-ja:latest
 
     steps:
       - name: Checkout
