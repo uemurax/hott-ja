@@ -1,4 +1,4 @@
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,newcomputermodern}
 
 \newcommand{\myConst}[1]{\mathord{\noexpand\text{\noexpand\textsf{#1}}}}
 
@@ -28,6 +28,6 @@
 \newcommand{\myProjI}[1]{\myProj@char_{1}\myAppParen{#1}}
 \newcommand{\myProjII}[1]{\myProj@char_{2}\myAppParen{#1}}
 \newcommand{\myPairType}{\times}
-\newcommand{\myRecordType}[1]{\{\!| {#1} |\!\}}
-\newcommand{\myRecordElem}[1]{(\!| {#1} |\!)}
+\newcommand{\myRecordType}[1]{\lBrace {#1} \rBrace}
+\newcommand{\myRecordElem}[1]{\lParen {#1} \rParen}
 \newcommand{\myRecordField}{.}
