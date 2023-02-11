@@ -1,0 +1,20 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000W}{myNotation}
+  大きなレコード型を定義する際には、
+  文章内で\myInlineMath{\myRecordType{x_{1} \myElemOf A_{1}, \myDots, x_{n} \myElemOf A_{n}}}
+  と書く代わりに縦に並べて
+  \begin{myDisplayMath}
+    \myArray{l}{
+      x_{1} \myElemOf A_{1} \\
+      \vdots \\
+      x_{n} \myElemOf A_{n}
+    }
+  \end{myDisplayMath}
+  と書くことがある。
+  レコード型の要素を定義する際にも同様に縦に並べて書くことがある。
+\end{myBlock}
+
+\end{document}
