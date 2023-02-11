@@ -1,4 +1,4 @@
-\usepackage{amsmath,amssymb,newcomputermodern}
+\usepackage{amsmath,amssymb,newcomputermodern,xparse}
 
 \newcommand{\myConst}[1]{\mathord{\noexpand\text{\noexpand\textsf{#1}}}}
 
@@ -40,3 +40,8 @@
 \newcommand{\myIsContr}[1]{\myConst{IsContr}\myAppParen{#1}}
 \newcommand{\myCenter}{\myConst{center}}
 \newcommand{\myContraction}{\myConst{contr}}
+\newcommand{\myEquiv}{\noexpand\simeq}
+\NewDocumentCommand{\myArray}{m +m}{\begin{array}{#1}#2\end{array}}
+\newcommand{\myEquivRel}{\myConst{Rel}}
+\newcommand{\myEquivContrA}{\myConst{contr-1}}
+\newcommand{\myEquivContrB}{\myConst{contr-2}}
