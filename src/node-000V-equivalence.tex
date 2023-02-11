@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{000V}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型とする。
+  型\myInlineMath{A \myEquiv B \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のラベルからなるレコード型と定義する。
+  \begin{myDisplayMath}
+    \myArray{l}{
+      \myEquivRel \myElemOf A \myFunType B \myFunType \myUniverse{i} \\
+      \myEquivContrA \myElemOf \myDFunType{x \myElemOf A}{\myIsContr{\myDPairType{y \myElemOf B}{\myEquivRel\myAppParen{x, y}}}} \\
+      \myEquivContrB \myElemOf \myDFunType{y \myElemOf B}{\myIsContr{\myDPairType{x \myElemOf A}{\myEquivRel\myAppParen{x, y}}}}
+    }
+  \end{myDisplayMath}
+  \myInlineMath{A \myEquiv B}の要素を\myInlineMath{A}と\myInlineMath{B}の間の
+  \myNewTerm[どうち]{同値}(equivalence)と呼ぶ。
+\end{myBlock}
+
+\end{document}

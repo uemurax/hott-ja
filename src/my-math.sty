@@ -2,6 +2,6 @@
 
 \newcommand{\myInlineMath}[1]{\edef\myInlineMath@tmp@expression{{#1}}\expandafter\myInlineMath@raw\myInlineMath@tmp@expression}
 
-\NewDocumentEnvironment{myDisplayMath}{+b}{\begin{center}\myInlineMath{#1}}{\end{center}}
+\NewDocumentEnvironment{myDisplayMath}{+b}{\begin{center}\myInlineMath{#1}\end{center}}{}
 
 \newcommand{\myInlineMath@raw}[1]{\(#1\)}
