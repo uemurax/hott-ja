@@ -1,0 +1,18 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0013}{myExercise}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{C \myElemOf A \myFunType B \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{f \myElemOf \myDFunType{x \myElemOf A}
+    {\myDFunType{y \myElemOf B}{C\myAppParen{x, y}}}}を関数とする。
+  関数\myInlineMath{\mySwap{f} \myElemOf \myDFunType{y \myElemOf B}
+    {\myDFunType{x \myElemOf A}{C\myAppParen{x, y}}}}であって、
+  任意の要素\myInlineMath{a \myElemOf A}と\myInlineMath{b \myElemOf B}に対して
+  \myInlineMath{\mySwap{f}\myAppParen{b, a} \myDefEq f\myAppParen{a, b}}
+  となるものを構成せよ。
+\end{myBlock}
+
+\end{document}
