@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0012}{myExercise}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B, C, D \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B},
+  \myInlineMath{g \myElemOf B \myFunType C},
+  \myInlineMath{h \myElemOf C \myFunType D}を関数とする。
+  \begin{enumerate}
+  \item \myInlineMath{f \myDefEq f \myFunComp \myIdFun{A}}
+    であることを確かめよ。
+  \item \myInlineMath{\myIdFun{B} \myFunComp f \myDefEq f}
+    であることを確かめよ。
+  \item \myInlineMath{(h \myFunComp g) \myFunComp f \myDefEq
+      h \myFunComp (g \myFunComp f)}
+    であることを確かめよ。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
