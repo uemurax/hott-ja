@@ -1,0 +1,18 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001C}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{j}を階数、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{j}}を型の族とする。
+  \myInlineMath{a_{1}, a_{2} \myElemOf A}と
+  \myInlineMath{p \myElemOf a_{1} \myIdType a_{2}}を要素とする。
+  \myNewTerm[ゆそうかんすう]{輸送関数}(transport function)
+  \myInlineMath{\myTransport{B}{p} \myElemOf
+    B\myAppParen{a_{1}} \myFunType B\myAppParen{a_{2}}}を
+  \myInlineMath{\myAbs{y_{1}}{\myIdInd{p}{\myAbs{x z}{B\myAppParen{x}}}{y_{1}}}}と定義する。
+\end{myBlock}
+
+\end{document}

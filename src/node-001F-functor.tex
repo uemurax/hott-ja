@@ -1,0 +1,20 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001F}{myDefinition}
+  \myInlineMath{i}階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  関数\myInlineMath{\myIdApp{f} \myElemOf
+    \myDFunType{\myImplicit{x_{1}, x_{2} \myElemOf A}}
+    {x_{1} \myIdType x_{2} \myFunType
+      f\myAppParen{x_{1}} \myIdType f\myAppParen{x_{2}}}}を
+  \myInlineMath{\myAbs{x_{1} x_{2} z}
+    {\myTransport{\myAbs{x}{f\myAppParen{x_{1}} \myIdType f\myAppParen{x}}}
+      {z}\myAppParen{\myRefl{f\myAppParen{x_{1}}}}}}と定義する。
+  文脈上わかる場合は、\myInlineMath{\myIdApp{f}\myAppParen{p}}のことを
+  \myInlineMath{f\myAppParen{p}}と書いてしまうこともある。
+\end{myBlock}
+
+\end{document}
