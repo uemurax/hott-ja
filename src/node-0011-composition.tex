@@ -1,0 +1,15 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0011}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B, C \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}と
+  \myInlineMath{g \myElemOf B \myFunType C}を関数とする。
+  \myNewTerm[ごうせいかんすう]{合成関数}(composed function)
+  \myInlineMath{g \myFunComp f \myElemOf A \myFunType C}を
+  \myInlineMath{\myAbs{x}{g\myAppParen{f\myAppParen{x}}}}と定義する。
+\end{myBlock}
+
+\end{document}
