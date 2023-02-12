@@ -16,7 +16,7 @@
 \newcommand{\myDots}{\noexpand\dots}
 \newcommand{\myLevelZero}{0}
 \newcommand{\myLevelSucc}[1]{\myConst{suc}\myAppParen{#1}}
-\newcommand{\myBlank}{?}
+\newcommand{\myBlank}{\noexpand\_}
 \newcommand{\myFunType}{\to}
 \newcommand{\myAbs}[2]{\lambda {#1} . {#2}}
 \newcommand{\myDFunType}[2]{\prod_{#1}{#2}}
@@ -45,3 +45,15 @@
 \newcommand{\myEquivRel}{\myConst{Rel}}
 \newcommand{\myEquivContrA}{\myConst{contr-1}}
 \newcommand{\myEquivContrB}{\myConst{contr-2}}
+\newcommand{\myIdFun}[1]{\myConst{id}\myAppParen{#1}}
+\newcommand{\myFunComp}{\noexpand\circ}
+\newcommand{\mySwap}[1]{\myConst{swap}\myAppParen{#1}}
+\newcommand{\myCurry}[1]{\myConst{curry}\myAppParen{#1}}
+\newcommand{\myUncurry}[1]{\myConst{uncurry}\myAppParen{#1}}
+\newcommand{\myPairAssoc@char}{\myConst{assoc}}
+\newcommand{\myPairAssoc}[1]{\myPairAssoc@char\myAppParen{#1}}
+\newcommand{\myPairAssocInv}[1]{\myPairAssoc@char^{-1}\myAppParen{#1}}
+\newcommand{\myPairSym}[2]{\myConst{sym}\myAppParen{{#1}, {#2}}}
+\newcommand{\myFunPairDist@char}{\myConst{dist}}
+\newcommand{\myFunPairDist}[1]{\myFunPairDist@char\myAppParen{#1}}
+\newcommand{\myFunPairDistInv}[1]{\myFunPairDist@char^{-1}\myAppParen{#1}}

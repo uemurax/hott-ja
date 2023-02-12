@@ -1,0 +1,33 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0014}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{C \myElemOf \myDFunType{x \myElemOf A}
+    {B\myAppParen{x} \myFunType \myUniverse{i}}}を型の族とする。
+  \begin{enumerate}
+  \item 関数\myInlineMath{f \myElemOf
+      \myDFunType{z \myElemOf \myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+      {C\myAppParen{\myProjI{z}, \myProjII{z}}}}に対し、
+    \myNewTerm[かりーか]{カリー化}(currying)
+    \myInlineMath{\myCurry{f} \myElemOf
+      \myDFunType{x \myElemOf A}
+      {\myDFunType{y \myElemOf B\myAppParen{x}}
+        {C\myAppParen{x, y}}}}を
+    \myInlineMath{\myAbs{x y}{f\myAppParen{\myPair{x}{y}}}}と定義する。
+  \item 関数\myInlineMath{g \myElemOf
+      \myDFunType{x \myElemOf A}
+      {\myDFunType{y \myElemOf B\myAppParen{x}}
+        {C\myAppParen{x, y}}}}に対し、
+    \myNewTerm[ぎゃくかりーか]{逆カリー化}(uncurrying)
+    \myInlineMath{\myUncurry{g} \myElemOf
+      \myDFunType{z \myElemOf \myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+      {C\myAppParen{\myProjI{z}, \myProjII{z}}}}を
+    \myInlineMath{\myAbs{z}{g\myAppParen{\myProjI{z}, \myProjII{z}}}}と定義する。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}

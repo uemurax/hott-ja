@@ -1,0 +1,33 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001A}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{C \myElemOf \myDFunType{x \myElemOf A}
+    {B\myAppParen{x} \myFunType \myUniverse{i}}}を型の族とする。
+  \begin{enumerate}
+  \item 関数\myInlineMath{\myFunPairDist{C} \myElemOf
+      (\myDFunType{x \myElemOf A}
+      {\myDPairType{y \myElemOf B\myAppParen{x}}
+        {C\myAppParen{x, y}}}) \myFunType
+      (\myDPairType{f \myElemOf \myDFunType{x \myElemOf A}{B\myAppParen{x}}}
+      {\myDFunType{x \myElemOf A}{C\myAppParen{x, f\myAppParen{x}}}})}を
+    \myInlineMath{\myAbs{h}{\myPair{\myAbs{x}{\myProjI{h\myAppParen{x}}}}
+        {\myAbs{x}{\myProjII{h\myAppParen{x}}}}}}と定義する。
+  \item 関数\myInlineMath{\myFunPairDistInv{C} \myElemOf
+      (\myDPairType{f \myElemOf \myDFunType{x \myElemOf A}{B\myAppParen{x}}}
+      {\myDFunType{x \myElemOf A}{C\myAppParen{x, f\myAppParen{x}}}})
+      \myFunType
+      (\myDFunType{x \myElemOf A}
+      {\myDPairType{y \myElemOf B\myAppParen{x}}
+        {C\myAppParen{x, y}}})}を
+    \myInlineMath{\myAbs{k}{\myAbs{x}
+        {\myPair{\myProjI{k}\myAppParen{x}}
+          {\myProjII{k}\myAppParen{x}}}}}と定義する。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
