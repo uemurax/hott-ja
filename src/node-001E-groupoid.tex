@@ -1,0 +1,29 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001E}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型とする。
+  \begin{enumerate}
+  \item 関数\myInlineMath{\myIdSymFun \myElemOf
+      \myDFunType{\myImplicit{x_{1}, x_{2} \myElemOf A}}
+      {x_{1} \myIdType x_{2} \myFunType
+        x_{2} \myIdType x_{1}}}を
+    \myInlineMath{\myAbs{x_{1} x_{2} z}
+      {\myIdExtension{z}{\myRefl{x_{1}}}}}と定義する。
+    \myInlineMath{\myIdSymFun\myAppParen{p}}を
+    \myInlineMath{p^{\myIdInv}}とも書く。
+  \item 関数\myInlineMath{\myIdTransFun \myElemOf
+      \myDFunType{\myImplicit{x_{1}, x_{2}, x_{3} \myElemOf A}}
+      {x_{1} \myIdType x_{2} \myFunType
+        x_{2} \myIdType x_{3} \myFunType
+        x_{1} \myIdType x_{3}}}を
+    \myInlineMath{\myAbs{x_{1} x_{2} x_{3} z w}
+      {\myIdExtension{z^{\myIdInv}}{w}}}と定義する。
+    \myInlineMath{\myIdTransFun\myAppParen{p, q}}を
+    \myInlineMath{q \myIdComp p}とも書く。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
