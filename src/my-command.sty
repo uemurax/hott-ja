@@ -16,7 +16,7 @@
 \newcommand{\myDots}{\noexpand\dots}
 \newcommand{\myLevelZero}{0}
 \newcommand{\myLevelSucc}[1]{\myConst{suc}\myAppParen{#1}}
-\newcommand{\myBlank}{?}
+\newcommand{\myBlank}{\noexpand\_}
 \newcommand{\myFunType}{\to}
 \newcommand{\myAbs}[2]{\lambda {#1} . {#2}}
 \newcommand{\myDFunType}[2]{\prod_{#1}{#2}}
@@ -50,3 +50,6 @@
 \newcommand{\mySwap}[1]{\myConst{swap}\myAppParen{#1}}
 \newcommand{\myCurry}[1]{\myConst{curry}\myAppParen{#1}}
 \newcommand{\myUncurry}[1]{\myConst{uncurry}\myAppParen{#1}}
+\newcommand{\myPairAssoc@char}{\myConst{assoc}}
+\newcommand{\myPairAssoc}[1]{\myPairAssoc@char\myAppParen{#1}}
+\newcommand{\myPairAssocInv}[1]{\myPairAssoc@char^{-1}\myAppParen{#1}}

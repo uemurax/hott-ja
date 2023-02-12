@@ -1,0 +1,37 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0016}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{C \myElemOf \myDFunType{x \myElemOf A}
+    {B\myAppParen{x} \myFunType \myUniverse{i}}}を型の族とする。
+  \begin{enumerate}
+  \item 関数
+    \myInlineMath{\myPairAssoc{C} \myElemOf
+      (\myDPairType{z \myElemOf
+        \myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+      {C\myAppParen{\myProjI{z}, \myProjII{z}}})
+      \myFunType (\myDPairType{x \myElemOf A}
+      {\myDPairType{y \myElemOf B\myAppParen{x}}
+        {C\myAppParen{x, y}}})}を
+    \myInlineMath{\myAbs{w}
+      {\myPair{\myProjI{\myProjI{w}}}
+        {\myPair{\myProjII{\myProjI{w}}}{\myProjII{w}}}}}と定義する。
+  \item 関数
+    \myInlineMath{\myPairAssocInv{C} \myElemOf
+      (\myDPairType{x \myElemOf A}
+      {\myDPairType{y \myElemOf B\myAppParen{x}}
+        {C\myAppParen{x, y}}})
+      \myFunType (\myDPairType{z \myElemOf
+        \myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+      {C\myAppParen{\myProjI{z}, \myProjII{z}}})}を
+    \myInlineMath{\myAbs{w}
+      {\myPair{\myPair{\myProjI{w}}{\myProjI{\myProjII{w}}}}
+        {\myProjII{\myProjII{w}}}}}と定義する。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
