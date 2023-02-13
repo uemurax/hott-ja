@@ -1,0 +1,16 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001P}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数、
+  \myInlineMath{b \myElemOf B}を要素とする。
+  型\myInlineMath{\myFiber{f}{b} \myElemOf \myUniverse{i}}を
+  \myInlineMath{\myRecordType{\myFiberElem \myElemOf A,
+      \myFiberId \myElemOf f\myAppParen{\myFiberElem} \myIdType b}}
+  と定義する。
+\end{myBlock}
+
+\end{document}
