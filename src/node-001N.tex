@@ -1,0 +1,28 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001N}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{a \myElemOf A}を要素とする。
+  型\myInlineMath{\myDPairType{x \myElemOf A}
+    {a \myIdType x}}は可縮である。
+\end{myBlock}
+\begin{myProof}
+  要素\myInlineMath{c \myElemOf \myDPairType{x \myElemOf A}{a \myIdType x}}と
+  \myInlineMath{r \myElemOf
+    \myDFunType{z \myElemOf \myDPairType{x \myElemOf A}{a \myIdType x}}
+    {c \myIdType z}}を構成すればよい。
+  \myInlineMath{c \myDefEq \myPair{a}{\myRefl{a}}}と定義する。
+  \myInlineMath{r}については、カリー化(\myRef{0014})により、
+  \myInlineMath{r' \myElemOf
+    \myDFunType{x \myElemOf A}
+    {\myDFunType{w \myElemOf a \myIdType x}
+      {c \myIdType \myPair{x}{w}}}}を構成すればよい。
+  同一視型の帰納法により、
+  \myInlineMath{c \myIdType \myPair{a}{\myRefl{a}}}の要素を構成すればよいが、
+  \myInlineMath{c}の定義より\myInlineMath{\myRefl{c}}とすればよい。
+\end{myProof}
+
+\end{document}

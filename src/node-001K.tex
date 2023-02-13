@@ -1,0 +1,37 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001K}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{r \myElemOf \myRetract{A}{B}}を要素とする。
+  \myInlineMath{B}が可縮ならば
+  \myInlineMath{A}も可縮である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{d \myElemOf \myIsContr{B}}と仮定する。
+  要素\myInlineMath{a \myElemOf A}と
+  \myInlineMath{p \myElemOf \myDFunType{x \myElemOf A}{a \myIdType x}}
+  を構成すればよい。
+  仮定\myInlineMath{d}から
+  \myInlineMath{b \myElemOf B},
+  \myInlineMath{q \myElemOf \myDFunType{y \myElemOf B}{b \myIdType y}}を得る。
+  仮定\myInlineMath{r}から
+  \myInlineMath{f \myElemOf B \myFunType A},
+  \myInlineMath{g \myElemOf A \myFunType B},
+  \myInlineMath{t \myElemOf \myDFunType{x \myElemOf A}
+    {f\myAppParen{g\myAppParen{x}} \myIdType x}}を得る。
+  \myInlineMath{a \myDefEq f\myAppParen{b}
+    \myElemOf A}と定義する。
+  \myInlineMath{p}を定義するために、
+  \myInlineMath{x \myElemOf A}を仮定する。
+  \myInlineMath{q\myAppParen{g\myAppParen{x}} \myElemOf b \myIdType g\myAppParen{x}},
+  \myInlineMath{t\myAppParen{x} \myElemOf
+    f\myAppParen{g\myAppParen{x}} \myIdType x}に注意して、
+  \myInlineMath{p\myAppParen{x} \myDefEq
+    t\myAppParen{x} \myIdComp
+    \myIdApp{f}\myAppParen{q\myAppParen{g\myAppParen{x}}}}と定義すればよい。
+\end{myProof}
+
+\end{document}

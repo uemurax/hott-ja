@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001J}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型とする。
+  型\myInlineMath{\myRetract{A}{B} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \myDisplayMath{
+    \myArray{l}{
+      \myRetractRetraction \myElemOf B \myFunType A \\
+      \myRetractSection \myElemOf A \myFunType B \\
+      \myRetractId \myElemOf \myDFunType{x \myElemOf A}
+      {\myRetractRetraction\myAppParen{\myRetractSection\myAppParen{x}}
+        \myIdType x}
+    }
+  }
+\end{myBlock}
+
+\end{document}
