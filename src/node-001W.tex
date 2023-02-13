@@ -1,0 +1,50 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001W}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B, C \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{r \myElemOf \myDFunType{x \myElemOf A}
+    {\myRetract{B\myAppParen{x}}{C\myAppParen{x}}}}を要素とすると、
+  \myInlineMath{\myRetract{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+    {\myDPairType{x \myElemOf A}{C\myAppParen{x}}}}の要素を構成できる。
+\end{myBlock}
+\begin{myProof}
+  仮定\myInlineMath{r}から
+  関数\myInlineMath{f \myElemOf \myDFunType{\myImplicit{x \myElemOf A}}
+    {B\myAppParen{x} \myFunType C\myAppParen{x}}}と
+  \myInlineMath{g \myElemOf \myDFunType{\myImplicit{x \myElemOf A}}
+    {C\myAppParen{x} \myFunType B\myAppParen{x}}}と
+  同一視\myInlineMath{p \myElemOf \myDFunType{x \myElemOf A}
+    {\myDFunType{y \myElemOf B\myAppParen{x}}
+      {g\myAppParen{f\myAppParen{y}} \myIdType y}}}を得る。
+  関数\myInlineMath{F \myElemOf (\myDPairType{x \myElemOf A}
+    {B\myAppParen{x}}) \myFunType
+    (\myDPairType{x \myElemOf A}
+    {C\myAppParen{x}})}を
+  \myInlineMath{\myAbs{z}
+    {\myPair{\myProjI{z}}{f\myAppParen{\myProjII{z}}}}}と定義する。
+  関数\myInlineMath{G \myElemOf (\myDPairType{x \myElemOf A}
+    {C\myAppParen{x}}) \myFunType
+    (\myDPairType{x \myElemOf A}
+    {B\myAppParen{x}})}も同様に\myInlineMath{g}を使って定義される。
+  同一視\myInlineMath{P \myElemOf \myDFunType{z \myElemOf
+      \myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+    {G\myAppParen{F\myAppParen{z}} \myIdType z}}を定義するために、
+  \myInlineMath{z \myElemOf \myDPairType{x \myElemOf A}
+    {B\myAppParen{x}}}を仮定する。
+  構成から\myInlineMath{\myProjI{G\myAppParen{F\myAppParen{z}}}
+    \myDefEq \myProjI{z}}であり、
+  \myInlineMath{p\myAppParen{\myProjI{z}, \myProjII{z}} \myElemOf
+    \myProjII{G\myAppParen{F\myAppParen{z}}}
+    \myIdType \myProjII{z}}を得る。
+  \myRef{001X}を使って、
+  \myInlineMath{\myPair{\myRefl{\myProjI{z}}}
+    {p\myAppParen{\myProjI{z}, \myProjII{z}}}}から
+  \myInlineMath{G\myAppParen{F\myAppParen{z}} \myIdType z}
+  の要素を構成できる。
+\end{myProof}
+
+\end{document}

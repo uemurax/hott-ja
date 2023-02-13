@@ -1,0 +1,60 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001X}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{c_{1}, c_{2} \myElemOf \myDPairType{x \myElemOf A}
+    {B\myAppParen{x}}}を要素とすると、
+  \myInlineMath{\myRetract{\myDPairType{z \myElemOf
+        \myProjI{c_{1}} \myIdType \myProjI{c_{2}}}
+      {\myTransport{B}{z}\myAppParen{\myProjII{c_{1}}}
+        \myIdType \myProjII{c_{2}}}}
+    {c_{1} \myIdType c_{2}}}の要素を構成できる。
+\end{myBlock}
+\begin{myProof}
+  関数\myInlineMath{f \myElemOf (\myDPairType{z \myElemOf
+      \myProjI{c_{1}} \myIdType \myProjI{c_{2}}}
+    {\myTransport{B}{z}\myAppParen{\myProjII{c_{1}}}
+      \myIdType \myProjII{c_{2}}})
+    \myFunType c_{1} \myIdType c_{2}}と
+  \myInlineMath{g \myElemOf c_{1} \myIdType c_{2} \myFunType
+    (\myDPairType{z \myElemOf
+      \myProjI{c_{1}} \myIdType \myProjI{c_{2}}}
+    {\myTransport{B}{z}\myAppParen{\myProjII{c_{1}}}
+      \myIdType \myProjII{c_{2}}})}と同一視
+  \myInlineMath{p \myElemOf \myDFunType{w}
+    {g\myAppParen{f\myAppParen{w}} \myIdType w}}を構成する。
+  \myInlineMath{f}についてはカリー化、一般化して
+  \myInlineMath{f' \myElemOf \myDFunType{\myImplicit{x \myElemOf A}}
+    {\myDFunType{\myImplicit{y \myElemOf B\myAppParen{x}}}
+      {\myDFunType{z \myElemOf \myProjI{c_{1}} \myIdType x}
+        {\myTransport{B}{z}\myAppParen{\myProjII{c_{1}}} \myIdType y
+          \myFunType c_{1} \myIdType \myPair{x}{y}}}}}を構成すればよいが、
+  同一視型の帰納法により
+  \myInlineMath{f'\myAppParen{\myRefl{\myProjI{c_{1}}}, \myRefl{\myProjII{c_{1}}}}
+    \myDefEq \myRefl{c_{1}}}と定義できる。
+  \myInlineMath{g}は一般化して
+  \myInlineMath{g' \myElemOf \myDFunType{\myImplicit{x \myElemOf
+        \myDPairType{x \myElemOf A}{B\myAppParen{x}}}}
+    {c_{1} \myIdType x \myFunType
+      (\myDPairType{z \myElemOf
+        \myProjI{c_{1}} \myIdType \myProjI{x}}
+      {\myTransport{B}{z}\myAppParen{\myProjII{c_{1}}}
+        \myIdType \myProjII{x}})}}を帰納法で
+  \myInlineMath{g'\myAppParen{\myRefl{c_{1}}} \myDefEq
+    \myPair{\myRefl{\myProjI{c_{1}}}}{\myRefl{\myProjII{c_{2}}}}}と定義する。
+  \myInlineMath{p}も\myInlineMath{f}と同様にカリー化、一般化して
+  \myInlineMath{p' \myElemOf \myDFunType{\myImplicit{x}}
+    {\myDFunType{\myImplicit{y}}
+      {\myDFunType{z \myElemOf \myProjI{c_{1}} \myIdType x}
+        {\myDFunType{w \myElemOf \myTransport{B}{z}\myAppParen{\myProjII{c_{1}}} \myIdType y}
+          {g'\myAppParen{f'\myAppParen{z, w}} \myIdType \myPair{z}{w}}}}}}
+  を帰納法により
+  \myInlineMath{p'\myAppParen{\myRefl{\myProjI{c_{1}}}, \myRefl{\myProjII{c_{2}}}}
+    \myDefEq \myRefl{\myBlank}}と定義する。
+\end{myProof}
+
+\end{document}

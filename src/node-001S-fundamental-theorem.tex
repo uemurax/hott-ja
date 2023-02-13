@@ -1,0 +1,56 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001S}{myTheorem}[\myNewTerm[どういつしがたのきほんていり]{同一視型の基本定理}]
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{a \myElemOf A}を要素、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{b \myElemOf B\myAppParen{a}}を要素とする。
+  次の型は論理的に同値である。
+  \begin{enumerate}
+  \item \label{001S:0000} \myInlineMath{\myDFunType{x \myElemOf A}
+      {\myIsEquiv{\myAbs{(p \myElemOf a \myIdType x)}
+          {\myTransport{B}{p}\myAppParen{b}}}}}
+  \item \label{001S:0001} \myInlineMath{\myDFunType{x \myElemOf A}
+      {(a \myIdType x) \myEquiv B\myAppParen{x}}}
+  \item \label{001S:0002} \myInlineMath{\myDFunType{x \myElemOf A}
+      {\myRetract{B\myAppParen{x}}{a \myIdType x}}}
+  \item \label{001S:0003} \myInlineMath{\myIsContr{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}}
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{\myAbs{(p \myElemOf a \myIdType x)}
+    {\myTransport{B}{p}\myAppParen{b}}}の型が
+  \myInlineMath{a \myIdType x \myFunType B\myAppParen{x}}であることから、
+  \myRefLabel{001S:0000}から\myRefLabel{001S:0001}は
+  \myInlineMath{\myEquiv}の定義から自明である。
+
+  \myRefLabel{001S:0001}から\myRefLabel{001S:0002}は
+  \myRef{001V}による。
+
+  \myRefLabel{001S:0002}から\myRefLabel{001S:0003}を示す。
+  \myRefLabel{001S:0002}を仮定すると、
+  \myRef{001W}から\myInlineMath{\myRetract{\myDPairType{x \myElemOf A}
+      {B\myAppParen{x}}}
+    {\myDPairType{x \myElemOf A}{a \myIdType x}}}の要素を得る。
+  すると、\myRef{001N}と\myRef{001K}より
+  \myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+  は可縮である。
+
+  最後に\myRefLabel{001S:0003}から\myRefLabel{001S:0000}を示す。
+  \myRefLabel{001S:0003}を仮定し、
+  \myInlineMath{x \myElemOf A}と
+  \myInlineMath{y \myElemOf B\myAppParen{x}}を仮定する。
+  \myInlineMath{\myFiber{\myAbs{p}{\myTransport{B}{p}\myAppParen{b}}}{y}}
+  が可縮であることを示す。
+  \myInlineMath{\myFiber{\myBlank}{\myBlank}}の定義より、
+  \myInlineMath{\myDPairType{p \myElemOf a \myIdType x}
+    {\myTransport{B}{p}\myAppParen{b} \myIdType y}}が可縮であることを示せばよい。
+  \myRef{001X}と\myRef{001K}から、
+  \myInlineMath{\myPair{a}{b} \myIdType \myPair{x}{y}}
+  が可縮であることを示せばよいが、これは仮定と\myRef{001L}から従う。
+\end{myProof}
+
+\end{document}

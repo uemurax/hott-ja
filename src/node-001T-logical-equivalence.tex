@@ -1,0 +1,33 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001T}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型とする。
+  型\myInlineMath{A \myLogEquiv B \myElemOf \myUniverse{i}}を
+  \myInlineMath{\myRecordType{\myLogEquivTo \myElemOf A \myFunType B,
+      \myLogEquivFrom \myElemOf B \myFunType A}}と定義する。
+  \myInlineMath{A \myLogEquiv B}の要素がある時、
+  \myInlineMath{A}と\myInlineMath{B}は
+  \myNewTerm[ろんりてきにどうち]{論理的に同値}(logically equivalent)であると言う。
+  \emph{反射律}、\emph{対称律}、\emph{推移律}を次のように構成できる。
+  \begin{itemize}
+  \item \myInlineMath{\myRecordElem{\myLogEquivTo \myDefEq \myIdFun{A},
+        \myLogEquivFrom \myDefEq \myIdFun{A}}
+      \myElemOf A \myLogEquiv A}
+  \item \myInlineMath{\myAbs{e}
+      {\myRecordElem{\myLogEquivTo \myDefEq e \myRecordField \myLogEquivFrom,
+          \myLogEquivTo \myDefEq e \myRecordField \myLogEquivTo}}
+      \myElemOf (A \myLogEquiv B) \myFunType (B \myLogEquiv A)}
+  \item \myInlineMath{\myAbs{e f}
+      {\myRecordElem{\myLogEquivTo \myDefEq
+          f \myRecordField \myLogEquivTo \myFunComp e \myRecordField \myLogEquivTo,
+          \myLogEquivFrom \myDefEq
+          e \myRecordField \myLogEquivFrom \myFunComp f \myRecordField \myLogEquivFrom}}
+      \myElemOf (A \myLogEquiv B) \myFunType
+      (B \myLogEquiv C) \myFunType (A \myLogEquiv C)}
+  \end{itemize}
+\end{myBlock}
+
+\end{document}
