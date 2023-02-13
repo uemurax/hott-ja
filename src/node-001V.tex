@@ -1,0 +1,30 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001V}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{e \myElemOf A \myEquiv B}を同値とすると、
+  \myInlineMath{\myRetract{B}{A}}の要素を構成できる。
+\end{myBlock}
+\begin{myProof}
+  仮定\myInlineMath{e}から
+  \myInlineMath{f \myElemOf A \myFunType B}と
+  \myInlineMath{H \myElemOf \myIsEquiv{f}}を得る。
+  任意の\myInlineMath{y \myElemOf B}に対して
+  \myInlineMath{H\myAppParen{y} \myElemOf
+    \myIsContr{\myFiber{f}{y}}}を得るので、
+  特に関数\myInlineMath{G \myElemOf \myDFunType{y \myElemOf B}
+    {\myFiber{f}{y}}}を得る。
+  \myRef{001A}の要領で\myInlineMath{G}から関数
+  \myInlineMath{g \myElemOf B \myFunType A}と同一視
+  \myInlineMath{p \myElemOf \myDFunType{y \myElemOf B}
+    {f\myAppParen{g\myAppParen{y}} \myIdType y}}を得る。
+  これで要素\myInlineMath{\myRecordElem{\myRetractRetraction \myDefEq f,
+      \myRetractSection \myDefEq g,
+      \myRetractId \myDefEq p}
+    \myElemOf \myRetract{B}{A}}を構成できた。
+\end{myProof}
+
+\end{document}
