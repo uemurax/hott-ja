@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001M}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{a_{1}, a_{2} \myElemOf A}を要素、
+  \myInlineMath{p \myElemOf a_{1} \myIdType a_{2}}を同一視とする。
+  同一視\myInlineMath{\myIdExtensionSelf{p} \myElemOf
+    \myIdExtension{p}{p} \myIdType \myRefl{a_{2}}}を次のように構成する。
+  同一視型の帰納法により、
+  \myInlineMath{a_{2}}が\myInlineMath{a_{1}}で
+  \myInlineMath{p}が\myInlineMath{\myRefl{a_{1}}}の場合を考えれば十分である。
+  定義より\myInlineMath{\myIdExtension{\myRefl{a_{1}}}{\myRefl{a_{1}}}
+    \myDefEq \myRefl{a_{1}}}なので
+  \myInlineMath{\myIdExtensionSelf{\myRefl{a_{1}}} \myDefEq
+    \myRefl{\myRefl{a_{1}}}}と定義する。
+\end{myBlock}
+
+\end{document}

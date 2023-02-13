@@ -1,0 +1,36 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001L}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{a_{1}, a_{2} \myElemOf A}を要素とする。
+  \myInlineMath{A}が可縮ならば
+  \myInlineMath{a_{1} \myIdType a_{2}}も可縮である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{c \myElemOf \myIsContr{A}}と仮定する。
+  要素\myInlineMath{p \myElemOf a_{1} \myIdType a_{2}}と
+  \myInlineMath{q \myElemOf \myDFunType{z \myElemOf a_{1} \myIdType a_{2}}
+    {p \myIdType z}}を構成すればよい。
+  仮定\myInlineMath{c}より
+  \myInlineMath{a_{0} \myElemOf A},
+  \myInlineMath{r \myElemOf
+    \myDFunType{x \myElemOf A}{a_{0} \myIdType x}}を得る。
+  \myInlineMath{p \myDefEq
+    \myIdExtension{r\myAppParen{a_{1}}}{r\myAppParen{a_{2}}}}と定義する。
+  \myInlineMath{q}については、一般化したもの
+  \myInlineMath{q' \myElemOf \myDFunType{x \myElemOf A}
+    {\myDFunType{z \myElemOf a_{1} \myIdType x}
+      {\myIdExtension{r\myAppParen{a_{1}}}{r\myAppParen{x}}
+        \myIdType z}}}を構成し、
+  \myInlineMath{q \myDefEq q'\myAppParen{a_{2}}}と定義する。
+  同一視型の帰納法により、
+  要素\myInlineMath{s \myElemOf
+    \myIdExtension{r\myAppParen{a_{1}}}{r\myAppParen{a_{1}}}
+    \myIdType \myRefl{a_{1}}}を構成すればよいが、
+  これは\myRef{001M}で構成した。
+\end{myProof}
+
+\end{document}
