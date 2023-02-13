@@ -35,11 +35,22 @@
   \myRef{001W}から\myInlineMath{\myRetract{\myDPairType{x \myElemOf A}
       {B\myAppParen{x}}}
     {\myDPairType{x \myElemOf A}{a \myIdType x}}}の要素を得る。
-  すると、\myRef{001N}より
+  すると、\myRef{001N}と\myRef{001K}より
   \myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}
   は可縮である。
 
-  工事中。
+  最後に\myRefLabel{001S:0003}から\myRefLabel{001S:0000}を示す。
+  \myRefLabel{001S:0003}を仮定し、
+  \myInlineMath{x \myElemOf A}と
+  \myInlineMath{y \myElemOf B\myAppParen{x}}を仮定する。
+  \myInlineMath{\myFiber{\myAbs{p}{\myTransport{B}{p}\myAppParen{b}}}{y}}
+  が可縮であることを示す。
+  \myInlineMath{\myFiber{\myBlank}{\myBlank}}の定義より、
+  \myInlineMath{\myDPairType{p \myElemOf a \myIdType x}
+    {\myTransport{B}{p}\myAppParen{b} \myIdType y}}が可縮であることを示せばよい。
+  \myRef{001X}と\myRef{001K}から、
+  \myInlineMath{\myPair{a}{b} \myIdType \myPair{x}{y}}
+  が可縮であることを示せばよいが、これは仮定と\myRef{001L}から従う。
 \end{myProof}
 
 \end{document}
