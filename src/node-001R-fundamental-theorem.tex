@@ -4,6 +4,40 @@
 
 \mySection{001R}{同一視型の基本定理}
 
+同一視型はすべての型に対して一様に定義されているが、
+個々の型については具体的な同一視のしかたが期待される。
+例えば、対型の要素\myInlineMath{c_{1}, c_{2} \myElemOf A \myPairType B}
+の「自然な」同一視のしかたは
+\myInlineMath{\myProjI{c_{1}}}と\myInlineMath{\myProjI{c_{2}}}を同一視しかつ
+\myInlineMath{\myProjII{c_{1}}}と\myInlineMath{\myProjII{c_{2}}}を同一視することである。
+つまり、同値
+\myInlineMath{(c_{1} \myIdType c_{2}) \myEquiv
+  ((\myProjI{c_{1}} \myIdType \myProjI{c_{2}}) \myPairType
+  (\myProjII{c_{1}} \myIdType \myProjII{c_{2}}))}を構成できると期待される。
+\emph{同一視型の基本定理}(\myRef{001S})は、この手の同値を構成する手順を与える。
+
+型\myInlineMath{A \myElemOf \myUniverse{i}}に興味があるとして、
+要素\myInlineMath{a \myElemOf A}に対して
+同一視型の族\myInlineMath{\myAbs{x}{a \myIdType x}
+  \myElemOf A \myFunType \myUniverse{i}}を特徴付けることを考える。
+具体的に特徴付けの候補\myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}
+を見つけたとしよう。
+これが正しいものなら、\myInlineMath{\myRefl{a}}に対応する要素
+\myInlineMath{b \myElemOf B\myAppParen{a}}があるはずである。
+同一視型の帰納法により、\myInlineMath{b}は関数
+\myInlineMath{b' \myElemOf \myDFunType{x \myElemOf A}
+  {a \myIdType x \myFunType B\myAppParen{x}}}に拡張される。
+\myInlineMath{b'\myAppParen{x} \myElemOf a \myIdType x
+  \myFunType B\myAppParen{x}}は「標準的」な比較関数であり、
+これが同値であることを示したい。
+\myInlineMath{b'\myAppParen{x}}の同値性を定義に従って示すことは難しくはないが
+筋が良いとも言えない。
+同一視型の基本定理は、すべての\myInlineMath{b'\myAppParen{x}}が同値であることと
+\myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}が可縮であること
+が論理的に同値であると主張する。
+可縮性は様々な型の構成について閉じる(\myRef{001L}や\myRef{001N}はその例である)ので
+比較的示しやすい性質である。
+
 \subfile{node-001V}
 \subfile{node-001X}
 \subfile{node-001W}
