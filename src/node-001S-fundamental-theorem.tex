@@ -10,17 +10,23 @@
   \myInlineMath{b \myElemOf B\myAppParen{a}}を要素とする。
   次の型は論理的に同値である。
   \begin{enumerate}
-  \item \myInlineMath{\myDFunType{x \myElemOf A}
+  \item \label{001S:0000} \myInlineMath{\myDFunType{x \myElemOf A}
       {\myIsEquiv{\myAbs{(p \myElemOf a \myIdType x)}
           {\myTransport{B}{p}\myAppParen{b}}}}}
-  \item \myInlineMath{\myDFunType{x \myElemOf A}
+  \item \label{001S:0001} \myInlineMath{\myDFunType{x \myElemOf A}
       {(a \myIdType x) \myEquiv B\myAppParen{x}}}
-  \item \myInlineMath{\myDFunType{x \myElemOf A}
+  \item \label{001S:0002} \myInlineMath{\myDFunType{x \myElemOf A}
       {\myRetract{B\myAppParen{x}}{a \myIdType x}}}
-  \item \myInlineMath{\myIsContr{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}}
+  \item \label{001S:0003} \myInlineMath{\myIsContr{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}}
   \end{enumerate}
 \end{myBlock}
 \begin{myProof}
+  \myInlineMath{\myAbs{(p \myElemOf a \myIdType x)}
+    {\myTransport{B}{p}\myAppParen{b}}}の型が
+  \myInlineMath{a \myIdType x \myFunType B\myAppParen{x}}であることから、
+  \myRefLabel{001S:0000}から\myRefLabel{001S:0001}は
+  \myInlineMath{\myEquiv}の定義から自明である。
+
   工事中。
 \end{myProof}
 
