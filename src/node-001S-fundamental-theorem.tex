@@ -1,0 +1,27 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001S}{myTheorem}[同一視型の基本定理]
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{a \myElemOf A}を要素、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{b \myElemOf B\myAppParen{a}}を要素とする。
+  次の型は論理的に同値である。
+  \begin{enumerate}
+  \item \myInlineMath{\myDFunType{x \myElemOf A}
+      {\myIsEquiv{\myAbs{(p \myElemOf a \myIdType x)}
+          {\myTransport{B}{p}\myAppParen{b}}}}}
+  \item \myInlineMath{\myDFunType{x \myElemOf A}
+      {(a \myIdType x) \myEquiv B\myAppParen{x}}}
+  \item \myInlineMath{\myDFunType{x \myElemOf A}
+      {\myRetract{B\myAppParen{x}}{a \myIdType x}}}
+  \item \myInlineMath{\myIsContr{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}}
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  工事中。
+\end{myProof}
+
+\end{document}
