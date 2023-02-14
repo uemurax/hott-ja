@@ -1,0 +1,18 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{001Z}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族とする。
+  関数型\myInlineMath{\myDFunType{x \myElemOf A}{B\myAppParen{x}}}が
+  \myNewTerm[かんすうがいえんせい]{関数外延性}(function extensionality)を持つとは、
+  \myInlineMath{\myDFunType{f \myElemOf \myDFunType{x \myElemOf A}{B\myAppParen{x}}}
+    {\myIsContr{\myDPairType{g \myElemOf \myDFunType{x \myElemOf A}{B\myAppParen{x}}}
+        {\myDFunType{x \myElemOf A}
+          {f\myAppParen{x} \myIdType g\myAppParen{x}}}}}}
+  が要素を持つことである。
+\end{myBlock}
+
+\end{document}
