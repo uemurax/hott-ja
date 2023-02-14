@@ -2,6 +2,7 @@
 
 \begin{document}
 
+\StartDefiningTabulars
 \begin{myBlock}{0023}{myExample}
   \myInlineMath{i}を階数とする。
   型\myInlineMath{\myPointedType{i} \myElemOf \myUniverse{\myLevelSucc{i}}}
@@ -21,8 +22,29 @@
       {e\myAppParen{A \myRecordField \myPointedTypePoint} \myIdType
         B \myRecordField \myPointedTypePoint}}}と定義する。
   \myInlineMath{\myDFunType{A \myElemOf \myPointedType{i}}
-    {\myIsContr{\myDPairType{X \myElemOf \myPointedType{i}}
-      {E\myAppParen{A, X}}}}}を示そう。
+    {\myIsContr{\myDPairType{Z \myElemOf \myPointedType{i}}
+        {E\myAppParen{A, Z}}}}}を示そう。
+  任意の\myInlineMath{A \myElemOf \myPointedType{i}}に対し、
+  レトラクトの列
+  \myEqReasoning{
+    & \term{\myDPairType{Z \myElemOf \myPointedType{i}}
+      {E\myAppParen{A, Z}}} \\
+    \rel{\myRetractRel} & \by{並び換え} \\
+    & \term{\myDPairType{X \myElemOf \myUniverse{i}}
+      {\myDPairType{e \myElemOf A \myRecordField \myPointedTypeCarrier
+          \myEquiv X}
+        {\myDPairType{x \myElemOf X}
+          {e\myAppParen{A \myRecordField \myPointedTypePoint}
+            \myIdType x}}}} \\
+    \rel{\myRetractRel} & \by{一価性} \\
+    & \term{\myDPairType{x \myElemOf A \myRecordField \myPointedTypeCarrier}
+      {A \myRecordField \myPointedTypePoint \myIdType x}} \\
+    \rel{\myRetractRel} & \by{\myRef{001N}} \\
+    & \term{\myUnitType}
+  }
+  を得るので、\myInlineMath{\myDPairType{Z \myElemOf \myPointedType{i}}
+    {E\myAppParen{A, Z}}}は可縮である。
 \end{myBlock}
+\StopDefiningTabulars
 
 \end{document}

@@ -1,0 +1,25 @@
+% Inside the `\myEqReasoning` command, commands `\term`, `\by`, and
+% `\rel` are available. The intended use is like this.
+%
+% \myEqReasoning{
+% & \term{x + y} \\
+% \rel{=}& \by{Commutativity} \\
+% & \term{y + x}
+% }
+
+\usepackage{lwarp,my-math}
+
+\NewDocumentCommand{\myEqReasoning}{+m}{%
+  \let\term\myEqReasoning@term
+  \let\by\myEqReasoning@by
+  \let\rel\myEqReasoning@rel
+  \begin{center}
+    \begin{tabular}{ll}
+      #1
+    \end{tabular}
+  \end{center}
+  \ignorespacesafterend}
+
+\newcommand{\myEqReasoning@term}[1]{\myInlineMath{#1}}
+\newcommand{\myEqReasoning@by}[1]{\qquad\{#1\}}
+\newcommand{\myEqReasoning@rel}[1]{\myInlineMath{#1}}
