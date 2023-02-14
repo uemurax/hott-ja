@@ -1,0 +1,39 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0024}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{a \myElemOf A}を要素とする。
+  \myInlineMath{A}が可縮ならば
+  \myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}は
+  \myInlineMath{B\myAppParen{a}}のレトラクトである。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{A}が可縮であると仮定する。
+  \myRef{001L}より、関数
+  \myInlineMath{p \myElemOf \myDFunType{x \myElemOf A}
+    {x \myIdType a}}を得る。
+  関数\myInlineMath{f \myElemOf
+    (\myDPairType{x \myElemOf A}{B\myAppParen{x}})
+    \myFunType B\myAppParen{a}}を
+  \myInlineMath{\myAbs{z}
+    {\myTransport{B}{p\myAppParen{\myProjI{z}}}\myAppParen{\myProjII{z}}}}と定義し、
+  関数\myInlineMath{g \myElemOf B\myAppParen{a} \myFunType
+    (\myDPairType{x \myElemOf A}{B\myAppParen{x}})}を
+  \myInlineMath{\myAbs{y}{\myPair{a}{y}}}と定義する。
+  定義より、任意の\myInlineMath{z \myElemOf \myDPairType{x \myElemOf A}
+    {B\myAppParen{x}}}に対して、
+  \myInlineMath{p\myAppParen{\myProjI{z}} \myElemOf
+    \myProjI{z} \myIdType \myProjI{g\myAppParen{f\myAppParen{z}}}}と
+  \myInlineMath{\myRefl{\myBlank} \myElemOf
+    \myTransport{B}{p\myAppParen{\myProjI{z}}}\myAppParen{\myProjII{z}}
+    \myIdType \myProjII{g\myAppParen{f\myAppParen{z}}}}を得るので、
+  \myRef{001X}より同一視\myInlineMath{q \myElemOf
+    \myDFunType{z \myElemOf \myBlank}
+    {g\myAppParen{f\myAppParen{z}} \myIdType z}}を得る。
+\end{myProof}
+
+\end{document}
