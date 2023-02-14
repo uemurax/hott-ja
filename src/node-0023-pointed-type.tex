@@ -1,0 +1,28 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0023}{myExample}
+  \myInlineMath{i}を階数とする。
+  型\myInlineMath{\myPointedType{i} \myElemOf \myUniverse{\myLevelSucc{i}}}
+  を次のレコード型と定義する。
+  \myDisplayMath{
+    \myArray{l}{
+      \myPointedTypeCarrier \myElemOf \myUniverse{i} \\
+      \myPointedTypePoint \myElemOf \myPointedTypeCarrier
+    }
+  }
+  \myInlineMath{E \myElemOf \myPointedType{i}
+    \myFunType \myPointedType{i}
+    \myFunType \myUniverse{i}}を
+  \myInlineMath{\myAbs{A B}
+    {\myDPairType{e \myElemOf A \myRecordField \myPointedTypeCarrier
+        \myEquiv B \myRecordField \myPointedTypeCarrier}
+      {e\myAppParen{A \myRecordField \myPointedTypePoint} \myIdType
+        B \myRecordField \myPointedTypePoint}}}と定義する。
+  \myInlineMath{\myDFunType{A \myElemOf \myPointedType{i}}
+    {\myIsContr{\myDPairType{X \myElemOf \myPointedType{i}}
+      {E\myAppParen{A, X}}}}}を示そう。
+\end{myBlock}
+
+\end{document}
