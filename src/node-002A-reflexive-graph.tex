@@ -1,0 +1,76 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\StartDefiningTabulars
+\begin{myBlock}{002A}{myExample}
+  \myInlineMath{i}を階数とする。
+  型\myInlineMath{\myReflGraph{i} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \myDisplayMath{
+    \myArray{l}{
+      \myReflGraphVertex \myElemOf \myUniverse{i} \\
+      \myReflGraphEdge \myElemOf \myReflGraphVertex \myFunType
+      \myReflGraphVertex \myFunType \myUniverse{i} \\
+      \myReflGraphRefl \myElemOf \myDFunType{x \myElemOf \myReflGraphVertex}
+      {\myReflGraphEdge\myAppParen{x, x}}
+    }
+  }
+  \myInlineMath{\myReflGraph{i}}の要素は
+  \myNewTerm[はんしゃてきぐらふ]{反射的グラフ}(reflexive graph)と呼ばれる。
+  \myInlineMath{A, Z \myElemOf \myReflGraph{i}}に対し、
+  \myInlineMath{E\myAppParen{Z} \myElemOf \myUniverse{i}}を次のレコード型と定義する。
+  \myDisplayMath{
+    \myArray{l}{
+      v \myElemOf A \myRecordField \myReflGraphVertex
+      \myEquiv Z \myRecordField \myReflGraphVertex \\
+      e \myElemOf
+      \myDFunType{\myImplicit{x_{1}, x_{2} \myElemOf A \myRecordField \myReflGraphVertex}}
+      {(A \myRecordField \myReflGraphEdge)\myAppParen{x_{1}, x_{2}}
+        \myEquiv (Z \myRecordField \myReflGraphEdge)\myAppParen{
+          v\myAppParen{x_{1}}, v\myAppParen{x_{2}}}} \\
+      r \myElemOf \myDFunType{x \myElemOf A \myRecordField \myReflGraphVertex}
+      {e\myAppParen{(A \myRecordField \myReflGraphRefl)\myAppParen{x}}
+      \myIdType (Z \myRecordField \myReflGraphRefl)\myAppParen{v\myAppParen{x}}}
+    }
+  }
+  要素\myInlineMath{\myRecordElem{v \myDefEq \myIdFun{\myBlank},
+      e \myDefEq \myAbs{x_{1} x_{2}}{\myIdFun{\myBlank}},
+      r \myDefEq \myAbs{x}{\myRefl{\myBlank}}}
+    \myElemOf E\myAppParen{A}}を得る。
+  レトラクトの列
+  \myEqReasoning{
+    & \term{\myDPairType{Z \myElemOf \myReflGraph{i}}{E\myAppParen{Z}}} \\
+    \rel{\myRetractRel} & \by{並び換え} \\
+    & \term{\myDPairType{X \myElemOf \myUniverse{i}}
+      {\myDPairType{v \myElemOf A \myRecordField \myReflGraphVertex
+          \myEquiv X}
+        {\myDPairType{Y \myElemOf \myBlank}
+          {\myDPairType{e \myElemOf \myBlank}
+            {\myDPairType{z \myElemOf \myBlank}
+              {\myDFunType{x \myElemOf \myBlank}
+                {\myBlank}}}}}}} \\
+    \rel{\myRetractRel} & \by{一価性} \\
+    & \term{\myDPairType{Y \myElemOf A \myRecordField \myReflGraphVertex
+        \myFunType A \myRecordField \myReflGraphVertex
+        \myFunType \myUniverse{i}}
+      {\myDPairType{e \myElemOf \myDFunType{x_{1}, x_{2}}
+          {(A \myRecordField \myReflGraphEdge)\myAppParen{x_{1}, x_{2}}
+            \myEquiv Y\myAppParen{x_{1}, x_{2}}}}
+        {\myDPairType{z \myElemOf \myBlank}
+          {\myDFunType{x \myElemOf \myBlank}
+            {\myBlank}}}}} \\
+    \rel{\myRetractRel} & \by{関数外延性と一価性} \\
+    & \term{\myDPairType{z \myElemOf
+        \myDFunType{x \myElemOf A \myRecordField \myReflGraphVertex}
+        {(A \myRecordField \myReflGraphEdge)\myAppParen{x, x}}}
+      {\myDFunType{x \myElemOf A \myRecordField \myReflGraphVertex}
+        {(A \myRecordField \myReflGraphRefl)\myAppParen{x}
+          \myIdType z\myAppParen{x}}}}
+  }
+  を得て、最後の型は関数外延性により可縮なので、
+  \myInlineMath{\myDPairType{Z \myElemOf \myReflGraph{i}}{E\myAppParen{Z}}}は可縮である。
+\end{myBlock}
+\StopDefiningTabulars
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\StartDefiningTabulars
+\begin{myBlock}{0023}{myExample}
+  \myInlineMath{i}を階数とする。
+  型\myInlineMath{\myPointedType{i} \myElemOf \myUniverse{\myLevelSucc{i}}}
+  を次のレコード型と定義する。
+  \myDisplayMath{
+    \myArray{l}{
+      \myPointedTypeCarrier \myElemOf \myUniverse{i} \\
+      \myPointedTypePoint \myElemOf \myPointedTypeCarrier
+    }
+  }
+  \myInlineMath{\myPointedType{i}}の要素を(階数\myInlineMath{i}の)
+  \myNewTerm[てんつきかた]{点付き型}(pointed type)と呼ぶ。
+  \myInlineMath{A \myElemOf \myPointedType{i}}に対し、
+  \myInlineMath{E \myElemOf \myPointedType{i}
+    \myFunType \myUniverse{i}}を
+  \myInlineMath{\myAbs{Z}
+    {\myDPairType{e \myElemOf A \myRecordField \myPointedTypeCarrier
+        \myEquiv Z \myRecordField \myPointedTypeCarrier}
+      {e\myAppParen{A \myRecordField \myPointedTypePoint} \myIdType
+        Z \myRecordField \myPointedTypePoint}}}と定義する。
+  要素\myInlineMath{\myPair{\myIdFun{A \myRecordField \myPointedTypeCarrier}}
+    {\myRefl{A \myRecordField \myPointedTypePoint}}
+    \myElemOf E\myAppParen{A}}を得る。
+  レトラクトの列
+  \myEqReasoning{
+    & \term{\myDPairType{Z \myElemOf \myPointedType{i}}
+      {E\myAppParen{Z}}} \\
+    \rel{\myRetractRel} & \by{並び換え} \\
+    & \term{\myDPairType{X \myElemOf \myUniverse{i}}
+      {\myDPairType{e \myElemOf A \myRecordField \myPointedTypeCarrier
+          \myEquiv X}
+        {\myDPairType{x \myElemOf X}
+          {e\myAppParen{A \myRecordField \myPointedTypePoint}
+            \myIdType x}}}} \\
+    \rel{\myRetractRel} & \by{一価性} \\
+    & \term{\myDPairType{x \myElemOf A \myRecordField \myPointedTypeCarrier}
+      {A \myRecordField \myPointedTypePoint \myIdType x}}
+  }
+  を得て、最後の型は\myRef{001N}より可縮なので、
+  \myInlineMath{\myDPairType{Z \myElemOf \myPointedType{i}}
+    {E\myAppParen{Z}}}は可縮である。
+\end{myBlock}
+\StopDefiningTabulars
+
+\end{document}

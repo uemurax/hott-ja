@@ -1,0 +1,59 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\StartDefiningTabulars
+\begin{myBlock}{0028}{myExample}
+  \myInlineMath{i}を階数とする。
+  型\myInlineMath{\myMagma{i} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \myDisplayMath{
+    \myArray{l}{
+      \myMagmaCarrier \myElemOf \myUniverse{i} \\
+      \myMagmaOperator \myElemOf \myMagmaCarrier \myFunType
+      \myMagmaCarrier \myFunType \myMagmaCarrier
+    }
+  }
+  \myInlineMath{\myMagma{i}}の要素は
+  \myNewTerm[まぐま]{マグマ}(magma)と呼ばれることがある。
+  \myInlineMath{A \myElemOf \myMagma{i}}に対し、
+  \myInlineMath{E \myElemOf \myMagma{i} \myFunType \myUniverse{i}}を
+  \myDisplayMath{\myAbs{Z}
+    {\myDPairType{e \myElemOf A \myRecordField \myMagmaCarrier
+        \myEquiv Z \myRecordField \myMagmaCarrier}
+      {\myDFunType{x_{1}, x_{2} \myElemOf A \myRecordField \myMagmaCarrier}
+        {e\myAppParen{(A \myRecordField \myMagmaOperator)\myAppParen{x_{1}, x_{2}}}
+          \myIdType (Z \myRecordField \myMagmaOperator)
+          \myAppParen{e\myAppParen{x_{1}}, e\myAppParen{x_{2}}}}}}}
+  と定義する。
+  要素\myInlineMath{\myPair{\myIdFun{A \myRecordField \myMagmaCarrier}}
+    {\myAbs{x_{1} x_{2}}
+      {\myRefl{(A \myRecordField \myMagmaOperator)\myAppParen{x_{1}, x_{2}}}}}
+    \myElemOf E\myAppParen{A}}を得る。
+  レトラクトの列
+  \myEqReasoning{
+    & \term{\myDPairType{Z \myElemOf \myMagma{i}}{E\myAppParen{Z}}} \\
+    \rel{\myRetractRel} & \by{並び換え} \\
+    & \term{\myDPairType{X \myElemOf \myUniverse{i}}
+      {\myDPairType{e \myElemOf A \myRecordField \myMagmaCarrier
+          \myEquiv X}
+        {\myDPairType{f \myElemOf X \myFunType X \myFunType X}
+          {\myDFunType{x_{1}, x_{2}}
+            {e\myAppParen{(A \myRecordField \myMagmaOperator)
+                \myAppParen{x_{1}, x_{2}}}
+              \myIdType f\myAppParen{e\myAppParen{x_{1}}, e\myAppParen{x_{2}}}}}}}} \\
+    \rel{\myRetractRel} & \by{一価性} \\
+    & \term{\myDPairType{f \myElemOf A \myRecordField \myMagmaCarrier
+        \myFunType A \myRecordField \myMagmaCarrier
+        \myFunType A \myRecordField \myMagmaCarrier}
+      {\myDFunType{x_{1}, x_{2}}
+        {(A \myRecordField \myMagmaOperator)\myAppParen{x_{1}, x_{2}}
+          \myIdType f\myAppParen{x_{1}, x_{2}}}}}
+  }
+  を得て、最後の型は関数外延性により可縮なので、
+  \myInlineMath{\myDPairType{Z \myElemOf \myMagma{i}}
+    {E\myAppParen{Z}}}は可縮である。
+\end{myBlock}
+\StopDefiningTabulars
+
+\end{document}

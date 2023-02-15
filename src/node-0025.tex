@@ -1,0 +1,23 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0025}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{C \myElemOf \myDFunType{x \myElemOf A}
+    {B\myAppParen{x} \myFunType \myUniverse{i}}}を型の族、
+  \myInlineMath{a \myElemOf A}と
+  \myInlineMath{b \myElemOf B\myAppParen{a}}を要素とする。
+  \myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}が可縮ならば
+  \myInlineMath{\myDPairType{x \myElemOf A}
+    {\myDPairType{y \myElemOf B\myAppParen{x}}
+      {C\myAppParen{x, y}}}}は
+  \myInlineMath{C\myAppParen{a, b}}のレトラクトである。
+\end{myBlock}
+\begin{myProof}
+  \myRef{0024}からすぐに従う。
+\end{myProof}
+
+\end{document}

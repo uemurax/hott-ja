@@ -68,6 +68,7 @@
 \newcommand{\myRetractRetraction}{\myConst{retraction}}
 \newcommand{\myRetractSection}{\myConst{section}}
 \newcommand{\myRetractId}{\myConst{r-s}}
+\newcommand{\myRetractRel}{\noexpand\triangleleft}
 \newcommand{\myFiber}[2]{\myConst{Fiber}\myAppParen{{#1}, {#2}}}
 \newcommand{\myFiberElem}{\myConst{elem}}
 \newcommand{\myFiberId}{\myConst{id}}
@@ -75,3 +76,16 @@
 \newcommand{\myLogEquiv}{\leftrightarrow}
 \newcommand{\myLogEquivTo}{\myConst{to}}
 \newcommand{\myLogEquivFrom}{\myConst{from}}
+\newcommand{\myPoint@char}{\noexpand\bullet}
+\newcommand{\myPointedType}[1]{\myUniverse@char_{\myPoint@char}\myAppParen{#1}}
+\newcommand{\myCarrier@char}{\myConst{Carrier}}
+\newcommand{\myPointedTypeCarrier}{\myCarrier@char}
+\newcommand{\myPointedTypePoint}{\myConst{point}}
+\newcommand{\myIdSymSym}[1]{\myConst{sym-sym}\myAppParen{#1}}
+\newcommand{\myMagma}[1]{\myConst{Magma}\myAppParen{#1}}
+\newcommand{\myMagmaCarrier}{\myCarrier@char}
+\newcommand{\myMagmaOperator}{\myConst{op}}
+\newcommand{\myReflGraph}[1]{\myConst{ReflGraph}\myAppParen{#1}}
+\newcommand{\myReflGraphVertex}{\myConst{Vertex}}
+\newcommand{\myReflGraphEdge}{\myConst{Edge}}
+\newcommand{\myReflGraphRefl}{\myConst{refl}}
