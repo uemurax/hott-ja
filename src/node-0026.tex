@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0026}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型とすると、
+  \myInlineMath{\myIdFun{A} \myElemOf A \myFunType A}は同値である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{a \myElemOf A}を要素とする。
+  \myInlineMath{\myFiber{\myIdFun{A}}{a}}の定義から、
+  \myInlineMath{\myDPairType{x \myElemOf A}{x \myIdType a}}
+  が可縮であることを示せばよい。
+  \myRef{0027}より\myInlineMath{x \myIdType a}は
+  \myInlineMath{a \myIdType x}のレトラクトなので、
+  \myRef{001S}より\myInlineMath{\myDPairType{x \myElemOf A}{x \myIdType a}}
+  は可縮である。
+\end{myProof}
+
+\end{document}
