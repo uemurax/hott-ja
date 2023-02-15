@@ -7,11 +7,14 @@
 \subfile{node-0024}
 \subfile{node-0025}
 
-ある構造\myInlineMath{A}の同一視型を特徴付けるには、
-候補\myInlineMath{E \myElemOf A \myFunType A \myFunType \myUniverse{i}}
-を見つけて、任意の\myInlineMath{a \myElemOf A}に対して
-\myInlineMath{\myDPairType{x \myElemOf A}{E\myAppParen{a, x}}}
+ある構造\myInlineMath{A}と要素\myInlineMath{a \myElemOf A}に対し、
+同一視型\myInlineMath{\myAbs{x}{a \myIdType x}}を特徴付けるには、
+候補\myInlineMath{E \myElemOf A \myFunType \myUniverse{i}}
+を見つけて
+\myInlineMath{\myDPairType{x \myElemOf A}{E\myAppParen{x}}}
 が可縮であることを示す。
+要素\myInlineMath{e \myElemOf E\myAppParen{a}}を自然に見つけられる場合がほとんどで、
+\myRef{001S}から\myInlineMath{(a \myIdType x) \myEquiv E\myAppParen{x}}を得る。
 基本的な戦略は目的の型から始めて、既に可縮と分かっている型になるまでレトラクトの列を作ることである
 (実際には同値の列を作れる場合が多い)。
 すると\myRef{001K}により目的の型が可縮であることが従う。

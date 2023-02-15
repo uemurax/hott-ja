@@ -13,22 +13,23 @@
       \myPointedTypePoint \myElemOf \myPointedTypeCarrier
     }
   }
+  \myInlineMath{A \myElemOf \myPointedType{i}}に対し、
   \myInlineMath{E \myElemOf \myPointedType{i}
-    \myFunType \myPointedType{i}
     \myFunType \myUniverse{i}}を
-  \myInlineMath{\myAbs{A B}
+  \myInlineMath{\myAbs{Z}
     {\myDPairType{e \myElemOf A \myRecordField \myPointedTypeCarrier
-        \myEquiv B \myRecordField \myPointedTypeCarrier}
+        \myEquiv Z \myRecordField \myPointedTypeCarrier}
       {e\myAppParen{A \myRecordField \myPointedTypePoint} \myIdType
-        B \myRecordField \myPointedTypePoint}}}と定義する。
-  \myInlineMath{\myDFunType{A \myElemOf \myPointedType{i}}
-    {\myIsContr{\myDPairType{Z \myElemOf \myPointedType{i}}
-        {E\myAppParen{A, Z}}}}}を示そう。
-  任意の\myInlineMath{A \myElemOf \myPointedType{i}}に対し、
+        Z \myRecordField \myPointedTypePoint}}}と定義する。
+  要素\myInlineMath{\myPair{\myIdFun{A \myRecordField \myPointedTypeCarrier}}
+    {\myRefl{A \myRecordField \myPointedTypePoint}}
+    \myElemOf E\myAppParen{A}}を得る。
+  \myInlineMath{\myIsContr{\myDPairType{Z \myElemOf \myPointedType{i}}
+      {E\myAppParen{A, Z}}}}を示そう。
   レトラクトの列
   \myEqReasoning{
     & \term{\myDPairType{Z \myElemOf \myPointedType{i}}
-      {E\myAppParen{A, Z}}} \\
+      {E\myAppParen{Z}}} \\
     \rel{\myRetractRel} & \by{並び換え} \\
     & \term{\myDPairType{X \myElemOf \myUniverse{i}}
       {\myDPairType{e \myElemOf A \myRecordField \myPointedTypeCarrier
@@ -42,7 +43,7 @@
   }
   を得て、最後の型は\myRef{001N}より可縮なので、
   \myInlineMath{\myDPairType{Z \myElemOf \myPointedType{i}}
-    {E\myAppParen{A, Z}}}は可縮である。
+    {E\myAppParen{Z}}}は可縮である。
 \end{myBlock}
 \StopDefiningTabulars
 
