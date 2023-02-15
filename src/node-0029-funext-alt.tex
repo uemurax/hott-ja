@@ -1,0 +1,51 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0029}{myProposition}
+  \myInlineMath{i}を階数とする。
+  次は論理的に同値である。
+  \begin{enumerate}
+  \item \label{0029:0000} \myInlineMath{\myUniverse{i}}のすべての関数型が関数外延性を持つ。
+  \item \label{0029:0001} 任意の型\myInlineMath{A \myElemOf \myUniverse{i}}と
+    型の族\myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}に対して、
+    \myInlineMath{\myDFunType{x \myElemOf A}{\myIsContr{B\myAppParen{x}}}
+      \myFunType \myIsContr{\myDFunType{x \myElemOf A}{B\myAppParen{x}}}}
+    の要素がある。
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  \myRefLabel{0029:0000}から\myRefLabel{0029:0001}を示す。
+  \myInlineMath{c \myElemOf
+    \myDFunType{x \myElemOf A}{\myIsContr{B\myAppParen{x}}}}を仮定する。
+  仮定\myInlineMath{c}より、
+  関数\myInlineMath{f \myElemOf \myDFunType{x \myElemOf A}{B\myAppParen{x}}}
+  と同一視\myInlineMath{p \myElemOf \myDFunType{x \myElemOf A}
+    {\myDFunType{y \myElemOf B\myAppParen{x}}
+      {f\myAppParen{x} \myIdType y}}}を得る。
+  同一視\myInlineMath{q \myElemOf \myDFunType{g \myElemOf
+      \myDFunType{x \myElemOf A}{B\myAppParen{x}}}
+    {f \myIdType g}}を構成すればよい。
+  任意の\myInlineMath{g \myElemOf \myDFunType{x \myElemOf A}{B\myAppParen{x}}}に対して、
+  \myInlineMath{\myAbs{x}{p\myAppParen{x, g\myAppParen{x}}}
+    \myElemOf \myDFunType{x \myElemOf A}
+    {f\myAppParen{x} \myIdType g\myAppParen{x}}}を得るが、
+  関数外延性と\myRef{001S}により\myInlineMath{f \myIdType g}の要素を得る。
+
+  \myRefLabel{0029:0001}から\myRefLabel{0029:0000}を示す。
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{f \myElemOf \myDFunType{x \myElemOf A}{B\myAppParen{x}}}を関数とする。
+  \myRef{001A}より、
+  \myInlineMath{\myDPairType{g \myElemOf
+      \myDFunType{x \myElemOf A}{B\myAppParen{x}}}
+    {\myDFunType{x \myElemOf A}{f\myAppParen{x} \myIdType g\myAppParen{x}}}}は
+  \myInlineMath{\myDFunType{x \myElemOf A}
+    {\myDPairType{y \myElemOf B\myAppParen{x}}
+      {f\myAppParen{x} \myIdType y}}}
+  のレトラクトであるが、
+  後者は仮定と\myRef{001N}により可縮である。
+  よって、\myRef{001K}から前者も可縮である。
+\end{myProof}
+
+\end{document}
