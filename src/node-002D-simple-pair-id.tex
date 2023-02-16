@@ -1,0 +1,35 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\StartDefiningTabulars
+\begin{myBlock}{002D}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{c_{1}, c_{2} \myElemOf A \myPairType B}を要素とすると、
+  同値\myInlineMath{(c_{1} \myIdType c_{2}) \myEquiv
+    ((\myProjI{c_{1}} \myIdType \myProjI{c_{2}}) \myPairType
+    (\myProjII{c_{1}} \myIdType \myProjII{c_{2}}))}を構成しよう。
+  \myRef{001S}を適用する。
+  \myInlineMath{E \myElemOf (A \myPairType B) \myFunType \myUniverse{i}}を
+  \myInlineMath{\myAbs{z}{(\myProjI{c_{1}} \myIdType \myProjI{z})
+      \myPairType (\myProjII{c_{1}} \myIdType \myProjII{z})}}と定義する。
+  要素\myInlineMath{\myPair{\myRefl{\myBlank}}{\myRefl{\myBlank}}
+    \myElemOf E\myAppParen{c_{1}}}を得る。
+  レトラクトの列
+  \myEqReasoning{
+    & \term{\myDPairType{z \myElemOf A \myPairType B}{E\myAppParen{z}}} \\
+    \rel{\myRetractRel} & \by{並び換え} \\
+    & \term{\myDPairType{x \myElemOf A}
+      {\myDPairType{p \myElemOf \myProjI{c_{1}} \myIdType x}
+        {\myDPairType{y \myElemOf B}
+          {\myProjII{c_{1}} \myIdType y}}}} \\
+    \rel{\myRetractRel} & \by{\myRef{001N}と\myRef{0025}} \\
+    & \term{\myDPairType{y \myElemOf B}{\myProjII{c_{1}} \myIdType y}}
+  }を得て、最後の型は\myRef{001N}により可縮なので、
+  \myRef{001K}より\myInlineMath{\myDPairType{z \myElemOf A \myPairType B}
+    {E\myAppParen{z}}}も可縮である。
+\end{myBlock}
+\StopDefiningTabulars
+
+\end{document}
