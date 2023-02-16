@@ -1,0 +1,23 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002E}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B, C \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}と
+  \myInlineMath{g \myElemOf B \myFunType C}を関数とする。
+  \myInlineMath{f, g, g \myFunComp f}のうちいずれか二つが同値ならば
+  残りの一つも同値である。
+  つまり、次の型の要素を構成できる。
+  \begin{enumerate}
+  \item \myInlineMath{\myIsEquiv{f} \myFunType
+      \myIsEquiv{g} \myFunType \myIsEquiv{g \myFunComp f}}
+  \item \myInlineMath{\myIsEquiv{f} \myFunType
+      \myIsEquiv{g \myFunComp f} \myFunType \myIsEquiv{g}}
+  \item \myInlineMath{\myIsEquiv{g} \myFunType
+      \myIsEquiv{g \myFunComp f} \myFunType \myIsEquiv{f}}
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
