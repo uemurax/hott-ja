@@ -1,0 +1,17 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002I}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{f, g \myElemOf \myDFunType{x \myElemOf A}{B\myAppParen{x}}}を関数とする。
+  型\myInlineMath{f \myHomotopy g \myElemOf \myUniverse{i}}を
+  \myInlineMath{\myDFunType{x \myElemOf A}
+    {f\myAppParen{x} \myIdType g\myAppParen{x}}}と定義する。
+  \myInlineMath{f \myHomotopy g}の要素を\myInlineMath{f}と\myInlineMath{g}の間の
+  \myNewTerm[ほもとぴー]{ホモトピー}(homotopy)と呼ぶ。
+\end{myBlock}
+
+\end{document}
