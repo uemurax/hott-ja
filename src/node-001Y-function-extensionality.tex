@@ -19,6 +19,16 @@
 そのため、この同値を得るためには何らかの公理が必要である。
 
 \subfile{node-001Z-function-extensionality}
+
+要素\myInlineMath{\myAbs{x}{\myRefl{f\myAppParen{x}}}
+  \myElemOf \myDFunType{x \myElemOf A}
+  {f\myAppParen{x} \myIdType f\myAppParen{x}}}があるので
+\myRef{001S}を適用できて、
+\myInlineMath{\myDFunType{x \myElemOf A}{B\myAppParen{x}}}が関数外延性を持つ時、
+任意の関数\myInlineMath{f, g \myElemOf \myDFunType{x \myElemOf A}{B\myAppParen{x}}}
+に対して同値\myInlineMath{(f \myIdType g) \myEquiv
+  \myDFunType{x \myElemOf A}{f\myAppParen{x} \myIdType g\myAppParen{x}}}を得る。
+
 \subfile{node-0020-funext-axiom}
 \subfile{node-0029-funext-alt}
 
