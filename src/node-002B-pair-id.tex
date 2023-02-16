@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002B}{myCorollary}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{c_{1}, c_{2} \myElemOf
+    \myDPairType{x \myElemOf A}{B\myAppParen{x}}}を要素とすると、
+  同値\myDisplayMath{
+    (c_{1} \myIdType c_{2}) \myEquiv
+    \myDPairType{z \myElemOf \myProjI{c_{1}} \myIdType \myProjI{c_{2}}}
+    {\myTransport{B}{z}\myAppParen{\myProjII{c_{1}}}
+      \myIdType \myProjII{c_{2}}}
+  }を構成できる。
+\end{myBlock}
+\begin{myProof}
+  \myRef{001S}と\myRef{001X}による。
+\end{myProof}
+
+\end{document}
