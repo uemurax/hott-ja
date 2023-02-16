@@ -8,8 +8,8 @@
   \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
   \myInlineMath{a \myElemOf A}を要素とする。
   \myInlineMath{A}が可縮ならば
-  \myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}は
-  \myInlineMath{B\myAppParen{a}}のレトラクトである。
+  \myInlineMath{(\myDPairType{x \myElemOf A}{B\myAppParen{x}})
+    \myBiRetractRel B\myAppParen{a}}の要素を構成できる。
 \end{myBlock}
 \begin{myProof}
   \myInlineMath{A}が可縮であると仮定する。
@@ -34,6 +34,12 @@
   \myRef{001X}より同一視\myInlineMath{q \myElemOf
     \myDFunType{z \myElemOf \myBlank}
     {g\myAppParen{f\myAppParen{z}} \myIdType z}}を得る。
+  また、\myRef{001L}より同一視\myInlineMath{r \myElemOf
+    p\myAppParen{a} \myIdType \myRefl{a}}も得られるので、
+  同一視\myInlineMath{\myAbs{y}
+    {\myIdApp{\myAbs{w}{\myTransport{B}{w}\myAppParen{y}}}\myAppParen{r}}
+    \myElemOf \myDFunType{y \myElemOf B\myAppParen{a}}
+    {f\myAppParen{g\myAppParen{y}} \myIdType y}}を得る。
 \end{myProof}
 
 \end{document}

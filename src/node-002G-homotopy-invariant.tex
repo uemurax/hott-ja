@@ -1,0 +1,25 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002G}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f, g \myElemOf A \myFunType B}を関数、
+  \myInlineMath{p \myElemOf f \myHomotopy g}をホモトピーとする。
+  \myInlineMath{f}が同値ならば\myInlineMath{g}も同値である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{q \myElemOf A \myFunType
+    (\myDPairType{y_{1} \myElemOf B}
+    {\myDPairType{y_{2} \myElemOf B}
+      {y_{1} \myIdType y_{2}}})}を
+  \myInlineMath{\myAbs{x}{\myPair{f\myAppParen{x}}
+      {\myPair{g\myAppParen{x}}{p\myAppParen{x}}}}}と定義すると、
+  \myInlineMath{(\myAbs{z}{\myProjI{z}}) \myFunComp q \myDefEq f}かつ
+  \myInlineMath{(\myAbs{z}{\myProjI{\myProjII{z}}}) \myFunComp q \myDefEq g}である。
+  \myRef{002E}と\myRef{002J}と仮定から\myInlineMath{q}が同値であると分かり、
+  すると\myRef{002E}と\myRef{002K}から\myInlineMath{g}が同値であると分かる。
+\end{myProof}
+
+\end{document}

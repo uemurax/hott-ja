@@ -11,10 +11,10 @@
   \myInlineMath{a \myElemOf A}と
   \myInlineMath{b \myElemOf B\myAppParen{a}}を要素とする。
   \myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}が可縮ならば
-  \myInlineMath{\myDPairType{x \myElemOf A}
+  \myInlineMath{(\myDPairType{x \myElemOf A}
     {\myDPairType{y \myElemOf B\myAppParen{x}}
-      {C\myAppParen{x, y}}}}は
-  \myInlineMath{C\myAppParen{a, b}}のレトラクトである。
+      {C\myAppParen{x, y}}}) \myBiRetractRel
+    C\myAppParen{a, b}}の要素を構成できる。
 \end{myBlock}
 \begin{myProof}
   \myRef{0024}からすぐに従う。

@@ -1,0 +1,37 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002H}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  \myInlineMath{f}が同値ならば、
+  関数\myInlineMath{g, h \myElemOf B \myFunType A}と
+  ホモトピー\myInlineMath{p \myElemOf f \myFunComp g \myHomotopy \myIdFun{B}}と
+  \myInlineMath{q \myElemOf h \myFunComp f \myHomotopy \myIdFun{A}}を構成できる。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{f}が同値であると仮定する。
+  関数\myInlineMath{G \myElemOf \myDFunType{y \myElemOf B}
+    {\myFiber{f}{y}}}と
+  同一視\myInlineMath{P \myElemOf \myDFunType{y \myElemOf B}
+    {\myDFunType{z \myElemOf \myFiber{f}{y}}
+      {G\myAppParen{y} \myIdType z}}}を得る。
+  \myInlineMath{g \myDefEq \myAbs{y}
+    {G\myAppParen{y}\myRecordField \myFiberElem}},
+  \myInlineMath{p \myDefEq \myAbs{y}
+    {G\myAppParen{y}\myRecordField \myFiberId}}と定義する。
+  \myInlineMath{r \myElemOf \myDFunType{x \myElemOf A}
+    {\myFiber{f}{f\myAppParen{x}}}}を
+  \myInlineMath{r \myDefEq \myAbs{x}
+    {\myRecordElem{\myFiberElem \myDefEq x,
+        \myFiberId \myDefEq \myRefl{f\myAppParen{x}}}}}と定義する。
+  \myInlineMath{h \myDefEq g}と定義し、
+  \myInlineMath{q \myDefEq \myAbs{x}
+    {\myIdApp{\myAbs{z}{z \myRecordField \myFiberId}}
+      \myAppParen{P\myAppParen{f\myAppParen{x}, r\myAppParen{x}}}}}
+  と定義すればよい。
+\end{myProof}
+
+\end{document}

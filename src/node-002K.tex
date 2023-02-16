@@ -1,0 +1,29 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002K}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型とする。
+  関数\myInlineMath{\myAbs{x}{\myPair{x}{\myPair{x}{\myRefl{x}}}}
+    \myElemOf A \myFunType
+    (\myDPairType{x_{1} \myElemOf A}
+    {\myDPairType{x_{2} \myElemOf A}
+      {x_{1} \myIdType x_{2}}})}
+  と\myInlineMath{\myAbs{z}{\myProjI{\myProjII{z}}} \myElemOf
+    (\myDPairType{x_{1} \myElemOf A}
+    {\myDPairType{x_{2} \myElemOf A}
+      {x_{1} \myIdType x_{2}}}) \myFunType A}は同値である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{f \myDefEq \myAbs{z}{\myProjI{z}}},
+  \myInlineMath{g \myDefEq \myAbs{x}{\myPair{x}{\myPair{x}{\myRefl{x}}}}},
+  \myInlineMath{h \myDefEq \myAbs{z}{\myProjI{\myProjII{z}}}}と定義すると、
+  \myInlineMath{f \myFunComp g \myDefEq \myIdFun{A}}かつ
+  \myInlineMath{h \myFunComp g \myDefEq \myIdFun{A}}である。
+  \myRef{002J}より\myInlineMath{f}は同値であるから、
+  \myRef{002E}と\myRef{0026}から\myInlineMath{g}も同値であると分かる。
+  すると、再び\myRef{002E}と\myRef{0026}から\myInlineMath{h}も同値であると分かる。
+\end{myProof}
+
+\end{document}

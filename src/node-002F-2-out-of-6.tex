@@ -1,0 +1,37 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002F}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B, C, D \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}と
+  \myInlineMath{g \myElemOf B \myFunType C}と
+  \myInlineMath{h \myElemOf C \myFunType D}を関数とする。
+  \myInlineMath{g \myFunComp f}と\myInlineMath{h \myFunComp g}が同値ならば
+  \myInlineMath{f, g, h, h \myFunComp g \myFunComp f}も同値である。
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  任意の要素\myInlineMath{d \myElemOf D}に対して、レトラクト
+  \myEqReasoning{
+    & \term{\myFiber{h \myFunComp g \myFunComp f}{d}} \\
+    \rel{\myRetractRel} & \by{\myRef{002L}} \\
+    & \term{\myDPairType{z \myElemOf \myFiber{h}{d}}
+      {\myDPairType{y \myElemOf \myFiber{g}{z \myRecordField \myFiberElem}}
+        {\myFiber{f}{y \myRecordField \myFiberElem}}}} \\
+    \rel{\myRetractRel} & \by{\myRef{002M}} \\
+    & \term{\myDPairType{z \myElemOf \myFiber{h}{d}}
+      {\myDPairType{y' \myElemOf \myFiber{g}{z \myRecordField \myFiberElem}}
+        {\myDPairType{y \myElemOf \myFiber{g}{z \myRecordField \myFiberElem}}
+          {\myFiber{f}{y \myRecordField \myFiberElem}}}}} \\
+    \rel{\myRetractRel} & \by{\myInlineMath{h \myFunComp g}が同値} \\
+    & \term{\myDPairType{y \myElemOf \myFiber{g}{\myBlank}}
+      {\myFiber{f}{y \myRecordField \myFiberElem}}}
+  }を得て、最後の型は\myInlineMath{g \myFunComp f}が同値なので可縮である。
+  よって、\myInlineMath{h \myFunComp g \myFunComp f}は同値である。
+  すると\myRef{002E}より残りの関数もすべて同値である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}
