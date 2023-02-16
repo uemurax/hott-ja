@@ -1,0 +1,33 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\StartDefiningTabulars
+\begin{myBlock}{002L}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B, C \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}と
+  \myInlineMath{g \myElemOf B \myFunType C}を型、
+  \myInlineMath{c \myElemOf C}を要素とすると、
+  \myInlineMath{\myDPairType{y \myElemOf \myFiber{g}{c}}
+    {\myFiber{f}{y \myRecordField \myFiberElem}}
+    \myBiRetractRel \myFiber{g \myFunComp f}{c}}の要素を構成できる。
+\end{myBlock}
+\begin{myProof}
+  次のようにわかる。
+  \myEqReasoning{
+    & \term{\myDPairType{y \myElemOf \myFiber{g}{c}}
+      {\myFiber{f}{y \myRecordField \myFiberElem}}} \\
+    \rel{\myBiRetractRel} & \by{並び換え} \\
+    & \term{\myDPairType{x \myElemOf A}
+      {\myDPairType{y \myElemOf B}
+        {\myDPairType{p \myElemOf f\myAppParen{x} \myIdType y}
+          {g\myAppParen{y} \myIdType c}}}} \\
+    \rel{\myBiRetractRel} & \by{\myRef{001W}と\myRef{0025}と\myRef{001N}} \\
+    & \term{\myDPairType{x \myElemOf A}
+      {g\myAppParen{f\myAppParen{x}} \myIdType c}}
+  }
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}

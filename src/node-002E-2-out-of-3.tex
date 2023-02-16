@@ -19,5 +19,31 @@
       \myIsEquiv{g \myFunComp f} \myFunType \myIsEquiv{f}}
   \end{enumerate}
 \end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myInlineMath{f}が同値であると仮定すると、
+  \myRef{002L}と\myRef{001K}から
+  \myInlineMath{\myIsEquiv{g} \myLogEquiv
+    \myIsEquiv{g \myFunComp f}}が従う。
+
+  \myInlineMath{g}と\myInlineMath{g \myFunComp f}が同値であると仮定する。
+  \myInlineMath{b \myElemOf B}を仮定する。
+  \myInlineMath{r \myElemOf \myFiber{g}{g\myAppParen{b}}}を
+  \myInlineMath{\myRecordElem{\myFiberElem \myDefEq b,
+      \myFiberId \myDefEq \myRefl{g\myAppParen{b}}}}と定義する。
+  レトラクト
+  \myEqReasoning{
+    & \term{\myFiber{g \myFunComp f}{g\myAppParen{b}}} \\
+    \rel{\myBiRetractRel} & \by{\myRef{002L}} \\
+    & \term{\myDPairType{y \myElemOf \myFiber{g}{g\myAppParen{b}}}
+      {\myFiber{f}{y \myRecordField \myFiberElem}}} \\
+    \rel{\myBiRetractRel} & \by{\myInlineMath{g}が同値} \\
+    & \term{\myFiber{f}{r \myRecordField \myFiberElem}}
+  }を得て、
+  \myInlineMath{r \myRecordField \myFiberElem \myDefEq b}
+  であることに注意すると、\myInlineMath{g \myFunComp f}が同値なので
+  \myInlineMath{\myFiber{f}{b}}は可縮である。
+\end{myProof}
+\StopDefiningTabulars
 
 \end{document}
