@@ -1,0 +1,30 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002J}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型とする。
+  関数\myInlineMath{\myAbs{z}{\myProjI{z}} \myElemOf
+    (\myDPairType{x_{1} \myElemOf A}
+    {\myDPairType{x_{2} \myElemOf A}
+      {x_{1} \myIdType x_{2}}}) \myFunType A}は同値である。
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  任意の要素\myInlineMath{a \myElemOf A}に対して、
+  レトラクトの列
+  \myEqReasoning{
+    & \term{\myFiber{\myAbs{z}{\myProjI{z}}}{a}} \\
+    \rel{\myRetractRel} & \by{並び換え} \\
+    & \term{\myDPairType{x_{1} \myElemOf A}
+      {\myDPairType{p \myElemOf x_{1} \myIdType a}
+        {\myDPairType{x_{2} \myElemOf A}
+          {x_{1} \myIdType x_{2}}}}} \\
+    \rel{\myRetractRel} & \by{\myRef{0026}} \\
+    & \term{\myDPairType{x_{2} \myElemOf A}{a \myIdType x_{2}}}
+  }を得て、最後の型は\myRef{001N}により可縮である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}
