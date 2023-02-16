@@ -4,7 +4,33 @@
 
 \mySection{000X}{一価性}
 
+同値\myInlineMath{A \myEquiv B}は型\myInlineMath{A, B \myElemOf \myUniverse{i}}の
+「自然な」同一視のしかたと考えられる。
+つまり、同値\myInlineMath{(A \myIdType B) \myEquiv (A \myEquiv B)}が期待される。
+しかし、関数\myInlineMath{(A \myEquiv B) \myFunType (A \myIdType B)}は
+宇宙、関数型、対型、同一視型の規則からは導出できない。
+実際、型を従来の意味での集合と解釈するモデルを考えると、
+\myInlineMath{A \myEquiv B}は\myInlineMath{A}から\myInlineMath{B}への
+全単射のなす集合と解釈される一方、
+\myInlineMath{A \myIdType B}は\myInlineMath{A}と\myInlineMath{B}が等しい時に限り
+(一つだけ)要素を持つような集合と解釈される。
+異なる集合の間にも全単射は存在する場合があり、
+その時には関数\myInlineMath{(A \myEquiv B) \myFunType (A \myIdType B)}は存在しない。
+
+\emph{一価性公理}は同値
+\myInlineMath{(A \myIdType B) \myEquiv (A \myEquiv B)}を導出する公理である。
+先に説明したように、この同値は型理論の集合論的解釈とは相反するものである。
+一価性公理の下では、型は空間のホモトピー型のように振る舞う。
+その意味で、一価性公理は型理論をホモトピー論的なものに強制する公理と言える。
+
+\subfile{node-0026}
 \subfile{node-000Y-univalence}
+
+\myRef{0026}から\myRef{001S}を適用できて、
+\myInlineMath{\myUniverse{i}}が一価性を満たす時、
+任意の型\myInlineMath{A, B \myElemOf \myUniverse{i}}に対して
+同値\myInlineMath{(A \myIdType B) \myEquiv (A \myEquiv B)}を構成できる。
+
 \subfile{node-000Z-univalence-axiom}
 
 \end{document}
