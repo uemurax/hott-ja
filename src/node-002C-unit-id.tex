@@ -3,10 +3,8 @@
 \begin{document}
 
 \begin{myBlock}{002C}{myExample}
-  任意の要素\myInlineMath{a_{1}, a_{2} \myElemOf \myUnitType}に対し、
-  同値\myInlineMath{(a_{1} \myIdType a_{2}) \myEquiv \myUnitType}を得る。
-\end{myBlock}
-\begin{myProof}
+  \myInlineMath{a_{1}, a_{2} \myElemOf \myUnitType}を要素とする。
+  同値\myInlineMath{(a_{1} \myIdType a_{2}) \myEquiv \myUnitType}を構成しよう。
   \myRef{001S}を適用する。
   \myInlineMath{B \myElemOf \myUnitType \myFunType \myUniverse{\myBlank}}を
   \myInlineMath{\myAbs{x}{\myUnitType}}と定義する。
@@ -17,6 +15,6 @@
   再び\myRef{001O}により\myInlineMath{B\myAppParen{a_{1}}}は可縮なので、
   \myRef{001K}により\myInlineMath{\myDPairType{x \myElemOf \myUnitType}
     {B\myAppParen{x}}}は可縮である。
-\end{myProof}
+\end{myBlock}
 
 \end{document}
