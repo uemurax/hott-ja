@@ -1,6 +1,17 @@
-\usepackage{my-node,my-label,cleveref}
+\usepackage{my-node,my-label,lwarp,cleveref,tableof}
 
 \newcommand{\mySection}[2]{\mySection@A{\myNodeTitle{#1}{#2}}\myNodeLabel{#1}}
+
+\newcounter{mySection@tag}
+
+\newenvironment{mySubsections}
+{\begin{myShiftSections}
+\edef\mySection@tmp@tag{toctag:\arabic{mySection@tag}}
+\stepcounter{mySection@tag}
+\warpHTMLonly{\tableof{\mySection@tmp@tag}}
+\toftagstart{\mySection@tmp@tag}}
+{\toftagstop{\mySection@tmp@tag}
+\end{myShiftSections}}
 
 \newenvironment{myShiftSections}{%
   \let\mySection@A\mySection@B
