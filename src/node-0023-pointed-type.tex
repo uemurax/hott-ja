@@ -7,12 +7,10 @@
   \myInlineMath{i}を階数とする。
   型\myInlineMath{\myPointedType{i} \myElemOf \myUniverse{\myLevelSucc{i}}}
   を次のレコード型と定義する。
-  \myDisplayMath{
-    \myArray{l}{
-      \myPointedTypeCarrier \myElemOf \myUniverse{i} \\
-      \myPointedTypePoint \myElemOf \myPointedTypeCarrier
-    }
-  }
+  \begin{itemize}
+    \item \myInlineMath{\myPointedTypeCarrier \myElemOf \myUniverse{i}}
+    \item \myInlineMath{\myPointedTypePoint \myElemOf \myPointedTypeCarrier}
+  \end{itemize}
   \myInlineMath{\myPointedType{i}}の要素を(階数\myInlineMath{i}の)
   \myNewTerm[てんつきかた]{点付き型}(pointed type)と呼ぶ。
   \myInlineMath{A \myElemOf \myPointedType{i}}に対し、
