@@ -26,10 +26,10 @@ body {
 
 div.bodyandsidetoc {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 main.bodycontainer {
@@ -39,8 +39,18 @@ main.bodycontainer {
 }
 
 div.sidetoccontainer {
+    position: sticky;
+    top: 0;
     float: none;
-    
+    border-left: 1px solid silver;
+    border-right: unset;
+    border-radius: 0px 0px 0px 20px ;
+}
+
+@media screen and (max-width: 50em) {
+    div.sidetoccontainer {
+        position: static;
+    }
 }
 
 em {
