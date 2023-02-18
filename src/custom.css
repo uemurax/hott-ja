@@ -50,6 +50,11 @@ div.sidetoccontainer {
 @media screen and (max-width: 50em) {
     div.sidetoccontainer {
         position: static;
+        border-bottom: 0px;
+        border-radius: 0;
+    }
+    nav.topnavigation, nav.botnavigation, span.sidetocthetitle {
+        display: none;
     }
 }
 
