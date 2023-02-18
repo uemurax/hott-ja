@@ -19,4 +19,9 @@ span.node-id {
     margin-right: 0.25em;
 }
 
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
 /* ( --- End of project.css --- ) */
