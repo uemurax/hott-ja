@@ -47,6 +47,14 @@ div.sidetoccontainer {
     border-radius: 0px 0px 0px 20px ;
 }
 
+div.my-sidetoc-nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
 @media screen and (max-width: 50em) {
     div.sidetoccontainer {
         position: static;

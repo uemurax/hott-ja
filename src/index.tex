@@ -50,6 +50,19 @@
 \HTMLFirstPageTop{}
 \HTMLPageTop{}
 \HTMLPageBottom{}
+\renewcommand{\linkpreviousname}{前}
+\renewcommand{\linknextname}{次}
+\renewcommand{\linkhomename}{ホーム}
+\renewcommand{\sidetocname}{
+  \begin{BlockClass}{my-sidetoc-nav}
+    \begin{BlockClass}{my-sidetoc-prev}
+      \LinkPrevious
+    \end{BlockClass}
+    \begin{BlockClass}{my-sidetoc-next}
+      \LinkNext
+    \end{BlockClass}
+  \end{BlockClass}
+}
 \CSSFilename{custom.css}
 
 \begin{document}
