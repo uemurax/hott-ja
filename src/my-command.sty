@@ -1,50 +1,50 @@
-\usepackage{amsmath,amssymb,newcomputermodern,xparse}
+\usepackage{amsmath,amssymb,newcomputermodern,xparse,my-math}
 
-\newcommand{\myConst}[1]{\mathord{\noexpand\text{\noexpand\textsf{#1}}}}
+\newcommand{\myConst}[1]{\myMathWrap{\mathord}{\myMathWrap{\text}{\myMathWrap{\textsf}{#1}}}}
 
 \newcommand{\myElemOf}{:}
-\newcommand{\myDefEq}{\noexpand\equiv}
+\newcommand{\myDefEq}{\myMathWrap{\equiv}}
 \newcommand{\mySubstParen}[1]{[#1]}
-\newcommand{\mySubst}{\noexpand\mapsto}
-\newcommand{\myUniverse@char}{\noexpand\mathcal{U}}
+\newcommand{\mySubst}{\myMathWrap{\mapsto}}
+\newcommand{\myUniverse@char}{\myMathWrap{\mathcal}{U}}
 \newcommand{\myUniverse}[1]{\myUniverse@char\myAppParen{#1}}
 \newcommand{\myUniverseEl}[1]{\myConst{El}\myAppParen{#1}}
-\newcommand{\myNameOf}[1]{\noexpand\lceil#1\noexpand\rceil}
+\newcommand{\myNameOf}[1]{\myMathWrap{\lceil}#1\myMathWrap{\rceil}}
 \newcommand{\myUniverseName}[1]{\myNameOf{\myUniverse@char}\myAppParen{#1}}
 \newcommand{\myUniverseLift}[1]{\myConst{Lift}\myAppParen{#1}}
 \newcommand{\myAppParen}[1]{(#1)}
-\newcommand{\myDots}{\noexpand\dots}
+\newcommand{\myDots}{\myMathWrap{\dots}}
 \newcommand{\myLevelZero}{0}
 \newcommand{\myLevelSucc}[1]{\myConst{suc}\myAppParen{#1}}
-\newcommand{\myBlank}{\noexpand\_}
-\newcommand{\myFunType}{\noexpand\to}
-\newcommand{\myAbs}[2]{\noexpand\lambda {#1} . {#2}}
-\newcommand{\myDFunType}[2]{\noexpand\prod_{#1}{#2}}
-\newcommand{\myUnitType}{\noexpand\mathbf{1}}
-\newcommand{\myUnitElem}{\noexpand\mathord{\noexpand\star}}
-\newcommand{\myDPairType}[2]{\noexpand\sum_{#1}{#2}}
+\newcommand{\myBlank}{\myMathWrap{\_}}
+\newcommand{\myFunType}{\myMathWrap{\to}}
+\newcommand{\myAbs}[2]{\myMathWrap{\lambda} {#1} . {#2}}
+\newcommand{\myDFunType}[2]{\myMathWrap{\prod}_{#1}{#2}}
+\newcommand{\myUnitType}{\myMathWrap{\mathbf}{1}}
+\newcommand{\myUnitElem}{\myMathWrap{\mathord}{\myMathWrap{\star}}}
+\newcommand{\myDPairType}[2]{\myMathWrap{\sum}_{#1}{#2}}
 \newcommand{\myPair}[2]{\myConst{pair}\myAppParen{{#1}, {#2}}}
 \newcommand{\myProj@char}{\myConst{pr}}
 \newcommand{\myProjI}[1]{\myProj@char_{1}\myAppParen{#1}}
 \newcommand{\myProjII}[1]{\myProj@char_{2}\myAppParen{#1}}
-\newcommand{\myPairType}{\noexpand\times}
-\newcommand{\myRecordType}[1]{\noexpand\lBrace {#1} \noexpand\rBrace}
-\newcommand{\myRecordElem}[1]{\noexpand\lParen {#1} \noexpand\rParen}
+\newcommand{\myPairType}{\myMathWrap{\times}}
+\newcommand{\myRecordType}[1]{\myMathWrap{\lBrace} {#1} \myMathWrap{\rBrace}}
+\newcommand{\myRecordElem}[1]{\myMathWrap{\lParen} {#1} \myMathWrap{\rParen}}
 \newcommand{\myRecordField}{.}
 \newcommand{\myIdType}{=}
 \newcommand{\myRefl}[1]{\myConst{refl}\myAppParen{#1}}
-\newcommand{\myImplicit}[1]{\noexpand\lbrack #1 \noexpand\rbrack}
+\newcommand{\myImplicit}[1]{\myMathWrap{\lbrack} #1 \myMathWrap{\rbrack}}
 \newcommand{\myInd@char}{\myConst{ind}}
 \newcommand{\myIdInd}[3]{\myInd@char_{\myIdType}\myAppParen{{#1}, {#2}, {#3}}}
-\newcommand{\myPhantom}[1]{\noexpand\phantom{#1}}
+\newcommand{\myPhantom}[1]{\myMathWrap{\phantom}{#1}}
 \newcommand{\myIsContr}[1]{\myConst{IsContr}\myAppParen{#1}}
 \newcommand{\myCenter}{\myConst{center}}
 \newcommand{\myContraction}{\myConst{contr}}
-\newcommand{\myEquiv}{\noexpand\simeq}
+\newcommand{\myEquiv}{\myMathWrap{\simeq}}
 \newcommand{\myEquivFun}{\myConst{fun}}
 \newcommand{\myEquivIsEquiv}{\myConst{is-equiv}}
 \newcommand{\myIdFun}[1]{\myConst{id}\myAppParen{#1}}
-\newcommand{\myFunComp}{\noexpand\circ}
+\newcommand{\myFunComp}{\myMathWrap{\circ}}
 \newcommand{\mySwap}[1]{\myConst{swap}\myAppParen{#1}}
 \newcommand{\myCurry}[1]{\myConst{curry}\myAppParen{#1}}
 \newcommand{\myUncurry}[1]{\myConst{uncurry}\myAppParen{#1}}
@@ -61,22 +61,22 @@
 \newcommand{\myIdSymFun}{\myConst{sym}}
 \newcommand{\myIdInv}{-1}
 \newcommand{\myIdTransFun}{\myConst{trans}}
-\newcommand{\myIdComp}{\noexpand\circ}
+\newcommand{\myIdComp}{\myMathWrap{\circ}}
 \newcommand{\myIdApp}[1]{\myConst{ap}\myAppParen{#1}}
 \newcommand{\myRetract}[2]{\myConst{Retract}\myAppParen{{#1}, {#2}}}
 \newcommand{\myRetractRetraction}{\myConst{retraction}}
 \newcommand{\myRetractSection}{\myConst{section}}
 \newcommand{\myRetractId}{\myConst{r-s}}
-\newcommand{\myRetractRel}{\noexpand\triangleleft}
-\newcommand{\myBiRetractRel}{\noexpand\mathrel{{\noexpand\triangleleft}{\noexpand\triangleright}}}
+\newcommand{\myRetractRel}{\myMathWrap{\triangleleft}}
+\newcommand{\myBiRetractRel}{\myMathWrap{\mathrel}{{\myMathWrap{\triangleleft}}{\myMathWrap{\triangleright}}}}
 \newcommand{\myFiber}[2]{\myConst{Fiber}\myAppParen{{#1}, {#2}}}
 \newcommand{\myFiberElem}{\myConst{elem}}
 \newcommand{\myFiberId}{\myConst{id}}
 \newcommand{\myIsEquiv}[1]{\myConst{IsEquiv}\myAppParen{#1}}
-\newcommand{\myLogEquiv}{\noexpand\leftrightarrow}
+\newcommand{\myLogEquiv}{\myMathWrap{\leftrightarrow}}
 \newcommand{\myLogEquivTo}{\myConst{to}}
 \newcommand{\myLogEquivFrom}{\myConst{from}}
-\newcommand{\myPoint@char}{\noexpand\bullet}
+\newcommand{\myPoint@char}{\myMathWrap{\bullet}}
 \newcommand{\myPointedType}[1]{\myUniverse@char_{\myPoint@char}\myAppParen{#1}}
 \newcommand{\myCarrier@char}{\myConst{Carrier}}
 \newcommand{\myPointedTypeCarrier}{\myCarrier@char}
@@ -89,6 +89,6 @@
 \newcommand{\myReflGraphVertex}{\myConst{Vertex}}
 \newcommand{\myReflGraphEdge}{\myConst{Edge}}
 \newcommand{\myReflGraphRefl}{\myConst{refl}}
-\newcommand{\myHomotopy}{\noexpand\sim}
+\newcommand{\myHomotopy}{\myMathWrap{\sim}}
 \newcommand{\myDiagonal}[1]{\myConst{diag}\myAppParen{A}}
-\newcommand{\myVDots}{\noexpand\vdots}
+\newcommand{\myVDots}{\myMathWrap{\vdots}}
