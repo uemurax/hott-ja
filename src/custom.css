@@ -19,6 +19,10 @@ span.node-id {
     margin-right: 0.25em;
 }
 
+body {
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+}
+
 em {
     font-style: normal;
     font-weight: bold;
