@@ -19,4 +19,68 @@ span.node-id {
     margin-right: 0.25em;
 }
 
+body {
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    font-size: 112.5%;
+    background: #FDF6E3;
+    color: #002B36;
+}
+
+div.bodyandsidetoc {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+main.bodycontainer {
+    max-width: 800px;
+    margin: 40px auto;
+    float: none;
+}
+
+div.sidetoccontainer {
+    position: sticky;
+    top: 0;
+    float: none;
+    border-left: 1px solid silver;
+    border-right: unset;
+    border-radius: 0px 0px 0px 20px ;
+    background: unset;
+}
+
+div.my-sidetoc-nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+nav.sidetoc p a {
+    color: unset;
+}
+
+@media screen and (max-width: 50em) {
+    div.sidetoccontainer {
+        position: static;
+        border-bottom: 0px;
+        border-radius: 0;
+    }
+    nav.topnavigation, nav.botnavigation, span.sidetocthetitle {
+        display: none;
+    }
+}
+
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+div.book, h1, h2, h3, h4, h5, h6, span.paragraph, span.subparagraph, div.sidetoccontainer, nav
+{
+    font-family: unset;
+}
+
 /* ( --- End of project.css --- ) */
