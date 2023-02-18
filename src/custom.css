@@ -48,4 +48,9 @@ em {
     font-weight: bold;
 }
 
+div.book, h1, h2, h3, h4, h5, h6, span.paragraph, span.subparagraph, div.sidetoccontainer, nav
+{
+    font-family: unset;
+}
+
 /* ( --- End of project.css --- ) */
