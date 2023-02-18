@@ -22,6 +22,8 @@ span.node-id {
 body {
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     font-size: 112.5%;
+    background: #FDF6E3;
+    color: #002B36;
 }
 
 div.bodyandsidetoc {
@@ -45,6 +47,7 @@ div.sidetoccontainer {
     border-left: 1px solid silver;
     border-right: unset;
     border-radius: 0px 0px 0px 20px ;
+    background: unset;
 }
 
 div.my-sidetoc-nav {
@@ -53,6 +56,10 @@ div.my-sidetoc-nav {
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
+}
+
+nav.sidetoc p a {
+    color: unset;
 }
 
 @media screen and (max-width: 50em) {
