@@ -7,15 +7,13 @@
   \myInlineMath{A, B \myElemOf \myUniverse{i}}を型とする。
   型\myInlineMath{\myRetract{A}{B} \myElemOf \myUniverse{i}}を
   次のレコード型と定義する。
-  \myDisplayMath{
-    \myArray{l}{
-      \myRetractRetraction \myElemOf B \myFunType A \\
-      \myRetractSection \myElemOf A \myFunType B \\
-      \myRetractId \myElemOf \myDFunType{x \myElemOf A}
+  \begin{itemize}
+    \item \myInlineMath{\myRetractRetraction \myElemOf B \myFunType A}
+    \item \myInlineMath{\myRetractSection \myElemOf A \myFunType B}
+    \item \myInlineMath{\myRetractId \myElemOf \myDFunType{x \myElemOf A}
       {\myRetractRetraction\myAppParen{\myRetractSection\myAppParen{x}}
-        \myIdType x}
-    }
-  }
+        \myIdType x}}
+  \end{itemize}
   \myInlineMath{\myRetract{A}{B}}は
   \myInlineMath{A \myRetractRel B}と書くこともある。
   \myInlineMath{A \myRetractRel B}の要素がある時、

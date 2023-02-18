@@ -1,7 +1,9 @@
-\usepackage{xparse}
+\usepackage{lwarp,xparse}
 
 \newcommand{\myInlineMath}[1]{\edef\myInlineMath@tmp@expression{{#1}}\expandafter\myInlineMath@raw\myInlineMath@tmp@expression}
 
 \NewDocumentCommand{\myDisplayMath}{+m}{\begin{center}\myInlineMath{#1}\end{center}}{}
 
-\newcommand{\myInlineMath@raw}[1]{\(#1\)}
+\newcommand{\myInlineMath@raw}[1]{\InlineClass{my-inline-math}{\(#1\)}}
+
+\newcommand{\myMathWrap}[1]{\noexpand#1}
