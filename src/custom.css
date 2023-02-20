@@ -94,4 +94,13 @@ kbd, span.texttt, p span.texttt {
         monospace;
 }
 
+div.amsthmbodydefinition > ul, div.amsthmproof > ul {
+    margin: 0;
+    padding: 0;
+}
+
+span.amsthmproofname {
+    font-style: normal;
+}
+
 /* ( --- End of project.css --- ) */
