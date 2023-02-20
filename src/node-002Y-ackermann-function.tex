@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002Y}{myExercise}
+  \emph{Ackermann関数}は二変数の関数\myInlineMath{\myAckermann \myElemOf
+    \myNat \myFunType \myNat \myFunType \myNat}で、次のように定義される。
+  \begin{itemize}
+  \item \myInlineMath{\myAckermann\myAppParen{0, n} \myDefEq \myNatSucc{n}}
+  \item \myInlineMath{\myAckermann\myAppParen{\myNatSucc{m}, 0} \myDefEq
+    \myAckermann\myAppParen{m, \myNatSucc{\myNatZero}}}
+  \item \myInlineMath{\myAckermann\myAppParen{\myNatSucc{m}, \myNatSucc{n}}
+    \myDefEq \myAckermann\myAppParen{m,
+      \myAckermann\myAppParen{\myNatSucc{m}, n}}}
+  \end{itemize}
+  Ackermann関数の構成を\myRef{002V}に基づいて正当化せよ。
+  ちなみに、Ackermann関数は原始再帰的でないことが知られているので、
+  \myRef{002X}の特別な場合としては定義できない。
+  関数型を使えることに注意するとよい。
+\end{myBlock}
+
+\end{document}
