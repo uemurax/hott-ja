@@ -1,0 +1,16 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0030}{myRule}
+  \begin{enumerate}
+  \item \myNewTerm[くうがた]{空型}(empty type)
+    \myInlineMath{\myEmptyType \myElemOf \myUniverse{\myLevelZero}}を構成できる。
+  \item \myInlineMath{c \myElemOf \myEmptyType}を要素、
+    \myInlineMath{i}を階数、
+    \myInlineMath{A \myElemOf \myEmptyType \myFunType \myUniverse{i}}を型の族とすると、
+    要素\myInlineMath{\myEmptyInd{c}{A} \myElemOf A\myAppParen{c}}を構成できる。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}

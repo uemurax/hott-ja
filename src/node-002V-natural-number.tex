@@ -1,0 +1,38 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002V}{myRule}
+  \begin{enumerate}
+  \item \myNewTerm[しぜんすうがた]{自然数型}(type of natural numbers)
+    \myInlineMath{\myNat \myElemOf \myUniverse{\myLevelZero}}を構成できる。
+    \myInlineMath{\myNat}の要素を
+    \myNewTerm[しぜんすう]{自然数}(natural number)と呼ぶ。
+  \item 要素\myInlineMath{\myNatZero \myElemOf \myNat}を構成できる。
+  \item 要素\myInlineMath{n \myElemOf \myNat}に対して、
+    要素\myInlineMath{\myNatSucc{n} \myElemOf \myNat}を構成できる。
+  \item \myInlineMath{n \myElemOf \myNat}を要素、
+    \myInlineMath{i}を階数、
+    \myInlineMath{A \myElemOf \myNat \myFunType \myUniverse{i}}を型の族、
+    \myInlineMath{a \myElemOf A\myAppParen{\myNatZero}}を要素、
+    \myInlineMath{f \myElemOf \myDFunType{\myImplicit{x \myElemOf \myNat}}
+      {A\myAppParen{x} \myFunType A\myAppParen{\myNatSucc{x}}}}を関数とすると、
+    要素\myInlineMath{\myNatInd{n}{A}{a}{f} \myElemOf A\myAppParen{n}}を構成できる。
+  \item \myInlineMath{i}を階数、
+    \myInlineMath{A \myElemOf \myNat \myFunType \myUniverse{i}}を型の族、
+    \myInlineMath{a \myElemOf A\myAppParen{\myNatZero}}を要素、
+    \myInlineMath{f \myElemOf \myDFunType{\myImplicit{x \myElemOf \myNat}}
+      {A\myAppParen{x} \myFunType A\myAppParen{\myNatSucc{x}}}}を関数とすると、
+    \myInlineMath{\myNatInd{\myNatZero}{A}{a}{f} \myDefEq a}と定義される。
+  \item \myInlineMath{n \myElemOf \myNat}を要素、
+    \myInlineMath{i}を階数、
+    \myInlineMath{A \myElemOf \myNat \myFunType \myUniverse{i}}を型の族、
+    \myInlineMath{a \myElemOf A\myAppParen{\myNatZero}}を要素、
+    \myInlineMath{f \myElemOf \myDFunType{\myImplicit{x \myElemOf \myNat}}
+      {A\myAppParen{x} \myFunType A\myAppParen{\myNatSucc{x}}}}を関数とすると、
+    \myInlineMath{\myNatInd{\myNatSucc{n}}{A}{a}{f} \myDefEq
+      f\myAppParen{\myNatInd{n}{A}{a}{f}}}と定義される。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}

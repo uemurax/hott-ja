@@ -1,0 +1,17 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002W}{myExample}
+  \myInlineMath{n_{1}, n_{2} \myElemOf \myNat}を要素とする。
+  要素\myInlineMath{\myNatPlusFun{n_{1}}{n_{2}} \myElemOf \myNat}を構成する。
+  自然数の帰納法を使い、
+  \myInlineMath{\myNatPlusFun{\myNatZero}{n_{2}} \myDefEq n_{2}},
+  \myInlineMath{\myNatPlusFun{\myNatSucc{n_{1}}}{n_{2}} \myDefEq
+    \myNatSucc{\myNatPlusFun{n_{1}}{n_{2}}}}と定義する。
+  形式的には\myInlineMath{\myNatPlusFun{n_{1}}{n_{2}} \myDefEq
+    \myNatInd{n_{1}}{\myAbs{x}{\myNat}}
+    {n_{2}}{\myAbs{x y}{\myNatSucc{y}}}}と定義できる。
+\end{myBlock}
+
+\end{document}
