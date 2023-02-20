@@ -4,7 +4,31 @@
 
 \mySection{002T}{自然数}
 
+今までに導入した型だけでは何も面白い数学はできない。
+数学を面白くするには\emph{自然数}の概念は必須であろう。
+自然数の型は\emph{帰納的型}の例として定義される。
+
 \subfile{node-002V-natural-number}
+
+一般に帰納的型はいくつかの\myNewTerm[こうせいし]{構成子}(constructor)によって定められる。
+\myInlineMath{\myNat}の場合、
+\myInlineMath{\myNatZero}と\myInlineMath{\myNatSucc{\myPhantom{n}}}が構成子である。
+これらは\myInlineMath{\myNat}の要素を構成する方法を与える。
+任意の\myInlineMath{\myNat}の要素がこれらの構成子のみを使って構成されることを表すために、
+\myNewTerm[きのうほうげんり]{帰納法原理}(induction principle)を規則として認める。
+\myInlineMath{\myNatInd{\myPhantom{n}}{\myPhantom{A}}{\myPhantom{a}}{\myPhantom{f}}}
+に関する規則は、自然数\myInlineMath{n}を使ってなんらかを構成するには、
+\myInlineMath{\myNatZero}の場合の構成(\myInlineMath{a \myElemOf A\myAppParen{\myNatZero}})と
+\myInlineMath{\myNatSucc{x}}の場合の構成(\myInlineMath{f \myElemOf
+  \myDFunType{\myImplicit{x \myElemOf \myNat}}{A\myAppParen{x}
+    \myFunType A\myAppParen{\myNatSucc{x}}}})を与えれば十分であることを意味する。
+つまり、型理論の中の人にとっては自然数とは
+\myInlineMath{\myNatZero}と\myInlineMath{\myNatSucc{\myPhantom{n}}}のみを使って構成されたものである。
+さらに、\myInlineMath{\myNatSucc{x}}の場合の構成においては、
+\myInlineMath{x}の場合の構成(\myInlineMath{f}の引数\myInlineMath{y \myElemOf
+  A\myAppParen{x}})は既に定義されたと仮定してよい。
+これは\myNewTerm[さいきてきていぎ]{再帰的定義}(recursive definition)を可能にする。
+
 \subfile{node-002W-plus}
 \subfile{node-002X-primitive-recursion}
 \subfile{node-002Y-ackermann-function}
