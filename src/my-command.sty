@@ -98,3 +98,7 @@
 \newcommand{\myIdAppComp}[3]{\myConst{ap-comp}\myAppParen{{#1}, {#2}, {#3}}}
 \newcommand{\myIdAppInv}[2]{\myConst{ap-inv}\myAppParen{{#1}, {#2}}}
 \newcommand{\myTransportComp}[3]{\myConst{transport-comp}\myAppParen{{#1}, {#2}, {#3}}}
+\newcommand{\myNat}{\myMathWrap{\mathbb}{N}}
+\newcommand{\myNatZero}{0}
+\newcommand{\myNatSucc}[1]{\myConst{suc}\myAppParen{#1}}
+\newcommand{\myNatInd}[4]{\myInd@char_{\myNat}\myAppParen{{#1}, {#2}, {#3}, {#4}}}
