@@ -5,10 +5,12 @@
 \begin{myBlock}{000T}{myDefinition}
   \myInlineMath{i}を階数、
   \myInlineMath{A \myElemOf \myUniverse{i}}を型とする。
-  型\myInlineMath{\myIsContr{A} \myElemOf \myUniverse{i}}を
-  \myInlineMath{\myRecordType{\myCenter \myElemOf A,
-      \myContraction \myElemOf \myDFunType{x \myElemOf A}{\myCenter \myIdType x}}}
-  と定義する。
+  型\myInlineMath{\myIsContr{A} \myElemOf \myUniverse{i}}を次のレコード型と定義する。
+  \begin{itemize}
+    \item \myInlineMath{\myCenter \myElemOf A}
+    \item \myInlineMath{\myContraction \myElemOf
+      \myDFunType{x \myElemOf A}{\myCenter \myIdType x}}
+  \end{itemize}
   \myInlineMath{\myIsContr{A}}の要素がある時、
   \myInlineMath{A}は\myNewTerm[かしゅく]{可縮}(contractible)であると言う。
 \end{myBlock}
