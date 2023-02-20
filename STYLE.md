@@ -30,6 +30,8 @@
 
 `src/my-references.bib` に文献情報を置き、 `\myCiteParen`, `\myCiteText`, `\myCiteAuthor` で参照する。これらのマクロはそれぞれ `biblatex` パッケージの `\parencite`, `\textcite`, `\citeauthor` と同等。
 
+プレプリント版のリンクは含める。
+
 # 用語
 
 新しい用語を導入する際は `\myNewTerm[<読み>]{<語>}` を使う。内部で `<語>` を索引に登録するので `\index` は使わない。
