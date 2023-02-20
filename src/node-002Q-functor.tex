@@ -1,0 +1,28 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002Q}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  \begin{enumerate}
+    \item 要素\myInlineMath{a_{1}, a_{2}, a_{3} \myElemOf A}と
+      同一視\myInlineMath{p_{1} \myElemOf a_{1} \myIdType a_{2}}と
+      \myInlineMath{p_{2} \myElemOf a_{2} \myIdType a_{3}}に対して、
+      同一視\myInlineMath{\myIdAppComp{f}{p_{2}}{p_{1}} \myElemOf
+        \myIdApp{f}\myAppParen{p_{2} \myIdComp p_{1}} \myIdType
+        \myIdApp{f}\myAppParen{p_{2}} \myIdComp \myIdApp{f}\myAppParen{p_{1}}}を構成できる。
+      実際、\myInlineMath{\myIdAppComp{f}{p_{2}}{\myRefl{a_{1}}} \myDefEq
+        \myRefl{\myIdApp{f}\myAppParen{p_2}}}と定義すればよい。
+    \item 要素\myInlineMath{a_{1}, a_{2} \myElemOf A}と
+      同一視\myInlineMath{p \myElemOf a_{1} \myIdType a_{2}}に対して、
+      同一視\myInlineMath{\myIdAppInv{f}{p} \myElemOf
+        \myIdApp{f}\myAppParen{p^{\myIdInv}} \myIdType
+        \myIdApp{f}\myAppParen{p}^{\myIdInv}}を構成できる。
+      実際、\myInlineMath{\myIdAppInv{f}{\myRefl{a_{1}}} \myDefEq
+        \myRefl{\myBlank}}と定義すればよい。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
