@@ -1,0 +1,45 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002Z}{myRule}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型とする。
+  \begin{enumerate}
+  \item \myNewTerm[よせき]{余積}(coproduct)
+    \myInlineMath{A \myCoproduct B \myElemOf \myUniverse{i}}を構成できる。
+  \item 要素\myInlineMath{a \myElemOf A}に対して、
+    要素\myInlineMath{\myCoproductInI{a} \myElemOf A \myCoproduct B}を構成できる。
+  \item 要素\myInlineMath{b \myElemOf B}に対して、
+    要素\myInlineMath{\myCoproductInII{b} \myElemOf A \myCoproduct B}を構成できる。
+  \item \myInlineMath{c \myElemOf A \myCoproduct B}を要素、
+    \myInlineMath{j}を階数、
+    \myInlineMath{D \myElemOf A \myCoproduct B \myFunType \myUniverse{j}}を型の族、
+    \myInlineMath{d_{1} \myElemOf \myDFunType{x \myElemOf A}
+      {D\myAppParen{\myCoproductInI{x}}}}を要素、
+    \myInlineMath{d_{2} \myElemOf \myDFunType{y \myElemOf B}
+      {D\myAppParen{\myCoproductInII{y}}}}を要素とすると、
+    要素\myInlineMath{\myCoproductInd{c}{D}{d_{1}}{d_{2}} \myElemOf
+      D\myAppParen{c}}を構成できる。
+  \item \myInlineMath{a \myElemOf A}を要素、
+    \myInlineMath{j}を階数、
+    \myInlineMath{D \myElemOf A \myCoproduct B \myFunType \myUniverse{j}}を型の族、
+    \myInlineMath{d_{1} \myElemOf \myDFunType{x \myElemOf A}
+      {D\myAppParen{\myCoproductInI{x}}}}を要素、
+    \myInlineMath{d_{2} \myElemOf \myDFunType{y \myElemOf B}
+      {D\myAppParen{\myCoproductInII{y}}}}を要素とすると、
+    \myInlineMath{\myCoproductInd{\myCoproductInI{a}}{D}{d_{1}}{d_{2}}
+      \myDefEq d_{1}\myAppParen{a}}と定義される。
+  \item \myInlineMath{b \myElemOf B}を要素、
+    \myInlineMath{j}を階数、
+    \myInlineMath{D \myElemOf A \myCoproduct B \myFunType \myUniverse{j}}を型の族、
+    \myInlineMath{d_{1} \myElemOf \myDFunType{x \myElemOf A}
+      {D\myAppParen{\myCoproductInI{x}}}}を要素、
+    \myInlineMath{d_{2} \myElemOf \myDFunType{y \myElemOf B}
+      {D\myAppParen{\myCoproductInII{y}}}}を要素とすると、
+    \myInlineMath{\myCoproductInd{\myCoproductInII{b}}{D}{d_{1}}{d_{2}}
+      \myDefEq d_{2}\myAppParen{b}}と定義される。
+    \end{enumerate}
+\end{myBlock}
+
+\end{document}
