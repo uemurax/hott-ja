@@ -1,0 +1,20 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002O}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{a_{1}, a_{2}, a_{3}, a_{4} \myElemOf A}を要素、
+  \myInlineMath{p_{1} \myElemOf a_{1} \myIdType a_{2}}と
+  \myInlineMath{p_{2} \myElemOf a_{2} \myIdType a_{3}}と
+  \myInlineMath{p_{3} \myElemOf a_{3} \myIdType a_{4}}を同一視とする。
+  同一視\myInlineMath{\myIdAssoc{p_{3}}{p_{2}}{p_{1}} \myElemOf
+    (p_{3} \myIdComp p_{2}) \myIdComp p_{1} \myIdType
+    p_{3} \myIdComp (p_{2} \myIdComp p_{1})}を構成する。
+  同一視型の帰納法により、
+  \myInlineMath{\myIdAssoc{p_{3}}{p_{2}}{\myRefl{a_{1}}} \myDefEq
+    \myRefl{p_{3} \myIdComp p_{2}}}と定義すればよい。
+\end{myBlock}
+
+\end{document}
