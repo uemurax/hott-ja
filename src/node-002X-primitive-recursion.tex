@@ -1,0 +1,18 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{002X}{myExample}
+  \myInlineMath{n \myElemOf \myNat}を要素、
+  \myInlineMath{f \myElemOf \myNat \myFunType \myNat \myFunType \myNat}を関数とする。
+  \myNewTerm[げんしさいき]{原始再帰}(primitive recursion)による関数
+  \myInlineMath{\myPrimRec{n}{f} \myElemOf \myNat \myFunType \myNat}が
+  \myInlineMath{\myPrimRec{n}{f}\myAppParen{\myNatZero} \myDefEq n}と
+  \myInlineMath{\myPrimRec{n}{f}\myAppParen{\myNatSucc{m}} \myDefEq
+    f\myAppParen{m, \myPrimRec{n}{f}\myAppParen{m}}}で定義される。
+  形式的には\myInlineMath{\myPrimRec{n}{f} \myDefEq \myAbs{m}
+    {\myNatInd{m}{\myAbs{x}{\myNat}}{n}{\myAbs{x y}{f\myAppParen{x, y}}}}}である。
+  よって、いわゆる\emph{原始再帰的関数}はすべて構成できる。
+\end{myBlock}
+
+\end{document}
