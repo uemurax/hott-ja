@@ -7,9 +7,37 @@
 \emph{可縮性}はホモトピー型理論において中心的な役割を果たす概念である。
 
 \subfile{node-000T-contractible}
+
+つまり、型\myInlineMath{A}が可縮であるとは、
+ある要素\myInlineMath{\myCenter \myElemOf A}があり、
+すべての\myInlineMath{A}の要素は\myInlineMath{\myCenter}と同一視されるということである。
+やや非形式的に言うと、\myInlineMath{A}はただ一つの要素を持つということである。
+
 \subfile{node-001O}
+
+型は∞グルーポイドの構造を持っているので、
+ただ一つの要素を持つとはいっても異なる同一視のしかたがある可能性が懸念される。
+次の\myRef{001L}は、可縮性は見た目よりもずっと強い条件で、
+任意の二つの要素の同一視もただ一つだけあることを示す。
+\myRef{001L}を繰り返し使えば、任意に高次の同一視もただ一つだけあることが分かる。
+
 \subfile{node-001L}
+
+型の可縮性は次の\myRef{001N}や\myRef{001K}を使って示される場合が多い。
+
 \subfile{node-001N}
+
+\myRef{001N}は同一視型の帰納法の別表現と考えられる。
+同一視型の帰納法は型の族\myInlineMath{\myAbs{x}{a \myIdType x} \myElemOf
+  A \myFunType \myUniverse{i}}が
+\myInlineMath{\myRefl{a} \myElemOf a \myIdType a}で自由に生成されることを表す。
+これは、対型\myInlineMath{\myDPairType{x \myElemOf A}{a \myIdType x}}が
+\myInlineMath{\myPair{a}{\myRefl{a}}}で自由に生成されると言い換えられる。
+一つの要素で生成される型はその要素しか持たないと期待され、
+\myRef{001N}は実際にそうだと言っている。
+
+\myRef{001K}は可縮性が\emph{レトラクト}で閉じることを主張する。
+
 \subfile{node-001J-retract}
 \subfile{node-001K}
 
