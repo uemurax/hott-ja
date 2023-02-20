@@ -83,4 +83,15 @@ div.book, h1, h2, h3, h4, h5, h6, span.paragraph, span.subparagraph, div.sidetoc
     font-family: unset;
 }
 
+kbd, span.texttt, p span.texttt {
+    font-family: 'DejaVu Sans Mono',
+        'Cascadia Mono',
+        'Consolas',
+        'SF Mono',
+        'Menlo',
+        'Monaco',
+        'Roboto Mono',
+        monospace;
+}
+
 /* ( --- End of project.css --- ) */
