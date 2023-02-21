@@ -1,0 +1,14 @@
+\usepackage{fontspec}
+
+\setmonofont{DejaVu Sans Mono}
+
+% Use some STIX symbols.
+% See https://tex.stackexchange.com/a/331899
+\DeclareFontEncoding{LS2}{}{\@noaccents}
+\DeclareFontSubstitution{LS2}{stix}{m}{n}
+\DeclareSymbolFont{myStix@largesymbols}{LS2}{stixex}{m}{n}
+
+\DeclareMathDelimiter{\lBrace}{\mathopen}{myStix@largesymbols}{"E8}{myStix@largesymbols}{"0E}
+\DeclareMathDelimiter{\rBrace}{\mathclose}{myStix@largesymbols}{"E9}{myStix@largesymbols}{"0F}
+\DeclareMathDelimiter{\lParen}{\mathopen}{myStix@largesymbols}{"DE}{myStix@largesymbols}{"02}
+\DeclareMathDelimiter{\rParen}{\mathclose}{myStix@largesymbols}{"DF}{myStix@largesymbols}{"03}
