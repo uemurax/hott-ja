@@ -1,0 +1,29 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003A}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myNatAlg{i}}を\myInlineMath{\myNat}代数、
+  \myInlineMath{B \myElemOf \myNatAlgOver{A}}を
+  \myInlineMath{A}上の\myInlineMath{\myNat}代数とする。
+  型\myInlineMath{\myNatSection{B} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myNatSectionCarrier \myElemOf
+      \myDFunType{x \myElemOf A \myRecordField \myNatAlgCarrier}
+      {(B \myRecordField \myNatAlgOverCarrier)\myAppParen{x}}}
+  \item \myInlineMath{\myNatSectionZero \myElemOf
+      \myNatSectionCarrier\myAppParen{A \myRecordField \myNatAlgZero}
+      \myIdType B \myRecordField \myNatAlgOverZero}
+  \item \myInlineMath{\myNatSectionSucc \myElemOf
+      \myDFunType{x \myElemOf A \myRecordField \myNatAlgCarrier}
+      {\myNatSectionCarrier\myAppParen{(A \myRecordField \myNatAlgSucc)\myAppParen{x}}
+        \myIdType (B \myRecordField \myNatAlgOverSucc)
+        \myAppParen{\myNatSectionCarrier\myAppParen{x}}}}
+  \end{itemize}
+  \myInlineMath{\myNatSection{B}}の要素を\myInlineMath{B}の
+  \myNewTerm[せつだん]{切断}(section)と呼ぶ。
+\end{myBlock}
+
+\end{document}

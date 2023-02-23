@@ -1,0 +1,23 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003B}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myNatAlg{i}}を\myInlineMath{\myNat}代数とする。
+  \myInlineMath{A}上の\myInlineMath{\myNat}代数
+  \myInlineMath{A^{\myBaseChange}B \myElemOf \myNatAlgOver{A}}を
+  次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myNatAlgOverCarrier \myDefEq
+      \myAbs{x}{B \myRecordField \myNatAlgCarrier}}
+  \item \myInlineMath{\myNatAlgOverZero \myDefEq
+      B \myRecordField \myNatAlgZero}
+  \item \myInlineMath{\myNatAlgOverSucc \myDefEq
+      \myAbs{x y}{(B \myRecordField \myNatAlgSucc)\myAppParen{y}}}
+  \end{itemize}
+  定義から\myInlineMath{\myNatSection{A^{\myBaseChange}B} \myDefEq
+    \myNatHom{A}{B}}である。
+\end{myBlock}
+
+\end{document}

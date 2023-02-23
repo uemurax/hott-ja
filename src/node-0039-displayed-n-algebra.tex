@@ -1,0 +1,26 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0039}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myNatAlg{i}}を\myInlineMath{\myNat}代数とする。
+  型\myInlineMath{\myNatAlgOver{A} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myNatAlgOverCarrier \myElemOf
+      A \myRecordField \myNatAlgCarrier \myFunType \myUniverse{i}}
+  \item \myInlineMath{\myNatAlgOverZero \myElemOf
+      \myNatAlgOverCarrier\myAppParen{A \myRecordField \myNatAlgZero}}
+  \item \myInlineMath{\myNatAlgOverSucc \myElemOf
+      \myDFunType{\myImplicit{x \myElemOf A \myRecordField \myNatAlgCarrier}}
+      {\myNatAlgOverCarrier\myAppParen{x} \myFunType
+        \myNatAlgOverCarrier\myAppParen{(A \myRecordField \myNatAlgSucc)\myAppParen{x}}}}
+  \end{itemize}
+  \myInlineMath{\myNatAlgOver{A}}の要素を
+  \myNewTerm[AじょうのNだいすう]
+  {\protect\myInlineMath{A}上の\protect\myInlineMath{\protect\myNat}代数}
+  (\myInlineMath{\myNat}-algebra over \myInlineMath{A})と呼ぶ。
+\end{myBlock}
+
+\end{document}

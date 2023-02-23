@@ -1,0 +1,48 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003C}{myTheorem}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myNatAlg{i}}を\myInlineMath{\myNat}代数とする。
+  次の型は論理的に同値である。
+  \begin{enumerate}
+  \item \label{003C:0000} \myInlineMath{\myIsInitNatAlg{A}}
+  \item \label{003C:0001} \myInlineMath{\myDFunType{X \myElemOf \myNatAlgOver{A}}
+      {\myIsContr{\myNatSection{X}}}}
+  \end{enumerate}
+  さらに、関数外延性を仮定すると、これらは
+  \myInlineMath{\myDFunType{X \myElemOf \myNatAlgOver{A}}
+    {\myNatSection{X}}}と論理的に同値である。
+\end{myBlock}
+\begin{myProof}
+  \myRefLabel{003C:0001}から\myRefLabel{003C:0000}は
+  \myRef{003B}から従う。
+
+  \myRefLabel{003C:0000}から\myRefLabel{003C:0001}を示す。
+  \myInlineMath{B \myElemOf \myNatAlgOver{A}}とする。
+  仮定より、\myInlineMath{\myNatHom{A}{\myTotalNatAlg{B}}}と
+  \myInlineMath{\myNatHom{A}{A}}は可縮である。
+  よって、\myRef{003F}より、関数
+  \myInlineMath{\myAbs{f}{\myTotalNatAlgProj{B} \myNatHomComp f}
+    \myElemOf \myNatHom{A}{\myTotalNatAlg{B}}
+    \myFunType \myNatHom{A}{A}}は同値である。
+  すると、\myRef{003E}と\myRef{001K}より\myInlineMath{\myNatSection{B}}は可縮である。
+
+  関数外延性を仮定し、
+  \myInlineMath{h \myElemOf \myDFunType{X \myElemOf \myNatAlgOver{A}}
+    {\myNatSection{X}}}を仮定する。
+  \myInlineMath{B \myElemOf \myNatAlgOver{A}}に対して、
+  \myInlineMath{\myNatSection{B}}は可縮であることを示す。
+  \myInlineMath{h\myAppParen{B} \myElemOf \myNatSection{B}}を得る。
+  任意の\myInlineMath{f \myElemOf \myNatSection{B}}に対して、
+  同一視\myInlineMath{p\myAppParen{f} \myElemOf
+    h\myAppParen{B} \myIdType f}を構成すればよい。
+  \myRef{003H}より、
+  \myInlineMath{p'\myAppParen{f} \myElemOf
+    \myNatSection{\myNatSectionId{h\myAppParen{B}}{f}}}を構成すればよいが、
+  \myInlineMath{p'\myAppParen{f} \myDefEq
+    h\myAppParen{\myNatSectionId{h\myAppParen{B}}{f}}}とすればよい。
+\end{myProof}
+
+\end{document}

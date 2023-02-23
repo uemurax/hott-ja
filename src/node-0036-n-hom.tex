@@ -1,0 +1,27 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0036}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myNatAlg{i}}を\myInlineMath{\myNat}代数とする。
+  型\myInlineMath{\myNatHom{A}{B} \myElemOf \myUniverse{i}}
+  を次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myNatHomCarrier \myElemOf
+      A \myRecordField \myNatAlgCarrier \myFunType
+      B \myRecordField \myNatAlgCarrier}
+  \item \myInlineMath{\myNatHomZero \myElemOf
+      \myNatHomCarrier\myAppParen{A \myRecordField \myNatAlgZero}
+      \myIdType B \myRecordField \myNatAlgZero}
+  \item \myInlineMath{\myNatHomSucc \myElemOf
+      \myDFunType{x \myElemOf A \myRecordField \myNatAlgCarrier}
+      {\myNatHomCarrier\myAppParen{(A \myRecordField \myNatAlgSucc)\myAppParen{x}}
+        \myIdType (B \myRecordField \myNatAlgSucc)\myAppParen{\myNatHomCarrier\myAppParen{x}}}}
+  \end{itemize}
+  \myInlineMath{\myNatHom{A}{B}}の要素を\myInlineMath{A}から\myInlineMath{B}への
+  \myNewTerm[Nじゅんどうけいしゃぞう]{\protect\myInlineMath{\protect\myNat}準同型写像}
+  (\myInlineMath{\myNat}-homomorphism)と呼ぶ。
+\end{myBlock}
+
+\end{document}

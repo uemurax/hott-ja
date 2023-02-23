@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003J}{myDefinition}
+  \myInlineMath{i}を階数とする。
+  型\myInlineMath{\myCircleAlg{i} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myCircleAlgCarrier \myElemOf \myUniverse{i}}
+  \item \myInlineMath{\myCircleAlgBase \myElemOf
+    \myCircleAlgCarrier}
+  \item \myInlineMath{\myCircleAlgLoop \myElemOf
+    \myCircleAlgBase \myIdType \myCircleAlgBase}
+  \end{itemize}
+  \myInlineMath{\myCircleAlg{i}}の要素を(階数\myInlineMath{i}の)
+  \myNewTerm[S1だいすう]{\protect\myInlineMath{\protect\myCircle}代数}
+  (\myInlineMath{\myCircle}-algebra)と呼ぶ。
+\end{myBlock}
+
+\end{document}

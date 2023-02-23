@@ -1,0 +1,19 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0035}{myDefinition}
+  \myInlineMath{i}を階数とする。
+  型\myInlineMath{\myNatAlg{i} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myNatAlgCarrier \myElemOf \myUniverse{i}}
+  \item \myInlineMath{\myNatAlgZero \myElemOf \myNatAlgCarrier}
+  \item \myInlineMath{\myNatAlgSucc \myElemOf
+    \myNatAlgCarrier \myFunType \myNatAlgCarrier}
+\end{itemize}
+\myInlineMath{\myNatAlg{i}}の要素を(階数\myInlineMath{i}の)
+\myNewTerm[Nだいすう]{\protect\myInlineMath{\protect\myNat}代数}(\myInlineMath{\myNat}-algebra)と呼ぶ。
+\end{myBlock}
+
+\end{document}

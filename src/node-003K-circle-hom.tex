@@ -1,0 +1,27 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003K}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myCircleAlg{i}}を\myInlineMath{\myCircle}代数とする。
+  型\myInlineMath{\myCircleHom{A}{B} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myCircleHomCarrier \myElemOf
+    A \myRecordField \myCircleAlgCarrier \myFunType
+    B \myRecordField \myCircleAlgCarrier}
+  \item \myInlineMath{\myCircleHomBase \myElemOf
+    \myCircleHomCarrier\myAppParen{A \myRecordField \myCircleAlgBase}
+    \myIdType B \myRecordField \myCircleAlgBase}
+  \item \myInlineMath{\myCircleHomLoop \myElemOf
+    \myCircleHomCarrier\myAppParen{A \myRecordField \myCircleAlgLoop}
+    \myIdTypeOver{\myAbs{x}{x \myIdType x}}{\myCircleHomBase}
+    B \myRecordField \myCircleAlgLoop}
+  \end{itemize}
+  \myInlineMath{\myCircleHom{A}{B}}の要素を
+  \myNewTerm[S1じゅんどうけいしゃぞう]{\protect\myInlineMath{\protect\myCircle}準同型写像}
+  (\myInlineMath{\myCircle}-homomorphism)と呼ぶ。
+\end{myBlock}
+
+\end{document}

@@ -1,0 +1,34 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003D}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myNatAlg{i}}を\myInlineMath{\myNat}代数、
+  \myInlineMath{B \myElemOf \myNatAlgOver{A}}を
+  \myInlineMath{A}上の\myInlineMath{\myNat}代数とする。
+  \myInlineMath{\myNat}代数
+  \myInlineMath{\myTotalNatAlg{B} \myElemOf \myNatAlg{i}}を次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myNatAlgCarrier \myDefEq
+      \myDPairType{x \myElemOf A \myRecordField \myNatAlgCarrier}
+      {(B \myRecordField \myNatAlgOverCarrier)\myAppParen{x}}}
+  \item \myInlineMath{\myNatAlgZero \myDefEq
+      \myPair{A \myRecordField \myNatAlgZero}{B \myRecordField \myNatAlgOverZero}}
+  \item \myInlineMath{\myNatAlgSucc \myDefEq \myAbs{z}
+      {\myPair{(A \myRecordField \myNatAlgSucc)\myAppParen{\myProjI{z}}}
+        {(B \myRecordField \myNatAlgOverSucc)\myAppParen{\myProjII{z}}}}}
+  \end{itemize}
+  また、\myInlineMath{\myNat}準同型写像
+  \myInlineMath{\myTotalNatAlgProj{B} \myElemOf
+    \myNatHom{\myTotalNatAlg{B}}{A}}を次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myNatHomCarrier \myDefEq
+      \myAbs{z}{\myProjI{z}}}
+  \item \myInlineMath{\myNatHomZero \myDefEq \myRefl{\myBlank}}
+  \item \myInlineMath{\myNatHomSucc \myDefEq
+      \myAbs{z}{\myRefl{\myBlank}}}
+  \end{itemize}
+\end{myBlock}
+
+\end{document}

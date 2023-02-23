@@ -112,3 +112,48 @@
 \newcommand{\myCoproductInd}[4]{\myInd@char_{\myCoproduct}\myAppParen{{#1}, {#2}, {#3}, {#4}}}
 \newcommand{\myEmptyType}{\myMathWrap{\mathbf}{0}}
 \newcommand{\myEmptyInd}[2]{\myInd@char_{\myEmptyType}\myAppParen{{#1}, {#2}}}
+\newcommand{\myAlg@char}{\myConst{Alg}}
+\newcommand{\myNatAlg@char}{\myNat\myConst{-}\myAlg@char}
+\newcommand{\myNatAlg}[1]{\myNatAlg@char\myAppParen{#1}}
+\newcommand{\myNatAlgCarrier}{\myCarrier@char}
+\newcommand{\myNatAlgZero}{\myConst{zero}}
+\newcommand{\myNatAlgSucc}{\myConst{suc}}
+\newcommand{\myHom@char}{\myConst{Hom}}
+\newcommand{\myNatHom}[2]{\myHom@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myCarrier@char@small}{\myConst{carrier}}
+\newcommand{\myNatHomCarrier}{\myCarrier@char@small}
+\newcommand{\myNatHomZero}{\myNatAlgZero}
+\newcommand{\myNatHomSucc}{\myNatAlgSucc}
+\newcommand{\myIdNatHom}[1]{\myIdFun{#1}}
+\newcommand{\myNatHomComp}{\myFunComp}
+\newcommand{\myIsInit@char}{\myConst{IsInit}}
+\newcommand{\myIsInitNatAlg}[1]{\myIsInit@char\myAppParen{#1}}
+\newcommand{\mySlice}{/}
+\newcommand{\myNatAlgOver}[1]{\myNatAlg@char_{\mySlice #1}}
+\newcommand{\myNatAlgOverCarrier}{\myNatAlgCarrier}
+\newcommand{\myNatAlgOverZero}{\myNatAlgZero}
+\newcommand{\myNatAlgOverSucc}{\myNatAlgSucc}
+\newcommand{\mySection@char}{\myConst{Sect}}
+\newcommand{\myNatSection}[1]{\mySection@char\myAppParen{#1}}
+\newcommand{\myNatSectionCarrier}{\myNatHomCarrier}
+\newcommand{\myNatSectionZero}{\myNatHomZero}
+\newcommand{\myNatSectionSucc}{\myNatHomSucc}
+\newcommand{\myBaseChange}{{\myMathWrap{\ast}}}
+\newcommand{\myTotal@char}{\myConst{Total}}
+\newcommand{\myTotalNatAlg}[1]{\myTotal@char\myAppParen{#1}}
+\newcommand{\myTotalProj@char}{\myConst{pr}}
+\newcommand{\myTotalNatAlgProj}[1]{\myTotalProj@char\myAppParen{#1}}
+\newcommand{\myId@char}{\myConst{Id}}
+\newcommand{\myNatSectionId}[2]{\myId@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myCircle}{\myMathWrap{\mathbb}{S}^{1}}
+\newcommand{\myCircleAlg@char}{\myCircle\myConst{-}\myAlg@char}
+\newcommand{\myCircleAlg}[1]{\myCircleAlg@char\myAppParen{#1}}
+\newcommand{\myCircleAlgCarrier}{\myCarrier@char}
+\newcommand{\myCircleAlgBase}{\myConst{base}}
+\newcommand{\myCircleAlgLoop}{\myConst{loop}}
+\newcommand{\myCircleHom}[2]{\myHom@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myCircleHomCarrier}{\myCarrier@char@small}
+\newcommand{\myCircleHomBase}{\myCircleAlgBase}
+\newcommand{\myCircleHomLoop}{\myCircleAlgLoop}
+\newcommand{\myIdTypeOver}[2]{=^{#1}_{#2}}
+\newcommand{\myIsInitCircleAlg}[1]{\myIsInit@char\myAppParen{#1}}
