@@ -113,7 +113,8 @@
 \newcommand{\myEmptyType}{\myMathWrap{\mathbf}{0}}
 \newcommand{\myEmptyInd}[2]{\myInd@char_{\myEmptyType}\myAppParen{{#1}, {#2}}}
 \newcommand{\myAlg@char}{\myConst{Alg}}
-\newcommand{\myNatAlg}[1]{\myAlg@char_{\myNat}\myAppParen{#1}}
+\newcommand{\myNatAlg@char}{\myNat\myConst{-}\myAlg@char}
+\newcommand{\myNatAlg}[1]{\myNatAlg@char\myAppParen{#1}}
 \newcommand{\myNatAlgCarrier}{\myCarrier@char}
 \newcommand{\myNatAlgZero}{\myConst{zero}}
 \newcommand{\myNatAlgSucc}{\myConst{suc}}
@@ -127,3 +128,8 @@
 \newcommand{\myNatHomComp}{\myFunComp}
 \newcommand{\myIsInit@char}{\myConst{IsInit}}
 \newcommand{\myIsInitNatAlg}[1]{\myIsInit@char\myAppParen{#1}}
+\newcommand{\mySlice}{/}
+\newcommand{\myNatAlgOver}[1]{\myNatAlg@char_{\mySlice #1}}
+\newcommand{\myNatAlgOverCarrier}{\myNatAlgCarrier}
+\newcommand{\myNatAlgOverZero}{\myNatAlgZero}
+\newcommand{\myNatAlgOverSucc}{\myNatAlgSucc}
