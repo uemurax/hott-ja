@@ -19,6 +19,16 @@
 \begin{myProof}
   \myRefLabel{003C:0001}から\myRefLabel{003C:0000}は
   \myRef{003B}から従う。
+
+  \myRefLabel{003C:0000}から\myRefLabel{003C:0001}を示す。
+  \myInlineMath{B \myElemOf \myNatAlgOver{A}}とする。
+  仮定より、\myInlineMath{\myNatHom{A}{\myTotalNatAlg{B}}}と
+  \myInlineMath{\myNatHom{A}{A}}は可縮である。
+  よって、\myRef{003F}より、関数
+  \myInlineMath{\myAbs{f}{\myTotalNatAlgProj{B} \myNatHomComp f}
+    \myElemOf \myNatHom{A}{\myTotalNatAlg{B}}
+    \myFunType \myNatHom{A}{A}}は同値である。
+  すると、\myRef{003E}と\myRef{001K}より\myInlineMath{\myNatSect{B}}は可縮である。
 \end{myProof}
 
 \end{document}
