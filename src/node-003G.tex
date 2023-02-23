@@ -1,0 +1,27 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003G}{myExample}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myNatAlg{i}}を\myInlineMath{\myNat}代数、
+  \myInlineMath{B \myElemOf \myNatAlgOver{A}}を
+  \myInlineMath{A}上の\myInlineMath{\myNat}代数、
+  \myInlineMath{f, g \myElemOf \myNatSection{B}}を切断とする。
+  \myInlineMath{A}上の\myInlineMath{\myNat}代数
+  \myInlineMath{\myNatSectionId{f}{g} \myElemOf \myNatAlgOver{A}}を次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myNatAlgOverCarrier \myDefEq \myAbs{x}
+      {(f \myRecordField \myNatSectionCarrier)\myAppParen{x}
+        \myIdType (g \myRecordField \myNatSectionCarrier)\myAppParen{x}}}
+  \item \myInlineMath{\myNatAlgOverZero \myDefEq
+      (g \myRecordField \myNatSectionZero)^{\myIdInv}
+      \myIdComp f \myRecordField \myNatSectionZero}
+  \item \myInlineMath{\myNatAlgOverSucc \myDefEq \myAbs{x y}
+      {(g \myRecordField \myNatSectionSucc)\myAppParen{x}^{\myIdInv}
+        \myIdComp (B \myRecordField \myNatAlgOverSucc)\myAppParen{y}
+        \myIdComp (f \myRecordField \myNatSectionSucc)\myAppParen{x}}}
+  \end{itemize}
+\end{myBlock}
+
+\end{document}
