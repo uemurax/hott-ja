@@ -1,0 +1,20 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003Q}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B, C \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf C \myFunType A}と
+  \myInlineMath{g \myElemOf C \myFunType B}を関数、
+  \myInlineMath{D \myElemOf \myPOAlg{f}{g}}を
+  \myInlineMath{\myPO{f}{g}}代数とする。
+  型\myInlineMath{\myIsInitPOAlg{D} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  \myInlineMath{\myDFunType{X \myElemOf \myPOAlg{f}{g}}
+    {\myIsContr{\myPOHom{D}{X}}}}と定義する。
+  \myInlineMath{\myIsInitPOAlg{D}}の要素がある時、\myInlineMath{D}は
+  \myNewTerm[しPOfgだいすう]{始\protect\myInlineMath{\protect\myPO{f}{g}}代数}
+  (initial \myInlineMath{\myPO{f}{g}}-algebra)であると言う。
+\end{myBlock}
+
+\end{document}

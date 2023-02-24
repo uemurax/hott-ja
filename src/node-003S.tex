@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003S}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{C \myElemOf A \myFunType B
+    \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{a_{1}, a_{2} \myElemOf A}と
+  \myInlineMath{b_{1}, b_{2} \myElemOf B}を要素、
+  \myInlineMath{p \myElemOf a_{1} \myIdType a_{2}}と
+  \myInlineMath{q \myElemOf b_{1} \myIdType b_{2}}を同一視、
+  \myInlineMath{c_{1} \myElemOf C\myAppParen{a_{1}, b_{1}}}と
+  \myInlineMath{c_{2} \myElemOf C\myAppParen{a_{2}, b_{2}}}を要素とする。
+  型\myInlineMath{c_{1} \myIdTypeOver{C}{p, q} c_{2} \myElemOf \myUniverse{i}}を
+  \myInlineMath{\myTransport{\myAbs{y}{C\myAppParen{a_{1}, y}}}
+    {q}\myAppParen{c_{1}} \myIdTypeOver{\myAbs{x}{C\myAppParen{x, b_{2}}}}{p}
+    c_{2}}と定義する。
+\end{myBlock}
+
+\end{document}
