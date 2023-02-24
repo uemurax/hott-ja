@@ -1,0 +1,28 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003U}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{P \myElemOf A \myFunType \myUniverse{i}}と
+  \myInlineMath{Q \myElemOf B \myFunType \myUniverse{i}}を型の族とする。
+  型の族\myInlineMath{R \myElemOf A \myCoproduct B \myFunType \myUniverse{i}}を
+  余積の帰納法により
+  \myInlineMath{R\myAppParen{\myCoproductInI{x}} \myDefEq P\myAppParen{x}}と
+  \myInlineMath{R\myAppParen{\myCoproductInII{y}} \myDefEq Q\myAppParen{y}}と定義する。
+  この時、関数
+  \myInlineMath{\myAbs{u}{\myPair{\myCoproductInI{\myProjI{u}}}{\myProjII{u}}}
+    \myElemOf (\myDPairType{x \myElemOf A}{P\myAppParen{x}})
+    \myFunType (\myDPairType{z \myElemOf A \myCoproduct B}{R\myAppParen{z}})}と
+  \myInlineMath{\myAbs{v}{\myPair{\myCoproductInII{\myProjI{v}}}{\myProjII{v}}}
+    \myElemOf (\myDPairType{y \myElemOf B}{Q\myAppParen{y}})
+    \myFunType (\myDPairType{z \myElemOf A \myCoproduct B}{R\myAppParen{z}})}から
+  余積の帰納法で定まる関数
+  \myDisplayMath{(\myDPairType{x \myElemOf A}{P\myAppParen{x}})
+    \myCoproduct (\myDPairType{y \myElemOf B}{Q\myAppParen{y}})
+    \myFunType (\myDPairType{z \myElemOf A \myCoproduct B}
+      {R\myAppParen{z}})}は同値である。
+\end{myBlock}
+
+\end{document}
