@@ -157,3 +157,11 @@
 \newcommand{\myCircleHomLoop}{\myCircleAlgLoop}
 \newcommand{\myIdTypeOver}[2]{=^{#1}_{#2}}
 \newcommand{\myIsInitCircleAlg}[1]{\myIsInit@char\myAppParen{#1}}
+\newcommand{\myPO@char}{\myConst{PO}}
+\newcommand{\myPO}[2]{\myPO@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myPOAlg@char}{\myPO@char\myConst{-}\myAlg@char}
+\newcommand{\myPOAlg}[2]{\myPOAlg@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myPOAlgCarrier}{\myCarrier@char}
+\newcommand{\myPOAlgInI}{\myIn@char_{1}}
+\newcommand{\myPOAlgInII}{\myIn@char_{2}}
+\newcommand{\myPOAlgGlue}{\myConst{glue}}

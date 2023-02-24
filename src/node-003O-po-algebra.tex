@@ -1,0 +1,28 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003O}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B, C \myElemOf \myUniverse{i}}を型
+  \myInlineMath{f \myElemOf C \myFunType A}と
+  \myInlineMath{g \myElemOf C \myFunType B}を関数とする。
+  型\myInlineMath{\myPOAlg{f}{g} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myPOAlgCarrier \myElemOf \myUniverse{i}}
+  \item \myInlineMath{\myPOAlgInI \myElemOf
+      A \myFunType \myPOAlgCarrier}
+  \item \myInlineMath{\myPOAlgInII \myElemOf
+      B \myFunType \myPOAlgCarrier}
+  \item \myInlineMath{\myPOAlgGlue \myElemOf
+      \myDFunType{z \myElemOf C}
+      {\myPOAlgInI\myAppParen{f\myAppParen{z}} \myIdType
+        \myPOAlgInII\myAppParen{g\myAppParen{z}}}}
+  \end{itemize}
+  \myInlineMath{\myPOAlg{f}{g}}の要素を
+  \myNewTerm[POfgだいすう]{\protect\myInlineMath{\protect\myPO{f}{g}}代数}
+  (\myInlineMath{\myPO{f}{g}}-algebra)と呼ぶ。
+\end{myBlock}
+
+\end{document}
