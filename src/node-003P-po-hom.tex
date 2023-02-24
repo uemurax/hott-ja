@@ -1,0 +1,40 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003P}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B, C \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf C \myFunType A}と
+  \myInlineMath{g \myElemOf C \myFunType B}を関数、
+  \myInlineMath{D, E \myElemOf \myPOAlg{f}{g}}を
+  \myInlineMath{\myPO{f}{g}}代数とする。
+  型\myInlineMath{\myPOHom{D}{E} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myPOHomCarrier \myElemOf
+      D \myRecordField \myPOAlgCarrier \myFunType
+      E \myRecordField \myPOAlgCarrier}
+  \item \myInlineMath{\myPOHomInI \myElemOf
+      \myDFunType{x \myElemOf A}
+      {\myPOHomCarrier\myAppParen{(D \myRecordField \myPOAlgInI)\myAppParen{x}}
+        \myIdType (E \myRecordField \myPOAlgInI)\myAppParen{x}}}
+  \item \myInlineMath{\myPOHomInII \myElemOf
+      \myDFunType{y \myElemOf B}
+      {\myPOHomCarrier\myAppParen{(D \myRecordField \myPOAlgInII)\myAppParen{y}}
+        \myIdType (E \myRecordField \myPOAlgInII)\myAppParen{y}}}
+  \item \myInlineMath{\myPOHomGlue \myElemOf
+      \myDFunType{z \myElemOf C}
+      {\myPOHomCarrier\myAppParen{(D \myRecordField \myPOAlgGlue)\myAppParen{z}}
+        \myIdTypeOver{\myAbs{x y}{x \myIdType y}}
+        {\myPOHomInI\myAppParen{f\myAppParen{z}},
+          \myPOHomInII\myAppParen{g\myAppParen{z}}}
+        (E \myRecordField \myPOAlgGlue)\myAppParen{z}}}
+  \end{itemize}
+  \myInlineMath{\myPOHom{D}{E}}の要素を
+  \myInlineMath{D}から\myInlineMath{E}への
+  \myNewTerm[POfgじゅんどうけいしゃぞう]{\protect\myInlineMath{\protect\myPO{f}{g}}準同型写像}
+  (\myInlineMath{\myPO{f}{g}}-homomorphism)と呼ぶ。
+\end{myBlock}
+
+\end{document}
