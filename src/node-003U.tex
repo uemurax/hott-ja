@@ -27,16 +27,19 @@
 \begin{myProof}
   \myInlineMath{\myDPairType{z \myElemOf A \myCoproduct B}
     {R\myAppParen{z}}}が余積の帰納法原理を満たすことを示す。
-  \myInlineMath{T \myElemOf
+  次を仮定する。
+  \begin{itemize}
+  \item 型の族\myInlineMath{T \myElemOf
     (\myDPairType{z \myElemOf A \myCoproduct B}
       {R\myAppParen{z}})
-    \myFunType \myUniverse{i}}を型の族、
-  \myInlineMath{f \myElemOf
+    \myFunType \myUniverse{i}}
+  \item 関数\myInlineMath{f \myElemOf
     \myDFunType{u \myElemOf \myDPairType{x \myElemOf A}{P\myAppParen{x}}}
-    {T\myAppParen{\myPair{\myCoproductInI{\myProjI{u}}}{\myProjII{u}}}}}と
-  \myInlineMath{g \myElemOf
+    {T\myAppParen{\myPair{\myCoproductInI{\myProjI{u}}}{\myProjII{u}}}}}
+  \item 関数\myInlineMath{g \myElemOf
     \myDFunType{v \myElemOf \myDPairType{y \myElemOf B}{Q\myAppParen{y}}}
-    {T\myAppParen{\myPair{\myCoproductInII{\myProjI{v}}}{\myProjII{v}}}}}を関数とする。
+    {T\myAppParen{\myPair{\myCoproductInII{\myProjI{v}}}{\myProjII{v}}}}}
+  \end{itemize}
   カリー化により、関数
   \myInlineMath{h \myElemOf \myDFunType{z \myElemOf A \myCoproduct B}
     {\myDFunType{w \myElemOf R\myAppParen{z}}
