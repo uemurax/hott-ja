@@ -24,5 +24,28 @@
     \myFunType (\myDPairType{z \myElemOf A \myCoproduct B}
       {R\myAppParen{z}})}は同値である。
 \end{myBlock}
+\begin{myProof}
+  \myInlineMath{\myDPairType{z \myElemOf A \myCoproduct B}
+    {R\myAppParen{z}}}が余積の帰納法原理を満たすことを示す。
+  \myInlineMath{T \myElemOf
+    (\myDPairType{z \myElemOf A \myCoproduct B}
+      {R\myAppParen{z}})
+    \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{f \myElemOf
+    \myDFunType{u \myElemOf \myDPairType{x \myElemOf A}{P\myAppParen{x}}}
+    {T\myAppParen{\myPair{\myCoproductInI{\myProjI{u}}}{\myProjII{u}}}}}と
+  \myInlineMath{g \myElemOf
+    \myDFunType{v \myElemOf \myDPairType{y \myElemOf B}{Q\myAppParen{y}}}
+    {T\myAppParen{\myPair{\myCoproductInII{\myProjI{v}}}{\myProjII{v}}}}}を関数とする。
+  カリー化により、関数
+  \myInlineMath{h \myElemOf \myDFunType{z \myElemOf A \myCoproduct B}
+    {\myDFunType{w \myElemOf R\myAppParen{z}}
+      {T\myAppParen{\myPair{z}{w}}}}}を構成することになるが、
+  \myInlineMath{A \myCoproduct B}の帰納法により、
+  \myInlineMath{h\myAppParen{\myCoproductInI{x}} \myDefEq
+    \myAbs{u}{f\myAppParen{\myPair{x}{u}}}}と
+  \myInlineMath{h\myAppParen{\myCoproductInII{y}} \myDefEq
+    \myAbs{v}{g\myAppParen{\myPair{y}{v}}}}と定義すればよい。
+\end{myProof}
 
 \end{document}
