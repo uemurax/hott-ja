@@ -1,0 +1,35 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0041}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型とする。
+  次の型は論理的に同値である。
+  \begin{enumerate}
+  \item \label{0041:0000} \myInlineMath{\myIsProp{A}}
+  \item \label{0041:0001} \myInlineMath{\myDFunType{x_{1}, x_{2} \myElemOf A}
+    {x_{1} \myIdType x_{2}}}
+  \item \label{0041:0002} \myInlineMath{A \myFunType \myIsContr{A}}
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  \myRefLabel{0041:0000}から\myRefLabel{0041:0001}は定義からすぐである。
+
+  \myRefLabel{0041:0001}から\myRefLabel{0041:0002}を示す。
+  \myInlineMath{H \myElemOf \myDFunType{x_{1}, x_{2} \myElemOf A}
+    {x_{1} \myIdType x_{2}}}と
+  \myInlineMath{a \myElemOf A}を仮定する。
+  \myInlineMath{a}があるので、\myInlineMath{A}が可縮であることを示すには
+  \myInlineMath{\myDFunType{x \myElemOf A}{a \myIdType x}}の要素を構成すればよいが、
+  \myInlineMath{\myAbs{x}{H\myAppParen{a, x}}}でよい。
+
+  \myRefLabel{0041:0002}から\myRefLabel{0041:0000}を示す。
+  \myInlineMath{H \myElemOf A \myFunType \myIsContr{A}}と
+  \myInlineMath{x_{1}, x_{2} \myElemOf A}を仮定する。
+  \myInlineMath{x_{1} \myIdType x_{2}}が可縮であることを示すが、
+  \myInlineMath{H\myAppParen{x_{1}} \myElemOf \myIsContr{A}}があるので、
+  \myRef{001L}を適用すればよい。
+\end{myProof}
+
+\end{document}
