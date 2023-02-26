@@ -15,7 +15,8 @@
 \newcommand{\myAppParen}[1]{(#1)}
 \newcommand{\myDots}{\myMathWrap{\dots}}
 \newcommand{\myLevelZero}{0}
-\newcommand{\myLevelSucc}[1]{\myConst{suc}\myAppParen{#1}}
+\newcommand{\mySucc@char}{\myConst{suc}}
+\newcommand{\myLevelSucc}[1]{\mySucc@char\myAppParen{#1}}
 \newcommand{\myBlank}{\myMathWrap{\_}}
 \newcommand{\myFunType}{\myMathWrap{\to}}
 \newcommand{\myAbs}[2]{\myMathWrap{\lambda} {#1} . {#2}}
@@ -101,7 +102,7 @@
 \newcommand{\myTransportComp}[3]{\myConst{transport-comp}\myAppParen{{#1}, {#2}, {#3}}}
 \newcommand{\myNat}{\myMathWrap{\mathbb}{N}}
 \newcommand{\myNatZero}{0}
-\newcommand{\myNatSucc}[1]{\myConst{suc}\myAppParen{#1}}
+\newcommand{\myNatSucc}[1]{\mySucc@char\myAppParen{#1}}
 \newcommand{\myNatInd}[4]{\myInd@char_{\myNat}\myAppParen{{#1}, {#2}, {#3}, {#4}}}
 \newcommand{\myNatPlusFun}[2]{\myConst{plus}\myAppParen{{#1}, {#2}}}
 \newcommand{\myPrimRec}[2]{\myConst{prim-rec}\myAppParen{{#1}, {#2}}}
@@ -118,7 +119,7 @@
 \newcommand{\myNatAlg}[1]{\myNatAlg@char\myAppParen{#1}}
 \newcommand{\myNatAlgCarrier}{\myCarrier@char}
 \newcommand{\myNatAlgZero}{\myConst{zero}}
-\newcommand{\myNatAlgSucc}{\myConst{suc}}
+\newcommand{\myNatAlgSucc}{\mySucc@char}
 \newcommand{\myHom@char}{\myConst{Hom}}
 \newcommand{\myNatHom}[2]{\myHom@char\myAppParen{{#1}, {#2}}}
 \newcommand{\myCarrier@char@small}{\myConst{carrier}}
@@ -174,3 +175,8 @@
 \newcommand{\myIsInitPOAlg}[1]{\myIsInit@char\myAppParen{#1}}
 \newcommand{\myOverline}[1]{\myMathWrap{\overline}{#1}}
 \newcommand{\myPairId}[2]{\myPair@char^{\myIdType}\myAppParen{{#1}, {#2}}}
+\newcommand{\myTruncLevel}{\myConst{TruncLevel}}
+\newcommand{\myTLMinusTwo}{-2}
+\newcommand{\myTLMinusOne}{-1}
+\newcommand{\myTLSucc}[1]{\mySucc@char\myAppParen{#1}}
+\newcommand{\myIsTrunc}[2]{\myConst{IsTrunc}\myAppParen{{#1}, {#2}}}
