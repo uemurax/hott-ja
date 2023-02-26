@@ -1,0 +1,25 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003X}{myDefinition}
+  \begin{enumerate}
+  \item 型\myInlineMath{\myTruncLevel \myElemOf \myUniverse{\myLevelZero}}を
+    \myInlineMath{\myNat \myCoproduct (\myUnitType \myCoproduct \myUnitType)}
+    と定義する。
+  \item 要素\myInlineMath{\myTLMinusTwo \myElemOf \myTruncLevel}を
+    \myInlineMath{\myCoproductInII{\myCoproductInII{\myUnitElem}}}
+    と定義する。
+  \item 要素\myInlineMath{\myTLMinusOne \myElemOf \myTruncLevel}を
+    \myInlineMath{\myCoproductInII{\myCoproductInI{\myUnitElem}}}
+    と定義する。
+  \item 要素\myInlineMath{n \myElemOf \myTruncLevel}に対して、
+    要素\myInlineMath{\myTLSucc{n} \myElemOf \myTruncLevel}を
+    \myInlineMath{\myTLSucc{\myTLMinusTwo} \myDefEq \myTLMinusOne},
+    \myInlineMath{\myTLSucc{\myTLMinusOne} \myDefEq \myCoproductInI{\myNatZero}},
+    \myInlineMath{\myTLSucc{\myCoproductInI{n}} \myDefEq
+      \myCoproductInI{\myNatSucc{n}}}と定義する。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
