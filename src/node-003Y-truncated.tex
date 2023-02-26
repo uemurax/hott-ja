@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003Y}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型とする。
+  \myInlineMath{n \myElemOf \myTruncLevel}に対して、
+  型\myInlineMath{\myIsTrunc{n}{A} \myElemOf \myUniverse{i}}を次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myIsTrunc{\myTLMinusTwo}{A} \myDefEq
+    \myIsContr{A}}
+  \item \myInlineMath{\myIsTrunc{\myTLSucc{n}}{A} \myDefEq
+    \myDFunType{x_{1}, x_{2} \myElemOf A}
+    {\myIsTrunc{n}{x_{1} \myIdType x_{2}}}}
+  \end{itemize}
+  \myInlineMath{\myIsTrunc{n}{A}}の要素がある時、\myInlineMath{A}は
+  \myNewTerm[nかた]{\protect\myInlineMath{n}型}(\myInlineMath{n}-type)
+  である、または\myInlineMath{n}-truncatedであると言う。
+\end{myBlock}
+
+\end{document}
