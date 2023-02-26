@@ -1,0 +1,66 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{003V}{myTheorem}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B, C \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf C \myFunType A}と
+  \myInlineMath{g \myElemOf C \myFunType B}を関数、
+  \myInlineMath{P \myElemOf A \myFunType \myUniverse{i}}と
+  \myInlineMath{Q \myElemOf B \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{e \myElemOf \myDFunType{\myImplicit{z \myElemOf C}}
+    {P\myAppParen{f\myAppParen{z}}} \myEquiv
+     Q\myAppParen{g\myAppParen{z}}}を同値の族、
+  \myInlineMath{D \myElemOf \myPOAlg{f}{g}}を
+  始\myInlineMath{\myPO{f}{g}}代数とする。
+  \begin{enumerate}
+  \item \label{003V:0000} \myInlineMath{\myUniverse{i}}が一価性を満たすと仮定すると、
+    次を構成できる。
+    \begin{itemize}
+    \item 型の族\myInlineMath{G \myElemOf D \myRecordField \myPOAlgCarrier
+      \myFunType \myUniverse{i}}
+    \item 同値の族\myInlineMath{j_{1} \myElemOf
+      \myDFunType{\myImplicit{x \myElemOf A}}
+      {P\myAppParen{x} \myEquiv
+       G\myAppParen{(D \myRecordField \myPOAlgInI)\myAppParen{x}}}}
+    \item 同値の族\myInlineMath{j_{2} \myElemOf
+      \myDFunType{\myImplicit{y \myElemOf B}}
+      {Q\myAppParen{y} \myEquiv
+       G\myAppParen{(D \myRecordField \myPOAlgInII)\myAppParen{y}}}}
+    \item 同一視の族\myInlineMath{θ \myElemOf
+      \myDFunType{\myImplicit{z \myElemOf C}}
+      {\myDFunType{p \myElemOf P\myAppParen{f\myAppParen{z}}}
+       {j_{1}\myAppParen{p} \myIdTypeOver{G}
+       {(D \myRecordField \myPOAlgGlue)\myAppParen{z}}
+       j_{2}\myAppParen{e\myAppParen{p}}}}}
+    \end{itemize}
+  \item \label{003V:0001} \myInlineMath{\myOverline{f} \myElemOf
+      (\myDPairType{z \myElemOf C}{P\myAppParen{f\myAppParen{z}}})
+      \myFunType (\myDPairType{x \myElemOf A}{P\myAppParen{x}})}を
+    \myInlineMath{\myAbs{z}{\myPair{f\myAppParen{\myProjI{z}}}{\myProjII{z}}}}と、
+    \myInlineMath{\myOverline{g} \myElemOf
+      (\myDPairType{z \myElemOf C}{P\myAppParen{f\myAppParen{z}}})
+      \myFunType (\myDPairType{y \myElemOf B}{Q\myAppParen{y}})}を
+    \myInlineMath{\myAbs{z}{\myPair{g\myAppParen{\myProjI{z}}}
+      {e\myAppParen{\myProjII{z}}}}}と定義する。
+    \myRefLabel{003V:0000}のような構造
+    \myInlineMath{(G, j_{1}, j_{2}, θ)}に対して、
+    次の構造は始\myInlineMath{\myPO{\myOverline{f}}{\myOverline{g}}}代数を定める。
+    \begin{itemize}
+    \item \myInlineMath{\myPOAlgCarrier \myDefEq
+      \myDPairType{w \myElemOf D}{G\myAppParen{w}}}
+    \item \myInlineMath{\myPOAlgInI \myDefEq
+      \myAbs{x}{\myPair{(D \myRecordField \myPOAlgInI)\myAppParen{\myProjI{x}}}
+        {j_{1}\myAppParen{\myProjII{x}}}}}
+    \item \myInlineMath{\myPOAlgInII \myDefEq
+      \myAbs{y}{\myPair{(D \myRecordField \myPOAlgInII)\myAppParen{\myProjI{y}}}
+        {j_{2}\myAppParen{\myProjII{y}}}}}
+    \item \myInlineMath{\myPOAlgGlue \myDefEq
+      \myAbs{z}{\myPairId{(D \myRecordField \myPOAlgGlue)\myAppParen{\myProjI{z}}}
+        {θ\myAppParen{\myProjII{z}}}}}
+    \end{itemize}
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}

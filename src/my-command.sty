@@ -23,7 +23,8 @@
 \newcommand{\myUnitType}{\myMathWrap{\mathbf}{1}}
 \newcommand{\myUnitElem}{\myMathWrap{\mathord}{\myMathWrap{\star}}}
 \newcommand{\myDPairType}[2]{\myMathWrap{\sum}_{#1}{#2}}
-\newcommand{\myPair}[2]{\myConst{pair}\myAppParen{{#1}, {#2}}}
+\newcommand{\myPair@char}{\myConst{pair}}
+\newcommand{\myPair}[2]{\myPair@char\myAppParen{{#1}, {#2}}}
 \newcommand{\myProj@char}{\myConst{pr}}
 \newcommand{\myProjI}[1]{\myProj@char_{1}\myAppParen{#1}}
 \newcommand{\myProjII}[1]{\myProj@char_{2}\myAppParen{#1}}
@@ -171,3 +172,5 @@
 \newcommand{\myPOHomInII}{\myPOAlgInII}
 \newcommand{\myPOHomGlue}{\myPOAlgGlue}
 \newcommand{\myIsInitPOAlg}[1]{\myIsInit@char\myAppParen{#1}}
+\newcommand{\myOverline}[1]{\myMathWrap{\overline}{#1}}
+\newcommand{\myPairId}[2]{\myPair@char^{\myIdType}\myAppParen{{#1}, {#2}}}
