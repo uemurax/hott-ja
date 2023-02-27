@@ -28,10 +28,10 @@ body {
 
 div.bodyandsidetoc {
     display: flex;
-    flex-wrap: wrap-reverse;
-    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 main.bodycontainer {
@@ -67,6 +67,10 @@ nav.sidetoc p a {
 }
 
 @media screen and (max-width: 50em) {
+    div.bodyandsidetoc {
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+    }
     div.sidetoccontainer {
         position: static;
         border-bottom: 0px;
