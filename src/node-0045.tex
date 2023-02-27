@@ -1,0 +1,25 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0045}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{r \myElemOf \myRetract{A}{B}}と
+  \myInlineMath{n \myElemOf \myTruncLevel}を要素とする。
+  \myInlineMath{B}が\myInlineMath{n}型ならば、
+  \myInlineMath{A}も\myInlineMath{n}型である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{n}についての帰納法による。
+  \myInlineMath{n}が\myInlineMath{\myTLMinusTwo}の時は
+  \myRef{001K}による。
+
+  \myInlineMath{n}について主張が成り立つと仮定し、
+  \myInlineMath{\myTLSucc{n}}の場合を示す。
+  \myInlineMath{x_{1}, x_{2} \myElemOf A}に対して、
+  \myInlineMath{\myIsTrunc{n}{x_{1} \myIdType x_{2}}}を示せばよいが、
+  \myRef{0046}と帰納法の仮定から直ちに従う。
+\end{myProof}
+
+\end{document}

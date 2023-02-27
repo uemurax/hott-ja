@@ -1,0 +1,35 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0046}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{r \myElemOf \myRetract{A}{B}}を要素、
+  \myInlineMath{a_{1}, a_{2} \myElemOf A}を要素とする。
+  要素\myInlineMath{\myRetractFunctorId{r}{a_{1}}{a_{2}} \myElemOf
+    \myRetract{a_{1} \myIdType a_{2}}
+    {(r \myRecordField \myRetractSection)\myAppParen{a_{1}} \myIdType
+      (r \myRecordField \myRetractSection)\myAppParen{a_{2}}}}を
+  次のように構成する。
+  \myInlineMath{f \myDefEq r \myRecordField \myRetractSection},
+  \myInlineMath{g \myDefEq r \myRecordField \myRetractRetraction},
+  \myInlineMath{p \myDefEq r \myRecordField \myRetractId}と定義する。
+  \myInlineMath{F \myElemOf a_{1} \myIdType a_{2} \myFunType
+    f\myAppParen{a_{1}} \myIdType f\myAppParen{a_{2}}}を
+  \myInlineMath{\myIdApp{f}}と定義する。
+  \myInlineMath{G \myElemOf f\myAppParen{a_{1}} \myIdType f\myAppParen{a_{2}}
+    \myFunType a_{1} \myIdType a_{2}}を
+  \myInlineMath{\myAbs{q}{(p\myAppParen{a_{2}} \myIdComp
+      \myIdApp{g}\myAppParen{q}) \myIdComp
+      p\myAppParen{a_{1}}^{\myIdInv}}}と定義する。
+  \myInlineMath{\myDFunType{z \myElemOf a_{1} \myIdType a_{2}}
+    {G\myAppParen{F\myAppParen{z}} \myIdType z}}を示すには、
+  同一視型の帰納法により\myInlineMath{G\myAppParen{F\myAppParen{\myRefl{a_{1}}}}
+    \myIdType \myRefl{a_{1}}}を示せばよいが、
+  \myInlineMath{G\myAppParen{F\myAppParen{\myRefl{a_{1}}}} \myDefEq
+    p\myAppParen{a_{1}} \myIdComp p\myAppParen{a_{1}}^{\myIdInv}}なので
+  \myRef{0047}を適用すればよい。
+\end{myBlock}
+
+\end{document}
