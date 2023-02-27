@@ -1,0 +1,35 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0048}{myProposition}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{n \myElemOf \myTruncLevel}を要素とする。
+  \myInlineMath{\myDFunType{x \myElemOf A}
+    {\myIsTrunc{n}{B\myAppParen{x}}}}の要素があるならば、
+  \myInlineMath{\myDFunType{x \myElemOf A}
+    {B\myAppParen{x}}}は\myInlineMath{n}型である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{n}についての帰納法による。
+  \myInlineMath{n}が\myInlineMath{\myTLMinusTwo}の場合は
+  \myRef{0029}による。
+
+  \myInlineMath{n}の場合に主張が成り立つと仮定し、
+  \myInlineMath{\myTLSucc{n}}の場合を示す。
+  \myInlineMath{f, g \myElemOf \myDFunType{x \myElemOf A}
+    {B\myAppParen{x}}}に対し、
+  \myInlineMath{f \myIdType g}が\myInlineMath{n}型であることを示す。
+  関数外延性より、同値\myInlineMath{(f \myIdType g) \myEquiv
+    (\myDFunType{x \myElemOf A}
+    {f\myAppParen{x} \myIdType g\myAppParen{x}})}を得る。
+  各\myInlineMath{f\myAppParen{x} \myIdType g\myAppParen{x}}は
+  \myInlineMath{B}についての仮定より\myInlineMath{n}型であるから、
+  帰納法の仮定と\myRef{0045}から
+  \myInlineMath{f \myIdType g}は\myInlineMath{n}型である。
+\end{myProof}
+
+\end{document}
