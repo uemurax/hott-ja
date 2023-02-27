@@ -1,0 +1,30 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0042}{myProposition}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型とすると、
+  型\myInlineMath{\myIsContr{A}}は命題である。
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myRef{0041}より、\myInlineMath{\myIsContr{A} \myFunType
+    \myIsContr{\myIsContr{A}}}を示せばよい。
+  \myInlineMath{A}が可縮であると仮定する。
+  要素\myInlineMath{a_{0} \myElemOf A}を得る。
+  レトラクトの列
+  \myEqReasoning{
+    & \term{\myIsContr{A}} \\
+    \rel{\myRetractRel} & \by{定義} \\
+    & \term{\myDPairType{a \myElemOf A}
+        {\myDFunType{x \myElemOf A}{a \myIdType x}}} \\
+    \rel{\myRetractRel} & \by{\myInlineMath{A}は可縮} \\
+    & \term{\myDFunType{x \myElemOf A}{a_{0} \myIdType x}}
+  }を得て、
+  最後の型は\myRef{001L}と\myRef{0029}より可縮である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}
