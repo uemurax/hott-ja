@@ -19,25 +19,25 @@
 \newcommand{\myLevelSucc}[1]{\mySucc@char\myAppParen{#1}}
 \newcommand{\myBlank}{\myMathWrap{\_}}
 \newcommand{\myFunType}{\myMathWrap{\to}}
-\newcommand{\myAbs}[2]{\myMathWrap{\lambda} {#1} . {#2}}
+\newcommand{\myAbs}[2]{\myMathWrap{\lambda} #1 . #2}
 \newcommand{\myDFunType}[2]{\myMathWrap{\prod}_{#1}#2}
 \newcommand{\myUnitType}{\myMathWrap{\mathbf}{1}}
 \newcommand{\myUnitElem}{\myMathWrap{\mathord}{\myMathWrap{\star}}}
-\newcommand{\myDPairType}[2]{\myMathWrap{\sum}_{#1}{#2}}
+\newcommand{\myDPairType}[2]{\myMathWrap{\sum}_{#1}#2}
 \newcommand{\myPair@char}{\myConst{pair}}
-\newcommand{\myPair}[2]{\myPair@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myPair}[2]{\myPair@char\myAppParen{#1, #2}}
 \newcommand{\myProj@char}{\myConst{pr}}
 \newcommand{\myProjI}[1]{\myProj@char_{1}\myAppParen{#1}}
 \newcommand{\myProjII}[1]{\myProj@char_{2}\myAppParen{#1}}
 \newcommand{\myPairType}{\myMathWrap{\times}}
-\newcommand{\myRecordType}[1]{\myMathWrap{\lBrace} {#1} \myMathWrap{\rBrace}}
-\newcommand{\myRecordElem}[1]{\myMathWrap{\lParen} {#1} \myMathWrap{\rParen}}
+\newcommand{\myRecordType}[1]{\myMathWrap{\lBrace} #1 \myMathWrap{\rBrace}}
+\newcommand{\myRecordElem}[1]{\myMathWrap{\lParen} #1 \myMathWrap{\rParen}}
 \newcommand{\myRecordField}{.}
 \newcommand{\myIdType}{=}
 \newcommand{\myRefl}[1]{\myConst{refl}\myAppParen{#1}}
 \newcommand{\myImplicit}[1]{\myMathWrap{\lbrack} #1 \myMathWrap{\rbrack}}
 \newcommand{\myInd@char}{\myConst{ind}}
-\newcommand{\myIdInd}[3]{\myInd@char_{\myIdType}\myAppParen{{#1}, {#2}, {#3}}}
+\newcommand{\myIdInd}[3]{\myInd@char_{\myIdType}\myAppParen{#1, #2, #3}}
 \newcommand{\myPhantom}[1]{\myMathWrap{\phantom}{#1}}
 \newcommand{\myIsContr}[1]{\myConst{IsContr}\myAppParen{#1}}
 \newcommand{\myCenter}{\myConst{center}}
@@ -53,25 +53,25 @@
 \newcommand{\myPairAssoc@char}{\myConst{assoc}}
 \newcommand{\myPairAssoc}[1]{\myPairAssoc@char\myAppParen{#1}}
 \newcommand{\myPairAssocInv}[1]{\myPairAssoc@char^{-1}\myAppParen{#1}}
-\newcommand{\myPairSym}[2]{\myConst{sym}\myAppParen{{#1}, {#2}}}
+\newcommand{\myPairSym}[2]{\myConst{sym}\myAppParen{#1, #2}}
 \newcommand{\myFunPairDist@char}{\myConst{dist}}
 \newcommand{\myFunPairDist}[1]{\myFunPairDist@char\myAppParen{#1}}
 \newcommand{\myFunPairDistInv}[1]{\myFunPairDist@char^{-1}\myAppParen{#1}}
-\newcommand{\myTransport}[2]{\myConst{transport}\myAppParen{{#1}, {#2}}}
-\newcommand{\myIdExtension}[2]{\myConst{ext}\myAppParen{{#1}, {#2}}}
+\newcommand{\myTransport}[2]{\myConst{transport}\myAppParen{#1, #2}}
+\newcommand{\myIdExtension}[2]{\myConst{ext}\myAppParen{#1, #2}}
 \newcommand{\myIdExtensionSelf}[1]{\myConst{ext-self}\myAppParen{#1}}
 \newcommand{\myIdSymFun}{\myConst{sym}}
 \newcommand{\myIdInv}{-1}
 \newcommand{\myIdTransFun}{\myConst{trans}}
 \newcommand{\myIdComp}{\myMathWrap{\circ}}
 \newcommand{\myIdApp}[1]{\myConst{ap}\myAppParen{#1}}
-\newcommand{\myRetract}[2]{\myConst{Retract}\myAppParen{{#1}, {#2}}}
+\newcommand{\myRetract}[2]{\myConst{Retract}\myAppParen{#1, #2}}
 \newcommand{\myRetractRetraction}{\myConst{retraction}}
 \newcommand{\myRetractSection}{\myConst{section}}
 \newcommand{\myRetractId}{\myConst{r-s}}
 \newcommand{\myRetractRel}{\myMathWrap{\triangleleft}}
 \newcommand{\myBiRetractRel}{\myMathWrap{\mathrel}{{\myMathWrap{\triangleleft}}{\myMathWrap{\triangleright}}}}
-\newcommand{\myFiber}[2]{\myConst{Fiber}\myAppParen{{#1}, {#2}}}
+\newcommand{\myFiber}[2]{\myConst{Fiber}\myAppParen{#1, #2}}
 \newcommand{\myFiberElem}{\myConst{elem}}
 \newcommand{\myFiberId}{\myConst{id}}
 \newcommand{\myIsEquiv}[1]{\myConst{IsEquiv}\myAppParen{#1}}
@@ -94,26 +94,26 @@
 \newcommand{\myHomotopy}{\myMathWrap{\sim}}
 \newcommand{\myDiagonal}[1]{\myConst{diag}\myAppParen{A}}
 \newcommand{\myVDots}{\myMathWrap{\vdots}}
-\newcommand{\myIdAssoc}[3]{\myConst{assoc}\myAppParen{{#1}, {#2}, {#3}}}
+\newcommand{\myIdAssoc}[3]{\myConst{assoc}\myAppParen{#1, #2, #3}}
 \newcommand{\myIdUnitL}[1]{\myConst{unit-l}\myAppParen{#1}}
 \newcommand{\myIdUnitR}[1]{\myConst{unit-r}\myAppParen{#1}}
-\newcommand{\myIdAppComp}[3]{\myConst{ap-comp}\myAppParen{{#1}, {#2}, {#3}}}
-\newcommand{\myIdAppInv}[2]{\myConst{ap-inv}\myAppParen{{#1}, {#2}}}
-\newcommand{\myTransportComp}[3]{\myConst{transport-comp}\myAppParen{{#1}, {#2}, {#3}}}
+\newcommand{\myIdAppComp}[3]{\myConst{ap-comp}\myAppParen{#1, #2, #3}}
+\newcommand{\myIdAppInv}[2]{\myConst{ap-inv}\myAppParen{#1, #2}}
+\newcommand{\myTransportComp}[3]{\myConst{transport-comp}\myAppParen{#1, #2, #3}}
 \newcommand{\myNat}{\myMathWrap{\mathbb}{N}}
 \newcommand{\myNatZero}{0}
 \newcommand{\myNatSucc}[1]{\mySucc@char\myAppParen{#1}}
-\newcommand{\myNatInd}[4]{\myInd@char_{\myNat}\myAppParen{{#1}, {#2}, {#3}, {#4}}}
-\newcommand{\myNatPlusFun}[2]{\myConst{plus}\myAppParen{{#1}, {#2}}}
-\newcommand{\myPrimRec}[2]{\myConst{prim-rec}\myAppParen{{#1}, {#2}}}
+\newcommand{\myNatInd}[4]{\myInd@char_{\myNat}\myAppParen{#1, #2, #3, #4}}
+\newcommand{\myNatPlusFun}[2]{\myConst{plus}\myAppParen{#1, #2}}
+\newcommand{\myPrimRec}[2]{\myConst{prim-rec}\myAppParen{#1, #2}}
 \newcommand{\myAckermann}{\myConst{ack}}
 \newcommand{\myCoproduct}{+}
 \newcommand{\myIn@char}{\myConst{in}}
 \newcommand{\myCoproductInI}[1]{\myIn@char_{1}\myAppParen{#1}}
 \newcommand{\myCoproductInII}[1]{\myIn@char_{2}\myAppParen{#1}}
-\newcommand{\myCoproductInd}[4]{\myInd@char_{\myCoproduct}\myAppParen{{#1}, {#2}, {#3}, {#4}}}
+\newcommand{\myCoproductInd}[4]{\myInd@char_{\myCoproduct}\myAppParen{#1, #2, #3, #4}}
 \newcommand{\myEmptyType}{\myMathWrap{\mathbf}{0}}
-\newcommand{\myEmptyInd}[2]{\myInd@char_{\myEmptyType}\myAppParen{{#1}, {#2}}}
+\newcommand{\myEmptyInd}[2]{\myInd@char_{\myEmptyType}\myAppParen{#1, #2}}
 \newcommand{\myAlg@char}{\myConst{Alg}}
 \newcommand{\myNatAlg@char}{\myNat\myConst{-}\myAlg@char}
 \newcommand{\myNatAlg}[1]{\myNatAlg@char\myAppParen{#1}}
@@ -121,7 +121,7 @@
 \newcommand{\myNatAlgZero}{\myConst{zero}}
 \newcommand{\myNatAlgSucc}{\mySucc@char}
 \newcommand{\myHom@char}{\myConst{Hom}}
-\newcommand{\myNatHom}[2]{\myHom@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myNatHom}[2]{\myHom@char\myAppParen{#1, #2}}
 \newcommand{\myCarrier@char@small}{\myConst{carrier}}
 \newcommand{\myNatHomCarrier}{\myCarrier@char@small}
 \newcommand{\myNatHomZero}{\myNatAlgZero}
@@ -146,44 +146,44 @@
 \newcommand{\myTotalProj@char}{\myConst{pr}}
 \newcommand{\myTotalNatAlgProj}[1]{\myTotalProj@char\myAppParen{#1}}
 \newcommand{\myId@char}{\myConst{Id}}
-\newcommand{\myNatSectionId}[2]{\myId@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myNatSectionId}[2]{\myId@char\myAppParen{#1, #2}}
 \newcommand{\myCircle}{\myMathWrap{\mathbb}{S}^{1}}
 \newcommand{\myCircleAlg@char}{\myCircle\myConst{-}\myAlg@char}
 \newcommand{\myCircleAlg}[1]{\myCircleAlg@char\myAppParen{#1}}
 \newcommand{\myCircleAlgCarrier}{\myCarrier@char}
 \newcommand{\myCircleAlgBase}{\myConst{base}}
 \newcommand{\myCircleAlgLoop}{\myConst{loop}}
-\newcommand{\myCircleHom}[2]{\myHom@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myCircleHom}[2]{\myHom@char\myAppParen{#1, #2}}
 \newcommand{\myCircleHomCarrier}{\myCarrier@char@small}
 \newcommand{\myCircleHomBase}{\myCircleAlgBase}
 \newcommand{\myCircleHomLoop}{\myCircleAlgLoop}
 \newcommand{\myIdTypeOver}[2]{=^{#1}_{#2}}
 \newcommand{\myIsInitCircleAlg}[1]{\myIsInit@char\myAppParen{#1}}
 \newcommand{\myPO@char}{\myConst{PO}}
-\newcommand{\myPO}[2]{\myPO@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myPO}[2]{\myPO@char\myAppParen{#1, #2}}
 \newcommand{\myPOAlg@char}{\myPO@char\myConst{-}\myAlg@char}
-\newcommand{\myPOAlg}[2]{\myPOAlg@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myPOAlg}[2]{\myPOAlg@char\myAppParen{#1, #2}}
 \newcommand{\myPOAlgCarrier}{\myCarrier@char}
 \newcommand{\myPOAlgInI}{\myIn@char_{1}}
 \newcommand{\myPOAlgInII}{\myIn@char_{2}}
 \newcommand{\myPOAlgGlue}{\myConst{glue}}
-\newcommand{\myPOHom}[2]{\myHom@char\myAppParen{{#1}, {#2}}}
+\newcommand{\myPOHom}[2]{\myHom@char\myAppParen{#1, #2}}
 \newcommand{\myPOHomCarrier}{\myCarrier@char@small}
 \newcommand{\myPOHomInI}{\myPOAlgInI}
 \newcommand{\myPOHomInII}{\myPOAlgInII}
 \newcommand{\myPOHomGlue}{\myPOAlgGlue}
 \newcommand{\myIsInitPOAlg}[1]{\myIsInit@char\myAppParen{#1}}
 \newcommand{\myOverline}[1]{\myMathWrap{\overline}{#1}}
-\newcommand{\myPairId}[2]{\myPair@char^{\myIdType}\myAppParen{{#1}, {#2}}}
+\newcommand{\myPairId}[2]{\myPair@char^{\myIdType}\myAppParen{#1, #2}}
 \newcommand{\myTruncLevel}{\myConst{TruncLevel}}
 \newcommand{\myTLMinusTwo}{-2}
 \newcommand{\myTLMinusOne}{-1}
 \newcommand{\myTLSucc}[1]{\mySucc@char\myAppParen{#1}}
-\newcommand{\myIsTrunc}[2]{\myConst{IsTrunc}\myAppParen{{#1}, {#2}}}
+\newcommand{\myIsTrunc}[2]{\myConst{IsTrunc}\myAppParen{#1, #2}}
 \newcommand{\myIsProp}[1]{\myConst{IsProp}\myAppParen{#1}}
-\newcommand{\myRetractFunctorId}[3]{\myConst{ret-id}\myAppParen{{#1}, {#2}, {#3}}}
+\newcommand{\myRetractFunctorId}[3]{\myConst{ret-id}\myAppParen{#1, #2, #3}}
 \newcommand{\myIdSymInvL}[1]{\myConst{inv-l}\myAppParen{#1}}
 \newcommand{\myIdSymInvR}[1]{\myConst{inv-r}\myAppParen{#1}}
-\newcommand{\myPropCompr}[2]{\lbrace {#1} \mid {#2} \rbrace}
+\newcommand{\myPropCompr}[2]{\lbrace #1 \mid #2 \rbrace}
 \newcommand{\myIsSet}[1]{\myConst{IsSet}\myAppParen{#1}}
 \newcommand{\myTLZero}{\myNatZero}
