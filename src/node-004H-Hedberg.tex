@@ -1,0 +1,44 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004H}{myTheorem}[\myCiteText{hedberg1998coherence}]
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{d \myElemOf \myDFunType{x_{1}, x_{2} \myElemOf A}
+    {(x_{1} \myIdType x_{2}) \myCoproduct
+     ((x_{1} \myIdType x_{2}) \myFunType \myEmptyType)}}を関数とすると、
+  \myInlineMath{A}は集合である。
+\end{myBlock}
+\begin{myProof}
+  \myRef{004E}を適用する。
+  \myInlineMath{E \myElemOf A \myFunType A \myFunType
+    \myUniverse{i}}を次のように定義する。
+  \myInlineMath{x_{1}, x_{2} \myElemOf A}に対して、
+  \myInlineMath{T\myAppParen{x_{1}, x_{2}} \myElemOf (x_{1} \myIdType x_{2})
+    \myCoproduct ((x_{1} \myIdType x_{2}) \myFunType \myEmptyType)
+    \myFunType \myUniverse{i}}を
+  \myInlineMath{T\myAppParen{x_{1}, x_{2}, \myCoproductInI{z}} \myDefEq \myUnitType}と
+  \myInlineMath{T\myAppParen{x_{2}, x_{2}, \myCoproductInII{z}} \myDefEq \myEmptyType}で定義する。
+  \myInlineMath{E\myAppParen{x_{1}, x_{2}} \myDefEq
+    T\myAppParen{x_{1}, x_{2}, d\myAppParen{x_{1}, x_{2}}}}と定義する。
+  \myRef{0010}と\myRef{004F}と\myRef{004G}から、
+  各\myInlineMath{E\myAppParen{x_{1}, x_{2}}}は命題である。
+  関数\myInlineMath{g \myElemOf \myDFunType{z \myElemOf \myBlank}
+    {T\myAppParen{x_{1}, x_{2}, z} \myFunType x_{1} \myIdType x_{2}}}を
+  \myInlineMath{g\myAppParen{\myCoproductInI{u}, w} \myDefEq u}と
+  \myInlineMath{g\myAppParen{\myCoproductInII{v}, w} \myDefEq
+    \myEmptyInd{w}{\myBlank}}で定義できるので、
+  関数\myInlineMath{E\myAppParen{x_{1}, x_{2}}
+    \myFunType x_{1} \myIdType x_{2}}を得る。
+  最後に、任意の\myInlineMath{x \myElemOf A}に対して
+  同値\myInlineMath{h \myElemOf \myDFunType{z \myElemOf \myBlank}
+    {T\myAppParen{x, x, z} \myEquiv \myUnitType}}を
+  \myInlineMath{h\myAppParen{\myCoproductInI{u}} \myDefEq \myIdFun{\myUnitType}}と
+  \myInlineMath{h\myAppParen{\myCoproductInII{v}} \myDefEq
+    \myEmptyInd{v\myAppParen{\myRefl{x}}}{\myBlank}}と定義できるので、
+  関数\myInlineMath{\myDFunType{x \myElemOf A}
+    {E\myAppParen{x, x}}}を得る。
+\end{myProof}
+
+\end{document}
