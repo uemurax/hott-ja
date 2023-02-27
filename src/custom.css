@@ -28,10 +28,10 @@ body {
 
 div.bodyandsidetoc {
     display: flex;
-    flex-wrap: wrap-reverse;
-    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 main.bodycontainer {
@@ -46,8 +46,12 @@ div.sidetoccontainer {
     float: none;
     border-left: 1px solid silver;
     border-right: unset;
-    border-radius: 0px 0px 0px 20px ;
+    border-bottom: unset;
+    border-radius: unset;
     background: unset;
+    margin-bottom: unset;
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 div.my-sidetoc-nav {
@@ -63,10 +67,15 @@ nav.sidetoc p a {
 }
 
 @media screen and (max-width: 50em) {
+    div.bodyandsidetoc {
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+    }
     div.sidetoccontainer {
         position: static;
         border-bottom: 0px;
         border-radius: 0;
+        max-height: unset;
     }
     nav.topnavigation, nav.botnavigation, span.sidetocthetitle {
         display: none;
