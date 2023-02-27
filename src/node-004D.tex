@@ -1,0 +1,42 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004D}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型とする。
+  次の型は論理的に同値である。
+  \begin{enumerate}
+  \item \label{004D:0000} \myInlineMath{\myIsSet{A}}
+  \item \label{004D:0001} \myInlineMath{\myDFunType{x \myElemOf A}
+      {\myIsContr{x \myIdType x}}}
+  \item \label{004D:0002} \myInlineMath{\myDFunType{x \myElemOf A}
+      {\myDFunType{z \myElemOf x \myIdType x}
+        {\myRefl{x} \myIdType z}}}
+    (\emph{Axiom K}と呼ばれる)
+  \item \label{004D:0003} \myInlineMath{\myDFunType{x_{1}, x_{2} \myElemOf A}
+      {\myDFunType{z_{1}, z_{2} \myElemOf x_{1} \myIdType x_{2}}
+        {z_{1} \myIdType z_{2}}}}
+    (\emph{uniqueness of identity principle (UIP)}と呼ばれる)
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  \myRefLabel{004D:0000}から\myRefLabel{004D:0001}を示す。
+  \myInlineMath{A}が集合であると仮定する。
+  要素\myInlineMath{x \myElemOf A}に対して、
+  \myInlineMath{x \myIdType x}は命題である。
+  要素\myInlineMath{\myRefl{x} \myElemOf x \myIdType x}があるので、
+  \myRef{0041}より\myInlineMath{x \myIdType x}は可縮である。
+
+  \myRefLabel{004D:0001}から\myRefLabel{004D:0002}は
+  \myRef{001L}による。
+
+  \myRefLabel{004D:0003}において\myInlineMath{z_{1}}について帰納法を使うと
+  \myRefLabel{004D:0002}そのものになるので
+  \myRefLabel{004D:0002}から\myRefLabel{004D:0003}が従う。
+
+  \myRefLabel{004D:0003}から\myRefLabel{004D:0000}は
+  \myRef{0041}による。
+\end{myProof}
+
+\end{document}
