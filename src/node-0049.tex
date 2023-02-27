@@ -1,0 +1,38 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0049}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{c_{1}, c_{2} \myElemOf \myDPairType{x \myElemOf A}
+    {B\myAppParen{x}}}を要素とする。
+  \myInlineMath{\myDFunType{x \myElemOf A}
+    {\myIsProp{B\myAppParen{x}}}}の要素があるならば、
+  同値\myInlineMath{(c_{1} \myIdType c_{2}) \myEquiv
+    (\myProjI{c_{1}} \myIdType \myProjI{c_{2}})}を得る。
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myRef{001S}を適用する。
+  \myInlineMath{\myDPairType{z \myElemOf
+      \myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+    {\myProjI{c_{1}} \myIdType \myProjI{z}}}が可縮であることを示す。
+  レトラクトの列
+  \myEqReasoning{
+    & \term{\myDPairType{z \myElemOf
+        \myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+      {\myProjI{c_{1}} \myIdType \myProjI{z}}} \\
+    \rel{\myRetractRel} & \by{並び換え} \\
+    & \term{\myDPairType{x \myElemOf A}
+      {\myDPairType{w \myElemOf \myProjI{c_{1}} \myIdType x}
+        {B\myAppParen{x}}}} \\
+    \rel{\myRetractRel} & \by{\myRef{001N}} \\
+    & \term{B\myAppParen{\myProjI{c_{1}}}}
+  }を得て、最後の型は要素\myInlineMath{\myProjII{c_{1}}}を持つので
+  仮定と\myRef{0041}より可縮である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}

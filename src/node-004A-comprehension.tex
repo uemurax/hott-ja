@@ -1,0 +1,19 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004A}{myNotation}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族とする。
+  \myInlineMath{\myDFunType{x \myElemOf A}
+    {\myIsProp{B\myAppParen{x}}}}の要素がある時、
+  \myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}のことを
+  \myInlineMath{\myPropCompr{x \myElemOf A}{B\myAppParen{x}}}と書くことがある。
+  さらに、要素\myInlineMath{c \myElemOf \myPropCompr{x \myElemOf A}
+    {B\myAppParen{x}}}に対して、
+  \myInlineMath{\myProjI{\myPhantom{c}}}を省略して
+  \myInlineMath{c}そのものを\myInlineMath{A}の要素とみなすことがある。
+\end{myBlock}
+
+\end{document}
