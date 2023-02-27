@@ -1,0 +1,26 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004F}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{n \myElemOf \myTruncLevel}を要素とする。
+  \myInlineMath{A}が\myInlineMath{n}型ならば、
+  \myInlineMath{A}は\myInlineMath{\myTLSucc{n}}型である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{n}についての帰納法による。
+  \myInlineMath{n}が\myInlineMath{\myTLMinusTwo}の場合は
+  \myRef{001L}による。
+
+  \myInlineMath{n}の場合に主張が成り立つと仮定して、
+  \myInlineMath{\myTLSucc{n}}の場合を示す。
+  \myInlineMath{A}が\myInlineMath{\myTLSucc{n}}型と仮定して、
+  任意の\myInlineMath{x_{1}, x_{2} \myElemOf A}に対して
+  \myInlineMath{x_{1} \myIdType x_{2}}が
+  \myInlineMath{\myTLSucc{n}}型であることを示せばよいが、
+  仮定と帰納法の過程から直ちに従う。
+\end{myProof}
+
+\end{document}

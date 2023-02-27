@@ -20,7 +20,7 @@
 \newcommand{\myBlank}{\myMathWrap{\_}}
 \newcommand{\myFunType}{\myMathWrap{\to}}
 \newcommand{\myAbs}[2]{\myMathWrap{\lambda} {#1} . {#2}}
-\newcommand{\myDFunType}[2]{\myMathWrap{\prod}_{#1}{#2}}
+\newcommand{\myDFunType}[2]{\myMathWrap{\prod}_{#1}#2}
 \newcommand{\myUnitType}{\myMathWrap{\mathbf}{1}}
 \newcommand{\myUnitElem}{\myMathWrap{\mathord}{\myMathWrap{\star}}}
 \newcommand{\myDPairType}[2]{\myMathWrap{\sum}_{#1}{#2}}
@@ -185,3 +185,5 @@
 \newcommand{\myIdSymInvL}[1]{\myConst{inv-l}\myAppParen{#1}}
 \newcommand{\myIdSymInvR}[1]{\myConst{inv-r}\myAppParen{#1}}
 \newcommand{\myPropCompr}[2]{\lbrace {#1} \mid {#2} \rbrace}
+\newcommand{\myIsSet}[1]{\myConst{IsSet}\myAppParen{#1}}
+\newcommand{\myTLZero}{\myNatZero}
