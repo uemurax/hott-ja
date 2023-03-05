@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004P}{myExercise}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  \myInlineMath{f}は同値であると仮定して、次を示せ。
+  \begin{enumerate}
+  \item \label{004P:0000} 任意の型\myInlineMath{X \myElemOf \myUniverse{i}}に対して、
+    関数\myInlineMath{\myAbs{g}{f \myFunComp g} \myElemOf
+      (X \myFunType A) \myFunType (X \myFunType B)}は同値である。
+  \item \label{004P:0001} 任意の型\myInlineMath{Y \myElemOf \myUniverse{i}}に対して、
+    関数\myInlineMath{\myAbs{h}{h \myFunComp f} \myElemOf
+      (B \myFunType Y) \myFunType (A \myFunType Y)}は同値である。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}

@@ -1,0 +1,20 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004O}{myProposition}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とすると、
+  型\myInlineMath{\myIsBiinv{f}}は命題である。
+\end{myBlock}
+\begin{myProof}
+  \myRef{0041}より、
+  \myInlineMath{f}が両側可逆であると仮定して
+  \myInlineMath{\myIsBiinv{f}}が可縮であることを示せばよいが、
+  \myRef{004K}より\myInlineMath{f}は同値なので、
+  \myRef{004P}から\myInlineMath{\myIsBiinv{f}}が可縮であることが従う。
+\end{myProof}
+
+\end{document}
