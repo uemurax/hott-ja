@@ -33,4 +33,27 @@
 
 \subfile{node-000Z-univalence-axiom}
 
+ここで公理という言葉を使ったが、規則と公理に本質的な違いは無い。
+つまり、\myRef{000Z}は
+任意の階数\myInlineMath{i}に対して
+要素\myInlineMath{\myUA{i} \myElemOf \myDFunType{X \myElemOf \myUniverse{i}}
+  {\myIsContr{\myDPairType{Y \myElemOf \myUniverse{i}}
+    {X \myEquiv Y}}}}を構成できるという規則だとも言える。
+本書では、次のように感覚的に使い分ける。
+\begin{enumerate}
+\item 規則は新しい型の種類を導入する際に使われ、
+  その型が何なのかを説明するものである。
+  例えば\myRef{000H}は関数型を説明するための規則だが、
+  \myInlineMath{\myUA{i}}は複合的な型の要素でしかなく、
+  新しい型を説明するものではない。
+\item 規則は導入した後はいつでも暗黙的に使うが、
+  公理を使用する際は明示する。
+  これは公理がどのように使われるかを強調するためというのもあるが、
+  相反する公理を導入する可能性も考えると公理を大域的に仮定するのは良くないというのがある。
+  あるいは、規則は型理論の基盤にあたるものだが
+  公理は選択的な機能だと言ってもよい。
+\end{enumerate}
+ちなみに、公理はある型が可縮であるという形で述べられることが多い。
+よって、\myInlineMath{\myUA{i}}のような名前を付ける必要はない。
+
 \end{document}
