@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004T}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  型\myInlineMath{\myQInv{f} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myQInvInv \myElemOf
+    B \myFunType A}
+  \item \myInlineMath{\myQInvUnit \myElemOf
+    \myQInvInv \myFunComp f \myHomotopy \myIdFun{A}}
+  \item \myInlineMath{\myQInvCounit \myElemOf
+    f \myFunComp \myQInvInv \myHomotopy \myIdFun{B}}
+  \end{itemize}
+\end{myBlock}
+
+\end{document}

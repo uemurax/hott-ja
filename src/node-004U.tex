@@ -1,0 +1,18 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004U}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  型\myInlineMath{\myIsEquiv{f}}と\myInlineMath{\myQInv{f}}は
+  論理的に同値である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{\myIsHAE{f} \myFunType \myQInv{f}}と
+  \myInlineMath{\myQInv{f} \myFunType \myIsBiinv{f}}は容易に示せるので、
+  \myRef{004K}と\myRef{004M}を使う。
+\end{myProof}
+
+\end{document}
