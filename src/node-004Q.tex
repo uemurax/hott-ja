@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004Q}{myCorollary}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  \myInlineMath{f}が同値ならば、
+  \myInlineMath{\myLInv{f}}と\myInlineMath{\myRInv{f}}は可縮である。
+\end{myBlock}
+\begin{myProof}
+  関数外延性から、レトラクト
+  \myInlineMath{\myRInv{f} \myRetractRel
+    \myFiber{\myAbs{(g \myElemOf B \myFunType A)}{f \myFunComp g}}
+      {\myIdFun{B}}}を得て、
+  右辺は\myRef{004P}より可縮である。
+  \myInlineMath{\myLInv{f}}についても同様である。
+\end{myProof}
+
+\end{document}

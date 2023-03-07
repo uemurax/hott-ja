@@ -1,0 +1,42 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004R}{myProposition}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とすると、
+  型\myInlineMath{\myIsHAE{f}}は命題である。
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myRef{0041}より、
+  \myInlineMath{f}が半随伴同値であると仮定して
+  \myInlineMath{\myIsHAE{f}}が可縮であることを示せばよい。
+  \myRef{004M}より\myInlineMath{f}は同値である。
+  レトラクト
+  \myEqReasoning{
+    & \term{\myIsHAE{f}} \\
+    \rel{\myRetractRel} & \by{並び替え} \\
+    & \term{\myDPairType{g \myElemOf B \myFunType A}
+        {\myDPairType{ε \myElemOf f \myFunComp g \myHomotopy \myIdFun{B}}
+          \myDPairType{η \myElemOf g \myFunComp f \myHomotopy \myIdFun{A}}
+            {\myDFunType{x \myElemOf A}
+              {f\myAppParen{η\myAppParen{x}} \myIdType
+                ε\myAppParen{f\myAppParen{x}}}}}} \\
+    \rel{\myRetractRel} & \by{\myRef{004Q}。可縮性から適当な\myInlineMath{g}と\myInlineMath{ε}を取れる。} \\
+    & \term{\myDPairType{η \myElemOf g \myFunComp f \myHomotopy \myIdFun{A}}
+        {\myDFunType{x \myElemOf A}
+          {f\myAppParen{η\myAppParen{x}}
+            \myIdType ε\myAppParen{f\myAppParen{x}}}}} \\
+    \rel{\myRetractRel} & \by{\myRef{001A}} \\
+    & \term{\myDFunType{x \myElemOf A}
+        {\myDPairType{p \myElemOf g\myAppParen{f\myAppParen{x}} \myIdType x}
+          {f\myAppParen{p} \myIdType ε\myAppParen{f\myAppParen{x}}}}}
+  }を得て、
+  最後の型は\myRef{004S}と\myRef{0029}より可縮である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}
