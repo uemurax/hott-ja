@@ -1,0 +1,78 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004W}{myExample}
+  \myInlineMath{i}を階数とする。
+  型\myInlineMath{\myGroupStr{i} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myGroupCarrier \myElemOf \myUniverse{i}}
+  \item \myInlineMath{\myGroupUnit \myElemOf \myGroupCarrier}
+  \item \myInlineMath{\myGroupMul \myElemOf
+    \myGroupCarrier \myFunType \myGroupCarrier \myFunType \myGroupCarrier}
+  \item \myInlineMath{\myGroupInv \myElemOf
+    \myGroupCarrier \myFunType \myGroupCarrier}
+  \end{itemize}
+  要素\myInlineMath{G \myElemOf \myGroupStr{i}}に対して、
+  型\myInlineMath{\myGroupAxiom{G} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myBlank \myElemOf \myIsSet{G \myRecordField \myGroupCarrier}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf G \myRecordField \myGroupCarrier}
+      {G \myRecordField \myGroupMul\myAppParen{G \myRecordField \myGroupUnit, x}
+        \myIdType x}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf G \myRecordField \myGroupCarrier}
+      {G \myRecordField \myGroupMul\myAppParen{x, G \myRecordField \myGroupUnit}
+        \myIdType x}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2}, x_{3} \myElemOf G \myRecordField \myGroupCarrier}
+      {G \myRecordField \myGroupMul\myAppParen{G \myRecordField \myGroupMul\myAppParen{x_{1}, x_{2}}, x_{3}}
+        \myIdType
+        G \myRecordField \myGroupMul\myAppParen{x_{1}, G \myRecordField \myGroupMul\myAppParen{x_{2}, x_{3}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf G \myRecordField \myGroupCarrier}
+      {G \myRecordField \myGroupMul\myAppParen{G \myRecordField \myGroupInv\myAppParen{x}, x}
+        \myIdType G \myRecordField \myGroupUnit}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf G \myRecordField \myGroupCarrier}
+      {G \myRecordField \myGroupMul\myAppParen{x, G \myRecordField \myGroupInv\myAppParen{x}}
+        \myIdType G \myRecordField \myGroupUnit}}
+  \end{itemize}
+  型\myInlineMath{\myGroup{i} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  \myInlineMath{\myDPairType{X \myElemOf \myGroupStr{i}}
+    {\myGroupAxiom{X}}}と定義する。
+  \myInlineMath{\myGroup{i}}の要素を(階数\myInlineMath{i}の)
+  \myNewTerm[ぐん]{群}(group)と呼ぶ。
+  群\myInlineMath{A, B \myElemOf \myGroup{i}}に対して、
+  同一視型\myInlineMath{A \myIdType B}を計算しよう。
+  \myInlineMath{\myGroupAxiom{X}}は命題であることが分かるので、
+  \myRef{0049}より、同値\myInlineMath{(A \myIdType B) \myEquiv
+    (\myProjI{A} \myIdType \myProjI{B})}を得る。
+  \myRef{0028}と同様に、
+  \myInlineMath{\myProjI{A} \myIdType \myProjI{B}}は
+  次のレコード型と同値であることが分かる。
+  \begin{itemize}
+  \item \myInlineMath{f \myElemOf
+    \myProjI{A}\myRecordField\myGroupCarrier \myEquiv
+    \myProjI{B}\myRecordField\myGroupCarrier}
+  \item \myInlineMath{\myBlank \myElemOf
+    f\myAppParen{\myProjI{A}\myRecordField\myGroupUnit}
+    \myIdType \myProjI{B}\myRecordField\myGroupUnit}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2} \myElemOf \myProjI{A}\myRecordField\myGroupCarrier}
+      {f\myAppParen{\myProjI{A}\myRecordField\myGroupMul
+        \myAppParen{x_{1}, x_{2}}} \myIdType
+       \myProjI{B}\myRecordField\myGroupMul\myAppParen{
+        f\myAppParen{x_{1}}, f\myAppParen{x_{2}}
+       }}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf \myProjI{A}\myRecordField\myGroupCarrier}
+      {f\myAppParen{\myProjI{A}\myRecordField\myGroupInv\myAppParen{x}}
+       \myIdType \myProjI{B}\myRecordField\myGroupInv\myAppParen{f\myAppParen{x}}}}
+  \end{itemize}
+\end{myBlock}
+
+\end{document}
