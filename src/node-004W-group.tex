@@ -50,7 +50,7 @@
   同一視型\myInlineMath{A \myIdType B}を計算しよう。
   \myRef{004X}と\myRef{0048}より
   \myInlineMath{\myGroupAxiom{X}}は命題であることが分かるので、
-  \myRef{0049}より、同値\myInlineMath{(A \myIdType B) \myEquiv
+  \myRef{0049}より同値\myInlineMath{(A \myIdType B) \myEquiv
     (\myProjI{A} \myIdType \myProjI{B})}を得る。
   \myRef{0028}と同様に、
   \myInlineMath{\myProjI{A} \myIdType \myProjI{B}}は
@@ -74,6 +74,21 @@
       {f\myAppParen{\myProjI{A}\myRecordField\myGroupInv\myAppParen{x}}
        \myIdType \myProjI{B}\myRecordField\myGroupInv\myAppParen{f\myAppParen{x}}}}
   \end{itemize}
-\end{myBlock}
+  この型の要素はいわゆる\emph{群同型}である。
+  ちなみに、群の間の乗法を保つ関数は単位元と逆元も保つことを示せるので、
+  この型は次のレコード型とも同値である。
+  \begin{itemize}
+    \item \myInlineMath{f \myElemOf
+      \myProjI{A}\myRecordField\myGroupCarrier \myEquiv
+      \myProjI{B}\myRecordField\myGroupCarrier}
+    \item \myInlineMath{\myBlank \myElemOf
+      \myDFunType{x_{1}, x_{2} \myElemOf \myProjI{A}\myRecordField\myGroupCarrier}
+        {f\myAppParen{\myProjI{A}\myRecordField\myGroupMul
+          \myAppParen{x_{1}, x_{2}}} \myIdType
+         \myProjI{B}\myRecordField\myGroupMul\myAppParen{
+          f\myAppParen{x_{1}}, f\myAppParen{x_{2}}
+         }}}
+    \end{itemize}
+  \end{myBlock}
 
 \end{document}
