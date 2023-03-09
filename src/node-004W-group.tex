@@ -74,21 +74,25 @@
       {f\myAppParen{\myProjI{A}\myRecordField\myGroupInv\myAppParen{x}}
        \myIdType \myProjI{B}\myRecordField\myGroupInv\myAppParen{f\myAppParen{x}}}}
   \end{itemize}
-  この型の要素はいわゆる\emph{群同型}である。
+  この型の要素はいわゆる\myNewTerm[ぐんどうけい]{群同型}(group isomorphism)である。
+  \myInlineMath{\myGroupAxiom{G}}の定義で\myInlineMath{\myIsSet{G\myRecordField\myGroupCarrier}}
+  を落とすと、\myInlineMath{\myGroup{i}}の同一視の特徴付けは
+  演算だけでなく残りの構造も保つ同値というものになってしまう。
+
   ちなみに、群の間の乗法を保つ関数は単位元と逆元も保つことを示せるので、
-  この型は次のレコード型とも同値である。
+  群同型の型は次のレコード型とも同値である。
   \begin{itemize}
-    \item \myInlineMath{f \myElemOf
-      \myProjI{A}\myRecordField\myGroupCarrier \myEquiv
-      \myProjI{B}\myRecordField\myGroupCarrier}
-    \item \myInlineMath{\myBlank \myElemOf
-      \myDFunType{x_{1}, x_{2} \myElemOf \myProjI{A}\myRecordField\myGroupCarrier}
-        {f\myAppParen{\myProjI{A}\myRecordField\myGroupMul
-          \myAppParen{x_{1}, x_{2}}} \myIdType
-         \myProjI{B}\myRecordField\myGroupMul\myAppParen{
-          f\myAppParen{x_{1}}, f\myAppParen{x_{2}}
-         }}}
-    \end{itemize}
-  \end{myBlock}
+  \item \myInlineMath{f \myElemOf
+    \myProjI{A}\myRecordField\myGroupCarrier \myEquiv
+    \myProjI{B}\myRecordField\myGroupCarrier}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2} \myElemOf \myProjI{A}\myRecordField\myGroupCarrier}
+      {f\myAppParen{\myProjI{A}\myRecordField\myGroupMul
+        \myAppParen{x_{1}, x_{2}}} \myIdType
+       \myProjI{B}\myRecordField\myGroupMul\myAppParen{
+        f\myAppParen{x_{1}}, f\myAppParen{x_{2}}
+       }}}
+  \end{itemize}
+\end{myBlock}
 
 \end{document}
