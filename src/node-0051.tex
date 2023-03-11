@@ -1,0 +1,43 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0051}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{n \myElemOf \myTruncLevel}を要素とする。
+  次は論理的に同値である。
+  \begin{enumerate}
+  \item \label{0051:0000} \myInlineMath{A}は\myInlineMath{n}型である。
+  \item \label{0051:0001}
+    関数\myInlineMath{\myAbs{x}{\myTruncIn{n}{x}} \myElemOf
+      A \myFunType \myTrunc{n}{A}}は同値である。
+  \item \label{0051:0002}
+    \myInlineMath{A}は\myInlineMath{\myTrunc{n}{A}}のレトラクトである。
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  \myRefLabel{0051:0001}から\myRefLabel{0051:0002}は自明である。
+  \myRefLabel{0051:0002}から\myRefLabel{0051:0000}は
+  \myRefLabel{0045}による。
+
+  \myRefLabel{0051:0000}から\myRefLabel{0051:0001}を示す。
+  \myInlineMath{A}が\myInlineMath{n}型なので、
+  帰納法より
+  関数\myInlineMath{g \myElemOf \myTrunc{n}{A} \myFunType A}であって
+  任意の\myInlineMath{a \myElemOf A}に対して
+  \myInlineMath{g\myAppParen{\myTruncIn{n}{a}} \myDefEq a}
+  となるものを構成できる。
+  特に、\myInlineMath{g \myFunComp (\myAbs{x}{\myTruncIn{n}{x}})
+    \myHomotopy \myIdFun{A}}である。
+  \myInlineMath{(\myAbs{x}{\myTruncIn{n}{x}}) \myFunComp g
+    \myHomotopy \myIdFun{\myTrunc{n}{A}}}を示す。
+  各\myInlineMath{z \myElemOf \myTrunc{n}{A}}に対して
+  \myInlineMath{\myTruncIn{n}{g\myAppParen{c}} \myIdType z}
+  は\myRef{0052}より\myInlineMath{n}型なので、
+  帰納法により\myInlineMath{\myDFunType{x \myElemOf A}
+    {\myTruncIn{n}{g\myAppParen{\myTruncIn{n}{x}}}
+     \myIdType \myTruncIn{n}{x}}}を示せばよいがこれは定義から明らかである。
+\end{myProof}
+
+\end{document}
