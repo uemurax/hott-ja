@@ -1,0 +1,38 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0050}{myRule}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{n \myElemOf \myTruncLevel}を要素とする。
+  \begin{enumerate}
+  \item \myNewTerm[nきりすて]{\protect\myInlineMath{n}切り捨て}
+    (\myInlineMath{n}-truncation) \myInlineMath{\myTrunc{n}{A} \myElemOf \myUniverse{i}}
+    を構成できる。
+  \item \myInlineMath{\myTrunc{n}{A}}は\myInlineMath{n}型である(ことを示す要素を構成できる)。
+  \item 要素\myInlineMath{a \myElemOf A}に対して、
+    要素\myInlineMath{\myTruncIn{n}{a} \myElemOf \myTrunc{n}{A}}
+    を構成できる。
+  \item \myInlineMath{c \myElemOf \myTrunc{n}{A}}を要素、
+    \myInlineMath{j}を階数、
+    \myInlineMath{B \myElemOf \myTrunc{n}{A} \myFunType \myUniverse{j}}を型の族、
+    \myInlineMath{f \myElemOf \myDFunType{x \myElemOf A}
+      {B\myAppParen{\myTruncIn{n}{A}}}}を関数とする。
+    \myInlineMath{\myDFunType{z \myElemOf \myTrunc{n}{A}}
+      {\myIsTrunc{n}{B\myAppParen{z}}}}の要素があるなら、
+    要素\myInlineMath{\myTruncInd{n}{c}{B}{f} \myElemOf
+      B\myAppParen{c}}を構成できる。
+  \item \myInlineMath{a \myElemOf A}を要素、
+    \myInlineMath{j}を階数、
+    \myInlineMath{B \myElemOf \myTrunc{n}{A} \myFunType \myUniverse{j}}を型の族、
+    \myInlineMath{f \myElemOf \myDFunType{x \myElemOf A}
+        {B\myAppParen{\myTruncIn{n}{A}}}}を関数とする。
+    \myInlineMath{\myDFunType{z \myElemOf \myTrunc{n}{A}}
+        {\myIsTrunc{n}{B\myAppParen{z}}}}の要素があるなら、
+    \myInlineMath{\myTruncInd{n}{\myTruncIn{n}{a}}{B}{f}
+      \myDefEq f\myAppParen{a}}を定義される。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
