@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0054}{myProposition}
+  一価性と関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{n \myElemOf \myTruncLevel}を要素とする。
+  \myInlineMath{\myTruncType{n}{i}}は\myInlineMath{\myTLSucc{n}}型である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{A, B \myElemOf \myTruncType{n}{i}}を要素とする。
+  一価性と\myRef{0049}と\myRef{0043}より、
+  同値\myInlineMath{(A \myIdType B) \myEquiv
+    (A\myRecordField\myTruncTypeType \myEquiv
+     B\myRecordField\myTruncTypeType)}を得て、
+  後者は\myRef{0048}と\myRef{004X}と\myRef{0052}から\myInlineMath{n}型である。
+\end{myProof}
+
+
+\end{document}
