@@ -225,3 +225,9 @@
 \newcommand{\myRingOne}{\myConst{one}}
 \newcommand{\myRingAxiom}[1]{\myConst{RingAxiom}\myAppParen{#1}}
 \newcommand{\myRing}[1]{\myConst{Ring}\myAppParen{#1}}
+\newcommand{\myTrunc}[2]{\myMathWrap{\|} #2 \myMathWrap{\|}_{#1}}
+\newcommand{\myTruncIn}[2]{| #2 |_{#1}}
+\newcommand{\myTruncInd}[4]{\myInd@char_{\myConst{Tr}\myAppParen{#1}}\myAppParen{#2, #3, #4}}
+\newcommand{\myTruncType}[2]{\myMathWrap{\langle} #1 \myMathWrap{\rangle}\myConst{-Type}\myAppParen{#2}}
+\newcommand{\myTruncTypeType}{\myConst{Type}}
+\newcommand{\myTruncTypeIsTrunc}{\myConst{is-trunc}}
