@@ -1,0 +1,44 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0058}{myNotation}
+  \myInlineMath{i}を階数とする。
+  \begin{enumerate}
+  \item 型\myInlineMath{\myTop \myElemOf \myUniverse{\myLevelZero}}を
+    \myInlineMath{\myUnitType}と定義する。
+  \item 型\myInlineMath{P, Q \myElemOf \myUniverse{i}}に対して、
+    型\myInlineMath{P \myLogicAnd Q \myElemOf \myUniverse{i}}を
+    \myInlineMath{P \myPairType Q}と定義する。
+  \item 型\myInlineMath{\myBottom \myElemOf \myUniverse{\myLevelZero}}を
+    \myInlineMath{\myEmptyType}と定義する。
+  \item 型\myInlineMath{P, Q \myElemOf \myUniverse{i}}に対して、
+    型\myInlineMath{P \myLogicOr Q \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myTrunc{\myTLMinusOne}{P \myCoproduct Q}}と定義する。
+  \item 型\myInlineMath{P, Q \myElemOf \myUniverse{i}}に対して、
+    型\myInlineMath{P \myLogicImpl Q \myElemOf \myUniverse{i}}を
+    \myInlineMath{P \myFunType Q}と定義する。
+  \item 型\myInlineMath{P \myElemOf \myUniverse{i}}に対して、
+    型\myInlineMath{\myNeg P \myElemOf \myUniverse{i}}を
+    \myInlineMath{P \myLogicImpl \myBottom}と定義する。
+  \item 型\myInlineMath{P, Q \myElemOf \myUniverse{i}}に対して、
+    型\myInlineMath{P \myLogicEquiv Q \myElemOf \myUniverse{i}}を
+    \myInlineMath{(P \myLogicImpl Q) \myLogicAnd (Q \myLogicImpl P)}と定義する。
+  \item 型\myInlineMath{A \myElemOf \myUniverse{i}}と
+    型の族\myInlineMath{P \myElemOf A \myFunType \myUniverse{i}}に対して、
+    型\myInlineMath{\myForall{x \myElemOf A}{P\myAppParen{x}}
+      \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myDFunType{x \myElemOf A}{P\myAppParen{x}}}と定義する。
+  \item 型\myInlineMath{A \myElemOf \myUniverse{i}}と
+    型の族\myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}に対して、
+    型\myInlineMath{\myExists{x \myElemOf A}{B\myAppParen{x}}
+      \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myTrunc{\myTLMinusOne}
+      {\myDPairType{x \myElemOf A}{B\myAppParen{x}}}}と定義する。
+  \end{enumerate}
+  これらの記法は\myInlineMath{P}や\myInlineMath{Q}が
+  命題である場合に使い、
+  結果も命題であることが分かる。
+\end{myBlock}
+
+\end{document}
