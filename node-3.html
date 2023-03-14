@@ -1,0 +1,1623 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="上村 太一" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="ホモトピー型理論についての文書" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>ホモトピー型理論 — 基礎</title>
+<link rel="stylesheet" type="text/css" href="custom.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+  subequations: "0",
+  section: "",
+  loader: {
+    load: ['[tex]/tagformat', '[tex]/textmacros'],
+  },
+  startup: {
+    ready() {
+      // These would be replaced by import commands if you wanted to make
+      // a proper extension.
+      const Configuration = MathJax._.input.tex.Configuration.Configuration;
+      const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+      const Macro = MathJax._.input.tex.Symbol.Macro;
+      const TexError = MathJax._.input.tex.TexError.default;
+      const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+      const expandable = MathJax._.util.Options.expandable;
+
+       // Insert the replacement string into the TeX string, and check
+       // that there haven't been too many maxro substitutions (prevents
+       // infinite loops).
+       const useArgument = (parser, text) => {
+         parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+         parser.i = 0;
+         if (++parser.macroCount > parser.configuration.options.maxMacros) {
+           throw new TexError('MaxMacroSub1',
+           'MathJax maximum macro substitution count exceeded; ' +
+           'is there a recursive macro call?');
+         }
+       }
+
+       // Create the command map for:
+       //     \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+       new CommandMap('Lwarp-macros', {
+         ifstar: 'IfstarFunction',
+         ifnextchar: 'IfnextcharFunction',
+         ifblank: 'IfblankFunction',
+         ifstrequal: 'IfstrequalFunction',
+         gsubstitute: 'GsubstituteFunction',
+         seteqnumber: 'SeteqnumberFunction'
+       }, {
+         // This function implements an ifstar macro.
+         IfstarFunction(parser, name) {
+            const resultstar = parser.GetArgument(name);
+            const resultnostar = parser.GetArgument(name);
+            const star = parser.GetStar();                 // true if there is a *
+            useArgument(parser, star ? resultstar : resultnostar);
+         },
+
+         // This function implements an ifnextchar macro.
+         IfnextcharFunction(parser, name) {
+           let whichchar = parser.GetArgument(name);
+           if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+             // $ syntax highlighting
+             whichchar = String.fromCodePoint(parseInt(whichchar));
+           }
+           const resultnextchar = parser.GetArgument(name);
+           const resultnotnextchar = parser.GetArgument(name);
+           const gotchar = (parser.GetNext() === whichchar);
+           useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+         },
+
+         // This function implements an ifblank macro.
+         IfblankFunction(parser, name) {
+           const blankarg = parser.GetArgument(name);
+           const resultblank = parser.GetArgument(name);
+           const resultnotblank = parser.GetArgument(name);
+           const isblank = (blankarg.trim() == "");
+           useArgument(parser, isblank ? resultblank : resultnotblank);
+         },
+
+         // This function implements an ifstrequal macro.
+         IfstrequalFunction(parser, name) {
+           const strequalfirst = parser.GetArgument(name);
+           const strequalsecond = parser.GetArgument(name);
+           const resultequal = parser.GetArgument(name);
+           const resultnotequal = parser.GetArgument(name);
+           const isequal = (strequalfirst == strequalsecond);
+           useArgument(parser, isequal ? resultequal : resultnotequal);
+         },
+
+         // This function implements a gsub macro.
+         GsubstituteFunction(parser, name) {
+           const gsubfirst = parser.GetArgument(name);
+           const gsubsecond = parser.GetArgument(name);
+           const gsubthird = parser.GetArgument(name);
+           let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
+           useArgument(parser, gsubresult);
+         },
+
+         // This function modifies the equation numbers.
+         SeteqnumberFunction(parser, name) {
+             // Get the macro parameters
+             const star = parser.GetStar();                  // true if there is a *
+             const optBrackets = parser.GetBrackets(name);   // contents of optional brackets
+             const newsubequations = parser.GetArgument(name); // the subequations argument
+             const neweqsection = parser.GetArgument(name); // the eq section argument
+             const neweqnumber = parser.GetArgument(name);   // the eq number argument
+             MathJax.config.subequations=newsubequations ;   // a string with boolean meaning
+             MathJax.config.section=neweqsection ;           // a string with numeric meaning
+             parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+         }
+
+       });
+
+       // Create the Lwarp-macros package
+       Configuration.create('Lwarp-macros', {
+         handler: {macro: ['Lwarp-macros']}
+       });
+
+       MathJax.startup.defaultReady();
+
+       // For forward references:
+       MathJax.startup.input[0].preFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             MathJax.config.subequations = math.inputData.recompile.subequations;
+             MathJax.config.section = math.inputData.recompile.section;
+         }
+       });
+       MathJax.startup.input[0].postFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             math.inputData.recompile.subequations = MathJax.config.subequations;
+             math.inputData.recompile.section = MathJax.config.section;
+         }
+       });
+
+         // For \left, \right with unicode-math:
+         const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+         const {Symbol} = MathJax._.input.tex.Symbol;
+         const {MapHandler} = MathJax._.input.tex.MapHandler;
+         const delimiter = MapHandler.getMap('delimiter');
+         delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+         delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+         delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+         delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+         delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+         delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+         delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+         delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+         delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+         delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+         delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+         delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+         delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+         delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+         delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+         delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+         delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+         delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+         delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+         delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+         delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+         delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+         delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+         delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+         delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+         delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+         delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+         delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+         delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+         delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+         delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+         delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+         delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+         delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+         delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+         delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+         delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+         delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+         delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+   }     // ready
+ },      // startup
+
+ tex: {
+   packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+   tags: "ams",
+        tagformat: {
+            number: function (n) {
+                if(MathJax.config.subequations==0)
+                     return(MathJax.config.section + n);
+                else
+                     return(MathJax.config.section + String.fromCharCode(96+n));
+            },
+        },
+ }
+}
+</script>
+
+<script
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="index-autopage-11"></a>
+<nav class="topnavigation"><a href="index.html" class="linkhome" >
+ホーム</a></nav>
+
+
+
+<div class="bodyandsidetoc">
+<div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">ホモトピー型理論</span>
+</p>
+
+
+<div class="my-sidetoc-nav">
+
+
+<div class="my-sidetoc-prev">
+
+<p>
+<a href="node-2.html" class="linkhome" >
+前</a>
+</p>
+</div>
+
+
+<div class="my-sidetoc-next">
+
+<p>
+<a href="node-4.html" class="linkhome" >
+次</a>
+</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="index.html" class="linkhome" >
+ホーム</a>
+</p>
+
+<p>
+<a href="node-1.html#autosec-7" class="tocchapter" >
+<span class="sectionnumber">第 1 章</span>&#x2003; はじめに<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0000]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-2.html#autosec-10" class="tocsection" >
+<span class="sectionnumber">1.1</span>&#x2003; 識別子<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000R]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-3.html#autosec-13" class="tocpart" >
+<span class="sectionnumber">第 I 部</span>&#x2003; 基礎<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0006]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-4.html#autosec-16" class="tocchapter" >
+<span class="sectionnumber">第 2 章</span>&#x2003; 型理論<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0001]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-5.html#autosec-19" class="tocsection" >
+<span class="sectionnumber">2.1</span>&#x2003; 宇宙<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0009]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-6.html#autosec-26" class="tocsection" >
+<span class="sectionnumber">2.2</span>&#x2003; 関数型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000A]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-7.html#autosec-38" class="tocsection" >
+<span class="sectionnumber">2.3</span>&#x2003; レコード型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000B]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-8.html#autosec-58" class="tocsection" >
+<span class="sectionnumber">2.4</span>&#x2003; 同一視型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000C]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-9.html#autosec-69" class="tocsubsection" >
+<span class="sectionnumber">2.4.1</span>&#x2003; 高次グルーポイド構造<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[002N]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-10.html#autosec-80" class="tocsection" >
+<span class="sectionnumber">2.5</span>&#x2003; 自然数<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[002T]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-11.html#autosec-87" class="tocsection" >
+<span class="sectionnumber">2.6</span>&#x2003; 有限余積<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[002U]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-12.html#autosec-92" class="tocchapter" >
+<span class="sectionnumber">第 3 章</span>&#x2003; 一価性公理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0002]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-13.html#autosec-95" class="tocsection" >
+<span class="sectionnumber">3.1</span>&#x2003; 可縮性<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000S]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-14.html#autosec-110" class="tocsection" >
+<span class="sectionnumber">3.2</span>&#x2003; 同一視型の基本定理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[001R]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-15.html#autosec-132" class="tocsection" >
+<span class="sectionnumber">3.3</span>&#x2003; 一価性<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000X]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-16.html#autosec-139" class="tocsection" >
+<span class="sectionnumber">3.4</span>&#x2003; 関数外延性<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[001Y]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-17.html#autosec-146" class="tocsubsection" >
+<span class="sectionnumber">3.4.1</span>&#x2003; 一価性から関数外延性を導く<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0021]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-18.html#autosec-149" class="tocsection" >
+<span class="sectionnumber">3.5</span>&#x2003; 構造同一原理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0022]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-19.html#autosec-162" class="tocsection" >
+<span class="sectionnumber">3.6</span>&#x2003; 同値<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000U]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-20.html#autosec-188" class="tocsubsection" >
+<span class="sectionnumber">3.6.1</span>&#x2003; 他の同値の概念<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004I]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-21.html#autosec-199" class="tocchapter" >
+<span class="sectionnumber">第 4 章</span>&#x2003; 高次帰納的型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0003]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-22.html#autosec-202" class="tocsection" >
+<span class="sectionnumber">4.1</span>&#x2003; 始代数<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0031]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-23.html#autosec-220" class="tocsection" >
+<span class="sectionnumber">4.2</span>&#x2003; 円周<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0032]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-24.html#autosec-228" class="tocsection" >
+<span class="sectionnumber">4.3</span>&#x2003; 押し出し<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0033]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-25.html#autosec-236" class="tocsection" >
+<span class="sectionnumber">4.4</span>&#x2003; 降下性<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0034]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-26.html#autosec-246" class="tocchapter" >
+<span class="sectionnumber">第 5 章</span>&#x2003;\(n\) 型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[003W]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-27.html#autosec-263" class="tocsection" >
+<span class="sectionnumber">5.1</span>&#x2003; 命題<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[003Z]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-28.html#autosec-284" class="tocsubsection" >
+<span class="sectionnumber">5.1.1</span>&#x2003; 同値の概念<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004N]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-29.html#autosec-298" class="tocsection" >
+<span class="sectionnumber">5.2</span>&#x2003; 集合<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004B]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-30.html#autosec-308" class="tocsection" >
+<span class="sectionnumber">5.3</span>&#x2003; 切り詰め<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004Z]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-31.html#autosec-319" class="tocsection" >
+<span class="sectionnumber">5.4</span>&#x2003; 述語論理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0057]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-32.html#autosec-325" class="tocsection" >
+<span class="sectionnumber">5.5</span>&#x2003; 構造同一原理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004V]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-33.html#autosec-330" class="tocpart" >
+<span class="sectionnumber">第 II 部</span>&#x2003; 数学<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0007]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-34.html#autosec-333" class="tocchapter" >
+<span class="sectionnumber">第 6 章</span>&#x2003; ホモトピー論<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0005]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-35.html#autosec-336" class="tocchapter" >
+<span class="sectionnumber">第 7 章</span>&#x2003; 圏論<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0004]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-36.html#autosec-339" class="tocchapter" >
+参考文献</a>
+</p>
+
+
+<p>
+<a href="node-37.html#autosec-342" class="tocchapter" >
+索引</a>
+</p>
+
+
+<p>
+<a href="node-38.html#autosec-346" class="tocchapter" >
+識別子一覧</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+<h1>ホモトピー型理論</h1>
+
+<!--MathJax customizations:-->
+
+
+<div class="hidden">
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+\(\require {mathtools}\)
+
+\(\newenvironment {crampedsubarray}[1]{}{}\)
+
+\(\newcommand {\smashoperator }[2][]{#2\limits }\)
+
+\(\newcommand {\SwapAboveDisplaySkip }{}\)
+
+\(\newcommand {\LaTeXunderbrace }[1]{\underbrace {#1}}\)
+
+\(\newcommand {\LaTeXoverbrace }[1]{\overbrace {#1}}\)
+
+\(\newcommand {\LWRmultlined }[1][]{\begin {multline*}}\)
+
+\(\newenvironment {multlined}[1][]{\LWRmultlined }{\end {multline*}}\)
+
+\(\let \LWRorigshoveleft \shoveleft \)
+
+\(\renewcommand {\shoveleft }[1][]{\LWRorigshoveleft }\)
+
+\(\let \LWRorigshoveright \shoveright \)
+
+\(\renewcommand {\shoveright }[1][]{\LWRorigshoveright }\)
+
+\(\newcommand {\shortintertext }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\vcentcolon }{\mathrel {\unicode {x2236}}}\)
+
+\(\let \symnormal \mathit \)
+
+\(\let \symliteral \mathrm \)
+
+\(\let \symbb \mathbb \)
+
+\(\let \symbbit \mathbb \)
+
+\(\let \symcal \mathcal \)
+
+\(\let \symscr \mathscr \)
+
+\(\let \symfrak \mathfrak \)
+
+\(\let \symsfup \mathsf \)
+
+\(\let \symsfit \mathit \)
+
+\(\let \symbfsf \mathbf \)
+
+\(\let \symbfup \mathbf \)
+
+\(\newcommand {\symbfit }[1]{\boldsymbol {#1}}\)
+
+\(\let \symbfcal \mathcal \)
+
+\(\let \symbfscr \mathscr \)
+
+\(\let \symbffrak \mathfrak \)
+
+\(\let \symbfsfup \mathbf \)
+
+\(\newcommand {\symbfsfit }[1]{\boldsymbol {#1}}\)
+
+\(\let \symup \mathrm \)
+
+\(\let \symbf \mathbf \)
+
+\(\let \symit \mathit \)
+
+\(\let \symtt \mathtt \)
+
+\(\let \symbffrac \mathbffrac \)
+
+\(\newcommand {\mathfence }[1]{\mathord {#1}}\)
+
+\(\newcommand {\mathover }[1]{#1}\)
+
+\(\newcommand {\mathunder }[1]{#1}\)
+
+\(\newcommand {\mathaccent }[1]{#1}\)
+
+\(\newcommand {\mathbotaccent }[1]{#1}\)
+
+\(\newcommand {\mathalpha }[1]{\mathord {#1}}\)
+
+\(\def\upAlpha{\unicode{x0391}}\)
+
+\(\def\upBeta{\unicode{x0392}}\)
+
+\(\def\upGamma{\unicode{x0393}}\)
+
+\(\def\upDigamma{\unicode{x03DC}}\)
+
+\(\def\upDelta{\unicode{x0394}}\)
+
+\(\def\upEpsilon{\unicode{x0395}}\)
+
+\(\def\upZeta{\unicode{x0396}}\)
+
+\(\def\upEta{\unicode{x0397}}\)
+
+\(\def\upTheta{\unicode{x0398}}\)
+
+\(\def\upVartheta{\unicode{x03F4}}\)
+
+\(\def\upIota{\unicode{x0399}}\)
+
+\(\def\upKappa{\unicode{x039A}}\)
+
+\(\def\upLambda{\unicode{x039B}}\)
+
+\(\def\upMu{\unicode{x039C}}\)
+
+\(\def\upNu{\unicode{x039D}}\)
+
+\(\def\upXi{\unicode{x039E}}\)
+
+\(\def\upOmicron{\unicode{x039F}}\)
+
+\(\def\upPi{\unicode{x03A0}}\)
+
+\(\def\upVarpi{\unicode{x03D6}}\)
+
+\(\def\upRho{\unicode{x03A1}}\)
+
+\(\def\upSigma{\unicode{x03A3}}\)
+
+\(\def\upTau{\unicode{x03A4}}\)
+
+\(\def\upUpsilon{\unicode{x03A5}}\)
+
+\(\def\upPhi{\unicode{x03A6}}\)
+
+\(\def\upChi{\unicode{x03A7}}\)
+
+\(\def\upPsi{\unicode{x03A8}}\)
+
+\(\def\upOmega{\unicode{x03A9}}\)
+
+\(\def\itAlpha{\unicode{x1D6E2}}\)
+
+\(\def\itBeta{\unicode{x1D6E3}}\)
+
+\(\def\itGamma{\unicode{x1D6E4}}\)
+
+\(\def\itDigamma{\mathit{\unicode{x03DC}}}\)
+
+\(\def\itDelta{\unicode{x1D6E5}}\)
+
+\(\def\itEpsilon{\unicode{x1D6E6}}\)
+
+\(\def\itZeta{\unicode{x1D6E7}}\)
+
+\(\def\itEta{\unicode{x1D6E8}}\)
+
+\(\def\itTheta{\unicode{x1D6E9}}\)
+
+\(\def\itVartheta{\unicode{x1D6F3}}\)
+
+\(\def\itIota{\unicode{x1D6EA}}\)
+
+\(\def\itKappa{\unicode{x1D6EB}}\)
+
+\(\def\itLambda{\unicode{x1D6EC}}\)
+
+\(\def\itMu{\unicode{x1D6ED}}\)
+
+\(\def\itNu{\unicode{x1D6EE}}\)
+
+\(\def\itXi{\unicode{x1D6EF}}\)
+
+\(\def\itOmicron{\unicode{x1D6F0}}\)
+
+\(\def\itPi{\unicode{x1D6F1}}\)
+
+\(\def\itRho{\unicode{x1D6F2}}\)
+
+\(\def\itSigma{\unicode{x1D6F4}}\)
+
+\(\def\itTau{\unicode{x1D6F5}}\)
+
+\(\def\itUpsilon{\unicode{x1D6F6}}\)
+
+\(\def\itPhi{\unicode{x1D6F7}}\)
+
+\(\def\itChi{\unicode{x1D6F8}}\)
+
+\(\def\itPsi{\unicode{x1D6F9}}\)
+
+\(\def\itOmega{\unicode{x1D6FA}}\)
+
+\(\def\upalpha{\unicode{x03B1}}\)
+
+\(\def\upbeta{\unicode{x03B2}}\)
+
+\(\def\upvarbeta{\unicode{x03D0}}\)
+
+\(\def\upgamma{\unicode{x03B3}}\)
+
+\(\def\updigamma{\unicode{x03DD}}\)
+
+\(\def\updelta{\unicode{x03B4}}\)
+
+\(\def\upepsilon{\unicode{x03F5}}\)
+
+\(\def\upvarepsilon{\unicode{x03B5}}\)
+
+\(\def\upzeta{\unicode{x03B6}}\)
+
+\(\def\upeta{\unicode{x03B7}}\)
+
+\(\def\uptheta{\unicode{x03B8}}\)
+
+\(\def\upvartheta{\unicode{x03D1}}\)
+
+\(\def\upiota{\unicode{x03B9}}\)
+
+\(\def\upkappa{\unicode{x03BA}}\)
+
+\(\def\upvarkappa{\unicode{x03F0}}\)
+
+\(\def\uplambda{\unicode{x03BB}}\)
+
+\(\def\upmu{\unicode{x03BC}}\)
+
+\(\def\upnu{\unicode{x03BD}}\)
+
+\(\def\upxi{\unicode{x03BE}}\)
+
+\(\def\upomicron{\unicode{x03BF}}\)
+
+\(\def\uppi{\unicode{x03C0}}\)
+
+\(\def\upvarpi{\unicode{x03D6}}\)
+
+\(\def\uprho{\unicode{x03C1}}\)
+
+\(\def\upvarrho{\unicode{x03F1}}\)
+
+\(\def\upsigma{\unicode{x03C3}}\)
+
+\(\def\upvarsigma{\unicode{x03C2}}\)
+
+\(\def\uptau{\unicode{x03C4}}\)
+
+\(\def\upupsilon{\unicode{x03C5}}\)
+
+\(\def\upphi{\unicode{x03D5}}\)
+
+\(\def\upvarphi{\unicode{x03C6}}\)
+
+\(\def\upchi{\unicode{x03C7}}\)
+
+\(\def\uppsi{\unicode{x03C8}}\)
+
+\(\def\upomega{\unicode{x03C9}}\)
+
+\(\def\italpha{\unicode{x1D6FC}}\)
+
+\(\def\itbeta{\unicode{x1D6FD}}\)
+
+\(\def\itvarbeta{\unicode{x03D0}}\)
+
+\(\def\itgamma{\unicode{x1D6FE}}\)
+
+\(\def\itdigamma{\mathit{\unicode{x03DD}}}\)
+
+\(\def\itdelta{\unicode{x1D6FF}}\)
+
+\(\def\itepsilon{\unicode{x1D716}}\)
+
+\(\def\itvarepsilon{\unicode{x1D700}}\)
+
+\(\def\itzeta{\unicode{x1D701}}\)
+
+\(\def\iteta{\unicode{x1D702}}\)
+
+\(\def\ittheta{\unicode{x1D703}}\)
+
+\(\def\itvartheta{\unicode{x1D717}}\)
+
+\(\def\itiota{\unicode{x1D704}}\)
+
+\(\def\itkappa{\unicode{x1D705}}\)
+
+\(\def\itvarkappa{\unicode{x1D718}}\)
+
+\(\def\itlambda{\unicode{x1D706}}\)
+
+\(\def\itmu{\unicode{x1D707}}\)
+
+\(\def\itnu{\unicode{x1D708}}\)
+
+\(\def\itxi{\unicode{x1D709}}\)
+
+\(\def\itomicron{\unicode{x1D70A}}\)
+
+\(\def\itpi{\unicode{x1D70B}}\)
+
+\(\def\itvarpi{\unicode{x1D71B}}\)
+
+\(\def\itrho{\unicode{x1D70C}}\)
+
+\(\def\itvarrho{\unicode{x1D71A}}\)
+
+\(\def\itsigma{\unicode{x1D70E}}\)
+
+\(\def\itvarsigma{\unicode{x1D70D}}\)
+
+\(\def\ittau{\unicode{x1D70F}}\)
+
+\(\def\itupsilon{\unicode{x1D710}}\)
+
+\(\def\itphi{\unicode{x1D719}}\)
+
+\(\def\itvarphi{\unicode{x1D711}}\)
+
+\(\def\itchi{\unicode{x1D712}}\)
+
+\(\def\itpsi{\unicode{x1D713}}\)
+
+\(\def\itomega{\unicode{x1D714}}\)
+
+\(\let \lparen (\)
+
+\(\let \rparen )\)
+
+\(\newcommand {\cuberoot }[1]{\,{}^3\!\!\sqrt {#1}}\,\)
+
+\(\newcommand {\fourthroot }[1]{\,{}^4\!\!\sqrt {#1}}\,\)
+
+\(\newcommand {\longdivision }[1]{\mathord {\unicode {x027CC}#1}}\)
+
+\(\newcommand {\mathcomma }{,}\)
+
+\(\newcommand {\mathcolon }{:}\)
+
+\(\newcommand {\mathsemicolon }{;}\)
+
+\(\newcommand {\overbracket }[1]{\mathinner {\overline {\ulcorner {#1}\urcorner }}}\)
+
+\(\newcommand {\underbracket }[1]{\mathinner {\underline {\llcorner {#1}\lrcorner }}}\)
+
+\(\newcommand {\overbar }[1]{\mathord {#1\unicode {x00305}}}\)
+
+\(\newcommand {\ovhook }[1]{\mathord {#1\unicode {x00309}}}\)
+
+\(\newcommand {\ocirc }[1]{\mathord {#1\unicode {x0030A}}}\)
+
+\(\newcommand {\candra }[1]{\mathord {#1\unicode {x00310}}}\)
+
+\(\newcommand {\oturnedcomma }[1]{\mathord {#1\unicode {x00312}}}\)
+
+\(\newcommand {\ocommatopright }[1]{\mathord {#1\unicode {x00315}}}\)
+
+\(\newcommand {\droang }[1]{\mathord {#1\unicode {x0031A}}}\)
+
+\(\newcommand {\leftharpoonaccent }[1]{\mathord {#1\unicode {x020D0}}}\)
+
+\(\newcommand {\rightharpoonaccent }[1]{\mathord {#1\unicode {x020D1}}}\)
+
+\(\newcommand {\vertoverlay }[1]{\mathord {#1\unicode {x020D2}}}\)
+
+\(\newcommand {\leftarrowaccent }[1]{\mathord {#1\unicode {x020D0}}}\)
+
+\(\newcommand {\annuity }[1]{\mathord {#1\unicode {x020E7}}}\)
+
+\(\newcommand {\widebridgeabove }[1]{\mathord {#1\unicode {x020E9}}}\)
+
+\(\newcommand {\asteraccent }[1]{\mathord {#1\unicode {x020F0}}}\)
+
+\(\newcommand {\threeunderdot }[1]{\mathord {#1\unicode {x020E8}}}\)
+
+\(\newcommand {\Bbbsum }{\mathop {\unicode {x2140}}\limits }\)
+
+\(\newcommand {\oiint }{\mathop {\unicode {x222F}}\limits }\)
+
+\(\newcommand {\oiiint }{\mathop {\unicode {x2230}}\limits }\)
+
+\(\newcommand {\intclockwise }{\mathop {\unicode {x2231}}\limits }\)
+
+\(\newcommand {\ointclockwise }{\mathop {\unicode {x2232}}\limits }\)
+
+\(\newcommand {\ointctrclockwise }{\mathop {\unicode {x2233}}\limits }\)
+
+\(\newcommand {\varointclockwise }{\mathop {\unicode {x2232}}\limits }\)
+
+\(\newcommand {\leftouterjoin }{\mathop {\unicode {x27D5}}\limits }\)
+
+\(\newcommand {\rightouterjoin }{\mathop {\unicode {x27D6}}\limits }\)
+
+\(\newcommand {\fullouterjoin }{\mathop {\unicode {x27D7}}\limits }\)
+
+\(\newcommand {\bigbot }{\mathop {\unicode {x27D8}}\limits }\)
+
+\(\newcommand {\bigtop }{\mathop {\unicode {x27D9}}\limits }\)
+
+\(\newcommand {\xsol }{\mathop {\unicode {x29F8}}\limits }\)
+
+\(\newcommand {\xbsol }{\mathop {\unicode {x29F9}}\limits }\)
+
+\(\newcommand {\bigcupdot }{\mathop {\unicode {x2A03}}\limits }\)
+
+\(\newcommand {\bigsqcap }{\mathop {\unicode {x2A05}}\limits }\)
+
+\(\newcommand {\conjquant }{\mathop {\unicode {x2A07}}\limits }\)
+
+\(\newcommand {\disjquant }{\mathop {\unicode {x2A08}}\limits }\)
+
+\(\newcommand {\bigtimes }{\mathop {\unicode {x2A09}}\limits }\)
+
+\(\newcommand {\modtwosum }{\mathop {\unicode {x2A0A}}\limits }\)
+
+\(\newcommand {\sumint }{\mathop {\unicode {x2A0B}}\limits }\)
+
+\(\newcommand {\intbar }{\mathop {\unicode {x2A0D}}\limits }\)
+
+\(\newcommand {\intBar }{\mathop {\unicode {x2A0E}}\limits }\)
+
+\(\newcommand {\fint }{\mathop {\unicode {x2A0F}}\limits }\)
+
+\(\newcommand {\cirfnint }{\mathop {\unicode {x2A10}}\limits }\)
+
+\(\newcommand {\awint }{\mathop {\unicode {x2A11}}\limits }\)
+
+\(\newcommand {\rppolint }{\mathop {\unicode {x2A12}}\limits }\)
+
+\(\newcommand {\scpolint }{\mathop {\unicode {x2A13}}\limits }\)
+
+\(\newcommand {\npolint }{\mathop {\unicode {x2A14}}\limits }\)
+
+\(\newcommand {\pointint }{\mathop {\unicode {x2A15}}\limits }\)
+
+\(\newcommand {\sqint }{\mathop {\unicode {x2A16}}\limits }\)
+
+\(\newcommand {\intlarhk }{\mathop {\unicode {x2A17}}\limits }\)
+
+\(\newcommand {\intx }{\mathop {\unicode {x2A18}}\limits }\)
+
+\(\newcommand {\intcap }{\mathop {\unicode {x2A19}}\limits }\)
+
+\(\newcommand {\intcup }{\mathop {\unicode {x2A1A}}\limits }\)
+
+\(\newcommand {\upint }{\mathop {\unicode {x2A1B}}\limits }\)
+
+\(\newcommand {\lowint }{\mathop {\unicode {x2A1C}}\limits }\)
+
+\(\newcommand {\bigtriangleleft }{\mathop {\unicode {x2A1E}}\limits }\)
+
+\(\newcommand {\zcmp }{\mathop {\unicode {x2A1F}}\limits }\)
+
+\(\newcommand {\zpipe }{\mathop {\unicode {x2A20}}\limits }\)
+
+\(\newcommand {\zproject }{\mathop {\unicode {x2A21}}\limits }\)
+
+\(\newcommand {\biginterleave }{\mathop {\unicode {x2AFC}}\limits }\)
+
+\(\newcommand {\bigtalloblong }{\mathop {\unicode {x2AFF}}\limits }\)
+
+\(\newcommand {\arabicmaj }{\mathop {\unicode {x1EEF0}}\limits }\)
+
+\(\newcommand {\arabichad }{\mathop {\unicode {x1EEF1}}\limits }\)
+
+\(\let \symsf \symsfup \)
+
+\(\def\Alpha{\unicode{x0391}}\)
+
+\(\def\Beta{\unicode{x0392}}\)
+
+\(\def\Gamma{\unicode{x0393}}\)
+
+\(\def\Digamma{\unicode{x03DC}}\)
+
+\(\def\Delta{\unicode{x0394}}\)
+
+\(\def\Epsilon{\unicode{x0395}}\)
+
+\(\def\Zeta{\unicode{x0396}}\)
+
+\(\def\Eta{\unicode{x0397}}\)
+
+\(\def\Theta{\unicode{x0398}}\)
+
+\(\def\Vartheta{\unicode{x03F4}}\)
+
+\(\def\Iota{\unicode{x0399}}\)
+
+\(\def\Kappa{\unicode{x039A}}\)
+
+\(\def\Lambda{\unicode{x039B}}\)
+
+\(\def\Mu{\unicode{x039C}}\)
+
+\(\def\Nu{\unicode{x039D}}\)
+
+\(\def\Xi{\unicode{x039E}}\)
+
+\(\def\Omicron{\unicode{x039F}}\)
+
+\(\def\Pi{\unicode{x03A0}}\)
+
+\(\def\Varpi{\unicode{x03D6}}\)
+
+\(\def\Rho{\unicode{x03A1}}\)
+
+\(\def\Sigma{\unicode{x03A3}}\)
+
+\(\def\Tau{\unicode{x03A4}}\)
+
+\(\def\Upsilon{\unicode{x03A5}}\)
+
+\(\def\Phi{\unicode{x03A6}}\)
+
+\(\def\Chi{\unicode{x03A7}}\)
+
+\(\def\Psi{\unicode{x03A8}}\)
+
+\(\def\Omega{\unicode{x03A9}}\)
+
+\(\def\alpha{\unicode{x1D6FC}}\)
+
+\(\def\beta{\unicode{x1D6FD}}\)
+
+\(\def\varbeta{\unicode{x03D0}}\)
+\(\def\gamma{\unicode{x1D6FE}}\)
+
+\(\def\digamma{\mathit{\unicode{x03DD}}}\)
+
+\(\def\delta{\unicode{x1D6FF}}\)
+
+\(\def\epsilon{\unicode{x1D716}}\)
+
+\(\def\varepsilon{\unicode{x1D700}}\)
+
+\(\def\zeta{\unicode{x1D701}}\)
+
+\(\def\eta{\unicode{x1D702}}\)
+
+\(\def\theta{\unicode{x1D703}}\)
+
+\(\def\vartheta{\unicode{x1D717}}\)
+
+\(\def\iota{\unicode{x1D704}}\)
+
+\(\def\kappa{\unicode{x1D705}}\)
+
+\(\def\varkappa{\unicode{x1D718}}\)
+
+\(\def\lambda{\unicode{x1D706}}\)
+
+\(\def\mu{\unicode{x1D707}}\)
+
+\(\def\nu{\unicode{x1D708}}\)
+
+\(\def\xi{\unicode{x1D709}}\)
+
+\(\def\omicron{\unicode{x1D70A}}\)
+
+\(\def\pi{\unicode{x1D70B}}\)
+
+\(\def\varpi{\unicode{x1D71B}}\)
+
+\(\def\rho{\unicode{x1D70C}}\)
+
+\(\def\varrho{\unicode{x1D71A}}\)
+
+\(\def\sigma{\unicode{x1D70E}}\)
+
+\(\def\varsigma{\unicode{x1D70D}}\)
+
+\(\def\tau{\unicode{x1D70F}}\)
+
+\(\def\upsilon{\unicode{x1D710}}\)
+
+\(\def\phi{\unicode{x1D719}}\)
+
+\(\def\varphi{\unicode{x1D711}}\)
+
+\(\def\chi{\unicode{x1D712}}\)
+
+\(\def\psi{\unicode{x1D713}}\)
+
+\(\def\omega{\unicode{x1D714}}\)
+
+</div>
+
+<p>
+<!--
+...... part 基礎 ......
+-->
+<h2 id="autosec-13"><span class="sectionnumber">第 I 部&#x2003;</span>基礎<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0006]</kbd></span></span></h2>
+<a id="index-autopage-13"></a>
+<a id="index-autofile-3"></a>
+
+<a id="0006"></a>
+
+<a id="LWRindex-3"></a>
+
+<p>
+<a href="node-4.html#autosec-16" class="tocchapter" >
+<span class="sectionnumber">第 2 章</span>&#x2003; 型理論<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0001]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-5.html#autosec-19" class="tocsection" >
+<span class="sectionnumber">2.1</span>&#x2003; 宇宙<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0009]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-6.html#autosec-26" class="tocsection" >
+<span class="sectionnumber">2.2</span>&#x2003; 関数型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000A]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-7.html#autosec-38" class="tocsection" >
+<span class="sectionnumber">2.3</span>&#x2003; レコード型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000B]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-8.html#autosec-58" class="tocsection" >
+<span class="sectionnumber">2.4</span>&#x2003; 同一視型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000C]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-9.html#autosec-69" class="tocsubsection" >
+<span class="sectionnumber">2.4.1</span>&#x2003; 高次グルーポイド構造<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[002N]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-10.html#autosec-80" class="tocsection" >
+<span class="sectionnumber">2.5</span>&#x2003; 自然数<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[002T]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-11.html#autosec-87" class="tocsection" >
+<span class="sectionnumber">2.6</span>&#x2003; 有限余積<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[002U]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-12.html#autosec-92" class="tocchapter" >
+<span class="sectionnumber">第 3 章</span>&#x2003; 一価性公理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0002]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-13.html#autosec-95" class="tocsection" >
+<span class="sectionnumber">3.1</span>&#x2003; 可縮性<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000S]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-14.html#autosec-110" class="tocsection" >
+<span class="sectionnumber">3.2</span>&#x2003; 同一視型の基本定理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[001R]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-15.html#autosec-132" class="tocsection" >
+<span class="sectionnumber">3.3</span>&#x2003; 一価性<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000X]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-16.html#autosec-139" class="tocsection" >
+<span class="sectionnumber">3.4</span>&#x2003; 関数外延性<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[001Y]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-17.html#autosec-146" class="tocsubsection" >
+<span class="sectionnumber">3.4.1</span>&#x2003; 一価性から関数外延性を導く<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0021]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-18.html#autosec-149" class="tocsection" >
+<span class="sectionnumber">3.5</span>&#x2003; 構造同一原理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0022]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-19.html#autosec-162" class="tocsection" >
+<span class="sectionnumber">3.6</span>&#x2003; 同値<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[000U]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-20.html#autosec-188" class="tocsubsection" >
+<span class="sectionnumber">3.6.1</span>&#x2003; 他の同値の概念<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004I]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-21.html#autosec-199" class="tocchapter" >
+<span class="sectionnumber">第 4 章</span>&#x2003; 高次帰納的型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0003]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-22.html#autosec-202" class="tocsection" >
+<span class="sectionnumber">4.1</span>&#x2003; 始代数<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0031]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-23.html#autosec-220" class="tocsection" >
+<span class="sectionnumber">4.2</span>&#x2003; 円周<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0032]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-24.html#autosec-228" class="tocsection" >
+<span class="sectionnumber">4.3</span>&#x2003; 押し出し<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0033]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-25.html#autosec-236" class="tocsection" >
+<span class="sectionnumber">4.4</span>&#x2003; 降下性<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0034]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-26.html#autosec-246" class="tocchapter" >
+<span class="sectionnumber">第 5 章</span>&#x2003;𝑛 型<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[003W]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-27.html#autosec-263" class="tocsection" >
+<span class="sectionnumber">5.1</span>&#x2003; 命題<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[003Z]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-28.html#autosec-284" class="tocsubsection" >
+<span class="sectionnumber">5.1.1</span>&#x2003; 同値の概念<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004N]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-29.html#autosec-298" class="tocsection" >
+<span class="sectionnumber">5.2</span>&#x2003; 集合<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004B]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-30.html#autosec-308" class="tocsection" >
+<span class="sectionnumber">5.3</span>&#x2003; 切り詰め<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004Z]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-31.html#autosec-319" class="tocsection" >
+<span class="sectionnumber">5.4</span>&#x2003; 述語論理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[0057]</kbd></span></span></a>
+</p>
+
+
+<p>
+<a href="node-32.html#autosec-325" class="tocsection" >
+<span class="sectionnumber">5.5</span>&#x2003; 構造同一原理<span class="node-id"><span
+    class="textcolor"
+    style="color:#808080"
+><kbd>[004V]</kbd></span></span></a>
+</p>
+
+
+</section>
+
+</main>
+
+</div>
+
+
+<nav class="botnavigation"><a href="index.html" class="linkhome" >
+ホーム</a></nav>
+
+</body>
+</html>

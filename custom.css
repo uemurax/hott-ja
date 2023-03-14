@@ -1,0 +1,115 @@
+/* ( --- Start of project.css --- ) */
+/* ( --- A sample project-specific CSS file for lwarp --- ) */
+
+/* Uncomment one of the following: */
+@import url("lwarp.css") ;
+/* @import url("lwarp_formal.css") ; */
+/* @import url("lwarp_sagebrush.css") ; */
+
+/* Project-specific CSS setting follow here. */
+/* . . . */
+
+span.my-inline-math {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+span.node-id {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+body {
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    font-size: 112.5%;
+    background: #FDF6E3;
+    color: #002B36;
+}
+
+div.bodyandsidetoc {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+main.bodycontainer {
+    max-width: 800px;
+    margin: 40px auto;
+    float: none;
+}
+
+div.sidetoccontainer {
+    position: sticky;
+    top: 0;
+    float: none;
+    border-left: 1px solid silver;
+    border-right: unset;
+    border-bottom: unset;
+    border-radius: unset;
+    background: unset;
+    margin-bottom: unset;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+div.my-sidetoc-nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+nav.sidetoc p a {
+    color: unset;
+}
+
+@media screen and (max-width: 50em) {
+    div.bodyandsidetoc {
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+    }
+    div.sidetoccontainer {
+        position: static;
+        border-bottom: 0px;
+        border-radius: 0;
+        max-height: unset;
+    }
+    nav.topnavigation, nav.botnavigation, span.sidetocthetitle {
+        display: none;
+    }
+}
+
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+div.book, h1, h2, h3, h4, h5, h6, span.paragraph, span.subparagraph, div.sidetoccontainer, nav
+{
+    font-family: unset;
+}
+
+kbd, span.texttt, p span.texttt {
+    font-family: 'DejaVu Sans Mono',
+        'Cascadia Mono',
+        'Consolas',
+        'SF Mono',
+        'Menlo',
+        'Monaco',
+        'Roboto Mono',
+        monospace;
+}
+
+div.amsthmbodydefinition > ul, div.amsthmproof > ul {
+    margin: 0;
+    padding: 0;
+}
+
+span.amsthmproofname {
+    font-style: normal;
+}
+
+/* ( --- End of project.css --- ) */
