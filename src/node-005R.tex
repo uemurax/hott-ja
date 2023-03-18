@@ -1,0 +1,25 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005R}{myExercise}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  次を示せ。
+  \begin{enumerate}
+  \item \label{005R:0000}
+    型\myInlineMath{\myIsTruncMap{\myTLMinusTwo}{f}}と
+    \myInlineMath{\myIsEquiv{f}}は論理的に同値である。
+  \item \label{005R:0001}
+    要素\myInlineMath{n \myElemOf \myTruncLevel}に対して、
+    次の型は論理的に同値である。
+    \begin{enumerate}
+    \item \myInlineMath{\myIsTruncMap{\myTLSucc{n}}{f}}
+    \item \myInlineMath{\myDFunType{x_{1}, x_{2} \myElemOf A}
+        {\myIsTruncMap{n}{\myIdApp{f}\myImplicit{x_{1}, x_{2}}}}}
+    \end{enumerate}
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
