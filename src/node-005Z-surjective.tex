@@ -1,0 +1,17 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005Z}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  型\myInlineMath{\myIsSurjective{f} \myElemOf \myUniverse{i}}を
+  \myInlineMath{\myForall{y \myElemOf B}
+    {\myExists{x \myElemOf A}
+      {f\myAppParen{x} \myIdType y}}}と定義する。
+  \myInlineMath{\myIsSurjective{f}}の要素がある時、
+  \myInlineMath{f}は\myNewTerm[ぜんしゃ]{全射}(surjection)であると言う。
+\end{myBlock}
+
+\end{document}
