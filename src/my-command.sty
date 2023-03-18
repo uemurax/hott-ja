@@ -35,7 +35,7 @@
 \newcommand{\myRecordField}{.}
 \newcommand{\myIdType}{=}
 \newcommand{\myRefl}[1]{\myConst{refl}\myAppParen{#1}}
-\newcommand{\myImplicit}[1]{\myMathWrap{\lbrack} #1 \myMathWrap{\rbrack}}
+\newcommand{\myImplicit}[1]{\myMathWrap{\lbrace} #1 \myMathWrap{\rbrace}}
 \newcommand{\myInd@char}{\myConst{ind}}
 \newcommand{\myIdInd}[3]{\myInd@char_{\myIdType}\myAppParen{#1, #2, #3}}
 \newcommand{\myPhantom}[1]{\myMathWrap{\phantom}{#1}}
@@ -261,3 +261,4 @@
 \newcommand{\myFunctor}[2]{\myConst{Fun}\myAppParen{#1, #2}}
 \newcommand{\myFunctorObj}{\myConst{obj}}
 \newcommand{\myFunctorMap}{\myConst{map}}
+\newcommand{\myIsPreCatEquiv}[1]{\myConst{IsEquiv}\myAppParen{#1}}
