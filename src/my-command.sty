@@ -240,7 +240,8 @@
 \newcommand{\myExists}[2]{\myMathWrap{\exists}_{#1}#2}
 \newcommand{\myNeg}{\myMathWrap{\neg}}
 \newcommand{\myLogicEquiv}{\myMathWrap{\Leftrightarrow}}
-\newcommand{\myPreCat}[1]{\myConst{PreCat}\myAppParen{#1}}
+\newcommand{\myPreCat@char}{\myConst{PreCat}}
+\newcommand{\myPreCat}[1]{\myPreCat@char\myAppParen{#1}}
 \newcommand{\myCatObj}{\myConst{Obj}}
 \newcommand{\myCatMap}{\myConst{Map}}
 \newcommand{\myCatId}{\myConst{id}}
@@ -261,4 +262,4 @@
 \newcommand{\myFunctor}[2]{\myConst{Fun}\myAppParen{#1, #2}}
 \newcommand{\myFunctorObj}{\myConst{obj}}
 \newcommand{\myFunctorMap}{\myConst{map}}
-\newcommand{\myIsPreCatEquiv}[1]{\myConst{IsEquiv}\myAppParen{#1}}
+\newcommand{\myIsPreCatEquiv}[1]{\myConst{IsEquiv}_{\myPreCat@char}\myAppParen{#1}}
