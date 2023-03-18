@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005L}{myNotation}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{F \myElemOf \myFunctor{C}{D}}を関手とする。
+  \begin{enumerate}
+  \item 対象\myInlineMath{x \myElemOf C}に対して、
+    \myInlineMath{F\myRecordField\myFunctorObj\myAppParen{x} \myElemOf D}の代わりに
+    単に\myInlineMath{F\myAppParen{x}}と書く。
+  \item 対象\myInlineMath{x_{1}, x_{2} \myElemOf C}と
+    射\myInlineMath{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}に対して、
+    \myInlineMath{F\myRecordField\myFunctorMap\myAppParen{f} \myElemOf
+      \myCatMap\myAppParen{F\myAppParen{x_{1}}, F\myAppParen{x_{2}}}}の代わりに
+    単に\myInlineMath{F\myAppParen{f}}と書く。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
