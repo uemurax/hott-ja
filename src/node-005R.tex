@@ -2,11 +2,10 @@
 
 \begin{document}
 
-\begin{myBlock}{005R}{myExercise}
+\begin{myBlock}{005R}{myProposition}
   \myInlineMath{i}を階数、
   \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
   \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
-  次を示せ。
   \begin{enumerate}
   \item \label{005R:0000}
     型\myInlineMath{\myIsTruncMap{\myTLMinusTwo}{f}}と
@@ -21,5 +20,44 @@
     \end{enumerate}
   \end{enumerate}
 \end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myRefLabel{005R:0000}は定義から自明である。
+
+  \myRefLabel{005R:0001}は次のように分かる。
+  \myEqReasoning{
+    & \term{\myIsTruncMap{\myTLSucc{n}}{f}} \\
+    \rel{\myLogEquiv} & \by{定義} \\
+    & \term{\myDFunType{y \myElemOf B}
+        {\myDFunType{z_{1}, z_{2} \myFiber{f}{y}}
+          {\myIsTrunc{n}{z_{1} \myIdType z_{2}}}}} \\
+    \rel{\myLogEquiv} & \by{並び替え} \\
+    & \term{\myDFunType{x_{1} \myElemOf A}
+        {\myDFunType{y \myElemOf B}
+          {\myDFunType{p_{1} \myElemOf f\myAppParen{x_{1}} \myIdType y}
+            {\myDFunType{z_{2} \myElemOf \myFiber{f}{y}}
+              {\myIsTrunc{n}{\myRecordElem{\myFiberElem \myDefEq x_{1},
+                  \myFiberId \myDefEq p_{1}}
+                \myIdType z_{2}}}}}}} \\
+    \rel{\myLogEquiv} & \by{\myInlineMath{p_{1}}についての帰納法} \\
+    & \term{\myDFunType{x_{1} \myElemOf A}
+        {\myDFunType{z_{2} \myElemOf \myFiber{f}{f\myAppParen{x_{1}}}}
+          {\myIsTrunc{n}{\myRecordElem{\myFiberElem \myDefEq x_{1},
+            \myFiberId \myDefEq \myRefl{f\myAppParen{x_{1}}}}
+            \myIdType z_{2}}}}} \\
+    \rel{\myLogEquiv} & \by{\myRef{005S}} \\
+    & \term{\myDFunType{x_{1} \myElemOf A}
+        {\myDFunType{z_{2} \myElemOf \myFiber{f}{f\myAppParen{x_{1}}}}
+          {\myIsTrunc{n}{\myFiber{\myIdApp{f}}{\myProjII{z_{2}}}}}}} \\
+    \rel{\myLogEquiv} & \by{並び替え} \\
+    & \term{\myDFunType{x_{2}, x_{1} \myElemOf A}
+        {\myDFunType{p \myElemOf f\myAppParen{x_{2}} \myIdType f\myAppParen{x_{1}}}
+          {\myIsTrunc{n}{\myFiber{\myIdApp{f}, p}}}}} \\
+    \rel{\myLogEquiv} & \by{定義} \\
+    & \term{\myDFunType{x_{2}, x_{1} \myElemOf A}
+        {\myIsTruncMap{n}{\myIdApp{f}\myImplicit{x_{2}, x_{1}}}}}
+  }
+\end{myProof}
+\StopDefiningTabulars
 
 \end{document}

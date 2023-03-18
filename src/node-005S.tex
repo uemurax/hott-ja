@@ -1,0 +1,37 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005S}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数、
+  \myInlineMath{a \myElemOf A}と
+  \myInlineMath{c \myElemOf \myFiber{f}{f\myAppParen{a}}}を要素とすると、
+  同値\myDisplayMath{(\myRecordElem{\myFiberElem \myDefEq a,
+    \myFiberId \myDefEq \myRefl{f\myAppParen{a}}}
+    \myIdType c) \myEquiv
+    \myFiber{\myIdApp{f}\myImplicit{\myProjI{c}, a}}
+    {\myProjII{c}}}を構成できる。
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myRef{001S}を適用する。
+  レトラクト
+  \myEqReasoning{
+    & \term{\myDPairType{z \myElemOf \myFiber{f}{f\myAppParen{a}}}
+        {\myFiber{\myIdApp{f}\myImplicit{\myProjI{c}, a}}
+          {\myProjII{c}}}} \\
+    \rel{\myRetractRel} & \by{並び替え} \\
+    & \term{\myDPairType{x \myElemOf A}
+        {\myDPairType{p \myElemOf x \myIdType a}
+          {\myDPairType{q \myElemOf f\myAppParen{x} \myIdType f\myAppParen{a}}
+            {f\myAppParen{p} \myIdType q}}}} \\
+    \rel{\myRetractRel} & \by{\myRef{0026}} \\
+    & \term{\myDPairType{q \myElemOf f\myAppParen{a} \myIdType f\myAppParen{a}}
+        {f\myAppParen{\myRefl{a}} \myIdType q}}
+  }を得て、最後の型は\myRef{001N}より可縮である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}
