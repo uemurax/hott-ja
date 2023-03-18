@@ -1,0 +1,30 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005O}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{F \myElemOf \myFunctor{C}{D}}を関手とする。
+  \begin{enumerate}
+  \item 型\myInlineMath{\myIsFullyFaithful{F} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myForall{x_{1}, x_{2} \myElemOf C\myRecordField\myCatObj}
+      {\myIsEquiv{F\myRecordField\myFunctorMap\myImplicit{x_{1}, x_{2}}}}}と定義する。
+    \myInlineMath{\myIsFullyFaithful{F}}の要素がある時、
+    \myInlineMath{F}は\myNewTerm[じゅうまんちゅうじつ]{充満忠実}(fully faithful)であると言う。
+  \item 型\myInlineMath{\myIsEssSurj{F} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myForall{y \myElemOf D}
+      {\myExists{x \myElemOf C}
+        {F\myAppParen{x} \myCatIso y}}}と定義する。
+    \myInlineMath{\myIsEssSurj{F}}の要素がある時、
+    \myInlineMath{F}は\myNewTerm[ほんしつてきぜんしゃ]{本質的全射}(essentially surjective)
+    であると言う。
+  \item 型\myInlineMath{\myIsWeakCatEquiv{F} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myIsFullyFaithful{F} \myLogicAnd \myIsEssSurj{F}}と定義する。
+    \myInlineMath{\myIsWeakCatEquiv{F}}の要素がある時、
+    \myInlineMath{F}は\myNewTerm[じゃくけんどうち]{弱圏同値}(weak categorical equivalence)
+    であると言う。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
