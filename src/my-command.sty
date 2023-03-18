@@ -35,7 +35,7 @@
 \newcommand{\myRecordField}{.}
 \newcommand{\myIdType}{=}
 \newcommand{\myRefl}[1]{\myConst{refl}\myAppParen{#1}}
-\newcommand{\myImplicit}[1]{\myMathWrap{\lbrack} #1 \myMathWrap{\rbrack}}
+\newcommand{\myImplicit}[1]{\myMathWrap{\lbrace} #1 \myMathWrap{\rbrace}}
 \newcommand{\myInd@char}{\myConst{ind}}
 \newcommand{\myIdInd}[3]{\myInd@char_{\myIdType}\myAppParen{#1, #2, #3}}
 \newcommand{\myPhantom}[1]{\myMathWrap{\phantom}{#1}}
@@ -240,3 +240,29 @@
 \newcommand{\myExists}[2]{\myMathWrap{\exists}_{#1}#2}
 \newcommand{\myNeg}{\myMathWrap{\neg}}
 \newcommand{\myLogicEquiv}{\myMathWrap{\Leftrightarrow}}
+\newcommand{\myPreCat@char}{\myConst{PreCat}}
+\newcommand{\myPreCat}[1]{\myPreCat@char\myAppParen{#1}}
+\newcommand{\myCatObj}{\myConst{Obj}}
+\newcommand{\myCatMap}{\myConst{Map}}
+\newcommand{\myCatId}{\myConst{id}}
+\newcommand{\myCatComp}{\myConst{comp}}
+\newcommand{\myCatCompBin}{\myMathWrap{\circ}}
+\newcommand{\myCatLInv}{\myLInv}
+\newcommand{\myCatLInvInv}{\myLInvInv}
+\newcommand{\myCatLInvId}{\myLInvId}
+\newcommand{\myCatRInv}{\myRInv}
+\newcommand{\myCatRInvInv}{\myRInvInv}
+\newcommand{\myCatRInvId}{\myRInvId}
+\newcommand{\myCatIsIso}[1]{\myConst{IsIso}\myAppParen{#1}}
+\newcommand{\myCatIsIsoLInv}{\myIsBiinvLInv}
+\newcommand{\myCatIsIsoRInv}{\myIsBiinvRInv}
+\newcommand{\myCatIso}{\myMathWrap{\cong}}
+\newcommand{\myIsCat}[1]{\myConst{IsCat}\myAppParen{#1}}
+\newcommand{\myCat}[1]{\myConst{Cat}\myAppParen{#1}}
+\newcommand{\myFunctor}[2]{\myConst{Fun}\myAppParen{#1, #2}}
+\newcommand{\myFunctorObj}{\myConst{obj}}
+\newcommand{\myFunctorMap}{\myConst{map}}
+\newcommand{\myIsPreCatEquiv}[1]{\myConst{IsIso}_{\myPreCat@char}\myAppParen{#1}}
+\newcommand{\myIsFullyFaithful}[1]{\myConst{IsFF}\myAppParen{#1}}
+\newcommand{\myIsEssSurj}[1]{\myConst{IsEssSurj}\myAppParen{#1}}
+\newcommand{\myIsWeakCatEquiv}[1]{\myConst{IsWCatEquiv}\myAppParen{#1}}

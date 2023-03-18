@@ -1,0 +1,27 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005G}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{x_{1}, x_{2} \myElemOf C}を対象、
+  \myInlineMath{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}を射とする。
+  \myInlineMath{f}は同型であると仮定する。
+  \begin{enumerate}
+  \item 任意の対象\myInlineMath{y \myElemOf C}に対して、
+    関数\myInlineMath{\myAbs{g}{f \myCatCompBin g} \myElemOf
+      \myCatMap\myAppParen{y, x_{1}} \myFunType
+      \myCatMap\myAppParen{y, x_{2}}}は同値である。
+  \item 任意の対象\myInlineMath{y \myElemOf C}に対して、
+    関数\myInlineMath{\myAbs{g}{g \myCatCompBin f} \myElemOf
+      \myCatMap\myAppParen{x_{2}, y} \myFunType
+      \myCatMap\myAppParen{x_{1}, y}}は同値である。
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  定義から、いずれの関数も両側可逆であることが分かる。
+  よって、\myRef{004K}よりこれらの関数は同値である。
+\end{myProof}
+
+\end{document}

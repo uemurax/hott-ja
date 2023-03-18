@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005I}{myDefinition}
+  \myInlineMath{i}を階数とする。
+  \begin{enumerate}
+  \item 前圏\myInlineMath{C \myElemOf \myPreCat{i}}に対して、
+    型\myInlineMath{\myIsCat{C} \myElemOf \myUniverse{i}}を
+    \myDisplayMath{\myDFunType{x \myElemOf C}
+      {\myIsContr{\myDPairType{y \myElemOf C}
+        {x \myCatIso y}}}}と定義する。
+  \item 型\myInlineMath{\myCat{i} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myPropCompr{C \myElemOf \myPreCat{i}}
+      {\myIsCat{C}}}と定義する。
+  \end{enumerate}
+  \myInlineMath{\myCat{i}}の要素を(階数\myInlineMath{i}の)
+  \myNewTerm[けん]{圏}(category)と呼ぶ。
+\end{myBlock}
+
+\end{document}

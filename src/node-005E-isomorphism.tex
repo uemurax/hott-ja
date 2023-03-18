@@ -1,0 +1,31 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005E}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{x_{1}, x_{2} \myElemOf C}を対象、
+  \myInlineMath{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}を射とする。
+  \begin{enumerate}
+  \item 型\myInlineMath{\myCatLInv{f} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myRecordType{\myCatLInvInv \myElemOf
+      \myCatMap\myAppParen{x_{2}, x_{1}},
+      \myCatLInvId \myElemOf
+      \myCatLInvInv \myCatCompBin f \myIdType
+      \myCatId\myAppParen{x_{1}}}}と定義する。
+  \item 型\myInlineMath{\myCatRInv{f} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myRecordType{\myCatRInvInv \myElemOf
+      \myCatMap\myAppParen{x_{2}, x_{1}},
+      \myCatRInvId \myElemOf
+      f \myCatCompBin \myCatRInvInv \myIdType
+      \myCatId\myAppParen{x_{2}}}}と定義する。
+  \item 型\myInlineMath{\myCatIsIso{f} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myRecordType{\myCatIsIsoLInv \myElemOf \myCatLInv{f},
+      \myCatIsIsoRInv \myElemOf \myCatRInv{f}}}と定義する。
+  \end{enumerate}
+  \myInlineMath{\myCatIsIso{f}}の要素がある時、
+  \myInlineMath{f}は\myNewTerm[どうけい]{同型}(isomorphism)であるという。
+\end{myBlock}
+
+\end{document}

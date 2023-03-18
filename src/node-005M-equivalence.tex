@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005M}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{F \myElemOf \myFunctor{C}{D}}を関手とする。
+  型\myInlineMath{\myIsPreCatEquiv{F} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myBlank \myElemOf \myIsEquiv{F\myRecordField\myFunctorObj}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2} \myElemOf C\myRecordField\myCatObj}
+    {\myIsEquiv{F\myRecordField\myFunctorMap\myImplicit{x_{1}, x_{2}}}}}
+  \end{itemize}
+  \myInlineMath{\myIsPreCatEquiv{F}}の要素がある時、
+  \myInlineMath{F}は\myNewTerm[ぜんけんのどうち]{前圏の同型}(isomorphism of precategories)
+  であると言う。
+\end{myBlock}
+
+\end{document}
