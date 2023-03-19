@@ -1,0 +1,32 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0063}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{F \myElemOf \myFunctor{C}{D}}を関手とする。
+  \myInlineMath{C}と\myInlineMath{D}が圏で、
+  \myInlineMath{F}が充満忠実ならば、
+  \myInlineMath{F\myRecordField\myFunctorObj \myElemOf
+    C\myRecordField\myCatObj \myFunType
+    D\myRecordField\myCatObj}は埋め込みである。
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myRef{0062}を適用する。
+  対象\myInlineMath{x_{1} \myElemOf C}に対して、レトラクト
+  \myEqReasoning{
+    & \term{\myDPairType{x_{2} \myElemOf C}
+        {F \myAppParen{x_{1}} \myIdType F\myAppParen{x_{2}}}} \\
+    \rel{\myRetractRel} & \by{\myInlineMath{D}は圏} \\
+    & \term{\myDPairType{x_{2} \myElemOf C}
+        {F\myAppParen{x_{1}} \myCatIso F\myAppParen{x_{2}}}} \\
+    \rel{\myRetractRel} & \by{\myRef{0060}と\myRef{0061}} \\
+    & \term{\myDPairType{x_{2} \myElemOf C}
+        {x_{1} \myCatIso x_{2}}}
+  }を得て、最後の型は\myInlineMath{C}が圏なので可縮である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}

@@ -1,0 +1,28 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0062}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  次は論理的に同値である。
+  \begin{enumerate}
+  \item \label{0062:0000} \myInlineMath{f}は埋め込みである。
+  \item \label{0062:0001} 任意の\myInlineMath{x_{1} \myElemOf A}に対して、
+    \myInlineMath{\myDPairType{x_{2} \myElemOf A}
+      {f\myAppParen{x_{1}} \myIdType f\myAppParen{x_{2}}}}は可縮である。
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  \myRef{005R}より、
+  \myRefLabel{0062:0000}は
+  任意の\myInlineMath{x_{1}, x_{2} \myElemOf A}に対して
+  \myInlineMath{\myIdApp{f} \myElemOf
+    x_{1} \myIdType x_{2} \myFunType
+    f\myAppParen{x_{1}} \myIdType f\myAppParen{x_{2}}}
+  が同値であることと論理的に同値である。
+  \myRef{001S}より、これは\myRefLabel{0062:0001}と論理的に同値である。
+\end{myProof}
+
+\end{document}
