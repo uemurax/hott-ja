@@ -259,8 +259,10 @@
 \newcommand{\myCatIsIsoRInv}{\myIsBiinvRInv}
 \newcommand{\myCatIso}{\myMathWrap{\cong}}
 \newcommand{\myIsCat}[1]{\myConst{IsCat}\myAppParen{#1}}
-\newcommand{\myCat}[1]{\myConst{Cat}\myAppParen{#1}}
-\newcommand{\myFunctor}[2]{\myConst{Fun}\myAppParen{#1, #2}}
+\newcommand{\myCat@char}{\myConst{Cat}}
+\newcommand{\myCat}[1]{\myCat@char\myAppParen{#1}}
+\newcommand{\myFunctor@char}{\myConst{Fun}}
+\newcommand{\myFunctor}[2]{\myFunctor@char\myAppParen{#1, #2}}
 \newcommand{\myFunctorObj}{\myConst{obj}}
 \newcommand{\myFunctorMap}{\myConst{map}}
 \newcommand{\myIsPreCatEquiv}[1]{\myConst{IsIso}_{\myPreCat@char}\myAppParen{#1}}
@@ -275,3 +277,4 @@
 \newcommand{\myNatTrans}[2]{\myConst{NatTrans}\myAppParen{#1, #2}}
 \newcommand{\myIdNatTrans}[1]{\myCatId\myAppParen{#1}}
 \newcommand{\myNatTransComp}{\myCatCompBin}
+\newcommand{\myFunctorCat}[2]{\myFunctor@char^{(\myCat@char)}\myAppParen{#1, #2}}
