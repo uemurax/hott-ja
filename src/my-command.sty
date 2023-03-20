@@ -236,8 +236,9 @@
 \newcommand{\myLogicAnd}{\myMathWrap{\land}}
 \newcommand{\myLogicOr}{\myMathWrap{\lor}}
 \newcommand{\myLogicImpl}{\myMathWrap{\Rightarrow}}
-\newcommand{\myForall}[2]{\myMathWrap{\forall}_{#1}#2}
-\newcommand{\myExists}[2]{\myMathWrap{\exists}_{#1}#2}
+\newcommand{\myMathOp}[1]{\myMathWrap{\mathop}{#1}}
+\newcommand{\myForall}[2]{\myMathOp{\myMathWrap{\forall}}_{#1}#2}
+\newcommand{\myExists}[2]{\myMathOp{\myMathWrap{\exists}}_{#1}#2}
 \newcommand{\myNeg}{\myMathWrap{\neg}}
 \newcommand{\myLogicEquiv}{\myMathWrap{\Leftrightarrow}}
 \newcommand{\myPreCat@char}{\myConst{PreCat}}
