@@ -16,6 +16,12 @@
   と定義する。
   \myInlineMath{\myNatTrans{F}{G}}の要素を\myInlineMath{F}から\myInlineMath{G}への
   \myNewTerm[しぜんへんかん]{自然変換}(natural transformation)と呼ぶ。
+  自然変換\myInlineMath{t \myElemOf \myNatTrans{F}{G}}が満たすべき性質
+  (\myInlineMath{\myForall{x_{1}, x_{2} \myElemOf C}
+    {\myForall{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}
+        {G\myAppParen{f} \myCatCompBin t\myAppParen{x_{1}}
+        \myIdType t\myAppParen{x_{2}} \myCatCompBin F\myAppParen{f}}}})
+  を\myInlineMath{t}の\myNewTerm[しぜんせい]{自然性}(naturality)と言う。
 \end{myBlock}
 
 \end{document}

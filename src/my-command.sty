@@ -246,7 +246,7 @@
 \newcommand{\myCatMap}{\myConst{Map}}
 \newcommand{\myCatId}{\myConst{id}}
 \newcommand{\myCatComp}{\myConst{comp}}
-\newcommand{\myCatCompBin}{\myMathWrap{\circ}}
+\newcommand{\myCatCompBin}{\myFunComp}
 \newcommand{\myCatLInv}{\myLInv}
 \newcommand{\myCatLInvInv}{\myLInvInv}
 \newcommand{\myCatLInvId}{\myLInvId}
@@ -272,3 +272,5 @@
 \newcommand{\myIsEmbedding}[1]{\myConst{IsEmb}\myAppParen{#1}}
 \newcommand{\myIsSurjective}[1]{\myConst{IsSurj}\myAppParen{#1}}
 \newcommand{\myNatTrans}[2]{\myConst{NatTrans}\myAppParen{#1, #2}}
+\newcommand{\myIdNatTrans}[1]{\myCatId\myAppParen{#1}}
+\newcommand{\myNatTransComp}{\myCatCompBin}
