@@ -1,0 +1,23 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006P}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{x \myElemOf C}を対象とする。
+  前層\myInlineMath{\myYoneda{x} \myElemOf \myPresheaf{C}}を
+  次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myPresheafCarrier \myDefEq
+    \myAbs{y}{\myCatMap\myAppParen{y, x}}}
+  \item \myInlineMath{\myPresheafAct \myDefEq
+    \myAbs{y_{1} y_{2}}
+    {\myAbs{(a \myElemOf \myPresheafCarrier\myAppParen{y_{2}})
+      (f \myElemOf \myCatMap\myAppParen{y_{1}, y_{2}})}
+     {C\myRecordField\myCatComp\myAppParen{a, f}}}}
+  \item 前層の公理は前圏の公理からすぐに分かる。
+  \end{itemize}
+\end{myBlock}
+
+\end{document}
