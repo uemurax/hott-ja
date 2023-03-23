@@ -279,9 +279,13 @@
 \newcommand{\myNatTransComp}{\myCatCompBin}
 \newcommand{\myCat@mark}{(\myCat@char)}
 \newcommand{\myFunctorCat}[2]{\myFunctor@char^{\myCat@mark}\myAppParen{#1, #2}}
-\newcommand{\myPresheaf}[1]{\myConst{Psh}\myAppParen{#1}}
+\newcommand{\myPresheaf@char}{\myConst{Psh}}
+\newcommand{\myPresheaf}[1]{\myPresheaf@char\myAppParen{#1}}
 \newcommand{\myPresheafCarrier}{\myCarrier@char}
 \newcommand{\myPresheafAct}{\myConst{act}}
 \newcommand{\myPresheafActBin}{\myMathWrap{\cdot}}
 \newcommand{\myPresheafHom}[2]{\myHom@char\myAppParen{#1, #2}}
 \newcommand{\mySetCat}[1]{\myConst{Set}^{\myCat@mark}\myAppParen{#1}}
+\newcommand{\myPresheafCat}[1]{\myPresheaf@char^{\myCat@mark}\myAppParen{#1}}
+\newcommand{\myIdPresheafHom}[1]{\myCatId\myAppParen{#1}}
+\newcommand{\myPresheafHomComp}{\myCatCompBin}

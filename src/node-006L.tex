@@ -1,0 +1,25 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006L}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏とする。
+  \begin{enumerate}
+  \item 前層\myInlineMath{A \myElemOf \myPresheaf{C}}に対して、
+    前層の射\myInlineMath{\myIdPresheafHom{A} \myElemOf
+      \myPresheafHom{A}{A}}を
+    \myInlineMath{\myAbs{x}{\myIdFun{A\myAppParen{x}}}}と定義する。
+    これが前層の射の公理を満たすことが確かめられる。
+  \item 前層\myInlineMath{A_{1}, A_{2}, A_{3} \myElemOf \myPresheaf{C}}と
+    前層の射\myInlineMath{f_{1} \myElemOf \myPresheafHom{A_{1}}{A_{2}}}と
+    \myInlineMath{f_{2} \myElemOf \myPresheafHom{A_{2}}{A_{3}}}に対して、
+    前層の射\myInlineMath{f_{2} \myPresheafHomComp f_{1} \myElemOf
+      \myPresheafHom{A_{1}}{A_{3}}}を
+    \myInlineMath{\myAbs{x}
+      {f_{2}\myImplicit{x} \myFunComp f_{1}\myImplicit{x}}}と定義する。
+    これが前層の射の公理を満たすことが確かめられる。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
