@@ -1,0 +1,16 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006J}{myTheorem}
+  関数外延性と一価性を仮定する。
+  \myInlineMath{i}を階数とすると、
+  \myInlineMath{\mySetCat{i}}は圏である。
+\end{myBlock}
+\begin{myProof}
+  対象\myInlineMath{A, B \myElemOf \mySetCat{i}}に対して、
+  \myRef{006I}より\myInlineMath{(A \myCatIso B) \myEquiv (A \myEquiv B)}を得て、
+  一価性と\myRef{0049}より\myInlineMath{(A \myEquiv B) \myEquiv (A \myIdType B)}を得る。
+\end{myProof}
+
+\end{document}
