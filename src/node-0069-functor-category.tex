@@ -1,0 +1,18 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0069}{myDefinition}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏とする。
+  前圏\myInlineMath{\myFunctorCat{C}{D} \myElemOf \myPreCat{i}}を次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myCatObj \myDefEq \myFunctor{C}{D}}
+  \item \myInlineMath{\myCatMap \myDefEq \myAbs{F G}{\myNatTrans{F}{G}}}
+  \item 恒等射と合成は\myRef{0067}の通り。
+  \item 残りは\myRef{0068}から容易に示せる。
+  \end{itemize}
+\end{myBlock}
+
+\end{document}

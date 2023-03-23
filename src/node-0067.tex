@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0067}{myExercise}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏とする。
+  \begin{enumerate}
+  \item 関手\myInlineMath{F \myElemOf \myFunctor{C}{D}}に対して、
+    \emph{恒等自然変換}\myInlineMath{\myIdNatTrans{F} \myElemOf \myNatTrans{F}{F}}を
+    \myInlineMath{\myAbs{x}{\myCatId{\myAppParen{F\myAppParen{x}}}}}と定義する。
+    \myInlineMath{\myIdNatTrans{F}}の自然性を確認せよ。
+  \item 関手\myInlineMath{F_{1}, F_{2}, F_{3} \myElemOf \myFunctor{C}{D}}と
+    自然変換\myInlineMath{t_{1} \myElemOf \myNatTrans{F_{1}}{F_{2}}}と
+    \myInlineMath{t_{2} \myElemOf \myNatTrans{F_{2}}{F_{3}}}に対して、
+    \emph{合成}\myInlineMath{t_{2} \myNatTransComp t_{1} \myElemOf \myNatTrans{F_{1}}{F_{3}}}を
+    \myInlineMath{\myAbs{x}{t_{2}\myAppParen{x} \myCatCompBin t_{1}\myAppParen{x}}}と定義する。
+    \myInlineMath{t_{2} \myNatTransComp t_{1}}の自然性を確認せよ。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006A}{myProposition}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{F, G \myElemOf \myFunctor{C}{D}}を関手、
+  \myInlineMath{t \myElemOf \myNatTrans{F}{G}}を自然変換とする。
+  次は論理的に同値である。
+  \begin{enumerate}
+  \item \label{006A:0000} 任意の\myInlineMath{x \myElemOf C}に対して、
+    \myInlineMath{t\myAppParen{x} \myElemOf
+      \myCatMap\myAppParen{F\myAppParen{x}, G\myAppParen{x}}}は同型である。
+  \item \label{006A:0001} \myInlineMath{t}は前圏
+    \myInlineMath{\myFunctorCat{C}{D}}の射として同型である。
+  \end{enumerate}
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myRefLabel{006A:0001}から\myRefLabel{006A:0000}は自明である。
+
+  \myRefLabel{006A:0000}から\myRefLabel{006A:0001}を示す。
+  各\myInlineMath{x \myElemOf C}に対して、
+  射\myInlineMath{s\myAppParen{x}, u\myAppParen{x} \myElemOf
+    \myCatMap\myAppParen{G\myAppParen{x}, F\myAppParen{x}}}と
+  同一視\myInlineMath{p\myAppParen{x} \myElemOf
+    s\myAppParen{x} \myCatCompBin t\myAppParen{x} \myIdType
+    \myCatId\myAppParen{F\myAppParen{x}}}と
+  \myInlineMath{q\myAppParen{x} \myElemOf
+    t\myAppParen{x} \myCatCompBin u\myAppParen{x} \myIdType
+    \myCatId\myAppParen{G\myAppParen{x}}}を得る。
+  \myRef{0068}より、\myInlineMath{s}と\myInlineMath{u}の自然性を確認すれば十分である。
+  \myInlineMath{x_{1}, x_{2} \myElemOf C}を対象、
+  \myInlineMath{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}を射とする。
+  \myInlineMath{F\myAppParen{f} \myCatCompBin s\myAppParen{x_{1}} \myIdType
+    s\myAppParen{x_{2}} \myCatCompBin G\myAppParen{f}}を言うには、
+  \myRef{005G}より
+  \myInlineMath{F\myAppParen{f} \myCatCompBin s\myAppParen{x_{1}}
+    \myCatCompBin t\myAppParen{x_{1}} \myIdType
+    s\myAppParen{x_{2}} \myCatCompBin G\myAppParen{f}
+    \myCatCompBin t\myAppParen{x_{1}}}を示せば十分で、
+  これは次のように分かる。
+  \myEqReasoning{
+    & \term{F\myAppParen{f} \myCatCompBin s\myAppParen{x_{1}} \myCatCompBin t\myAppParen{x_{1}}} \\
+    \rel{\myIdType} & \by{\myInlineMath{p\myAppParen{x_{1}}}} \\
+    & \term{F\myAppParen{f}} \\
+    \rel{\myIdType} & \by{\myInlineMath{p\myAppParen{x_{2}}^{\myIdInv}}} \\
+    & \term{s\myAppParen{x_{2}} \myCatCompBin t\myAppParen{x_{2}} \myCatCompBin F\myAppParen{f}} \\
+    \rel{\myIdType} & \by{\myInlineMath{t}の自然性} \\
+    & \term{s\myAppParen{x_{2}} \myCatCompBin G\myAppParen{f} \myCatCompBin t\myAppParen{x_{1}}}
+  }\myInlineMath{u}の自然性も同様である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}
