@@ -1,0 +1,32 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006B}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{P, B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{c \myElemOf \myDPairType{x \myElemOf A}
+    {P\myAppParen{x}}}を要素、
+  \myInlineMath{b \myElemOf B\myAppParen{\myProjI{c}}}を要素とする。
+  \myInlineMath{\myDFunType{x \myElemOf A}
+    {\myIsProp{P\myAppParen{x}}}}の要素があり、
+  \myInlineMath{\myDPairType{x \myElemOf A}
+    {B\myAppParen{x}}}は可縮であるならば、
+  \myInlineMath{\myDPairType{z \myElemOf
+      \myDPairType{x \myElemOf A}{P\myAppParen{x}}}
+    {B\myAppParen{\myProjI{z}}}}は可縮である。
+\end{myBlock}
+\begin{myProof}
+  並び換えによりレトラクト
+  \myInlineMath{(\myDPairType{z \myElemOf
+      \myDPairType{x \myElemOf A}{P\myAppParen{x}}}
+    {B\myAppParen{\myProjI{z}}}) \myRetractRel
+    \myDPairType{z \myElemOf \myDPairType{x \myElemOf A}
+      B\myAppParen{x}}{P\myAppParen{\myProjI{z}}}}を得る。
+  後者は\myRef{004F}と\myRef{004X}より命題であり、
+  要素\myInlineMath{\myPair{\myPair{\myProjI{c}}{b}}{\myProjII{c}}}
+  を持つので、\myRef{0041}より可縮である。
+\end{myProof}
+
+\end{document}
