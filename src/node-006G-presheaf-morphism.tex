@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006G}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{A, B \myElemOf \myPresheaf{C}}を前層とする。
+  型\myInlineMath{\myPresheafHom{A}{B} \myElemOf \myUniverse{i}}を
+  \myDisplayMath{\myPropCompr{h \myElemOf
+      \myDFunType{\myImplicit{x \myElemOf C}}
+      {A\myAppParen{x} \myFunType B\myAppParen{x}}}
+    {\myForall{x_{1}, x_{2} \myElemOf C}
+     {\myForall{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}
+      {\myForall{a \myElemOf A\myAppParen{x_{2}}}
+       {h\myAppParen{a \myPresheafActBin f} \myIdType
+        h\myAppParen{a} \myPresheafActBin f}}}}}と定義する。
+  \myInlineMath{\myPresheafHom{A}{B}}の要素を
+  \myNewTerm[ぜんそうのしゃ]{前層の射}(morphism of presheaves)と呼ぶ。
+\end{myBlock}
+
+\end{document}
