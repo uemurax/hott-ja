@@ -17,4 +17,20 @@
 \subfile{node-006S}
 \subfile{node-006P-yoneda}
 
+定義から、任意の対象\myInlineMath{x, y \myElemOf C}に対して
+\myInlineMath{\myYoneda{C}\myAppParen{x}\myAppParen{y}
+  \myDefEq \myCatMap\myAppParen{y, x}}である。
+特に、\myInlineMath{\myCatId\myAppParen{x} \myElemOf
+  \myCatMap\myAppParen{x, x}}は
+\myInlineMath{\myYoneda{C}\myAppParen{x}\myAppParen{x}}の要素とも思える。
+\myInlineMath{\myCatId{x}}をどのように見ているかを区別するために別の表記を導入する。
+
+\subfile{node-006U}
+
+\emph{米田の補題}(\myRef{006T})は\myInlineMath{\myYoneda{C}{x}}は
+\myInlineMath{\myYonedaGen{x} \myElemOf \myYoneda{C}{x}{x}}で
+自由に生成された\myInlineMath{C}上の前層であることを主張する。
+
+\subfile{node-006T-yoneda-lemma}
+
 \end{document}
