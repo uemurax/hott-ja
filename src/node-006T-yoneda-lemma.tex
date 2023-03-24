@@ -13,5 +13,29 @@
     \myFunType A\myAppParen{x}}
   は同値である。
 \end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  射\myInlineMath{h \myElemOf \myCatMap\myAppParen{\myYoneda{C}\myAppParen{x}, A}}と
+  対象\myInlineMath{y \myElemOf C}と
+  要素\myInlineMath{f \myElemOf \myYoneda{C}\myAppParen{x}\myAppParen{y}}に対して、
+  同一視
+  \myEqReasoning{
+    & \term{h\myAppParen{f}} \\
+    \rel{\myIdType} & \by{前圏の公理} \\
+    & \term{h\myAppParen{\myYonedaGen{x} \myPresheafActBin f}} \\
+    \rel{\myIdType} & \by{前層の公理} \\
+    & \term{h\myAppParen{\myYonedaGen{x}} \myPresheafActBin f}
+  }を得るので、
+  \myInlineMath{h}は\myInlineMath{\myYonedaGen{x}}における値のみで決まる。
+  つまり、任意の要素\myInlineMath{a \myElemOf A\myAppParen{x}}に対して、
+  \myInlineMath{\myFiber{\myAbs{h}{h\myAppParen{\myYonedaGen{x}}}}{a}}は命題であることが分かる。
+  この型が要素を持つことを確認するには、
+  \myInlineMath{\myAbs{y f}{a \myPresheafActBin f} \myElemOf
+    \myDFunType{y \myElemOf C}
+    {\myYoneda{C}\myAppParen{x}\myAppParen{y}
+     \myFunType A\myAppParen{y}}}が前層の射であることを確かめればよいが、
+  それは前層の公理から容易である。
+\end{myProof}
+\StopDefiningTabulars
 
 \end{document}
