@@ -1,0 +1,20 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0062}{myCorollary}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{A, B \myElemOf \myPresheafCat{C}}を前層、
+  \myInlineMath{f \myElemOf \myCatMap\myAppParen{A, B}}を射とする。
+  次は論理的に同値である。
+  \begin{enumerate}
+  \item \myInlineMath{f}は\myInlineMath{\myPresheafCat{C}}の射として同型である。
+  \item 任意の対象\myInlineMath{x \myElemOf C}に対して、
+    関数\myInlineMath{\myAbs{a}{f\myAppParen{a}} \myElemOf
+      A\myAppParen{x} \myFunType B\myAppParen{x}}は同値である。\myQed
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}
