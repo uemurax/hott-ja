@@ -71,7 +71,8 @@
 \newcommand{\myRetractId}{\myConst{r-s}}
 \newcommand{\myRetractRel}{\myMathWrap{\triangleleft}}
 \newcommand{\myBiRetractRel}{\myMathWrap{\mathrel}{{\myMathWrap{\triangleleft}}{\myMathWrap{\triangleright}}}}
-\newcommand{\myFiber}[2]{\myConst{Fiber}\myAppParen{#1, #2}}
+\newcommand{\myFiber@char}{\myConst{Fiber}}
+\newcommand{\myFiber}[2]{\myFiber@char\myAppParen{#1, #2}}
 \newcommand{\myFiberElem}{\myConst{elem}}
 \newcommand{\myFiberId}{\myConst{id}}
 \newcommand{\myIsEquiv}[1]{\myConst{IsEquiv}\myAppParen{#1}}
@@ -299,3 +300,9 @@
 \newcommand{\myFunctor@mark}{(\myFunctor@char)}
 \newcommand{\myCatMapFun}[1]{\myCatMap^{\myFunctor@mark}\myAppParen{#1}}
 \newcommand{\myYonedaGen}[1]{\myConst{gen}\myAppParen{#1}}
+\newcommand{\myIsoFiber}[2]{\myFiber@char^{{\myCatIso}}\myAppParen{#1, #2}}
+\newcommand{\myIsoFiberObj}{\myConst{obj}}
+\newcommand{\myIsoFiberIso}{\myConst{iso}}
+\newcommand{\myIsReprPsh}[1]{\myConst{IsRepr}\myAppParen{#1}}
+\newcommand{\myIsReprPshObj}{\myConst{obj}}
+\newcommand{\myIsReprPshElem}{\myConst{elem}}

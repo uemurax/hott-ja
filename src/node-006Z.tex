@@ -1,0 +1,36 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006Z}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{F \myElemOf \myFunctor{C}{D}}を関手、
+  \myInlineMath{y \myElemOf D}を対象とする。
+  \myInlineMath{C}が圏で、
+  \myInlineMath{F}が充満忠実ならば、
+  \myInlineMath{\myIsoFiber{F}{y}}は命題である。
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myRef{0041}を適用し、
+  \myInlineMath{a \myElemOf \myIsoFiber{F}{y}}を仮定して
+  \myInlineMath{\myIsoFiber{F}{y}}が可縮であることを示す。
+  レトラクト
+  \myEqReasoning{
+    & \term{\myIsoFiber{F}{y}} \\
+    \rel{\myRetractRel} & \by{定義} \\
+    & \term{\myDPairType{x \myElemOf C}
+        {F\myAppParen{x} \myCatIso y}} \\
+    \rel{\myRetractRel} & \by{\myInlineMath{a\myRecordField\myIsoFiberIso}と合成} \\
+    & \term{\myDPairType{x \myElemOf C}
+        {F\myAppParen{a\myRecordField\myIsoFiberObj}
+         \myCatIso F\myAppParen{x}}} \\
+    \rel{\myRetractRel} & \by{\myInlineMath{F}は充満忠実} \\
+    & \term{\myDPairType{x \myElemOf C}
+        {a\myRecordField\myIsoFiberObj \myCatIso x}}
+  }を得て、最後の型は\myInlineMath{C}が圏なので可縮である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}
