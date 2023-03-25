@@ -1,0 +1,24 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0070}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{A \myElemOf \myPresheaf{C}}を前層とする。
+  型\myInlineMath{\myIsReprPsh{A} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myIsReprPshObj \myElemOf C}
+  \item \myInlineMath{\myIsReprPshElem \myElemOf
+    A\myAppParen{\myIsReprPshObj}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myForall{x \myElemOf C}
+    {\myIsEquiv{\myAbs{(f \myElemOf \myCatMap\myAppParen{x, \myIsReprPshObj})}
+       {\myIsReprPshElem \myPresheafActBin f}}}}
+  \end{itemize}
+  \myInlineMath{\myIsReprPsh{A}}の要素がある時、
+  \myInlineMath{A}は\myNewTerm[ひょうげんかのう]{表現可能}(representable)であると言う。
+\end{myBlock}
+
+\end{document}
