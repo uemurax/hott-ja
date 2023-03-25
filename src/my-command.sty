@@ -277,4 +277,25 @@
 \newcommand{\myNatTrans}[2]{\myConst{NatTrans}\myAppParen{#1, #2}}
 \newcommand{\myIdNatTrans}[1]{\myCatId\myAppParen{#1}}
 \newcommand{\myNatTransComp}{\myCatCompBin}
-\newcommand{\myFunctorCat}[2]{\myFunctor@char^{(\myCat@char)}\myAppParen{#1, #2}}
+\newcommand{\myCat@mark}{(\myCat@char)}
+\newcommand{\myFunctorCat}[2]{\myFunctor@char^{\myCat@mark}\myAppParen{#1, #2}}
+\newcommand{\myPresheaf@char}{\myConst{Psh}}
+\newcommand{\myPresheaf}[1]{\myPresheaf@char\myAppParen{#1}}
+\newcommand{\myPresheafCarrier}{\myCarrier@char}
+\newcommand{\myPresheafAct}{\myConst{act}}
+\newcommand{\myPresheafActBin}{\myMathWrap{\cdot}}
+\newcommand{\myPresheafHom}[2]{\myHom@char\myAppParen{#1, #2}}
+\newcommand{\mySetCat}[1]{\myConst{Set}^{\myCat@mark}\myAppParen{#1}}
+\newcommand{\myPresheafCat}[1]{\myPresheaf@char^{\myCat@mark}\myAppParen{#1}}
+\newcommand{\myIdPresheafHom}[1]{\myCatId\myAppParen{#1}}
+\newcommand{\myPresheafHomComp}{\myCatCompBin}
+\newcommand{\myOppositeCat}[1]{\myConst{Op}\myAppParen{#1}}
+\newcommand{\myYoneda}[1]{\myConst{よ}\myAppParen{#1}}
+\newcommand{\myBiFunctor}[3]{\myConst{BiFun}\myAppParen{#1, #2; #3}}
+\newcommand{\myBiFunctorObj}{\myConst{obj}}
+\newcommand{\myBiFunctorMap@char}{\myConst{map}}
+\newcommand{\myBiFunctorMapI}{\myBiFunctorMap@char_{1}}
+\newcommand{\myBiFunctorMapII}{\myBiFunctorMap@char_{2}}
+\newcommand{\myFunctor@mark}{(\myFunctor@char)}
+\newcommand{\myCatMapFun}[1]{\myCatMap^{\myFunctor@mark}\myAppParen{#1}}
+\newcommand{\myYonedaGen}[1]{\myConst{gen}\myAppParen{#1}}

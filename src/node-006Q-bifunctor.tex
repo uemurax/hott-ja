@@ -1,0 +1,68 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006Q}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C_{1}, C_{2}, D \myElemOf \myPreCat{i}}を前圏とする。
+  型\myInlineMath{\myBiFunctor{C_{1}}{C_{2}}{D} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myBiFunctorObj \myElemOf
+    C_{1}\myRecordField\myCatObj \myFunType
+    C_{2}\myRecordField\myCatObj \myFunType
+    D\myRecordField\myCatObj}
+  \item \myInlineMath{\myBiFunctorMapI \myElemOf
+    \myDFunType{\myImplicit{x_{11}, x_{12} \myElemOf C_{1}}}
+    {\myCatMap\myAppParen{x_{11}, x_{12}} \myFunType
+     \myDFunType{x_{2} \myElemOf C_{2}}
+     {\myCatMap\myAppParen{\myBiFunctorObj\myAppParen{x_{11}, x_{2}},
+      \myBiFunctorObj\myAppParen{x_{12}, x_{2}}}}}}
+  \item \myInlineMath{\myBiFunctorMapII \myElemOf
+    \myDFunType{x_{1} \myElemOf C_{1}}
+    {\myDFunType{\myImplicit{x_{21}, x_{22} \myElemOf C_{2}}}
+     {\myCatMap\myAppParen{x_{21}, x_{22}} \myFunType
+      \myCatMap\myAppParen{\myBiFunctorObj\myAppParen{x_{1}, x_{21}},
+        \myBiFunctorObj\myAppParen{x_{1}, x_{22}}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myForall{x_{1} \myElemOf C_{1}}
+    {\myForall{x_{2} \myElemOf C_{2}}
+     {\myBiFunctorMapI\myAppParen{\myCatId\myAppParen{x_{1}}, x_{2}}
+      \myIdType \myCatId\myAppParen{\myBiFunctorObj\myAppParen{x_{1}, x_{2}}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myForall{x_{11}, x_{12}, x_{13} \myElemOf C_{1}}
+    {\myForall{x_{2} \myElemOf C_{2}}
+     {\myForall{f_{1} \myElemOf \myCatMap\myAppParen{x_{11}, x_{12}}}
+      {\myForall{f_{2} \myElemOf \myCatMap\myAppParen{x_{12}, x_{13}}}
+       {\myBiFunctorMapI\myAppParen{f_{2} \myCatCompBin f_{1}, x_{2}} \myIdType
+        \myBiFunctorMapI\myAppParen{f_{2}, x_{2}} \myCatCompBin
+        \myBiFunctorMapI\myAppParen{f_{1}, x_{2}}}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myForall{x_{1} \myElemOf C_{1}}
+    {\myForall{x_{2} \myElemOf C_{2}}
+     {\myBiFunctorMapII\myAppParen{x_{1}, \myCatId\myAppParen{x_{2}}}
+      \myIdType \myCatId\myAppParen{\myBiFunctorObj\myAppParen{x_{1}, x_{2}}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myForall{x_{1} \myElemOf C_{1}}
+    {\myForall{x_{21}, x_{22}, x_{23} \myElemOf C_{2}}
+     {\myForall{f_{1} \myElemOf \myCatMap\myAppParen{x_{21}, x_{22}}}
+      {\myForall{f_{2} \myElemOf \myCatMap\myAppParen{x_{22}, x_{23}}}
+       {\myBiFunctorMapII\myAppParen{x_{1}, f_{2} \myCatCompBin f_{1}} \myIdType
+        \myBiFunctorMapII\myAppParen{x_{1}, f_{2}} \myCatCompBin
+        \myBiFunctorMapII\myAppParen{x_{1}, f_{1}}}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myForall{x_{11}, x_{12} \myElemOf C_{1}}
+    {\myForall{x_{21}, x_{22} \myElemOf C_{2}}
+     {\myForall{f_{1} \myElemOf \myCatMap\myAppParen{x_{11}, x_{12}}}
+      {\myForall{f_{2} \myElemOf \myCatMap\myAppParen{x_{21}, x_{22}}}
+       {\myBiFunctorMapI\myAppParen{f_{1}, x_{22}} \myCatCompBin
+        \myBiFunctorMapII\myAppParen{x_{11}, f_{2}} \myIdType
+        \myBiFunctorMapII\myAppParen{x_{12}, f_{2}} \myCatCompBin
+        \myBiFunctorMapI\myAppParen{f_{1}, x_{21}}}}}}}
+  \end{itemize}
+  \myInlineMath{\myBiFunctor{C_{1}}{C_{2}}{D}}の要素を
+  \myInlineMath{C_{1}, C_{2}}から\myInlineMath{D}への
+  \myNewTerm[そうかんしゅ]{双関手}(bifunctor)と呼ぶ。
+\end{myBlock}
+
+\end{document}

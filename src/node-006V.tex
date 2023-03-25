@@ -1,0 +1,25 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006V}{myCorollary}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏とする。
+  米田埋め込み\myInlineMath{\myYoneda{C} \myElemOf
+    \myFunctor{C}{\myPresheafCat{C}}}は充満忠実である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{x_{1}, x_{2} \myElemOf C}を対象とする。
+  関数\myInlineMath{\myAbs{f}{\myYoneda{C}\myAppParen{f}} \myElemOf
+    \myCatMap\myAppParen{x_{1}, x_{2}} \myFunType
+    \myCatMap\myAppParen{\myYoneda{C}\myAppParen{x_{1}}, \myYoneda{C}\myAppParen{x_{2}}}}と
+  \myInlineMath{\myAbs{h}{h\myAppParen{\myYonedaGen{x_{1}}}} \myElemOf
+    \myCatMap\myAppParen{\myYoneda{C}\myAppParen{x_{1}}, \myYoneda{C}\myAppParen{x_{2}}}
+    \myFunType \myYoneda{C}\myAppParen{x_{2}}\myAppParen{x_{1}}}の合成は
+  \myInlineMath{\myCatMap\myAppParen{x_{1}, x_{2}}}上の恒等関数と同一であることが分かる。
+  よって、\myRef{002E}と\myRef{006T}から
+  \myInlineMath{\myAbs{f}{\myYoneda{C}\myAppParen{f}}}は同値である。
+\end{myProof}
+
+\end{document}

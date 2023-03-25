@@ -1,0 +1,25 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006N}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏とする。
+  前圏\myInlineMath{\myOppositeCat{C} \myElemOf \myPreCat{i}}を
+  次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myCatObj \myDefEq C\myRecordField\myCatObj}
+  \item \myInlineMath{\myCatMap \myDefEq
+    \myAbs{x_{1} x_{2}}{C\myRecordField\myCatMap\myAppParen{x_{2}, x_{1}}}}
+  \item \myInlineMath{\myCatId \myDefEq
+    \myAbs{x}{C\myRecordField\myCatId\myAppParen{x}}}
+  \item \myInlineMath{\myCatComp \myDefEq
+    \myAbs{x_{1} x_{2} x_{3}}
+    {\myAbs{(g \myElemOf \myCatMap\myAppParen{x_{2}, x_{3}})
+       (f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}})}
+     {C\myRecordField\myCatComp\myAppParen{f, g}}}}
+  \item 前圏の公理は\myInlineMath{C}のそれから分かる。
+  \end{itemize}
+\end{myBlock}
+
+\end{document}

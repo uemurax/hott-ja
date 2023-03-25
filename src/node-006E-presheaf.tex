@@ -1,0 +1,38 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006E}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏とする。
+  型\myInlineMath{\myPresheaf{C} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myPresheafCarrier \myElemOf
+    C\myRecordField\myCatObj \myFunType \myUniverse{i}}
+  \item \myInlineMath{\myPresheafAct \myElemOf
+    \myDFunType{\myImplicit{x_{1}, x_{2} \myElemOf C}}
+    {\myPresheafCarrier\myAppParen{x_{2}} \myFunType
+     \myCatMap\myAppParen{x_{1}, x_{2}} \myFunType
+     \myPresheafCarrier\myAppParen{x_{1}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myForall{x \myElemOf C}
+    {\myIsSet{\myPresheafCarrier\myAppParen{x}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myForall{x \myElemOf C}
+    {\myForall{a \myElemOf \myPresheafCarrier\myAppParen{x}}
+     {\myPresheafAct\myAppParen{a, \myCatId\myAppParen{x}}
+      \myIdType a}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myForall{x_{1}, x_{2}, x_{3} \myElemOf C}
+    {\myForall{f_{1} \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}
+     {\myForall{f_{2} \myElemOf \myCatMap\myAppParen{x_{2}, x_{3}}}
+      {\myForall{a \myElemOf \myPresheafCarrier\myAppParen{x_{3}}}
+       {\myPresheafAct\myAppParen{a, f_{2} \myCatCompBin f_{1}} \myIdType
+        \myPresheafAct\myAppParen{\myPresheafAct\myAppParen{a, f_{2}}, f_{1}}}}}}}
+  \end{itemize}
+  \myInlineMath{\myPresheaf{C}}の要素を\myInlineMath{C}上の
+  \myNewTerm[ぜんそう]{前層}(presheaf)と呼ぶ。
+\end{myBlock}
+
+\end{document}

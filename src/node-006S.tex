@@ -1,0 +1,23 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006S}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏とする。
+  \myInlineMath{\myCatMapFun{C} \myElemOf
+    \myBiFunctor{\myOppositeCat{C}}{C}{\mySetCat{i}}}を
+  次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myBiFunctorObj \myDefEq
+    \myAbs{x_{1} x_{2}}{\myCatMap\myAppParen{x_{1}, x_{2}}}}
+  \item \myInlineMath{\myBiFunctorMapI \myDefEq
+    \myAbs{x_{11} x_{12} f x_{2}}
+    {\myAbs{h}{h \myCatCompBin f}}}
+  \item \myInlineMath{\myBiFunctorMapII \myDefEq
+    \myAbs{x_{1} x_{21} x_{22} f}
+    {\myAbs{h}{f \myCatCompBin h}}}
+  \end{itemize}
+\end{myBlock}
+
+\end{document}
