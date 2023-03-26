@@ -7,16 +7,16 @@
 % & \term{y + x}
 % }
 
-\usepackage{lwarp,my-math}
+\usepackage{lwarp,longtable,my-math}
 
 \NewDocumentCommand{\myEqReasoning}{+m}{%
   \let\term\myEqReasoning@term
   \let\by\myEqReasoning@by
   \let\rel\myEqReasoning@rel
   \begin{center}
-    \begin{tabular}{ll}
+    \begin{longtable}{ll}
       #1
-    \end{tabular}
+    \end{longtable}
   \end{center}
   \ignorespacesafterend}
 
