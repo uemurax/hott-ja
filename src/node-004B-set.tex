@@ -4,8 +4,23 @@
 
 \mySection{004B}{集合}
 
+\myInlineMath{\myTLMinusOne}型の次に単純な型は
+\myInlineMath{\myTLZero}型である。
+\myInlineMath{A}が\myInlineMath{\myTLZero}型の時は、
+任意の\myInlineMath{x_{1}, x_{2} \myElemOf A}に対して
+\myInlineMath{x_{1} \myIdType x_{2}}は命題である。
+よって、二つの要素が同一視されるかどうかには興味があるが、
+どう同一視されるかは考える意味がない。
+このような型を\emph{集合}であると考える。
+
 \subfile{node-004C-set}
 \subfile{node-004D}
+
+型が集合であることの十分条件として、
+同一視型が\emph{決定可能}であるというのがある(\myRef{004H})。
+ここで、型\myInlineMath{P}が決定可能とは、
+\myInlineMath{P \myCoproduct (P \myFunType \myEmptyType)}の要素があることを言う。
+
 \subfile{node-004E}
 \subfile{node-004H-Hedberg}
 
