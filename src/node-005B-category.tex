@@ -5,13 +5,46 @@
 \mySection{005B}{圏}
 
 \subfile{node-005C-precategory}
+
+射の型\myInlineMath{\myCatMap\myAppParen{x_{1}, x_{2}}}は
+集合であると要請される。
+これは、群の定義(\myRef{004W})において
+\myInlineMath{\myGroupCarrier}は集合としたのと同様である。
+対して、\myInlineMath{\myCatObj}は集合とは限らない。
+
 \subfile{node-005D}
+\subfile{node-006H-category-of-sets}
+\subfile{node-006N-opposite}
+
+前圏\myInlineMath{C}の対象の間には、同一視型の他に
+\emph{同型}という同一視の概念が考えらる。
+
 \subfile{node-005E-isomorphism}
 \subfile{node-005G}
 \subfile{node-005H}
-\subfile{node-006X}
 \subfile{node-005F}
-\subfile{node-005I-category}
-\subfile{node-006N-opposite}
 
+同型の基本性質は次のようにまとめられる。
+
+\subfile{node-006X}
+
+\emph{圏}とは、前圏であって対象の間の同型の型と同一視型が
+同値になるようなものである。
+
+\subfile{node-005I-category}
+
+\myInlineMath{C}を圏とすると、
+恒等射は同型なので\myRef{001S}を適用できて、
+同値\myDisplayMath{\myDFunType{x_{1}, x_{2} \myElemOf C}
+  {(x_{1} \myIdType x_{2}) \myEquiv
+    (x_{1} \myCatIso x_{2})}}を得る。
+逆に、前圏\myInlineMath{C}が圏であることを示すには
+このような同値を構成すれば十分である。
+
+圏の典型例として、
+\myInlineMath{\mySetCat{i}} (\myRef{006H})が圏であることを見る。
+
+\subfile{node-006I}
+\subfile{node-006J}
+  
 \end{document}
