@@ -4,9 +4,29 @@
 
 \mySection{003Z}{命題}
 
+\myInlineMath{\myTLMinusTwo}型は可縮な型であり、
+すべての次元の構造が自明であるという最も単純な型である。
+次に単純な型は\myInlineMath{\myTLMinusOne}型である。
+定義から、\myInlineMath{A}が\myInlineMath{\myTLMinusOne}型であるとは、
+任意の\myInlineMath{x_{1}, x_{2} \myElemOf A}に対して
+\myInlineMath{x_{1} \myIdType x_{2}}が可縮であることである。
+つまり、任意の二つの要素の間にただ一つだけ同一視がある。
+\myInlineMath{A}を\myInlineMath{\myTLMinusOne}型とすると、
+\myInlineMath{A}の要素が存在するという情報には意味があるが、
+\myInlineMath{A}の二つの要素が同一かどうかは考える意味がない。
+このような\myInlineMath{A}を\emph{命題}と考え、
+\myInlineMath{A}の要素を命題の\emph{証明}と考える。
+
 \subfile{node-0040-proposition}
 \subfile{node-004G-empty-prop}
+
+型が命題であることを示すには次が便利である。
+
 \subfile{node-0041}
+
+レコード型の同一視型を決定する場面において、
+命題の部分は無視できることを示す(\myRef{0049})。
+
 \subfile{node-006B}
 \subfile{node-0049}
 
@@ -22,10 +42,26 @@
 この視点を強調するために記法を導入する。
 
 \subfile{node-004A-comprehension}
+
+さて、これまでいくつかの型に\myInlineMath{\myConst{IsXXX}}という形の命名をしてきたが、
+これは(関数外延性の下で)その型が命題であることを意図している。
+多くの概念が可縮性を軸に定義されるので、
+\myInlineMath{\myIsContr{A}}が命題であること(\myRef{0042})が基本的である。
+
 \subfile{node-0042}
 \subfile{node-0043}
 \subfile{node-0044}
+
+\myRef{004N}で諸々の同値の概念も命題であることを見る。
+
+\myInlineMath{\myIsTrunc{n}{A}}が命題である(\myRef{0043})ということは、
+\myInlineMath{\myTruncType{n}{A}}は\myInlineMath{\myUniverse{i}}の部分型となる。
+一価性公理から、その同一視型を計算できる。
+
 \subfile{node-0054}
+
+命題の相対版も考える。
+
 \subfile{node-005Y-embedding}
 \subfile{node-0062}
 
