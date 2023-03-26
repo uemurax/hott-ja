@@ -4,17 +4,30 @@
 
 \mySection{006D}{前層}
 
+圏にとっての\emph{前層}は、
+群にとっての作用、
+環にとっての加群に相当するものである。
+
 \subfile{node-006E-presheaf}
 \subfile{node-006F}
+
+つまり、\myInlineMath{C}上の前層は
+\myInlineMath{C}の対象で添え字付けられた集合の族で、
+\myInlineMath{C}の射が右から作用しているものである。
+
 \subfile{node-006G-presheaf-morphism}
 \subfile{node-006L}
-\subfile{node-006H-category-of-sets}
-\subfile{node-006I}
-\subfile{node-006J}
+
+前層と前層の射は前圏をなし、
+関手のなす前圏としても定義できる(\myRef{006M})。
+
 \subfile{node-006K-presheaf-category}
 \subfile{node-006M}
 \subfile{node-006O}
 \subfile{node-0072}
+
+さて、圏論において最も重要な\emph{米田の補題}(\myRef{006T})を導入する。
+
 \subfile{node-006S}
 \subfile{node-006P-yoneda}
 
@@ -29,13 +42,25 @@
 
 \subfile{node-006U}
 
-\emph{米田の補題}(\myRef{006T})は\myInlineMath{\myYoneda{C}\myAppParen{x}}は
+米田の補題が主張するのは、
+\myInlineMath{\myYoneda{C}\myAppParen{x}}は
 \myInlineMath{\myYonedaGen{x} \myElemOf \myYoneda{C}\myAppParen{x}\myAppParen{x}}で
-自由に生成された\myInlineMath{C}上の前層であることを主張する。
+自由に生成された\myInlineMath{C}上の前層であることである。
 
 \subfile{node-006T-yoneda-lemma}
 \subfile{node-006V}
+
+多くの圏論的な概念は、ある前層が\emph{表現可能}であるという性質で定義される。
+
 \subfile{node-0070-representable}
+
+従来の圏論では、
+\myInlineMath{C}上の前層\myInlineMath{A}の普遍要素は
+「同型を除いて一意」であることが知られている。
+ホモトピー型理論においては、
+\myInlineMath{C}が圏と仮定して普遍要素は一意であること、
+つまり\myInlineMath{\myIsReprPsh{A}}は命題であることが分かる(\myRef{0073})。
+
 \subfile{node-0071}
 \subfile{node-0073}
 
