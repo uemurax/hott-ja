@@ -1,0 +1,23 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0074}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  次は論理的に同値である。
+  \begin{enumerate}
+  \item \myInlineMath{f}は全射である。
+  \item \myInlineMath{f}は\myInlineMath{\myTLMinusOne}連結である。
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{y \myElemOf B}を要素とする。
+  \myRef{0041}より、
+  \myInlineMath{\myTrunc{\myTLMinusOne}{\myFiber{f}{y}}}と
+  \myInlineMath{\myIsContr{\myTrunc{\myTLMinusOne}{\myFiber{f}{y}}}}は
+  論理的に同値であるから主張が従う。
+\end{myProof}
+
+\end{document}
