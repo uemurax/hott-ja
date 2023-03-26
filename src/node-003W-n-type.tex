@@ -4,15 +4,52 @@
 
 \mySection{003W}{$n$型}
 
+\myRef{002N}で型は高次グルーポイドの構造を持つと説明したが、
+その豊富な構造をすべて把握するのは容易ではない。
+\myInlineMath{n}次元より上の構造が自明になっているような型は
+\emph{\myInlineMath{n}型}と呼ばれ、比較的解析が容易である。
+
+次数\myInlineMath{n}は\myInlineMath{-2}から数えるのが都合がよい。
+
 \subfile{node-003X-truncation-level}
+
+\myInlineMath{\myTruncLevel}は実質\myInlineMath{\myNat}と同じであるが、
+\myInlineMath{\myNatZero}の代わりに\myInlineMath{\myTLMinusTwo}から数えたものである。
+特に、次の\emph{帰納法原理}を満たす:型の族\myInlineMath{A \myElemOf \myTruncLevel
+  \myFunType \myUniverse{i}}に対して、
+関数\myInlineMath{h \myElemOf \myDFunType{x \myElemOf \myTruncLevel}
+  {A\myAppParen{x}}}を構成するためには、
+\begin{itemize}
+\item \myInlineMath{a \myElemOf A\myAppParen{\myTLMinusTwo}}
+\item \myInlineMath{f \myElemOf \myDFunType{x \myElemOf \myTruncLevel}
+  {A\myAppParen{x} \myFunType
+   A\myAppParen{\myTLSucc{x}}}}
+\end{itemize}
+を構成すれば十分である。
+
 \subfile{node-003Y-truncated}
 \subfile{node-0053-n-type}
+
+\myInlineMath{\myTLMinusOne}型は特別に\emph{命題}と呼ばれ、
+\myRef{003Z}でより詳しく調べる。
+\myInlineMath{\myTLZero}型は特別に\emph{集合}と呼ばれ、
+\myRef{004B}でより詳しく調べる。
+
+\myInlineMath{n}型の一般的な性質をいくつか見る。
+まず、\myInlineMath{n}型はレトラクトで閉じる(\myRef{0045})。
+
 \subfile{node-0046}
 \subfile{node-0045}
+
+\myInlineMath{n}型はいくつかの型の構成で閉じる。
+
 \subfile{node-0048}
 \subfile{node-004X}
 \subfile{node-004F}
 \subfile{node-0052}
+
+相対的な\myInlineMath{n}型の概念も導入する。
+
 \subfile{node-005Q-truncated-map}
 \subfile{node-005S}
 \subfile{node-005R}
