@@ -1,0 +1,54 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005G}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{x_{1}, x_{2} \myElemOf C}を対象、
+  \myInlineMath{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}を射とする。
+  次は論理的に同値である。
+  \begin{enumerate}
+  \item \label{005G:0000} \myInlineMath{f}は同型である。
+  \item \label{005G:0001} 任意の対象\myInlineMath{y \myElemOf C}に対して、
+    関数\myInlineMath{\myAbs{g}{f \myCatCompBin g} \myElemOf
+      \myCatMap\myAppParen{y, x_{1}} \myFunType
+      \myCatMap\myAppParen{y, x_{2}}}は同値である。
+  \item \label{005G:0002} 任意の対象\myInlineMath{y \myElemOf C}に対して、
+    関数\myInlineMath{\myAbs{g}{g \myCatCompBin f} \myElemOf
+      \myCatMap\myAppParen{x_{2}, y} \myFunType
+      \myCatMap\myAppParen{x_{1}, y}}は同値である。
+  \end{enumerate}
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  \myRefLabel{005G:0000}から\myRefLabel{005G:0001}を示す。
+  定義から、関数\myInlineMath{\myAbs{g}{f \myCatCompBin g} \myElemOf
+    \myCatMap\myAppParen{y, x_{1}} \myFunType
+    \myCatMap\myAppParen{y, x_{2}}}は両側可逆であることが分かる。
+  よって、\myRef{004K}よりこれは同値である。
+
+  \myRefLabel{005G:0001}から\myRefLabel{005G:0000}を示す。
+  \myInlineMath{\myAbs{g}{f \myCatCompBin g} \myElemOf
+    \myCatMap\myAppParen{x_{2}, x_{1}} \myFunType
+    \myCatMap\myAppParen{x_{2}, x_{2}}}が同値なので、
+  射\myInlineMath{h \myElemOf \myCatMap\myAppParen{x_{2}, x_{1}}}と
+  同一視\myInlineMath{p \myElemOf f \myCatCompBin h \myIdType \myCatId\myAppParen{x_{2}}}を得る。
+  関数\myInlineMath{\myAbs{g}{f \myCatCompBin g} \myElemOf
+    \myCatMap\myAppParen{x_{1}, x_{1}} \myFunType
+    \myCatMap\myAppParen{x_{1}, x_{2}}}が同値なので、
+  同一視\myEqReasoning{
+    & \term{f \myCatCompBin h \myCatCompBin f} \\
+    \rel{\myIdType} & \by{\myInlineMath{p}} \\
+    & \term{f} \\
+    \rel{\myIdType} & \by{前圏の公理} \\
+    & \term{f \myCatCompBin \myCatId\myAppParen{x_{1}}}
+  }から同一視\myInlineMath{q \myElemOf h \myCatCompBin f \myIdType
+    \myCatId\myAppParen{x_{1}}}を得る。
+  よって、\myInlineMath{f}は同型である。
+
+  \myRefLabel{005G:0000}と\myRefLabel{005G:0002}の同値性も同様である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}

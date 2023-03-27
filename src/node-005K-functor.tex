@@ -1,0 +1,35 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005K}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏とする。
+  型\myInlineMath{\myFunctor{C}{D} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myFunctorObj \myElemOf
+    C\myRecordField\myCatObj \myFunType
+    D\myRecordField\myCatObj}
+  \item \myInlineMath{\myFunctorMap \myElemOf
+    \myDFunType{\myImplicit{x_{1}, x_{2} \myElemOf C\myRecordField\myCatObj}}
+    {C\myRecordField\myCatMap\myAppParen{x_{1}, x_{2}} \myFunType
+     D\myRecordField\myCatMap\myAppParen{\myFunctorObj\myAppParen{x_{1}},
+       \myFunctorObj\myAppParen{x_{2}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf C\myRecordField\myCatObj}
+    {\myFunctorMap\myAppParen{C\myRecordField\myCatId\myAppParen{x}}
+     \myIdType D\myRecordField\myCatId\myAppParen{\myFunctorObj\myAppParen{x}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2}, x_{3} \myElemOf C\myRecordField\myCatObj}
+    {\myDFunType{f_{1} \myElemOf C\myRecordField\myCatMap\myAppParen{x_{1}, x_{2}}}
+      \myDFunType{f_{2} \myElemOf C\myRecordField\myCatMap\myAppParen{x_{2}, x_{3}}}
+      {\myFunctorMap\myAppParen{C\myRecordField\myCatComp\myAppParen{f_{2}, f_{1}}}
+       \myIdType D\myRecordField\myCatComp\myAppParen{\myFunctorMap\myAppParen{f_{2}},
+       \myFunctorMap\myAppParen{f_{1}}}}}}
+  \end{itemize}
+  \myInlineMath{\myFunctor{C}{D}}の要素を\myInlineMath{C}から\myInlineMath{D}への
+  \myNewTerm[かんしゅ]{関手}(functor)と呼ぶ。
+\end{myBlock}
+
+\end{document}

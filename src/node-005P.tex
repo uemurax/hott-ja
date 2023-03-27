@@ -1,0 +1,26 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005P}{myTheorem}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{F \myElemOf \myFunctor{C}{D}}を関手とする。
+  \myInlineMath{C}と\myInlineMath{D}が圏ならば、
+  次は論理的に同値である。
+  \begin{enumerate}
+  \item \label{005P:0000} \myInlineMath{F}は前圏の同型である。
+  \item \label{005P:0001} \myInlineMath{F}は弱圏同値である。
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  \myRefLabel{005P:0000}から\myRefLabel{005P:0001}は自明である。
+
+  \myRefLabel{005P:0001}から\myRefLabel{005P:0000}を示す。
+  \myInlineMath{F\myRecordField\myFunctorObj \myElemOf
+    C\myRecordField\myCatObj \myFunType
+    D\myRecordField\myCatObj}が同値であることを示せばよいが、
+  これは\myRef{005X}と\myRef{0063}と\myRef{0074}と\myRef{0075}から従う。
+\end{myProof}
+
+\end{document}

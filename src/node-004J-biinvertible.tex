@@ -1,0 +1,26 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004J}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  \begin{itemize}
+  \item 型\myInlineMath{\myLInv{f} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myRecordType{\myLInvInv \myElemOf B \myFunType A,
+      \myLInvId \myElemOf \myLInvInv \myFunComp f \myHomotopy \myIdFun{A}}}
+    と定義する。
+  \item 型\myInlineMath{\myRInv{f} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myRecordType{\myRInvInv \myElemOf B \myFunType A,
+      \myRInvId \myElemOf f \myFunComp \myRInvInv \myHomotopy \myIdFun{B}}}
+    と定義する。
+  \item 型\myInlineMath{\myIsBiinv{f} \myElemOf \myUniverse{i}}を
+    \myInlineMath{\myRecordType{\myIsBiinvLInv \myElemOf \myLInv{f},
+      \myIsBiinvRInv \myElemOf \myRInv{f}}}と定義する。
+  \end{itemize}
+  \myInlineMath{\myIsBiinv{f}}の要素がある時、\myInlineMath{f}は
+  \myNewTerm[りょうがわかぎゃく]{両側可逆}(biinvertible)であると言う。
+\end{myBlock}
+
+\end{document}

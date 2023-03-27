@@ -12,6 +12,8 @@
   関数適用を\myInlineMath{f\myAppParen{a, b}}の代わりに
   \myInlineMath{a}を省略して\myInlineMath{f\myAppParen{b}}と書く。
   \myInlineMath{B}の構成で\myInlineMath{x}を明示的に使う場合には実用上は曖昧性は無い。
+  暗黙的な引数\myInlineMath{a}だけを適用したい場合は
+  \myInlineMath{f\myImplicit{a} \myElemOf B\mySubstParen{x \mySubst a}}と書く。
 \end{myBlock}
 
 \end{document}

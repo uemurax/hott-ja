@@ -1,0 +1,18 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005H}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{x_{1}, x_{2} \myElemOf C}を対象、
+  \myInlineMath{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}を射とすると、
+  型\myInlineMath{\myCatIsIso{f}}は命題である。
+\end{myBlock}
+\begin{myProof}
+  \myRef{0041}より、\myInlineMath{f}が同型であると仮定して
+  \myInlineMath{\myCatIsIso{f}}が可縮であることを示せばよいが、
+  これは\myRef{005G}からすぐに従う。
+\end{myProof}
+
+\end{document}

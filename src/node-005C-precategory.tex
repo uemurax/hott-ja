@@ -1,0 +1,49 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005C}{myDefinition}
+  \myInlineMath{i}を階数とする。
+  型\myInlineMath{\myPreCat{i} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myNewTerm[たいしょう]{対象}(object)の型
+    \myInlineMath{\myCatObj \myElemOf \myUniverse{i}}
+  \item \myNewTerm[しゃ]{射}(morphism)の型の族
+    \myInlineMath{\myCatMap \myElemOf \myCatObj \myFunType
+      \myCatObj \myFunType \myUniverse{i}}
+  \item \myNewTerm[こうとうしゃ]{恒等射}(identity)
+    \myInlineMath{\myCatId \myElemOf
+      \myDFunType{x \myElemOf \myCatObj}{\myCatMap\myAppParen{x, x}}}
+  \item 射の\myNewTerm[ごうせい]{合成}(composition)
+    \myInlineMath{\myCatComp \myElemOf
+    \myDFunType{\myImplicit{x_{1}, x_{2}, x_{3} \myElemOf \myCatObj}}
+    {\myCatMap\myAppParen{x_{2}, x_{3}} \myFunType
+     \myCatMap\myAppParen{x_{1}, x_{2}} \myFunType
+     \myCatMap\myAppParen{x_{1}, x_{3}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2} \myElemOf \myCatObj}
+    {\myIsSet{\myCatMap\myAppParen{x_{1}, x_{2}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2} \myElemOf \myCatObj}
+    {\myDFunType{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}
+      {\myCatComp\myAppParen{\myCatId\myAppParen{x_{2}}, f}
+       \myIdType f}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2} \myElemOf \myCatObj}
+    {\myDFunType{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}
+      {\myCatComp\myAppParen{f, \myCatId\myAppParen{x_{1}}}
+       \myIdType f}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2}, x_{3}, x_{4}}
+    {\myDFunType{f_{1} \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}
+     {\myDFunType{f_{2} \myElemOf \myCatMap\myAppParen{x_{2}, x_{3}}}
+      {\myDFunType{f_{3} \myElemOf \myCatMap\myAppParen{x_{3}, x_{4}}}
+       {\myCatComp\myAppParen{\myCatComp\myAppParen{f_{3}, f_{2}}, f_{1}} \myIdType
+        \myCatComp\myAppParen{f_{3}, \myCatComp\myAppParen{f_{2}, f_{1}}}}}}}}
+  \end{itemize}
+  \myInlineMath{\myPreCat{i}}の要素を(階数\myInlineMath{i}の)
+  \myNewTerm[ぜんけん]{前圏}(precategory)と呼ぶ。
+\end{myBlock}
+
+\end{document}

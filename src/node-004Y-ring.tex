@@ -1,0 +1,110 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004Y}{myExample}
+  \myInlineMath{i}を階数とする。
+  型\myInlineMath{\myRingStr{i} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myRingCarrier \myElemOf \myUniverse{i}}
+  \item \myInlineMath{\myRingZero \myElemOf \myRingCarrier}
+  \item \myInlineMath{\myRingPlus \myElemOf
+    \myRingCarrier \myFunType \myRingCarrier
+    \myFunType \myRingCarrier}
+  \item \myInlineMath{\myRingMinus \myElemOf
+    \myRingCarrier \myFunType \myRingCarrier}
+  \item \myInlineMath{\myRingOne \myElemOf \myRingCarrier}
+  \item \myInlineMath{\myRingMul \myElemOf
+    \myRingCarrier \myFunType \myRingCarrier
+    \myFunType \myRingCarrier}
+  \end{itemize}
+  要素\myInlineMath{R \myElemOf \myRingStr{i}}に対して、
+  型\myInlineMath{\myRingAxiom{R} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myBlank \myElemOf \myIsSet{R\myRecordField\myRingCarrier}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf R\myRecordField\myRingCarrier}
+    {R\myRecordField\myRingPlus\myAppParen{R\myRecordField\myRingZero, x}
+      \myIdType x}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2}, x_{3} \myElemOf R\myRecordField\myRingCarrier}
+    {R\myRecordField\myRingPlus\myAppParen{R\myRecordField\myRingPlus
+    \myAppParen{x_{1}, x_{2}}, x_{3}} \myIdType
+     R\myRecordField\myRingPlus\myAppParen{x_{1},
+     R\myRecordField\myRingPlus\myAppParen{x_{2}, x_{3}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2} \myElemOf R\myRecordField\myRingCarrier}
+    {R\myRecordField\myRingPlus\myAppParen{x_{1}, x_{2}} \myIdType
+     R\myRecordField\myRingPlus\myAppParen{x_{2}, x_{1}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf R\myRecordField\myRingCarrier}
+    {R\myRecordField\myRingPlus\myAppParen{x,
+      R\myRecordField\myRingMinus\myAppParen{x}} \myIdType
+     R\myRecordField\myRingZero}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf R\myRecordField\myRingCarrier}
+    {R\myRecordField\myRingMul\myAppParen{R\myRecordField\myRingOne, x}
+      \myIdType x}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf R\myRecordField\myRingCarrier}
+    {R\myRecordField\myRingMul\myAppParen{x, R\myRecordField\myRingOne}
+      \myIdType x}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2}, x_{3} \myElemOf R\myRecordField\myRingCarrier}
+    {R\myRecordField\myRingMul\myAppParen{R\myRecordField\myRingMul
+    \myAppParen{x_{1}, x_{2}}, x_{3}} \myIdType
+     R\myRecordField\myRingMul\myAppParen{x_{1},
+     R\myRecordField\myRingMul\myAppParen{x_{2}, x_{3}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x, y_{1}, y_{2} \myElemOf R\myRecordField\myRingCarrier}
+    {R\myRecordField\myRingMul\myAppParen{x,
+      R\myRecordField\myRingPlus\myAppParen{y_{1}, y_{2}}} \myIdType
+     R\myRecordField\myRingPlus
+     \myAppParen{R\myRecordField\myRingMul\myAppParen{x, y_{1}},
+       R\myRecordField\myRingMul\myAppParen{x, y_{2}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2}, y \myElemOf R\myRecordField\myRingCarrier}
+    {R\myRecordField\myRingMul
+      \myAppParen{R\myRecordField\myRingPlus\myAppParen{x_{1}, x_{2}}, y}
+     \myIdType R\myRecordField\myRingPlus
+     \myAppParen{R\myRecordField\myRingMul\myAppParen{x_{1}, y},
+       R\myRecordField\myRingMul\myAppParen{x_{2}, y}}}}
+  \end{itemize}
+  型\myInlineMath{\myRing{i} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  \myInlineMath{\myDPairType{X \myElemOf \myRingStr{i}}
+    {\myRingAxiom{X}}}と定義する。
+  \myInlineMath{\myRing{i}}の要素を(階数\myInlineMath{i}の)
+  \myNewTerm[かん]{環}(ring)と呼ぶ。
+  環\myInlineMath{A, B \myElemOf \myRing{i}}に対して、
+  同一視型\myInlineMath{A \myIdType B}は
+  次のレコード型と同値であることが分かる。
+  \begin{itemize}
+  \item \myInlineMath{f \myElemOf \myProjI{A}\myRecordField\myRingCarrier
+    \myEquiv \myProjI{B}\myRecordField\myRingCarrier}
+  \item \myInlineMath{\myBlank \myElemOf
+    f\myAppParen{\myProjI{A}\myRecordField\myRingZero}
+    \myIdType \myProjI{B}\myRecordField\myRingZero}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2} \myElemOf \myProjI{A}\myRecordField\myRingCarrier}
+    {f\myAppParen{\myProjI{A}\myRecordField\myRingPlus\myAppParen{x_{1}, x_{2}}}
+     \myIdType \myProjI{B}\myRecordField\myRingPlus
+     \myAppParen{f\myAppParen{x_{1}}, f\myAppParen{x_{2}}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x \myElemOf \myProjI{A}\myRecordField\myRingCarrier}
+    {f\myAppParen{\myProjI{A}\myRecordField\myRingMinus\myAppParen{x}}
+     \myIdType \myProjI{B}\myRecordField\myRingMinus\myAppParen{f\myAppParen{x}}}}
+  \item \myInlineMath{\myBlank \myElemOf
+    f\myAppParen{\myProjI{A}\myRecordField\myRingOne}
+    \myIdType \myProjI{B}\myRecordField\myRingOne}
+  \item \myInlineMath{\myBlank \myElemOf
+    \myDFunType{x_{1}, x_{2} \myElemOf \myProjI{A}\myRecordField\myRingCarrier}
+    {f\myAppParen{\myProjI{A}\myRecordField\myRingMul\myAppParen{x_{1}, x_{2}}}
+     \myIdType \myProjI{B}\myRecordField\myRingMul
+     \myAppParen{f\myAppParen{x_{1}}, f\myAppParen{x_{2}}}}}
+  \end{itemize}
+  この型の要素はいわゆる\myNewTerm[かんどうけい]{環同型}(ring isomorphism)である。
+\end{myBlock}
+
+\end{document}

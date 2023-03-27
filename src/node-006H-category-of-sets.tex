@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006H}{myExample}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数とする。
+  前圏\myInlineMath{\mySetCat{i} \myElemOf \myPreCat{\myLevelSucc{i}}}を
+  次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myCatObj \myDefEq
+    \myPropCompr{A \myElemOf \myUniverse{i}}{\myIsSet{A}}}
+  \item \myInlineMath{\myCatMap \myDefEq
+    \myAbs{A B}{(A \myFunType B)}}
+  \item 恒等射は\myRef{0010}、合成は\myRef{0011}による。
+  \item \myRef{0048}より、各\myInlineMath{\myCatMap\myAppParen{A, B}}は集合である。
+  \item 他の公理は自明である。
+  \end{itemize}
+\end{myBlock}
+
+\end{document}

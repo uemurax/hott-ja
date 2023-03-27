@@ -1,0 +1,23 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0063}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{F \myElemOf \myFunctor{C}{D}}を関手とする。
+  \myInlineMath{C}と\myInlineMath{D}が圏で、
+  \myInlineMath{F}が充満忠実ならば、
+  \myInlineMath{F\myRecordField\myFunctorObj \myElemOf
+    C\myRecordField\myCatObj \myFunType
+    D\myRecordField\myCatObj}は埋め込みである。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{y \myElemOf D}を対象とする。
+  \myInlineMath{D}が圏であることから、
+  \myInlineMath{\myFiber{F\myRecordField\myFunctorObj}{y}}は
+  \myInlineMath{\myIsoFiber{F}{y}}のレトラクトであることが分かる。
+  後者は\myRef{006Z}より命題である。
+\end{myProof}
+
+\end{document}

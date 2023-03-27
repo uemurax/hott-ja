@@ -1,0 +1,59 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0056}{myTheorem}
+  一価性と関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{n \myElemOf \myTruncLevel}を要素とする。
+  任意の\myInlineMath{x \myElemOf A}に対して
+  \myInlineMath{B\myAppParen{x}}は\myInlineMath{n}型であると仮定する。
+  \myRef{0054}より、帰納法で
+  型の族\myInlineMath{T \myElemOf \myTrunc{\myTLSucc{n}}{A} \myFunType \myUniverse{i}}であって、
+  任意の\myInlineMath{u \myElemOf \myTrunc{\myTLSucc{n}}{A}}に対して
+  \myInlineMath{T\myAppParen{u}}は\myInlineMath{n}型であり、
+  任意の\myInlineMath{x \myElemOf A}に対して
+  \myInlineMath{T\myAppParen{\myTruncIn{\myTLSucc{n}}{x}} \myDefEq
+    B\myAppParen{x}}であるものを構成できる。
+  \myRef{004X}と\myRef{004F}より
+  \myInlineMath{\myDPairType{u \myElemOf \myTrunc{\myTLSucc{n}}{A}}
+    {T\myAppParen{u}}}は\myInlineMath{\myTLSucc{n}}型なので、
+  関数\myInlineMath{\myAbs{z}{\myPair{\myTruncIn{\myTLSucc{n}}{\myProjI{z}}}
+    {\myProjII{z}}} \myElemOf
+    (\myDPairType{x \myElemOf A}{B\myAppParen{x}}) \myFunType
+    (\myDPairType{u \myElemOf \myTrunc{\myTLSucc{n}}{A}}{T\myAppParen{u}})}は
+  関数\myDisplayMath{
+    H \myElemOf
+    \myTrunc{\myTLSucc{n}}{\myDPairType{x \myElemOf A}{B\myAppParen{x}}} \myFunType
+    (\myDPairType{u \myElemOf \myTrunc{\myTLSucc{n}}{A}}{T\myAppParen{u}})
+  }を誘導する。
+  この時、関数\myInlineMath{H}は同値である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{\myDPairType{u \myElemOf \myTrunc{\myTLSucc{n}}{A}}
+    {T\myAppParen{u}}}が
+  \myInlineMath{\myTrunc{\myTLSucc{n}}{\myDPairType{x \myElemOf A}
+    {B\myAppParen{x}}}}と同じ帰納法原理を満たすことを見る。
+  \myInlineMath{C \myElemOf (\myDPairType{u \myElemOf \myTrunc{\myTLSucc{n}}{A}}
+    {T\myAppParen{u}}) \myFunType \myUniverse{i}}を型の族とし、
+  各\myInlineMath{C\myAppParen{u}}は\myInlineMath{\myTLSucc{n}}型であると仮定する。
+  \myInlineMath{f \myElemOf \myDFunType{z \myElemOf \myDPairType{x \myElemOf A}
+    {B\myAppParen{x}}}{C\myAppParen{\myPair{\myTruncIn{\myTLSucc{n}}{z}}
+      {\myProjII{z}}}}}を関数とする。
+  \myInlineMath{D \myElemOf \myDFunType{u \myElemOf \myTrunc{\myTLSucc{n}}{A}}
+    {T\myAppParen{u} \myFunType \myUniverse{i}}}を\myInlineMath{C}のカリー化、
+  \myInlineMath{g \myElemOf \myDFunType{x \myElemOf A}
+    {\myDFunType{y \myElemOf B\myAppParen{x}}
+      {D\myAppParen{\myTruncIn{\myTLSucc{n}}{x}, y}}}}を\myInlineMath{f}のカリー化とする。
+  \myRef{0048}より各\myInlineMath{\myDFunType{v \myElemOf D\myAppParen{u}}
+    {D\myAppParen{u, v}}}は\myInlineMath{\myTLSucc{n}}型なので、
+  帰納法で関数
+  \myInlineMath{h \myElemOf \myDFunType{u \myElemOf \myTrunc{\myTLSucc{n}}{A}}
+    {\myDFunType{v \myElemOf T\myAppParen{u}}}
+      {D\myAppParen{u, v}}}を得る。
+  \myInlineMath{h}を逆カリー化すればよい。
+\end{myProof}
+
+\end{document}

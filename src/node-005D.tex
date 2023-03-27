@@ -1,0 +1,23 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{005D}{myNotation}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏とする。
+  \myInlineMath{x}が\myInlineMath{C}の対象であることを
+  \myInlineMath{x \myElemOf C\myRecordField\myCatObj}の代わりに単に
+  \myInlineMath{x \myElemOf C}と書く。
+  対象\myInlineMath{x_{1}, x_{2} \myElemOf C}に対して、
+  \myInlineMath{C\myRecordField\myCatMap\myAppParen{x_{1}, x_{2}}}の代わりに
+  単に\myInlineMath{\myCatMap\myAppParen{x_{1}, x_{2}}}と書く。
+  \myInlineMath{x_{1} \myElemOf C}と書いた時点で
+  \myInlineMath{C}の前圏の構造が暗黙に了解されるのでこの表記で曖昧性はない。
+  同様に、対象\myInlineMath{x \myElemOf C}に対して、
+  \myInlineMath{C\myRecordField\myCatId\myAppParen{x}}の代わりに
+  単に\myInlineMath{\myCatId\myAppParen{x}}と書く。
+  合成\myInlineMath{\myCatComp\myAppParen{f_{2}, f_{1}}}は
+  二項演算子を使って\myInlineMath{f_{2} \myCatCompBin f_{1}}と書く。
+\end{myBlock}
+
+\end{document}

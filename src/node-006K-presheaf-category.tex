@@ -1,0 +1,20 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006K}{myDefinition}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏とする。
+  前圏\myInlineMath{\myPresheafCat{C} \myElemOf \myUniverse{\myLevelSucc{i}}}を
+  次のように定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myCatObj \myDefEq \myPresheaf{C}}
+  \item \myInlineMath{\myCatMap \myDefEq
+    \myAbs{A B}{\myPresheafHom{A}{B}}}
+  \item 恒等射と合成は\myRef{006L}の通りである。
+  \item 前圏の公理は関数外延性から分かる。
+  \end{itemize}
+\end{myBlock}
+
+\end{document}

@@ -1,0 +1,21 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006F}{myNotation}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{A \myElemOf \myPresheaf{C}}を前層とする。
+  \begin{enumerate}
+  \item 対象\myInlineMath{x \myElemOf C}に対して、
+    \myInlineMath{A\myRecordField\myPresheafCarrier\myAppParen{x}}の代わりに
+    単に\myInlineMath{A\myAppParen{x}}と書く。
+  \item 対象\myInlineMath{x_{1}, x_{2} \myElemOf C}と
+    射\myInlineMath{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}と
+    要素\myInlineMath{a \myElemOf A\myAppParen{x_{2}}}に対して、
+    要素\myInlineMath{a \myPresheafActBin f \myElemOf A\myAppParen{x_{1}}}を
+    \myInlineMath{A\myRecordField\myPresheafAct\myAppParen{a, f}}と定義する。
+  \end{enumerate}
+\end{myBlock}
+
+\end{document}

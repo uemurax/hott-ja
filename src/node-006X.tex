@@ -1,0 +1,30 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006X}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C \myElemOf \myPreCat{i}}を前圏とする。
+  \begin{enumerate}
+  \item \label{006X:0000} 任意の対象\myInlineMath{x \myElemOf C}に対して、
+    恒等射\myInlineMath{\myCatId\myAppParen{x} \myElemOf
+      \myCatMap\myAppParen{x, x}}は同型である。
+  \item \label{006X:0001} 任意の対象\myInlineMath{x_{1}, x_{2}, x_{3}, x_{4} \myElemOf C}と
+    射\myInlineMath{f_{1} \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}と
+    \myInlineMath{f_{2} \myElemOf \myCatMap\myAppParen{x_{2}, x_{3}}}と
+    \myInlineMath{f_{3} \myElemOf \myCatMap\myAppParen{x_{3}, x_{4}}}に対して、
+    \myInlineMath{f_{2} \myCatCompBin f_{1}}と
+    \myInlineMath{f_{3} \myCatCompBin f_{2}}が同型ならば、
+    \myInlineMath{f_{1}}と
+    \myInlineMath{f_{2}}と
+    \myInlineMath{f_{3}}と
+    \myInlineMath{f_{3} \myCatCompBin f_{2} \myCatCompBin f_{1}}も同型である。
+  \end{enumerate}
+\end{myBlock}
+\begin{myProof}
+  \myRefLabel{006X:0000}は定義からすぐに確かめられる。
+  \myRefLabel{006X:0001}は
+  \myRef{005G}と\myRef{002F}による。
+\end{myProof}
+
+\end{document}

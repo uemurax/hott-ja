@@ -1,0 +1,62 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006C}{myProposition}
+  関数外延性を仮定する。
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏とする。
+  \myInlineMath{D}が圏ならば、
+  \myInlineMath{\myFunctorCat{C}{D}}は圏である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{F \myElemOf \myFunctorCat{C}{D}}を対象とする。
+  \myRef{006A}よりレトラクト
+  \myInlineMath{(\myDPairType{G \myElemOf \myFunctorCat{C}{D}}
+    {F \myCatIso G}) \myRetractRel
+    (\myDPairType{G \myElemOf \myFunctor{C}{D}}
+    {\myPropCompr{t \myElemOf \myNatTrans{F}{G}}
+      {\myForall{x \myElemOf C}
+        {\myCatIsIso{t\myAppParen{x}}}}})}を得る。
+  後者が可縮であることを示すには、\myRef{006B}より
+  \myDisplayMath{\myDPairType{G_{0} \myElemOf
+      C\myRecordField\myCatObj \myFunType D\myRecordField\myCatObj}
+    {\myDPairType{G_{1} \myElemOf
+        \myDFunType{\myImplicit{x_{1}, x_{2} \myElemOf C}}
+        {\myCatMap\myAppParen{x_{1}, x_{2}} \myFunType
+          \myCatMap\myAppParen{G_{0}\myAppParen{x_{1}}, G_{0}\myAppParen{x_{2}}}}}
+      {\myPropCompr{t \myElemOf \myDFunType{x \myElemOf C}
+          {F\myAppParen{x} \myCatIso G_{0}\myAppParen{x}}}
+        {\myForall{x_{1}, x_{2} \myElemOf C}
+          {\myForall{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}
+            {G_{1}\myAppParen{f} \myCatCompBin t\myAppParen{x_{1}} \myIdType
+              t\myAppParen{x_{2}} \myCatCompBin F\myAppParen{f}}}}}}}
+  が可縮であることを示せばよい。
+  \myInlineMath{\myDPairType{G_{0} \myElemOf
+      C\myRecordField\myCatObj \myFunType D\myRecordField\myCatObj}
+    {\myDFunType{x \myElemOf C}
+      {F\myAppParen{x} \myCatIso G_{0}\myAppParen{x}}}}の部分は
+  \myInlineMath{\myDFunType{x \myElemOf C}
+    {\myDPairType{y \myElemOf D}
+      {F\myAppParen{x} \myCatIso y}}}のレトラクトなので、
+  \myRef{0029}と\myInlineMath{D}が圏であるという仮定から可縮である。
+  よって、件の型は
+  \myInlineMath{\myPropCompr{G_{1} \myElemOf
+      \myDFunType{\myImplicit{x_{1}, x_{2} \myElemOf C}}
+      {\myCatMap\myAppParen{x_{1}, x_{2}} \myFunType
+        \myCatMap\myAppParen{F\myAppParen{x_{1}}, F\myAppParen{x_{2}}}}}
+    {\myForall{x_{1}, x_{2} \myElemOf C}
+      {\myForall{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}
+        {G_{1}\myAppParen{f} \myCatCompBin \myCatId\myAppParen{x_{1}} \myIdType
+          \myCatId\myAppParen{x_{2}} \myCatCompBin F\myAppParen{f}}}}}
+  のレトラクトである。
+  この型はさらに
+  \myInlineMath{\myDFunType{x_{1}, x_{2} \myElemOf C}
+    {\myDFunType{f \myElemOf \myCatMap\myAppParen{x_{1}, x_{2}}}
+      {\myPropCompr{g \myElemOf \myCatMap\myAppParen
+          {F\myAppParen{x_{1}}, F\myAppParen{x_{2}}}}
+        {g \myIdType F\myAppParen{f}}}}}のレトラクトであるが、
+  これは\myRef{0029}と\myRef{0026}より可縮である。
+\end{myProof}
+
+\end{document}

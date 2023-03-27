@@ -1,0 +1,19 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{006Y}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{C, D \myElemOf \myPreCat{i}}を前圏、
+  \myInlineMath{F \myElemOf \myFunctor{C}{D}}を関手、
+  \myInlineMath{y \myElemOf D}を対象とする。
+  型\myInlineMath{\myIsoFiber{F}{y} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myIsoFiberObj \myElemOf C}
+  \item \myInlineMath{\myIsoFiberIso \myElemOf
+    F\myAppParen{\myIsoFiberObj} \myCatIso y}
+  \end{itemize}
+\end{myBlock}
+
+\end{document}

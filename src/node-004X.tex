@@ -1,0 +1,36 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004X}{myProposition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族、
+  \myInlineMath{n \myElemOf \myTruncLevel}を要素とする。
+  \myInlineMath{A}が\myInlineMath{n}型で、
+  任意の\myInlineMath{x \myElemOf A}に対して
+  \myInlineMath{B\myAppParen{x}}が\myInlineMath{n}型ならば、
+  \myInlineMath{\myDPairType{x \myElemOf A}{B\myAppParen{x}}}
+  も\myInlineMath{n}型である。
+\end{myBlock}
+\begin{myProof}
+  \myInlineMath{n}についての帰納法による。
+  \myInlineMath{n}が\myInlineMath{\myTLMinusTwo}の場合は容易である。
+
+  \myInlineMath{n}の場合に主張が成り立つと仮定し、
+  \myInlineMath{\myTLSucc{n}}の場合を示す。
+  \myInlineMath{c_{1}, c_{2} \myElemOf
+    \myDPairType{x \myElemOf A}{B\myAppParen{x}}}に対し、
+  \myInlineMath{c_{1} \myIdType c_{2}}が\myInlineMath{n}型であることを示す。
+  \myRef{002B}より、同値
+  \myDisplayMath{(c_{1} \myIdType c_2) \myEquiv
+    \myDPairType{z \myElemOf \myProjI{c_{1}} \myIdType \myProjI{c_{2}}}
+      {\myTransport{B}{z}\myAppParen{\myProjII{c_{1}}}
+       \myIdType \myProjII{c_{2}}}}を得る。
+  仮定より、\myInlineMath{\myProjI{c_{1}} \myIdType \myProjI{c_{2}}}と
+  各\myInlineMath{\myTransport{B}{z}\myAppParen{\myProjII{c_{1}}}
+    \myIdType \myProjII{c_{2}}}は\myInlineMath{n}型である。
+  よって、帰納法の仮定を適用すればよい。
+\end{myProof}
+
+\end{document}

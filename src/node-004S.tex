@@ -1,0 +1,19 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004S}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数、
+  \myInlineMath{a_{1}, a_{2} \myElemOf A}を要素とする。
+  \myInlineMath{f}が同値ならば
+  \myInlineMath{\myIdApp{f} \myElemOf
+    a_{1} \myIdType a_{2} \myFunType
+    f\myAppParen{a_{1}} \myIdType f\myAppParen{a_{2}}}は同値である。
+\end{myBlock}
+\begin{myProof}
+  \myRef{004F}と\myRef{005R}から従う。
+\end{myProof}
+
+\end{document}

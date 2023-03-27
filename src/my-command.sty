@@ -35,7 +35,7 @@
 \newcommand{\myRecordField}{.}
 \newcommand{\myIdType}{=}
 \newcommand{\myRefl}[1]{\myConst{refl}\myAppParen{#1}}
-\newcommand{\myImplicit}[1]{\myMathWrap{\lbrack} #1 \myMathWrap{\rbrack}}
+\newcommand{\myImplicit}[1]{\myMathWrap{\lbrace} #1 \myMathWrap{\rbrace}}
 \newcommand{\myInd@char}{\myConst{ind}}
 \newcommand{\myIdInd}[3]{\myInd@char_{\myIdType}\myAppParen{#1, #2, #3}}
 \newcommand{\myPhantom}[1]{\myMathWrap{\phantom}{#1}}
@@ -71,7 +71,8 @@
 \newcommand{\myRetractId}{\myConst{r-s}}
 \newcommand{\myRetractRel}{\myMathWrap{\triangleleft}}
 \newcommand{\myBiRetractRel}{\myMathWrap{\mathrel}{{\myMathWrap{\triangleleft}}{\myMathWrap{\triangleright}}}}
-\newcommand{\myFiber}[2]{\myConst{Fiber}\myAppParen{#1, #2}}
+\newcommand{\myFiber@char}{\myConst{Fiber}}
+\newcommand{\myFiber}[2]{\myFiber@char\myAppParen{#1, #2}}
 \newcommand{\myFiberElem}{\myConst{elem}}
 \newcommand{\myFiberId}{\myConst{id}}
 \newcommand{\myIsEquiv}[1]{\myConst{IsEquiv}\myAppParen{#1}}
@@ -187,3 +188,121 @@
 \newcommand{\myPropCompr}[2]{\lbrace #1 \mid #2 \rbrace}
 \newcommand{\myIsSet}[1]{\myConst{IsSet}\myAppParen{#1}}
 \newcommand{\myTLZero}{\myNatZero}
+\newcommand{\myUA}[1]{\myConst{ua}\myAppParen{#1}}
+\newcommand{\myLInv}[1]{\myConst{LInv}\myAppParen{#1}}
+\newcommand{\myInv@char}{\myConst{inv}}
+\newcommand{\myLInvInv}{\myInv@char}
+\newcommand{\myLInvId}{\myConst{is-linv}}
+\newcommand{\myRInv}[1]{\myConst{RInv}\myAppParen{#1}}
+\newcommand{\myRInvInv}{\myInv@char}
+\newcommand{\myRInvId}{\myConst{is-rinv}}
+\newcommand{\myIsBiinv}[1]{\myConst{IsBiinv}\myAppParen{#1}}
+\newcommand{\myIsBiinvLInv}{\myConst{linv}}
+\newcommand{\myIsBiinvRInv}{\myConst{rinv}}
+\newcommand{\myIsHAE}[1]{\myConst{IsHAE}\myAppParen{#1}}
+\newcommand{\myIsHAEInv}{\myInv@char}
+\newcommand{\myUnit@char}{\myConst{unit}}
+\newcommand{\myIsHAEUnit}{\myUnit@char}
+\newcommand{\myCounit@char}{\myConst{counit}}
+\newcommand{\myIsHAECounit}{\myCounit@char}
+\newcommand{\myIsHAECoh}{\myConst{coh}}
+\newcommand{\myQInv}[1]{\myConst{QInv}\myAppParen{#1}}
+\newcommand{\myQInvInv}{\myInv@char}
+\newcommand{\myQInvUnit}{\myUnit@char}
+\newcommand{\myQInvCounit}{\myCounit@char}
+\newcommand{\myGroup}[1]{\myConst{Group}\myAppParen{#1}}
+\newcommand{\myGroupCarrier}{\myCarrier@char}
+\newcommand{\myGroupUnit}{\myConst{unit}}
+\newcommand{\myGroupMul}{\myConst{mul}}
+\newcommand{\myGroupInv}{\myConst{inv}}
+\newcommand{\myGroupStr}[1]{\myConst{GroupStr}\myAppParen{#1}}
+\newcommand{\myGroupAxiom}[1]{\myConst{GroupAxiom}\myAppParen{#1}}
+\newcommand{\myRingStr}[1]{\myConst{RingStr}\myAppParen{#1}}
+\newcommand{\myRingCarrier}{\myCarrier@char}
+\newcommand{\myRingPlus}{\myConst{plus}}
+\newcommand{\myRingZero}{\myConst{zero}}
+\newcommand{\myRingMinus}{\myConst{neg}}
+\newcommand{\myRingMul}{\myConst{mul}}
+\newcommand{\myRingOne}{\myConst{one}}
+\newcommand{\myRingAxiom}[1]{\myConst{RingAxiom}\myAppParen{#1}}
+\newcommand{\myRing}[1]{\myConst{Ring}\myAppParen{#1}}
+\newcommand{\myTrunc}[2]{\myMathWrap{\|} #2 \myMathWrap{\|}_{#1}}
+\newcommand{\myTruncIn}[2]{| #2 |_{#1}}
+\newcommand{\myTruncInd}[4]{\myInd@char_{\myConst{Tr}\myAppParen{#1}}\myAppParen{#2, #3, #4}}
+\newcommand{\myTruncType}[2]{\myMathWrap{\langle} #1 \myMathWrap{\rangle}\myConst{-Type}\myAppParen{#2}}
+\newcommand{\myTruncTypeType}{\myConst{Type}}
+\newcommand{\myTruncTypeIsTrunc}{\myConst{is-trunc}}
+\newcommand{\myTop}{\myMathWrap{\top}}
+\newcommand{\myBottom}{\myMathWrap{\bot}}
+\newcommand{\myLogicAnd}{\myMathWrap{\land}}
+\newcommand{\myLogicOr}{\myMathWrap{\lor}}
+\newcommand{\myLogicImpl}{\myMathWrap{\Rightarrow}}
+\newcommand{\myMathOp}[1]{\myMathWrap{\mathop}{#1}}
+\newcommand{\myForall}[2]{\myMathOp{\myMathWrap{\forall}}_{#1}#2}
+\newcommand{\myExists}[2]{\myMathOp{\myMathWrap{\exists}}_{#1}#2}
+\newcommand{\myNeg}{\myMathWrap{\neg}}
+\newcommand{\myLogicEquiv}{\myMathWrap{\Leftrightarrow}}
+\newcommand{\myPreCat@char}{\myConst{PreCat}}
+\newcommand{\myPreCat}[1]{\myPreCat@char\myAppParen{#1}}
+\newcommand{\myCatObj}{\myConst{Obj}}
+\newcommand{\myCatMap}{\myConst{Map}}
+\newcommand{\myCatId}{\myConst{id}}
+\newcommand{\myCatComp}{\myConst{comp}}
+\newcommand{\myCatCompBin}{\myFunComp}
+\newcommand{\myCatLInv}{\myLInv}
+\newcommand{\myCatLInvInv}{\myLInvInv}
+\newcommand{\myCatLInvId}{\myLInvId}
+\newcommand{\myCatRInv}{\myRInv}
+\newcommand{\myCatRInvInv}{\myRInvInv}
+\newcommand{\myCatRInvId}{\myRInvId}
+\newcommand{\myCatIsIso}[1]{\myConst{IsIso}\myAppParen{#1}}
+\newcommand{\myCatIsIsoLInv}{\myIsBiinvLInv}
+\newcommand{\myCatIsIsoRInv}{\myIsBiinvRInv}
+\newcommand{\myCatIso}{\myMathWrap{\cong}}
+\newcommand{\myIsCat}[1]{\myConst{IsCat}\myAppParen{#1}}
+\newcommand{\myCat@char}{\myConst{Cat}}
+\newcommand{\myCat}[1]{\myCat@char\myAppParen{#1}}
+\newcommand{\myFunctor@char}{\myConst{Fun}}
+\newcommand{\myFunctor}[2]{\myFunctor@char\myAppParen{#1, #2}}
+\newcommand{\myFunctorObj}{\myConst{obj}}
+\newcommand{\myFunctorMap}{\myConst{map}}
+\newcommand{\myIsPreCatEquiv}[1]{\myConst{IsIso}_{\myPreCat@char}\myAppParen{#1}}
+\newcommand{\myIsFullyFaithful}[1]{\myConst{IsFF}\myAppParen{#1}}
+\newcommand{\myIsEssSurj}[1]{\myConst{IsEssSurj}\myAppParen{#1}}
+\newcommand{\myIsWeakCatEquiv}[1]{\myConst{IsWCatEquiv}\myAppParen{#1}}
+\newcommand{\myIsTruncMap}[2]{\myConst{IsTruncMap}\myAppParen{#1, #2}}
+\newcommand{\myIsConnected}[2]{\myConst{IsConnected}\myAppParen{#1, #2}}
+\newcommand{\myIsConnectedMap}[2]{\myConst{IsConnMap}\myAppParen{#1, #2}}
+\newcommand{\myIsEmbedding}[1]{\myConst{IsEmb}\myAppParen{#1}}
+\newcommand{\myIsSurjective}[1]{\myConst{IsSurj}\myAppParen{#1}}
+\newcommand{\myNatTrans}[2]{\myConst{NatTrans}\myAppParen{#1, #2}}
+\newcommand{\myIdNatTrans}[1]{\myCatId\myAppParen{#1}}
+\newcommand{\myNatTransComp}{\myCatCompBin}
+\newcommand{\myCat@mark}{(\myCat@char)}
+\newcommand{\myFunctorCat}[2]{\myFunctor@char^{\myCat@mark}\myAppParen{#1, #2}}
+\newcommand{\myPresheaf@char}{\myConst{Psh}}
+\newcommand{\myPresheaf}[1]{\myPresheaf@char\myAppParen{#1}}
+\newcommand{\myPresheafCarrier}{\myCarrier@char}
+\newcommand{\myPresheafAct}{\myConst{act}}
+\newcommand{\myPresheafActBin}{\myMathWrap{\cdot}}
+\newcommand{\myPresheafHom}[2]{\myHom@char\myAppParen{#1, #2}}
+\newcommand{\mySetCat}[1]{\myConst{Set}^{\myCat@mark}\myAppParen{#1}}
+\newcommand{\myPresheafCat}[1]{\myPresheaf@char^{\myCat@mark}\myAppParen{#1}}
+\newcommand{\myIdPresheafHom}[1]{\myCatId\myAppParen{#1}}
+\newcommand{\myPresheafHomComp}{\myCatCompBin}
+\newcommand{\myOppositeCat}[1]{\myConst{Op}\myAppParen{#1}}
+\newcommand{\myYoneda}[1]{\myConst{よ}\myAppParen{#1}}
+\newcommand{\myBiFunctor}[3]{\myConst{BiFun}\myAppParen{#1, #2; #3}}
+\newcommand{\myBiFunctorObj}{\myConst{obj}}
+\newcommand{\myBiFunctorMap@char}{\myConst{map}}
+\newcommand{\myBiFunctorMapI}{\myBiFunctorMap@char_{1}}
+\newcommand{\myBiFunctorMapII}{\myBiFunctorMap@char_{2}}
+\newcommand{\myFunctor@mark}{(\myFunctor@char)}
+\newcommand{\myCatMapFun}[1]{\myCatMap^{\myFunctor@mark}\myAppParen{#1}}
+\newcommand{\myYonedaGen}[1]{\myConst{gen}\myAppParen{#1}}
+\newcommand{\myIsoFiber}[2]{\myFiber@char^{{\myCatIso}}\myAppParen{#1, #2}}
+\newcommand{\myIsoFiberObj}{\myConst{obj}}
+\newcommand{\myIsoFiberIso}{\myConst{iso}}
+\newcommand{\myIsReprPsh}[1]{\myConst{IsRepr}\myAppParen{#1}}
+\newcommand{\myIsReprPshObj}{\myConst{obj}}
+\newcommand{\myIsReprPshElem}{\myConst{elem}}

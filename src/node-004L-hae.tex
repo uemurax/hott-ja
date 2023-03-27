@@ -1,0 +1,25 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{004L}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  型\myInlineMath{\myIsHAE{f} \myElemOf \myUniverse{i}}を
+  次のレコード型と定義する。
+  \begin{itemize}
+  \item \myInlineMath{\myIsHAEInv \myElemOf B \myFunType A}
+  \item \myInlineMath{\myIsHAEUnit \myElemOf
+    \myIsHAEInv \myFunComp f \myHomotopy \myIdFun{A}}
+  \item \myInlineMath{\myIsHAECounit \myElemOf
+    f \myFunComp \myIsHAEInv \myHomotopy \myIdFun{B}}
+  \item \myInlineMath{\myIsHAECoh \myElemOf \myDFunType{x \myElemOf A}
+    {f\myAppParen{\myIsHAEUnit\myAppParen{x}} \myIdType
+     \myIsHAECounit\myAppParen{f\myAppParen{x}}}}
+  \end{itemize}
+  \myInlineMath{\myIsHAE{f}}の要素がある時、\myInlineMath{f}は
+  \myNewTerm[はんずいはんどうち]{半随伴同値}(half adjoint equivalence)であると言う。
+\end{myBlock}
+
+\end{document}
