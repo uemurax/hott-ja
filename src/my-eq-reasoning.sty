@@ -10,15 +10,16 @@
 \usepackage{lwarp,longtable,my-math}
 
 \NewDocumentCommand{\myEqReasoning}{+m}{%
-  \let\term\myEqReasoning@term
-  \let\by\myEqReasoning@by
-  \let\rel\myEqReasoning@rel
   \begin{center}
+    \let\term\myEqReasoning@term
+    \let\by\myEqReasoning@by
+    \let\rel\myEqReasoning@rel
+    \setlength{\LTpre}{0pt}
+    \setlength{\LTpost}{-20pt}
     \begin{longtable}{ll}
       #1
     \end{longtable}
-  \end{center}
-  \ignorespacesafterend}
+  \end{center}}
 
 \newcommand{\myEqReasoning@term}[1]{\myInlineMath{#1}}
 \newcommand{\myEqReasoning@by}[1]{\qquad\{#1\}}
