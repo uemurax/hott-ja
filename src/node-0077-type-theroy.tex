@@ -4,23 +4,53 @@
 
 \mySection{0077}{型理論}
 
-型理論は元々は\myCiteText{russell1908logic}が数学の基礎付けの文脈で導入した形式体系である。
-後に\myCiteText{church1940formulation}によって
+型理論は形式体系の一種で、\emph{型}(type)とその\emph{要素}(element)という
+プリミティヴな概念を持つ。
+型理論は次のような使われ方がある。
+\begin{enumerate}
+\item 数学の基礎付け
+\item 圏の内部言語
+\item プログラミング言語の基礎
+\item 定理証明支援系の基礎
+\end{enumerate}
+
+歴史的には数学の基礎付けが元々の動機である。
+\myCiteText{russell1908logic}が型理論を導入した当時は
+パラドックスの発見により数学の基礎付けが揺らいでいた時期である。
+\myCiteText{russell1908logic}の型理論は後に\myCiteText{church1940formulation}によって
 単純型付きラムダ計算として整備され、
 元々の動機であった数学の基礎付けとは別にプログラミング言語理論においても
 活発に研究されている\myCiteParen{pierce2002types}。
 型理論はさらに別の方向で圏論との関わりもあり、
 例えば単純型付きラムダ計算はデカルト閉圏の\emph{内部言語}(internal language)
 である\myCiteParen{lambek1986higher}。
+型理論は\emph{定理証明支援系}(interactive theorem prover, proof assistant)
+の基礎でもある。
+これはコンピュータ上で定理を証明または証明の正しさを検証するソフトウェアで、
+\myHRef{https://coq.inria.fr/}{Coq}や
+\myHRef{https://wiki.portal.chalmers.se/agda/pmwiki.php}{Agda}や
+\myHRef{https://isabelle.in.tum.de/}{Isabelle}などがある。
+
+型理論が圏の内部言語であるという意味を説明する。
+圏とは、集合と写像のような、なんらかの対象とその間の射のなる構造を抽象化した概念である。
+単純型付きラムダ計算がデカルト閉圏の内部言語であるとは、
+デカルト閉圏と呼ばれる特別な構造を持つ圏は
+型を対象、要素を射と解釈することで
+単純型付きラムダ計算の\emph{モデル}になるという意味である
+(実際にはデカルト閉圏の構造が単純型付きラムダ計算を解釈するために
+必要最低限のものであるというようなことも言える)。
+例えば集合と写像のなす圏はデカルト閉圏であり、
+型を集合、要素を写像と解釈することで単純型付きラムダ計算のモデルになる。
+他にも、群\myInlineMath{G}に対して\myInlineMath{G}の作用を持つ集合のなす圏、
+空間\myInlineMath{X}に対して\myInlineMath{X}上の層のなす圏などは
+デカルト閉圏である。
+したがって、単純型付きラムダ計算の中での構成は自動的に
+これらの圏の中での構成に翻訳される。
+
 ホモトピー型理論の直接の基盤となる型理論は
 \emph{Martin-Löf型理論}\myCiteParen{martin-lof1975intuitionistic}である。
 これは\myCiteText{martin-lof1975intuitionistic}が構成的数学の基礎付けとして
 導入したものである。
-また、\emph{定理証明支援系}(interactive theorem prover, proof assistant)
-の基盤でもある。
-これはコンピュータ上で定理を証明または証明の正しさを検証するソフトウェアで、
-\myHRef{https://coq.inria.fr/}{Coq}や
-\myHRef{https://wiki.portal.chalmers.se/agda/pmwiki.php}{Agda}などがある。
 以下では型理論と言った場合、
 Martin-Löf型理論またはその亜種のことを指す。
 
