@@ -4,4 +4,35 @@
 
 \mySection{0077}{型理論}
 
+型理論は元々は\myCiteText{russell1908logic}が数学の基礎付けの文脈で導入した形式体系である。
+後に\myCiteText{church1940formulation}によって
+単純型付きラムダ計算として整備され、
+元々の動機であった数学の基礎付けとは別にプログラミング言語理論においても
+活発に研究されている\myCiteParen{pierce2002types}。
+型理論はさらに別の方向で圏論との関わりもあり、
+例えば単純型付きラムダ計算はデカルト閉圏の\emph{内部言語}(internal language)
+である\myCiteParen{lambek1986higher}。
+ホモトピー型理論の直接の基盤となる型理論は
+\emph{Martin-Löf型理論}\myCiteParen{martin-lof1975intuitionistic}である。
+これは\myCiteText{martin-lof1975intuitionistic}が構成的数学の基礎付けとして
+導入したものである。
+また、\emph{定理証明支援系}(interactive theorem prover, proof assistant)
+の基盤でもある。
+これはコンピュータ上で定理を証明または証明の正しさを検証するソフトウェアで、
+\myHRef{https://coq.inria.fr/}{Coq}や
+\myHRef{https://wiki.portal.chalmers.se/agda/pmwiki.php}{Agda}などがある。
+以下では型理論と言った場合、
+Martin-Löf型理論またはその亜種のことを指す。
+
+型理論はしばしば\emph{構成的}であることが強調される。
+構成的でない議論の例として、排中律や二重否定の除去がある。
+排中律は、すべての命題は真または偽のいずれかであるという公理であるが、
+構成的な立場からは真か偽のどちらなのかを決定できない限りは
+真または偽のいずれかであるとは言えない。
+二重否定の除去は例えばある性質を満たす\myInlineMath{x}が存在しないと仮定して矛盾を導き、
+よってその性質を満たす\myInlineMath{x}が存在するというような議論である。
+実際に証拠となる\myInlineMath{x}を構成しなくても
+\myInlineMath{x}の存在を証明できてしまう場合があるので構成的ではない。
+型理論では、このような非構成的な公理は一般には仮定しない。
+
 \end{document}
