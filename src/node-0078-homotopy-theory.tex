@@ -4,4 +4,40 @@
 
 \mySection{0078}{ホモトピー論}
 
+型理論のホモトピー論的モデルで一価性公理が正当化されることを説明する。
+ホモトピー論ではその名の通り\emph{ホモトピー}(homotopy)の概念が重要である。
+ホモトピーの概念は様々な場所で現れるが、まずは古典的な
+連続写像の間のホモトピーを思い出そう。
+位相空間の間の連続写像\myInlineMath{f, g \myElemOf U \myFunType A}に対して、
+\myInlineMath{f}から\myInlineMath{g}へのホモトピーとは
+\myInlineMath{f}を\myInlineMath{g}に「連続的に変形」させるものである。
+形式的には、連続写像\myInlineMath{H \myElemOf
+  [0, 1] \myPairType U \myFunType A}であって
+\myInlineMath{H\myAppParen{0, x} \myIdType f\myAppParen{x}}かつ
+\myInlineMath{H\myAppParen{1, x} \myIdType g\myAppParen{x}}となるものである。
+位相空間のホモトピー論ではホモトピーの概念により連続写像を同一視して位相空間を調べる。
+
+ホモトピーで連続写像を同一視するといっても、
+ホモトピーはたくさんあり得るので、どのように同一視するかというのも重要な情報になる。
+ホモトピー自身も連続写像であることから、
+ホモトピーの間のホモトピーやホモトピーの間のホモトピーの間のホモトピーといった
+高次のホモトピー概念も定義される。
+さらに、\myInlineMath{f}から\myInlineMath{g}へのホモトピー\myInlineMath{H}と
+\myInlineMath{g}から\myInlineMath{h}へのホモトピー\myInlineMath{K}は
+合成することができ、
+\myInlineMath{f}から\myInlineMath{h}へのホモトピー\myInlineMath{K \myIdComp H}を得る。
+合成演算はすべての次元のホモトピーに対して定義され、互いに複雑な関係を持つ。
+このような構造は\emph{∞グルーポイド}と呼ばれる。
+特に、一点からの連続写像とその間の高次ホモトピーを考えると、
+位相空間から∞グルーポイドを得る。
+
+Grothendieckの\emph{ホモトピー仮説}(homotopy hypothesis)は、
+位相空間のホモトピー論と∞グルーポイドのホモトピー論は同値であるという仮説である。
+∞グルーポイドをどう厳密に定義するかというのは自明ではなく、
+ホモトピー仮説は∞グルーポイドの定義によって定理であったり予想であったりする。
+例えばKan複体(Kan complex)は∞グルーポイドの定義の一つであり、
+位相空間のホモトピー論とKan複体のホモトピー論は同値である
+(モデル圏\myCiteParen{quillen1967homotopical}の言葉で定式化される。
+証明は例えば\myCiteParen{hovey1999model}を参照)。
+
 \end{document}
