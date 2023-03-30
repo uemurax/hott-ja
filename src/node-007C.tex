@@ -1,0 +1,31 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{007C}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族とする。
+  \myInlineMath{\myDFunType{x \myElemOf A}
+    {\myIsContr{B\myAppParen{x}}}}の要素があるならば、
+  関数\myInlineMath{\myAbs{z}{\myProjI{z}} \myElemOf
+    (\myDPairType{x \myElemOf A}{B\myAppParen{x}})
+    \myFunType A}は同値である。
+\end{myBlock}
+\StartDefiningTabulars
+\begin{myProof}
+  任意の\myInlineMath{a \myElemOf A}に対して、
+  レトラクト
+  \myEqReasoning{
+    & \term{\myFiber{\myAbs{z}{\myProjI{z}}}{a}} \\
+    \rel{\myRetractRel} & \by{並び換え} \\
+    & \term{\myDPairType{x \myElemOf A}
+      {\myDPairType{p \myElemOf x \myIdType a}
+        {B\myAppParen{x}}}} \\
+    \rel{\myRetractRel} & \by{\myRef{0026}} \\
+    & \term{B\myAppParen{a}}
+  }を得て、最後の型は仮定より可縮である。
+\end{myProof}
+\StopDefiningTabulars
+
+\end{document}

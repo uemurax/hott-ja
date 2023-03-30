@@ -1,0 +1,26 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{007D}{myTheorem}
+  \myInlineMath{i}を階数とする。
+  \myInlineMath{\myUniverse{i}}が一価性を満たすならば、
+  \myInlineMath{\myUniverse{i}}のすべての関数型は
+  関数外延性を満たす。
+\end{myBlock}
+\begin{myProof}
+  \myRef{0029}を適用する。
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族とし、
+  各\myInlineMath{B\myAppParen{x}}は可縮であると仮定する。
+  \myRef{007C}より、
+  関数\myInlineMath{\myAbs{z}{\myProjI{z}} \myElemOf
+    (\myDPairType{x \myElemOf A}{B\myAppParen{x}})
+    \myFunType A}は同値である。
+  これと\myRef{007B}より、
+  \myInlineMath{\mySectionOfProj{A}{B}}は可縮である。
+  したがって、\myRef{007A}と\myRef{001K}より
+  \myInlineMath{\myDFunType{x \myElemOf A}{B\myAppParen{x}}}は可縮である。
+\end{myProof}
+
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{007B}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A, B \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{f \myElemOf A \myFunType B}を関数とする。
+  \myInlineMath{\myUniverse{i}}が一価性を満たし、
+  \myInlineMath{f}が同値ならば、
+  任意の型\myInlineMath{X \myElemOf \myUniverse{i}}に対して
+  関数\myInlineMath{\myAbs{g}{f \myFunComp g} \myElemOf
+    (X \myFunType A) \myFunType (X \myFunType B)}は同値である。
+\end{myBlock}
+\begin{myProof}
+  一価性より、
+  \myInlineMath{f}が恒等関数の場合を示せば十分であるが、
+  \myInlineMath{\myAbs{g}{\myIdFun{A} \myFunComp g}
+    \myDefEq \myAbs{g}{g}}なのでこれは同値である。
+\end{myProof}
+
+\end{document}

@@ -1,0 +1,28 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{007A}{myLemma}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族とすると、
+  \myInlineMath{\myDFunType{x \myElemOf A}{B\myAppParen{x}}}は
+  \myInlineMath{\mySectionOfProj{A}{B}}のレトラクトである。
+\end{myBlock}
+\begin{myProof}
+  関数\myInlineMath{F \myElemOf (\myDFunType{x \myElemOf A}{B\myAppParen{x}})
+    \myFunType \mySectionOfProj{A}{B}}を
+  \myDisplayMath{\myAbs{f}{\myRecordElem{
+        \myFiberElem \myDefEq \myAbs{x}{\myPair{x}{f\myAppParen{x}}},
+        \myFiberId \myDefEq \myRefl{\myIdFun{A}}}}}と定義し、
+  関数\myInlineMath{G \myElemOf \mySectionOfProj{A}{B} \myFunType
+    (\myDFunType{x \myElemOf A}{B\myAppParen{x}})}を
+  \myDisplayMath{\myAbs{z}{\myAbs{x}
+      {\myTransport{\myAbs{g}{B\myAppParen{g\myAppParen{x}}}}
+        {z\myRecordField\myFiberId}
+        \myAppParen{\myProjII{z\myRecordField\myFiberElem\myAppParen{x}}}}}}
+  と定義すると、
+  \myInlineMath{G \myFunComp F \myDefEq \myIdFun{\myBlank}}である。
+\end{myProof}
+
+\end{document}
