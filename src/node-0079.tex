@@ -1,0 +1,17 @@
+\documentclass[index]{subfiles}
+
+\begin{document}
+
+\begin{myBlock}{0079}{myDefinition}
+  \myInlineMath{i}を階数、
+  \myInlineMath{A \myElemOf \myUniverse{i}}を型、
+  \myInlineMath{B \myElemOf A \myFunType \myUniverse{i}}を型の族とする。
+  関数\myInlineMath{p \myElemOf
+    (A \myFunType \myDPairType{x \myElemOf A}{B\myAppParen{x}})
+    \myFunType (A \myFunType A)}を
+  \myInlineMath{\myAbs{f}{\myAbs{x}{\myProjI{f\myAppParen{x}}}}}とし、
+  型\myInlineMath{\mySectionOfProj{A}{B} \myElemOf \myUniverse{i}}を
+  \myInlineMath{\myFiber{p}{\myIdFun{A}}}と定義する。
+\end{myBlock}
+
+\end{document}
