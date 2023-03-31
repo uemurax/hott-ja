@@ -2,6 +2,13 @@
 
 \newcommand{\mySection}[2]{\mySection@A{\myNodeTitle{#1}{#2}}\myNodeLabel{#1}}
 
+\newcommand{\myChapter}[2]{%
+  \begingroup%
+  \let\mySection@A\chapter%
+  \mySection{#1}{#2}%
+  \endgroup%
+}
+
 \newcounter{mySection@tag}
 
 \newenvironment{mySubsections}

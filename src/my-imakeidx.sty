@@ -2,16 +2,16 @@
 
 \newcommand{\myNodeIndex}[1]{\index[node]{#1}}
 
-\newcommand{\myPrintNodeIndex}{
-  \chapter{\myNodeIndex@Title}
+\newcommand{\myPrintNodeIndex}[1]{
+  \myChapter{#1}{\myNodeIndex@Title}
   \hypertarget{ListOfNodes}{}
   \printindex[node]
 }
 
 \newcommand{\myLinkNodeIndex}{\hyperlink{ListOfNodes}{\myNodeIndex@Title}}
 
-\newcommand{\myPrintIndex}{
-  \chapter{\indexname}
+\newcommand{\myPrintIndex}[1]{
+  \myChapter{#1}{\indexname}
   \printindex
 }
 
