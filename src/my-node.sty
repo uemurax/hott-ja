@@ -5,3 +5,15 @@
 \newcommand{\myNodeTitle}[2]{\texorpdfstring{#2\myNodeText{#1}}{#2}}
 
 \NewDocumentCommand{\myNodeTitleOpt}{m O{}}{\myNodeTitle{#1}{#2}}
+
+\warpHTMLonly{
+  % Tell lwarp a fake title to use id for filename.
+  \let\LWR@newhtmlfile@orig\LWR@newhtmlfile
+  \newcommand\myNodeTitle@alt[2]{#1}
+  \renewcommand*{\LWR@newhtmlfile}[1]{%
+    \begingroup%
+    \let\myNodeTitle\myNodeTitle@alt%
+    \LWR@newhtmlfile@orig{#1}%
+    \endgroup%
+  }
+}

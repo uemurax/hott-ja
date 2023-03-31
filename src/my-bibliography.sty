@@ -4,8 +4,8 @@
 \let\myCiteText\textcite
 \let\myCiteAuthor\citeauthor
 
-\newcommand{\myPrintBibliography}{
-  \chapter{\myBibliography@Title}
+\newcommand{\myPrintBibliography}[1]{
+  \myChapter{#1}{\myBibliography@Title}
   \printbibliography[heading=none]
 }
 

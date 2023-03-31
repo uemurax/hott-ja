@@ -24,7 +24,7 @@
   makeindex,
   makeindexStyle=custom.ist,
 ]{lwarp}
-\boolfalse{FileSectionNames}  % If false, numbers the files.
+\booltrue{FileSectionNames}  % If false, numbers the files.
 
 % --- LOAD PDFLATEX MATH FONTS HERE ---
 
@@ -98,10 +98,8 @@
 
 \backmatter
 
-\myPrintBibliography
-
-\myPrintIndex
-
-\myPrintNodeIndex
+\subfile{node-007E-bibliography}
+\subfile{node-007F-index}
+\subfile{node-007G-node-index}
 
 \end{document}
