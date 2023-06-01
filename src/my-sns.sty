@@ -1,0 +1,6 @@
+\usepackage{hyperref}
+
+\newcommand{\mySNSLink@internal}[3]{#1: \href{#3}{\nolinkurl{#2}}}
+
+\newcommand{\myTwitterLink}[1]{\mySNSLink@internal{Twitter}{#1}{https://twitter.com/#1}}
+\newcommand{\myGitHubLink}[1]{\mySNSLink@internal{GitHub}{#1}{https://github.com/#1}}
