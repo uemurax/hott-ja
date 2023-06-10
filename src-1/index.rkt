@@ -14,7 +14,7 @@
     #:contents @%[
       @paragraph{
         @unordered-list[
-          @list-item{(C) 2023 @|me|}
+          @list-item{© 2023 @|me|}
           @list-item{HTML版: @href["https://uemurax.github.io/hott-ja/index.html"]}
           @list-item{PDF版: @href["https://uemurax.github.io/hott-ja/index.pdf"]}
           @list-item{リポジトリ: @href["https://github.com/uemurax/hott-ja"]}
