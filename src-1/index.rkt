@@ -13,11 +13,13 @@
     #:author @list[me]
     #:contents @%[
       @paragraph{
-        (C) 2023 @|me|
-        HTML版: https://uemurax.github.io/hott-ja/index.html
-        PDF版: https://uemurax.github.io/hott-ja/index.pdf
-        リポジトリ: https://github.com/uemurax/hott-ja
-        ライセンス: この作品は[クリエイティブ・コモンズ表示4.0国際ライセンス](http://creativecommons.org/licenses/by/4.0/)の下に提供されています。
+        @unordered-list[
+          @list-item{(C) 2023 @|me|}
+          @list-item{HTML版: https://uemurax.github.io/hott-ja/index.html}
+          @list-item{PDF版: https://uemurax.github.io/hott-ja/index.pdf}
+          @list-item{リポジトリ: https://github.com/uemurax/hott-ja}
+          @list-item{ライセンス: この作品は[クリエイティブ・コモンズ表示4.0国際ライセンス](http://creativecommons.org/licenses/by/4.0/)の下に提供されています。}
+        ]
       }
     ]
   ]
