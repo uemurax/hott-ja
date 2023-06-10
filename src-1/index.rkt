@@ -2,6 +2,9 @@
 
 (require morg/markup)
 
+(require "0000.rkt"
+         "007E.rkt")
+
 (provide part:index)
 
 (define me @%{上村 太一})
@@ -21,6 +24,10 @@
           @list-item{ライセンス: この作品は@href["https://creativecommons.org/licenses/by/4.0/"]{クリエイティブ・コモンズ表示4.0国際ライセンス}の下に提供されています。}
         ]
       }
+    ]
+    part:0000
+    #:back @list[
+      part:007E
     ]
   ]
 ]
