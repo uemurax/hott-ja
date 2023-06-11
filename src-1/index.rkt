@@ -7,6 +7,7 @@
          "0002.rkt"
          "0003.rkt"
          "0004.rkt"
+         "0005.rkt"
          "007E.rkt")
 
 (provide part:index)
@@ -33,6 +34,7 @@
     part:0001
     part:0002
     part:0003
+    part:0005
     part:0004
     #:back @list[
       part:007E
