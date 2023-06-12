@@ -8,6 +8,7 @@
          def-eq
          seq
          elem-of
+         elem-of/chain
          dots
          subst-bin
          subst-apply
@@ -35,6 +36,9 @@
 
 (define elem-of
   (binary #:level 'elem-of ":"))
+
+(define elem-of/chain
+  (monoid #:level 'elem-of "" ":"))
 
 (define dots (macro "dots"))
 
