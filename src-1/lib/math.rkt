@@ -16,11 +16,13 @@
          universe
          id-type
          equiv
+         d-fun-type
          $)
 
 (define cfg
   (struct-copy user-config default-config
    [levels '(relation
+             big-op
              subst-arrow
              def-eq
              elem-of
@@ -63,3 +65,6 @@
 
 (define equiv
   (binary #:level 'relation (macro "simeq")))
+
+(define d-fun-type
+  (big-op #:level 'big-op (macro "prod")))
