@@ -35,6 +35,7 @@
          pair
          proj/sym
          proj
+         pair-type/symb
          pair-type
          $)
 
@@ -151,5 +152,6 @@
 (define (proj [n : Natural])
   (make-fun (proj/sym n)))
 
+(define pair-type/symb times)
 (define pair-type
-  (monoid #:level '* unit-type times))
+  (monoid #:level '* unit-type pair-type/symb))
