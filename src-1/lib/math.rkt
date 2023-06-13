@@ -24,6 +24,7 @@
          d-fun-type
          refl
          abs
+         fun-type/sym
          fun-type
          level:zero
          level:succ
@@ -108,9 +109,10 @@
   (paren #:level 'abs
          "λ" x "." (dec-degree (apply % b))))
 
+(define fun-type/sym (macro "to"))
 (define fun-type
   (binary #:level 'relation #:assoc 'right
-          (macro "to")))
+          fun-type/sym))
 
 (define level:zero "0")
 (define level:succ/symb (const "succ"))
