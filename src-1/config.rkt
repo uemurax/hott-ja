@@ -18,6 +18,10 @@
     [front-matter @text-tex%{@macro%{frontmatter}}]
     [main-matter @text-tex%{@macro%{mainmatter}}]
     [back-matter @text-tex%{@macro%{backmatter}}]
+    [packages @list[
+      (latex:package "amsmath" '())
+      (latex:package "amssymb" '())
+    ]]
     [make-section-ref latex-config:make-section-ref]
     [section-macros '("chapter" "section" "subsection" "subsubsection" "paragraph")]
     [section-macro-fallback "subparagraph"]

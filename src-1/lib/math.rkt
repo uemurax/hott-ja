@@ -17,11 +17,15 @@
          id-type
          equiv
          d-fun-type
+         refl
+         abs
+         fun-type
          $)
 
 (define cfg
   (struct-copy user-config default-config
-   [levels '(relation
+   [levels '(abs
+             relation
              big-op
              subst-arrow
              def-eq
@@ -29,6 +33,10 @@
              punctuation)]))
 
 (define $ (make-math cfg))
+
+(define mathcal (macro-1 "mathcal"))
+(define mathsf (macro-1 "mathsf"))
+(define operator-name (macro-1 "operatorname"))
 
 (define def-eq
   (binary #:level 'def-eq (macro "equiv")))
@@ -54,11 +62,11 @@
 (define (fun-apply [f : MathTeX+Like] [x : MathTeX+Like]) : MathTeX+Like
   @paren[#:level #f]{@dec-degree[@group{@|f|}]@paren{@|x|}})
 
-(define universe-1
-  @macro["mathcal" @argument{U}])
+(define universe/symb
+  @mathcal{U})
 
 (define (universe . [xs : MathTeX+Like *])
-  (fun-apply universe-1 (apply % xs)))
+  (fun-apply universe/symb (apply % xs)))
 
 (define id-type
   (binary #:level 'relation "="))
@@ -68,3 +76,20 @@
 
 (define d-fun-type
   (big-op #:level 'big-op (macro "prod")))
+
+(define const
+  (compose operator-name mathsf))
+
+(define refl/symb
+  @const{refl})
+
+(define (refl . [xs : MathTeX+Like *])
+  (fun-apply refl/symb (apply % xs)))
+
+(define (abs [x : MathTeX+Like] [b : MathTeX+Like])
+  (paren #:level 'abs
+         "λ" x "." (dec-degree b)))
+
+(define fun-type
+  (binary #:level 'relation #:assoc 'right
+          (macro "to")))

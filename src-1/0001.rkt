@@ -5,6 +5,7 @@
 
 (require "0009.rkt"
          "000B.rkt"
+         "000C.rkt"
          "000A.rkt")
 
 (provide part:0001)
@@ -23,6 +24,7 @@
       part:0009
       part:000A
       part:000B
+      part:000C
     ]
   ]
 ]
