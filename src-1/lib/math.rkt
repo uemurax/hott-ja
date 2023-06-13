@@ -14,8 +14,10 @@
          subst-apply
          fun-apply
          universe
+         universe:el/symb
          universe:el
          universe:name
+         universe:lift/symb
          universe:lift
          id-type
          equiv

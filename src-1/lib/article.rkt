@@ -2,6 +2,8 @@
 
 (require morg/markup)
 
-(provide rule)
+(provide rule
+         notation)
 
 (define rule (article/curried "規則"))
+(define notation (article/curried "記法"))
