@@ -97,8 +97,11 @@
 (define equiv
   (binary #:level 'relation (macro "simeq")))
 
-(define d-fun-type
+(define prod
   (big-op #:level 'big-op (macro "prod")))
+
+(define (d-fun-type [A : MathTeX+Like] . [B : MathTeX+Like *])
+  (prod #:_ A (apply % B)))
 
 (define refl/symb
   @const{refl})
