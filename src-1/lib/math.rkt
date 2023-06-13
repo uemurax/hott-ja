@@ -28,6 +28,8 @@
          fun-type
          level:zero
          level:succ
+         unit-type
+         unit-elem
          $)
 
 (define cfg
@@ -44,7 +46,11 @@
 
 (define mathcal (macro-1 "mathcal"))
 (define mathsf (macro-1 "mathsf"))
+(define mathbf (macro-1 "mathbf"))
+(define mathord (macro-1 "mathord"))
 (define operator-name (macro-1 "operatorname"))
+
+(define star (macro "star"))
 
 (define def-eq
   (binary #:level 'def-eq (macro "equiv")))
@@ -120,3 +126,6 @@
 (define level:zero "0")
 (define level:succ/symb (const "succ"))
 (define level:succ (make-fun level:succ/symb))
+
+(define unit-type @mathbf{1})
+(define unit-elem (mathord star))
