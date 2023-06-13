@@ -14,6 +14,9 @@
          subst-apply
          fun-apply
          universe
+         universe:el
+         universe:name
+         universe:lift
          id-type
          equiv
          d-fun-type
@@ -66,10 +69,24 @@
 (define ((make-fun [f : MathTeX+Like]) . [xs : MathTeX+Like *])
   (fun-apply f (apply % xs)))
 
+(define name-of
+  (paren/curried
+   #:left (macro "lceil")
+   #:right (macro "rceil")))
+
+(define const
+  (compose operator-name mathsf))
+
 (define universe/symb
   @mathcal{U})
 
 (define universe (make-fun universe/symb))
+
+(define universe:el/symb @const{El})
+(define universe:el (make-fun universe:el/symb))
+(define universe:name (make-fun (name-of universe/symb)))
+(define universe:lift/symb @const{Lift})
+(define universe:lift (make-fun universe:lift/symb))
 
 (define id-type
   (binary #:level 'relation "="))
@@ -79,9 +96,6 @@
 
 (define d-fun-type
   (big-op #:level 'big-op (macro "prod")))
-
-(define const
-  (compose operator-name mathsf))
 
 (define refl/symb
   @const{refl})
