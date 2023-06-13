@@ -3,6 +3,8 @@
 (require morg/markup
         "lib/math.rkt")
 
+(require "000D.rkt")
+
 (provide part:0009)
 
 (define part:0009
@@ -18,7 +20,7 @@
     @paragraph{
       数学を基礎付ける文脈では@($ (seq "0" "1" "2" dots))が何なのか分からないので、@emph{階数}の概念を導入する。階数は型でも要素でもない別の種類の対象である。
     }
-    ;part:000D
+    part:000D
     @paragraph{
       宇宙に関する規則は次の通りである。
     }

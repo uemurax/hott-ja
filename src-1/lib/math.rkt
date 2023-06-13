@@ -20,6 +20,8 @@
          refl
          abs
          fun-type
+         level:zero
+         level:succ
          $)
 
 (define cfg
@@ -61,11 +63,13 @@
 (define fun-apply
   (apply-with-parens))
 
+(define ((make-fun [f : MathTeX+Like]) . [xs : MathTeX+Like *])
+  (fun-apply f (apply % xs)))
+
 (define universe/symb
   @mathcal{U})
 
-(define (universe . [xs : MathTeX+Like *])
-  (fun-apply universe/symb (apply % xs)))
+(define universe (make-fun universe/symb))
 
 (define id-type
   (binary #:level 'relation "="))
@@ -82,8 +86,7 @@
 (define refl/symb
   @const{refl})
 
-(define (refl . [xs : MathTeX+Like *])
-  (fun-apply refl/symb (apply % xs)))
+(define refl (make-fun refl/symb))
 
 (define (abs [x : MathTeX+Like] [b : MathTeX+Like])
   (paren #:level 'abs
@@ -92,3 +95,7 @@
 (define fun-type
   (binary #:level 'relation #:assoc 'right
           (macro "to")))
+
+(define level:zero "0")
+(define level:succ/symb (const "succ"))
+(define level:succ (make-fun level:succ/symb))
