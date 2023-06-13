@@ -35,11 +35,13 @@
          pair
          proj/sym
          proj
+         pair-type
          $)
 
 (define cfg
   (struct-copy user-config default-config
-   [levels '(abs
+   [levels '(*
+             abs
              relation
              big-op
              subst-arrow
@@ -56,6 +58,7 @@
 (define operator-name (macro-1 "operatorname"))
 
 (define star (macro "star"))
+(define times (macro "times"))
 
 (define def-eq
   (binary #:level 'def-eq (macro "equiv")))
@@ -147,3 +150,6 @@
   ((const "proj") . _ . (number->string n)))
 (define (proj [n : Natural])
   (make-fun (proj/sym n)))
+
+(define pair-type
+  (monoid #:level '* unit-type times))

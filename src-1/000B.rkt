@@ -3,6 +3,7 @@
 (require morg/markup)
 
 (require "000K.rkt"
+         "000M.rkt"
          "000L.rkt")
 
 (provide part:000B)
@@ -16,6 +17,7 @@
     }
     part:000K
     part:000L
+    part:000M
   ])
 
 (module+ main
