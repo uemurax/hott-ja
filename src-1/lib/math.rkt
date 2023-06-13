@@ -55,12 +55,11 @@
 (define subst-bin
   (binary #:level 'subst-arrow @%{@macro["mapsto"]}))
 
-(define (subst-apply [e : MathTeX+Like] [x : MathTeX+Like])
-        : MathTeX+Like
-  @paren[#:level #f]{@dec-degree[@group{@|e|}]@paren[#:left "[" #:right "]"]{@|x|}})
+(define subst-apply
+  (apply-with-parens #:left "[" #:right "]"))
 
-(define (fun-apply [f : MathTeX+Like] [x : MathTeX+Like]) : MathTeX+Like
-  @paren[#:level #f]{@dec-degree[@group{@|f|}]@paren{@|x|}})
+(define fun-apply
+  (apply-with-parens))
 
 (define universe/symb
   @mathcal{U})
