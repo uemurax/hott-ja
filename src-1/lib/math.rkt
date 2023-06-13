@@ -104,9 +104,9 @@
 
 (define refl (make-fun refl/symb))
 
-(define (abs [x : MathTeX+Like] [b : MathTeX+Like])
+(define (abs [x : MathTeX+Like] . [b : MathTeX+Like *])
   (paren #:level 'abs
-         "λ" x "." (dec-degree b)))
+         "λ" x "." (dec-degree (apply % b))))
 
 (define fun-type
   (binary #:level 'relation #:assoc 'right
