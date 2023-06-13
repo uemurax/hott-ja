@@ -30,6 +30,11 @@
          level:succ
          unit-type
          unit-elem
+         d-pair-type
+         pair/sym
+         pair
+         proj/sym
+         proj
          $)
 
 (define cfg
@@ -106,6 +111,9 @@
 (define prod
   (big-op #:level 'big-op (macro "prod")))
 
+(define sum
+  (big-op #:level 'big-op (macro "sum")))
+
 (define (d-fun-type [A : MathTeX+Like] . [B : MathTeX+Like *])
   (prod #:_ A (apply % B)))
 
@@ -129,3 +137,13 @@
 
 (define unit-type @mathbf{1})
 (define unit-elem (mathord star))
+
+(define (d-pair-type [A : MathTeX+Like] . [B : MathTeX+Like *])
+  (sum #:_ A (apply % B)))
+
+(define pair/sym (const "pair"))
+(define pair (make-fun pair/sym))
+(define (proj/sym [n : Natural])
+  ((const "proj") . _ . (number->string n)))
+(define (proj [n : Natural])
+  (make-fun (proj/sym n)))
