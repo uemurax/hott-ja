@@ -45,11 +45,5 @@
 ]
 
 (module+ main
-  (require morg/latex
-           morg/html
-           "config.rkt")
-  (define dst-dir
-    (build-path (current-directory) "_site"))
-  (define doc part:index)
-  (->html/publish doc dst-dir)
-  (->latex/publish #:config latex-config doc dst-dir))
+  (require morg/text)
+  (display (->text part:index)))
