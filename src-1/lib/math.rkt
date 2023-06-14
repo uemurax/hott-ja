@@ -25,16 +25,16 @@
          d-fun-type
          refl
          abs
-         fun-type/sym
+         fun-type/symb
          fun-type
          level:zero
          level:succ
          unit-type
          unit-elem
          d-pair-type
-         pair/sym
+         pair/symb
          pair
-         proj/sym
+         proj/symb
          proj
          pair-type/symb
          pair-type
@@ -144,10 +144,10 @@
   (paren #:level 'abs
          "λ" x "." (dec-degree (apply % b))))
 
-(define fun-type/sym (macro "to"))
+(define fun-type/symb (macro "to"))
 (define fun-type
   (binary #:level 'relation #:assoc 'right
-          fun-type/sym))
+          fun-type/symb))
 
 (define level:zero "0")
 (define level:succ/symb (const "succ"))
@@ -159,12 +159,12 @@
 (define (d-pair-type [A : MathTeX+Like] . [B : MathTeX+Like *])
   (sum #:_ A (apply % B)))
 
-(define pair/sym (const "pair"))
-(define pair (make-fun pair/sym))
-(define (proj/sym [n : Natural])
+(define pair/symb (const "pair"))
+(define pair (make-fun pair/symb))
+(define (proj/symb [n : Natural])
   ((const "proj") . _ . (number->string n)))
 (define (proj [n : Natural])
-  (make-fun (proj/sym n)))
+  (make-fun (proj/symb n)))
 
 (define pair-type/symb times)
 (define pair-type
