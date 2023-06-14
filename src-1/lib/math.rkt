@@ -14,6 +14,7 @@
          subst-bin
          subst-apply
          fun-apply
+         fun-apply/implicit
          universe
          universe:el/symb
          universe:el
@@ -43,6 +44,7 @@
          record-elem
          record-field
          implicit
+         phantom
          +
          -
          $)
@@ -67,6 +69,7 @@
 (define mathbf (macro-1 "mathbf"))
 (define mathord (macro-1 "mathord"))
 (define operator-name (macro-1 "operatorname"))
+(define phantom (macro-1 "phantom"))
 
 (define star (macro "star"))
 (define times (macro "times"))
@@ -99,8 +102,15 @@
 (define subst-apply
   (apply-with-parens #:left "[" #:right "]"))
 
+(define implicit-left lbrace)
+(define implicit-right rbrace)
+(define implicit (paren/curried #:left implicit-left #:right implicit-right))
+
 (define fun-apply
   (apply-with-parens))
+
+(define fun-apply/implicit
+  (apply-with-parens #:left implicit-left #:right implicit-right))
 
 (define ((make-fun [f : MathTeX+Like]) . [xs : MathTeX+Like *])
   (fun-apply f (apply % xs)))
@@ -195,5 +205,3 @@
 (define + (monoid #:level '+ "0" "+"))
 
 (define - (binary #:level '+ "-"))
-
-(define implicit (paren/curried #:left lbrace #:right rbrace))
