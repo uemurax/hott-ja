@@ -21,6 +21,7 @@
          universe:lift/symb
          universe:lift
          id-type
+         id-ind
          equiv
          d-fun-type
          refl
@@ -41,6 +42,7 @@
          record-type
          record-elem
          record-field
+         implicit
          +
          -
          $)
@@ -68,6 +70,8 @@
 
 (define star (macro "star"))
 (define times (macro "times"))
+(define lbrace (macro "lbrace"))
+(define rbrace (macro "rbrace"))
 
 (define def-eq
   (binary #:level 'def-eq (macro "equiv")))
@@ -120,8 +124,9 @@
 (define universe:lift/symb @const{Lift})
 (define universe:lift (make-fun universe:lift/symb))
 
+(define id-type/symb "=")
 (define id-type
-  (binary #:level 'relation "="))
+  (binary #:level 'relation id-type/symb))
 
 (define equiv
   (binary #:level 'relation (macro "simeq")))
@@ -139,6 +144,12 @@
   @const{refl})
 
 (define refl (make-fun refl/symb))
+
+(define ind/symb (const "ind"))
+
+(define id-ind/symb
+  (ind/symb . _ . id-type/symb))
+(define id-ind (make-fun id-ind/symb))
 
 (define (abs [x : MathTeX+Like] . [b : MathTeX+Like *])
   (paren #:level 'abs
@@ -171,7 +182,7 @@
   (monoid #:level '* unit-type pair-type/symb))
 
 (define record-apply
-  (apply-with-parens #:left (macro "lbrace") #:right (macro "rbrace")))
+  (apply-with-parens #:left lbrace #:right rbrace))
 (define record-type/symb (const "Record"))
 (define (record-type . [xs : MathTeX+Like *])
   (record-apply record-type/symb (apply seq xs)))
@@ -184,3 +195,5 @@
 (define + (monoid #:level '+ "0" "+"))
 
 (define - (binary #:level '+ "-"))
+
+(define implicit (paren/curried #:left lbrace #:right rbrace))
