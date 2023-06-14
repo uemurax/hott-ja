@@ -7,6 +7,7 @@
          sub-sup _ ^
          def-eq
          seq
+         seq-of
          elem-of
          elem-of/chain
          dots
@@ -37,11 +38,18 @@
          proj
          pair-type/symb
          pair-type
+         record-type
+         record-elem
+         record-field
+         +
+         -
          $)
 
 (define cfg
   (struct-copy user-config default-config
-   [levels '(*
+   [levels '(dot
+             *
+             +
              abs
              relation
              big-op
@@ -74,6 +82,12 @@
   (monoid #:level 'elem-of "" ":"))
 
 (define dots (macro "dots"))
+
+(define-syntax-rule (seq-of [i from to] body ...)
+  (let ()
+    (define (f [i : MathTeX+Like]) : MathTeX+Like
+      (% body ...))
+    (seq (f from) dots (f to))))
 
 (define subst-bin
   (binary #:level 'subst-arrow @%{@macro["mapsto"]}))
@@ -155,3 +169,18 @@
 (define pair-type/symb times)
 (define pair-type
   (monoid #:level '* unit-type pair-type/symb))
+
+(define record-apply
+  (apply-with-parens #:left (macro "lbrace") #:right (macro "rbrace")))
+(define record-type/symb (const "Record"))
+(define (record-type . [xs : MathTeX+Like *])
+  (record-apply record-type/symb (apply seq xs)))
+(define record-elem/symb (const "record"))
+(define (record-elem . [xs : MathTeX+Like *])
+  (record-apply record-elem/symb (apply seq xs)))
+(define record-field
+  (binary #:level 'dot "."))
+
+(define + (monoid #:level '+ "0" "+"))
+
+(define - (binary #:level '+ "-"))
