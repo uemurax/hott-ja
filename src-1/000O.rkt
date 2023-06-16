@@ -18,7 +18,7 @@
         @list-item{@($ (record-type (seq)))は@($ unit-type)のこととする。}
         @list-item{@($ (record-type (seq-of [i "1" ("n" . + . "1")] (("x" . _ . i) . elem-of . ("A" . _ . i)))))は@($ (d-pair-type (("x" . _ . "1") . elem-of . ("A" . _ . "1")) (record-type (seq-of [i "2" ("n" . + . "1")] (("x" . _ . i) . elem-of . ("A" . _ . i))))))のこととする。}
       ]
-      この形の型を@emph{レコード型(record type)}と呼ぶ。また、記法@($ (record-elem (seq-of [i "1" "n"] (("x" . _ . i) . def-eq . ("a" . _ . i)))))を次のように定める。
+      この形の型を@dfn{レコード型(record type)}と呼ぶ。また、記法@($ (record-elem (seq-of [i "1" "n"] (("x" . _ . i) . def-eq . ("a" . _ . i)))))を次のように定める。
       @unordered-list[
         @list-item{@($ (record-elem (seq)))は@($ unit-elem)のこととする。}
         @list-item{@($ (record-elem (seq-of [i "1" ("n" . + . "1")] (("x" . _ . i) . def-eq . ("a" . _ . i)))))は@($ (pair (seq ("a" . _ . "1") (record-elem (seq-of [i "2" ("n" . + . "1")] (("x" . _ . i) . def-eq . ("a" . _ . i)))))))のこととする。}

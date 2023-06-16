@@ -13,7 +13,7 @@
       @index[#:key "いっかせいこうり"]{一価性公理}
     ]
     @paragraph{
-      @emph{一価性公理(univalence axiom)}は任意の階数の宇宙が一価性を満たすことを要請する。
+      @dfn{一価性公理(univalence axiom)}は任意の階数の宇宙が一価性を満たすことを要請する。
     }
   ])
 

@@ -13,7 +13,7 @@
       @index[#:key "うちゅう"]{宇宙}
     ]
     @paragraph{
-      @emph{宇宙(universe)}についての規則は次で与えられる。
+      @dfn{宇宙(universe)}についての規則は次で与えられる。
       @unordered-list[
         @list-item{階数@${i}に対して、型@${@universe{i}}を構成できる。}
         @list-item{階数@${i}と要素@($ ("A" . elem-of . @universe{i}))に対して、型@${@universe:el{A}}を構成できる。}

@@ -18,7 +18,7 @@
         @list-item{@($ (center . elem-of . "A"))}
         @list-item{@($ (contraction . elem-of . (d-fun-type ("x" . elem-of . "A") (center . id-type . "x"))))}
       ]
-      @${@is-contr{A}}の要素がある時、@${A}は@emph{可縮(contractible)}であると言う。
+      @${@is-contr{A}}の要素がある時、@${A}は@dfn{可縮(contractible)}であると言う。
     }
   ])
 
