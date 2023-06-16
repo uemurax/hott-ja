@@ -3,7 +3,8 @@
 (require morg/markup
          "lib/math.rkt")
 
-(require "000T.rkt")
+(require "000T.rkt"
+         "000V.rkt")
 
 (provide part:000S)
 
@@ -46,7 +47,7 @@
     }
     ;part:001P
     ;part:001Q
-    ;part:000V
+    part:000V
     @paragraph{
       この定義による同値の概念が妥当なものであるかは自明ではない。直観的には、@($ (fiber (seq "f" "b")))は@${b}の@${f}による逆像であり、@($ (is-contr (fiber (seq "f" "b"))))は逆像がただ一つの要素を持つことを表す。これはもっともらしい定義だが、@($ equiv/symb)が反射的、対称、推移的であることすら@ref["000V"]から直ちに分かることではない。@ref["000U"]でこの同値の概念が妥当であることを説明するが、その前にいくつか重要な定理と概念を導入する。
     }

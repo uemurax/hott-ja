@@ -26,6 +26,8 @@
          is-equiv
          equiv
          equiv/symb
+         equiv:fun
+         equiv:is-equiv
          d-fun-type
          refl
          abs
@@ -153,6 +155,8 @@
 (define equiv/symb (macro "simeq"))
 (define equiv
   (binary #:level 'relation equiv/symb))
+(define equiv:fun (const "fun"))
+(define equiv:is-equiv (const "is-equiv"))
 
 (define prod
   (big-op #:level 'big-op (macro "prod")))
