@@ -24,6 +24,7 @@
          id-type
          id-ind
          equiv
+         equiv/symb
          d-fun-type
          refl
          abs
@@ -45,6 +46,10 @@
          record-field
          implicit
          phantom
+         center
+         is-contr
+         retract
+         fiber
          +
          -
          $)
@@ -138,8 +143,9 @@
 (define id-type
   (binary #:level 'relation id-type/symb))
 
+(define equiv/symb (macro "simeq"))
 (define equiv
-  (binary #:level 'relation (macro "simeq")))
+  (binary #:level 'relation equiv/symb))
 
 (define prod
   (big-op #:level 'big-op (macro "prod")))
@@ -205,3 +211,13 @@
 (define + (monoid #:level '+ "0" "+"))
 
 (define - (binary #:level '+ "-"))
+
+(define center (const "center"))
+(define is-contr/symb (const "IsContr"))
+(define is-contr (make-fun is-contr/symb))
+
+(define retract/symb (const "Retract"))
+(define retract (make-fun retract/symb))
+
+(define fiber/symb (const "Fiber"))
+(define fiber (make-fun fiber/symb))

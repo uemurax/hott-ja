@@ -3,6 +3,8 @@
 (require morg/markup
          "lib/math.rkt")
 
+(require "000S.rkt")
+
 (provide part:0002)
 
 (define part:0002
@@ -24,6 +26,9 @@
     @paragraph{
       @ref["000U"]はやや技術的な話で、同値の概念の基本性質を見る。
     }
+    #:subsections @list[
+      part:000S
+    ]
   ])
 
 (module+ main
