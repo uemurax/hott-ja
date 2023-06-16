@@ -63,6 +63,7 @@
          uncurry
          pair-assoc
          pair-assoc-inv
+         pair-sym
          blank
          +
          -
@@ -265,5 +266,8 @@
 (define pair-assoc (make-fun pair-assoc/symb))
 (define pair-assoc-inv/symb (pair-assoc/symb . ^ . "-1"))
 (define pair-assoc-inv (make-fun pair-assoc-inv/symb))
+
+(define pair-sym/symb (const "sym"))
+(define pair-sym (make-fun pair-sym/symb))
 
 (define blank "_")
