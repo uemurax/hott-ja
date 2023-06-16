@@ -7,6 +7,7 @@
          terminology
          axiom
          example
+         exercise
          notation)
 
 (define rule (article/curried "規則"))
@@ -15,3 +16,4 @@
 (define terminology (article/curried "用語"))
 (define axiom (article/curried "公理"))
 (define example (article/curried "例"))
+(define exercise (article/curried "演習"))

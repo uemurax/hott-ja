@@ -8,6 +8,7 @@
          "000J.rkt"
          "0010.rkt"
          "0011.rkt"
+         "0012.rkt"
          "000Q.rkt"
          "000H.rkt")
 
@@ -29,6 +30,7 @@
     part:000I
     part:0010
     part:0011
+    part:0012
     part:000Q
   ])
 
