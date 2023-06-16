@@ -9,6 +9,7 @@
          "001F.rkt"
          "001G.rkt"
          "001H.rkt"
+         "001I.rkt"
          "001C.rkt")
 
 (provide part:000C)
@@ -36,6 +37,7 @@
     part:001E
     part:001H
     part:001F
+    part:001I
   ])
 
 (module+ main
