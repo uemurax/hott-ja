@@ -68,6 +68,10 @@
          fun-pair-dist-inv
          transport
          id-extension
+         id-sym
+         id-trans
+         id-inv
+         id-comp
          blank
          +
          -
@@ -284,5 +288,11 @@
 
 (define id-extension/symb (const "ext"))
 (define id-extension (make-fun id-extension/symb))
+
+(define id-sym (const "sym"))
+(define id-trans (const "trans"))
+(define (id-inv [x : MathTeXAtom+Like])
+  (x . ^ . "-1"))
+(define id-comp (monoid #:level 'comp refl/symb fun-comp/symb))
 
 (define blank "_")

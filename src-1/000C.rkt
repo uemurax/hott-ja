@@ -5,6 +5,7 @@
 
 (require "000P.rkt"
          "001D.rkt"
+         "001E.rkt"
          "001C.rkt")
 
 (provide part:000C)
@@ -28,6 +29,7 @@
     }
     part:001C
     part:001D
+    part:001E
   ])
 
 (module+ main
