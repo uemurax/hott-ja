@@ -3,7 +3,8 @@
 (require morg/markup
          "lib/math.rkt")
 
-(require "000Y.rkt")
+(require "000Y.rkt"
+         "000Z.rkt")
 
 (provide part:000X)
 
@@ -22,7 +23,7 @@
     @paragraph{
       @ref["0026"]から@ref["001S"]を適用できて、@${@universe{i}}が一価性を満たす時、任意の型@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))に対して同値@($ (("A" . id-type . "B") . equiv . ("A" . equiv . "B")))を構成できる。
     }
-    ;part:000Z
+    part:000Z
     @paragraph{
       ここで公理という言葉を使ったが、規則と公理に本質的な違いは無い。つまり、@ref["000Z"]は任意の階数@${i}に対して要素@($ (@ua{i} . elem-of . (d-fun-type ("X" . elem-of . @universe{i}) (is-contr (d-pair-type ("Y" . elem-of . @universe{i}) ("X" . equiv . "Y"))))))を構成できるという規則だとも言える。本書では、次のように感覚的に使い分ける。
       @unordered-list[
