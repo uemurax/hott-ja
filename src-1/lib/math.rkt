@@ -58,6 +58,7 @@
          id-fun
          fun-comp
          ua
+         swap
          +
          -
          $)
@@ -245,3 +246,6 @@
 
 (define ua/symb (const "ua"))
 (define ua (make-fun ua/symb))
+
+(define swap/symb (const "swap"))
+(define swap (make-fun swap/symb))
