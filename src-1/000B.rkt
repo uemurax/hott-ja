@@ -9,6 +9,7 @@
          "000W.rkt"
          "0014.rkt"
          "0015.rkt"
+         "0016.rkt"
          "000L.rkt")
 
 (provide part:000B)
@@ -26,6 +27,7 @@
     part:000N
     part:0014
     part:0015
+    part:0016
     part:000O
     part:000W
   ])

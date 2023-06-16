@@ -61,6 +61,8 @@
          swap
          curry
          uncurry
+         pair-assoc
+         pair-assoc-inv
          +
          -
          $)
@@ -257,3 +259,8 @@
 
 (define uncurry/symb (const "uncurry"))
 (define uncurry (make-fun uncurry/symb))
+
+(define pair-assoc/symb (const "assoc"))
+(define pair-assoc (make-fun pair-assoc/symb))
+(define pair-assoc-inv/symb (pair-assoc/symb . ^ . "-1"))
+(define pair-assoc-inv (make-fun pair-assoc-inv/symb))
