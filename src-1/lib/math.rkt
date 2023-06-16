@@ -66,6 +66,7 @@
          pair-sym
          fun-pair-dist
          fun-pair-dist-inv
+         transport
          blank
          +
          -
@@ -276,5 +277,8 @@
 (define fun-pair-dist (make-fun fun-pair-dist/symb))
 (define fun-pair-dist-inv/symb (fun-pair-dist/symb . ^ . "-1"))
 (define fun-pair-dist-inv (make-fun fun-pair-dist-inv/symb))
+
+(define transport/symb (const "transport"))
+(define transport (make-fun transport/symb))
 
 (define blank "_")
