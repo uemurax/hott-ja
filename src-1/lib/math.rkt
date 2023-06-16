@@ -59,6 +59,8 @@
          fun-comp
          ua
          swap
+         curry
+         uncurry
          +
          -
          $)
@@ -249,3 +251,9 @@
 
 (define swap/symb (const "swap"))
 (define swap (make-fun swap/symb))
+
+(define curry/symb (const "curry"))
+(define curry (make-fun curry/symb))
+
+(define uncurry/symb (const "uncurry"))
+(define uncurry (make-fun uncurry/symb))
