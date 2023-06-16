@@ -23,7 +23,9 @@
         @list-item{@($ (record-elem (seq)))は@($ unit-elem)のこととする。}
         @list-item{@($ (record-elem (seq-of [i "1" ("n" . + . "1")] (("x" . _ . i) . def-eq . ("a" . _ . i)))))は@($ (pair (seq ("a" . _ . "1") (record-elem (seq-of [i "2" ("n" . + . "1")] (("x" . _ . i) . def-eq . ("a" . _ . i)))))))のこととする。}
       ]
-      これらの記法は、各@($ ("a" . _ . "i"))が@($ (subst-apply ("A" . _ . "i") (seq-of [i "1" ("i" . - . "1")] (("x" . _ . i) . subst-bin . ("a" . _ . i)))))の要素の時に@($ (record-elem (seq-of [i "1" "n"] (("x" . _ . i) . def-eq . ("a" . _ . i)))))が@($ (record-type (seq-of [i "1" "n"] (("x" . _ . i) . elem-of . ("A" . _ . i)))))の要素になるように設計されている。さらに、@($ ("a" . elem-of . (record-type (seq-of [i "1" "n"] (("x" . _ . i) . elem-of . ("A" . _ . i))))))を要素、@${y}を@($ ("x" . _ . "1"))から@($ ("x" . _ . "n"))のいずれかとする時、記法@($ ("a" . record-field . "y"))を次のように定める。
+      これらの記法は、各@($ ("a" . _ . "i"))が@($ (subst-apply ("A" . _ . "i") (seq-of [i "1" ("i" . - . "1")] (("x" . _ . i) . subst-bin . ("a" . _ . i)))))の要素の時に@disp{
+        @($ ((record-elem (seq-of [i "1" "n"] (("x" . _ . i) . def-eq . ("a" . _ . i)))) . elem-of . (record-type (seq-of [i "1" "n"] (("x" . _ . i) . elem-of . ("A" . _ . i))))))
+      }となるように設計されている。さらに、@($ ("a" . elem-of . (record-type (seq-of [i "1" "n"] (("x" . _ . i) . elem-of . ("A" . _ . i))))))を要素、@${y}を@($ ("x" . _ . "1"))から@($ ("x" . _ . "n"))のいずれかとする時、記法@($ ("a" . record-field . "y"))を次のように定める。
       @unordered-list[
         @list-item{@${y}が@($ ("x" . _ . "1"))の時、@($ ("a" . record-field . ("x" . _ . "1")))は@($ ((proj 1) "a"))のこととする。}
         @list-item{@${y}が@($ ("x" . _ . "2"))から@($ ("x" . _ . "n"))のいずれかの時、@($ ("a" . record-field . "y"))は@($ (((proj 2) "a") . record-field . "y"))のこととする。}
