@@ -8,6 +8,7 @@
          "001E.rkt"
          "001F.rkt"
          "001G.rkt"
+         "001H.rkt"
          "001C.rkt")
 
 (provide part:000C)
@@ -33,6 +34,7 @@
     part:001G
     part:001D
     part:001E
+    part:001H
     part:001F
   ])
 
