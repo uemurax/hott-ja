@@ -67,6 +67,7 @@
          fun-pair-dist
          fun-pair-dist-inv
          transport
+         id-extension
          blank
          +
          -
@@ -280,5 +281,8 @@
 
 (define transport/symb (const "transport"))
 (define transport (make-fun transport/symb))
+
+(define id-extension/symb (const "ext"))
+(define id-extension (make-fun id-extension/symb))
 
 (define blank "_")

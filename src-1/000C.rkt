@@ -4,6 +4,7 @@
          "lib/math.rkt")
 
 (require "000P.rkt"
+         "001D.rkt"
          "001C.rkt")
 
 (provide part:000C)
@@ -26,6 +27,7 @@
       @($ (("a" . _ . "1") . id-type . ("a" . _ . "2")))が同一視型と呼ぶに価することを確認するために、いくつかの期待される関数を構成しよう。
     }
     part:001C
+    part:001D
   ])
 
 (module+ main
