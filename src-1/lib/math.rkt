@@ -47,6 +47,7 @@
          implicit
          phantom
          center
+         contraction
          is-contr
          retract
          fiber
@@ -213,6 +214,7 @@
 (define - (binary #:level '+ "-"))
 
 (define center (const "center"))
+(define contraction (const "contr"))
 (define is-contr/symb (const "IsContr"))
 (define is-contr (make-fun is-contr/symb))
 

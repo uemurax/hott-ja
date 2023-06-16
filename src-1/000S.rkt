@@ -3,6 +3,8 @@
 (require morg/markup
          "lib/math.rkt")
 
+(require "000T.rkt")
+
 (provide part:000S)
 
 (define part:000S
@@ -12,7 +14,7 @@
     @paragraph{
       @emph{可縮性}はホモトピー型理論において中心的な役割を果たす概念である。
     }
-    ;part:000T
+    part:000T
     @paragraph{
       つまり、型@${A}が可縮であるとは、ある要素@($ (center . elem-of . "A"))があり、すべての@${A}の要素は@($ center)と同一視されるということである。やや非形式的に言うと、@${A}はただ一つの要素を持つということである。
     }
