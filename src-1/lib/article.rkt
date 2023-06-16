@@ -8,6 +8,7 @@
          axiom
          example
          exercise
+         comparison
          notation)
 
 (define rule (article/curried "規則"))
@@ -17,3 +18,4 @@
 (define axiom (article/curried "公理"))
 (define example (article/curried "例"))
 (define exercise (article/curried "演習"))
+(define comparison (article/curried "比較"))
