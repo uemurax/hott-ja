@@ -23,6 +23,7 @@
          universe:lift
          id-type
          id-ind
+         is-equiv
          equiv
          equiv/symb
          d-fun-type
@@ -51,6 +52,7 @@
          is-contr
          retract
          fiber
+         fun-comp
          +
          -
          $)
@@ -58,6 +60,7 @@
 (define cfg
   (struct-copy user-config default-config
    [levels '(dot
+             comp
              *
              +
              abs
@@ -144,6 +147,9 @@
 (define id-type
   (binary #:level 'relation id-type/symb))
 
+(define is-equiv/symb (const "IsEquiv"))
+(define is-equiv (make-fun is-equiv/symb))
+
 (define equiv/symb (macro "simeq"))
 (define equiv
   (binary #:level 'relation equiv/symb))
@@ -223,3 +229,7 @@
 
 (define fiber/symb (const "Fiber"))
 (define fiber (make-fun fiber/symb))
+
+(define id-fun/symb (const "id"))
+(define fun-comp/symb (macro "circ"))
+(define fun-comp (monoid #:level 'comp id-fun/symb fun-comp/symb))

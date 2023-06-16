@@ -3,7 +3,8 @@
 (require morg/markup
          "lib/math.rkt")
 
-(require "000S.rkt")
+(require "000S.rkt"
+         "000U.rkt")
 
 (provide part:0002)
 
@@ -28,6 +29,11 @@
     }
     #:subsections @list[
       part:000S
+      ;part:001R
+      ;part:000X
+      ;part:001Y
+      ;part:0022
+      part:000U
     ]
   ])
 
