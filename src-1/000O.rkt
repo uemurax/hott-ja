@@ -21,7 +21,7 @@
       この形の型を@emph{レコード型(record type)}と呼ぶ。また、記法@($ (record-elem (seq-of [i "1" "n"] (("x" . _ . i) . def-eq . ("a" . _ . i)))))を次のように定める。
       @unordered-list[
         @list-item{@($ (record-elem (seq)))は@($ unit-elem)のこととする。}
-        @list-item{@($ (record-elem (seq-of [i "1" ("n" . + . "1")] (("x" . _ . i) . def-eq . ("a" . _ . i)))))は@($ (pair ("a" . _ . "1") (record-elem (seq-of [i "2" ("n" . + . "1")] (("x" . _ . i) . def-eq . ("a" . _ . i))))))のこととする。}
+        @list-item{@($ (record-elem (seq-of [i "1" ("n" . + . "1")] (("x" . _ . i) . def-eq . ("a" . _ . i)))))は@($ (pair (seq ("a" . _ . "1") (record-elem (seq-of [i "2" ("n" . + . "1")] (("x" . _ . i) . def-eq . ("a" . _ . i)))))))のこととする。}
       ]
       これらの記法は、各@($ ("a" . _ . "i"))が@($ (subst-apply ("A" . _ . "i") (seq-of [i "1" ("i" . - . "1")] (("x" . _ . i) . subst-bin . ("a" . _ . i)))))の要素の時に@($ (record-elem (seq-of [i "1" "n"] (("x" . _ . i) . def-eq . ("a" . _ . i)))))が@($ (record-type (seq-of [i "1" "n"] (("x" . _ . i) . elem-of . ("A" . _ . i)))))の要素になるように設計されている。さらに、@($ ("a" . elem-of . (record-type (seq-of [i "1" "n"] (("x" . _ . i) . elem-of . ("A" . _ . i))))))を要素、@${y}を@($ ("x" . _ . "1"))から@($ ("x" . _ . "n"))のいずれかとする時、記法@($ ("a" . record-field . "y"))を次のように定める。
       @unordered-list[
