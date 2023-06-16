@@ -6,6 +6,7 @@
          "000M.rkt"
          "000N.rkt"
          "000O.rkt"
+         "000W.rkt"
          "000L.rkt")
 
 (provide part:000B)
@@ -22,6 +23,7 @@
     part:000M
     part:000N
     part:000O
+    part:000W
   ])
 
 (module+ main

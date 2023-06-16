@@ -11,6 +11,7 @@
          elem-of
          elem-of/chain
          dots
+         vdots
          subst-bin
          subst-apply
          fun-apply
@@ -100,6 +101,7 @@
   (monoid #:level 'elem-of "" ":"))
 
 (define dots (macro "dots"))
+(define vdots (macro "vdots"))
 
 (define-syntax-rule (seq-of [i from to] body ...)
   (let ()
