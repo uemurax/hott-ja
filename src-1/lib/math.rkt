@@ -56,6 +56,7 @@
          retract
          fiber
          fun-comp
+         ua
          +
          -
          $)
@@ -239,3 +240,6 @@
 (define id-fun/symb (const "id"))
 (define fun-comp/symb (macro "circ"))
 (define fun-comp (monoid #:level 'comp id-fun/symb fun-comp/symb))
+
+(define ua/symb (const "ua"))
+(define ua (make-fun ua/symb))
