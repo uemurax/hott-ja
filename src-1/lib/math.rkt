@@ -72,6 +72,7 @@
          id-trans
          id-inv
          id-comp
+         fun-apply-id
          blank
          +
          -
@@ -134,7 +135,7 @@
 
 (define implicit-left lbrace)
 (define implicit-right rbrace)
-(define implicit (paren/curried #:left implicit-left #:right implicit-right))
+(define implicit (delimiter #:left implicit-left #:right implicit-right))
 
 (define fun-apply
   (apply-with-parens))
@@ -146,7 +147,7 @@
   (fun-apply f (apply % xs)))
 
 (define name-of
-  (paren/curried
+  (delimiter
    #:left (macro "lceil")
    #:right (macro "rceil")))
 
@@ -294,5 +295,8 @@
 (define (id-inv [x : MathTeXAtom+Like])
   (x . ^ . "-1"))
 (define id-comp (monoid #:level 'comp refl/symb fun-comp/symb))
+
+(define fun-apply-id/symb (const "ap"))
+(define fun-apply-id (make-fun fun-apply-id/symb))
 
 (define blank "_")
