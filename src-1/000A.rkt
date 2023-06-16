@@ -6,6 +6,7 @@
 (require "000G.rkt"
          "000I.rkt"
          "000J.rkt"
+         "0010.rkt"
          "000Q.rkt"
          "000H.rkt")
 
@@ -25,6 +26,7 @@
     part:000G
     part:000J
     part:000I
+    part:0010
     part:000Q
   ])
 

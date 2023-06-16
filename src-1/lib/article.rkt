@@ -6,6 +6,7 @@
          definition
          terminology
          axiom
+         example
          notation)
 
 (define rule (article/curried "規則"))
@@ -13,3 +14,4 @@
 (define definition (article/curried "定義"))
 (define terminology (article/curried "用語"))
 (define axiom (article/curried "公理"))
+(define example (article/curried "例"))
