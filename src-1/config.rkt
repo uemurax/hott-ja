@@ -25,4 +25,4 @@
     [section-macros '("chapter" "section" "subsection" "subsubsection" "paragraph")]
     [section-macro-fallback "subparagraph"]
     [class "ltjsbook"]
-    [class-options '("b5paper")]))
+    [class-options '("a4paper")]))
