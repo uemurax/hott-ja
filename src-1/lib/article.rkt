@@ -10,6 +10,7 @@
          exercise
          comparison
          proposition
+         theorem
          (rename-out [my-proof proof])
          notation)
 
@@ -22,5 +23,6 @@
 (define exercise (article/curried "演習"))
 (define comparison (article/curried "比較"))
 (define proposition (article/curried "命題"))
+(define theorem (article/curried "定理"))
 
 (define my-proof (proof/curried #:header "証明"))

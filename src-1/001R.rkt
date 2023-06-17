@@ -3,6 +3,8 @@
 (require "lib/markup.rkt"
          "lib/math.rkt")
 
+(require "001S.rkt")
+
 (provide part:001R)
 
 (define part:001R
@@ -22,7 +24,7 @@
     ;part:001V
     ;part:001X
     ;part:001W
-    ;part:001S
+    part:001S
     @paragraph{
       副産物として、対の同一視型の特徴付けは既に得られている。
     }
