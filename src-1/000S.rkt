@@ -4,6 +4,7 @@
          "lib/math.rkt")
 
 (require "000T.rkt"
+         "001J.rkt"
          "000V.rkt")
 
 (provide part:000S)
@@ -37,7 +38,7 @@
     @paragraph{
       @ref["001K"]は可縮性が@emph{レトラクト}で閉じることを主張する。
     }
-    ;part:001J
+    part:001J
     @paragraph{
       @($ (retract (seq "A" "B")))は@${@is-contr{A}}と違って命題ではないが、実用上は@($ (retract (seq "A" "B")))の要素の具体的な定義は重要ではない場合が多い。これは@ref["001K"]のように、ある性質がレトラクトで閉じるという使われ方をする場合が多いからである。
     }

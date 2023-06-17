@@ -54,6 +54,11 @@
          contraction
          is-contr
          retract
+         retract-retraction
+         retract-section
+         retract-id
+         retract-rel
+         bi-retract-rel
          fiber
          id-fun
          fun-comp
@@ -98,8 +103,11 @@
 (define mathsf (macro-1 "mathsf"))
 (define mathbf (macro-1 "mathbf"))
 (define mathord (macro-1 "mathord"))
+(define mathrel (macro-1 "mathrel"))
 (define operator-name (macro-1 "operatorname"))
 (define phantom (macro-1 "phantom"))
+(define textsf (macro-1 "textsf"))
+(define textnormal (macro-1 "textnormal"))
 
 (define star (macro "star"))
 (define times (macro "times"))
@@ -152,7 +160,7 @@
    #:right (macro "rceil")))
 
 (define const
-  (compose operator-name mathsf))
+  (mathord . compose . (textnormal . compose . textsf)))
 
 (define universe/symb
   @mathcal{U})
@@ -250,6 +258,14 @@
 
 (define retract/symb (const "Retract"))
 (define retract (make-fun retract/symb))
+(define retract-retraction (const "retraction"))
+(define retract-section (const "section"))
+(define retract-id (const "r-s"))
+(define retract-rel
+  (binary #:level 'relation (macro "triangleleft")))
+(define bi-retract-rel
+  (binary #:level 'relation
+          (mathrel (macro "triangleleft") (macro "triangleright"))))
 
 (define fiber/symb (const "Fiber"))
 (define fiber (make-fun fiber/symb))
