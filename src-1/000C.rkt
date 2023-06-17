@@ -10,6 +10,7 @@
          "001G.rkt"
          "001H.rkt"
          "001I.rkt"
+         "002N.rkt"
          "001C.rkt")
 
 (provide part:000C)
@@ -38,6 +39,9 @@
     part:001H
     part:001F
     part:001I
+    #:subsections @list[
+      part:002N
+    ]
   ])
 
 (module+ main
