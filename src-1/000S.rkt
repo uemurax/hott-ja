@@ -7,6 +7,7 @@
          "001J.rkt"
          "001K.rkt"
          "001L.rkt"
+         "001N.rkt"
          "000V.rkt")
 
 (provide part:000S)
@@ -33,7 +34,7 @@
     @paragraph{
       型の可縮性は次の@ref["001N"]や@ref["001K"]を使って示される場合が多い。
     }
-    ;part:001N
+    part:001N
     @paragraph{
       @ref["001N"]は同一視型の帰納法の別表現と考えられる。同一視型の帰納法は型の族@($ ((abs "x" ("a" . id-type . "x")) . elem-of . ("A" . fun-type . @universe{i})))が@($ (@refl{a} . elem-of . ("a" . id-type . "a")))で自由に生成されることを表す。これは、対型@($ (d-pair-type ("x" . elem-of . "A") ("a" . id-type . "x")))が@($ (pair (seq "a" @refl{a})))で自由に生成されると言い換えられる。一つの要素で生成される型はその要素しか持たないと期待され、@ref["001N"]は実際にそうだと言っている。
     }
