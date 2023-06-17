@@ -79,7 +79,7 @@
          $)
 
 (define cfg
-  (struct-copy user-config default-config
+  (struct-copy config default-config
    [levels '(dot
              comp
              *
