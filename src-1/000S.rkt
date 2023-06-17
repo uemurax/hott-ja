@@ -9,6 +9,7 @@
          "001L.rkt"
          "001N.rkt"
          "001O.rkt"
+         "001P.rkt"
          "000V.rkt")
 
 (provide part:000S)
@@ -50,7 +51,7 @@
     @paragraph{
       可縮性を使って型の@emph{同値}が定義される。
     }
-    ;part:001P
+    part:001P
     ;part:001Q
     part:000V
     @paragraph{

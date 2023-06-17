@@ -60,6 +60,8 @@
          retract-rel
          bi-retract-rel
          fiber
+         fiber-elem
+         fiber-id
          id-fun
          fun-comp
          ua
@@ -270,6 +272,8 @@
 
 (define fiber/symb (const "Fiber"))
 (define fiber (make-fun fiber/symb))
+(define fiber-elem (const "elem"))
+(define fiber-id (const "id"))
 
 (define id-fun/symb (const "id"))
 (define id-fun (make-fun id-fun/symb))
