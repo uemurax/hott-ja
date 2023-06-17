@@ -3,6 +3,8 @@
 (require "lib/markup.rkt"
          "lib/math.rkt")
 
+(require "001M.rkt")
+
 (provide part:002N)
 
 (define part:002N
@@ -15,7 +17,7 @@
     @paragraph{
       ∞グルーポイドの持つ構造の一部を挙げる。∞グルーポイドの文脈では要素@($ ("p" . elem-of . (("a" . _ . "1") . id-type . ("a" . _ . "2"))))は@emph{射}と呼ばれる。@($ ((refl ("a" . _ . "1")) . elem-of . (("a" . _ . "1") . id-type . ("a" . _ . "1"))))は@emph{恒等射}、@($ (@id-inv{p} . elem-of . (("a" . _ . "2") . id-type . ("a" . _ . "1"))))は@emph{逆射}、@($ (("q" . id-comp . "p") . elem-of . (("a" . _ . "1") . id-type . ("a" . _ . "3"))))は@emph{合成射}と呼ばれる。@($ ((id-extension (seq ("p" . _ . "1") ("p" . _ . "2"))) . elem-of . (("a" . _ . "1") . id-type . ("a" . _ . "2"))))は@($ (("p" . _ . "2") . elem-of . (("a" . _ . "0") . id-type . ("a" . _ . "2"))))の@($ (("p" . _ . "1") . elem-of . (("a" . _ . "0") . id-type . ("a" . _ . "1"))))に沿った@emph{拡張}である。
     }
-    ;part:001M
+    part:001M
     ;part:0027
     ;part:002O
     ;part:002P

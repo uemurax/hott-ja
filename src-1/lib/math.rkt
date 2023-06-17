@@ -73,6 +73,7 @@
          fun-pair-dist-inv
          transport
          id-extension
+         id-extension-self
          id-sym
          id-trans
          id-inv
@@ -305,6 +306,8 @@
 
 (define id-extension/symb (const "ext"))
 (define id-extension (make-fun id-extension/symb))
+(define id-extension-self/symb (const "ext-self"))
+(define id-extension-self (make-fun id-extension-self/symb))
 
 (define id-sym (const "sym"))
 (define id-trans (const "trans"))
