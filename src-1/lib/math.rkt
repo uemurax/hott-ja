@@ -94,6 +94,7 @@
              +
              abs
              relation
+             fun-type
              big-op
              subst-arrow
              def-eq
@@ -215,7 +216,7 @@
 
 (define fun-type/symb (macro "to"))
 (define fun-type
-  (binary #:level 'relation #:assoc 'right
+  (binary #:level 'fun-type #:assoc 'right
           fun-type/symb))
 
 (define level:zero "0")
