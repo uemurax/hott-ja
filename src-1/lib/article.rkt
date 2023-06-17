@@ -9,6 +9,8 @@
          example
          exercise
          comparison
+         proposition
+         (rename-out [my-proof proof])
          notation)
 
 (define rule (article/curried "規則"))
@@ -19,3 +21,6 @@
 (define example (article/curried "例"))
 (define exercise (article/curried "演習"))
 (define comparison (article/curried "比較"))
+(define proposition (article/curried "命題"))
+
+(define my-proof (proof/curried #:header "証明"))

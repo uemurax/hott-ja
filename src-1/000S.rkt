@@ -1,10 +1,11 @@
 #lang at-exp typed/racket
 
-(require morg/markup
+(require "lib/markup.rkt"
          "lib/math.rkt")
 
 (require "000T.rkt"
          "001J.rkt"
+         "001K.rkt"
          "000V.rkt")
 
 (provide part:000S)
@@ -42,7 +43,7 @@
     @paragraph{
       @($ (retract (seq "A" "B")))は@${@is-contr{A}}と違って命題ではないが、実用上は@($ (retract (seq "A" "B")))の要素の具体的な定義は重要ではない場合が多い。これは@ref["001K"]のように、ある性質がレトラクトで閉じるという使われ方をする場合が多いからである。
     }
-    ;part:001K
+    part:001K
     @paragraph{
       可縮性を使って型の@emph{同値}が定義される。
     }

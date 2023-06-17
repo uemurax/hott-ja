@@ -1,6 +1,6 @@
 #lang at-exp typed/racket
 
-(require morg/markup
+(require "lib/markup.rkt"
          "lib/math.rkt")
 
 (provide part:000U)
