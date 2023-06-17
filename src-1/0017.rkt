@@ -10,12 +10,7 @@
   @exercise[
     #:id "0017"
     @paragraph{
-      @ref["0016"]において、
-      @unordered-list[
-        @list-item{@($ ((@pair-assoc-inv{C} . fun-comp . @pair-assoc{C}) . def-eq . (id-fun blank)))}
-        @list-item{@($ ((@pair-assoc{C} . fun-comp . @pair-assoc-inv{C}) . def-eq . (id-fun blank)))}
-      ]
-      を確かめよ。
+      @ref["0016"]において、@($ ((@pair-assoc-inv{C} . fun-comp . @pair-assoc{C}) . def-eq . (id-fun blank)))と@($ ((@pair-assoc{C} . fun-comp . @pair-assoc-inv{C}) . def-eq . (id-fun blank)))を確かめよ。
     }
   ])
 
