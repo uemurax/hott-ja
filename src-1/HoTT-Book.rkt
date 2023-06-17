@@ -6,7 +6,7 @@
 (provide part:HoTT-Book)
 
 (define part:HoTT-Book
-  @b:bib["HoTT-Book"
+  @b:bibliography["HoTT-Book"
     @b:book[
       #:author @list[@%{The Univalent Foundations Program}]
       #:title @%{Homotopy Type Theory: Univalent Foundations of Mathematics}
