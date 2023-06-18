@@ -60,6 +60,7 @@
          retract-rel
          bi-retract-rel
          fiber
+         fiber/symb
          fiber-elem
          fiber-id
          id-fun
