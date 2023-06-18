@@ -5,6 +5,7 @@
 
 (require "001S.rkt"
          "001W.rkt"
+         "001X.rkt"
          "001V.rkt")
 
 (provide part:001R)
@@ -24,7 +25,7 @@
       ]
     }
     part:001V
-    ;part:001X
+    part:001X
     part:001W
     part:001S
     @paragraph{
