@@ -3,7 +3,8 @@
 (require "lib/markup.rkt"
          "lib/math.rkt")
 
-(require "001S.rkt")
+(require "001S.rkt"
+         "001V.rkt")
 
 (provide part:001R)
 
@@ -21,7 +22,7 @@
         @list-item{@($ (d-pair-type ("x" . elem-of . "A") ("B" . fun-apply . "x")))の可縮性は@${a}や@${b}や@${b'}に依らない性質である。}
       ]
     }
-    ;part:001V
+    part:001V
     ;part:001X
     ;part:001W
     part:001S
