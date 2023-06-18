@@ -82,6 +82,10 @@
          id-inv
          id-comp
          fun-apply-id
+         log-equiv/symb
+         log-equiv
+         log-equiv-to
+         log-equiv-from
          blank
          +
          -
@@ -323,5 +327,10 @@
 
 (define fun-apply-id/symb (const "ap"))
 (define fun-apply-id (make-fun fun-apply-id/symb))
+
+(define log-equiv/symb (macro "leftrightarrow"))
+(define log-equiv (binary #:level 'relation log-equiv/symb))
+(define log-equiv-to (const "to"))
+(define log-equiv-from (const "from"))
 
 (define blank "_")

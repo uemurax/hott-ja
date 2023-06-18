@@ -15,6 +15,7 @@
          "0019.rkt"
          "001A.rkt"
          "001B.rkt"
+         "001T.rkt"
          "000L.rkt")
 
 (provide part:000B)
@@ -40,6 +41,7 @@
     part:001B
     part:000O
     part:000W
+    part:001T
   ])
 
 (module+ main
