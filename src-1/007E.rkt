@@ -4,6 +4,7 @@
 
 (require "HoTT-Book.rkt"
          "van-den-Berg--Garner--2011-0000.rkt"
+         "Streicher--1993-0000.rkt"
          "Lumsdaine--2010-0000.rkt")
 
 (provide part:007E)
@@ -14,6 +15,7 @@
     #:title @%{参考文献}
     part:HoTT-Book
     part:Lumsdaine--2010-0000
+    part:Streicher--1993-0000
     part:van-den-Berg--Garner--2011-0000
   ])
 
