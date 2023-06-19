@@ -7,6 +7,7 @@
          "000X.rkt"
          "001R.rkt"
          "001Y.rkt"
+         "0022.rkt"
          "000U.rkt")
 
 (provide part:0002)
@@ -35,7 +36,7 @@
       part:001R
       part:000X
       part:001Y
-      ;part:0022
+      part:0022
       part:000U
     ]
   ])
