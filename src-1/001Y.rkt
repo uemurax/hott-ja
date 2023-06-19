@@ -3,7 +3,8 @@
 (require "lib/markup.rkt"
          "lib/math.rkt")
 
-(require "001Z.rkt")
+(require "001Z.rkt"
+         "0020.rkt")
 
 (provide part:001Y)
 
@@ -18,7 +19,7 @@
     @paragraph{
       要素@($ ((abs "x" (refl ("f" . fun-apply . "x"))) . elem-of . (d-fun-type ("x" . elem-of . "A") (("f" . fun-apply . "x") . id-type . ("f" . fun-apply . "x")))))があるので@ref["001S"]を適用できて、@($ (d-fun-type ("x" . elem-of . "A") ("B" . fun-apply ."x")))が関数外延性を持つ時、任意の関数@($ ("f" . elem-of . (d-fun-type ("x" . elem-of . "A") ("B" . fun-apply . "x"))))と@($ ("g" . elem-of . (d-fun-type ("x" . elem-of . "A") ("B" . fun-apply . "x"))))に対して同値@($ (("f" . id-type . "g") . equiv . (d-fun-type ("x" . elem-of . "A") (("f" . fun-apply . "x") . id-type . ("g" . fun-apply . "x")))))を得る。
     }
-    ;part:0020
+    part:0020
     ;part:0029
     #:subsections @list[
       ;part:0021
