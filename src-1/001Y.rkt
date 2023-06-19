@@ -4,6 +4,7 @@
          "lib/math.rkt")
 
 (require "001Z.rkt"
+         "0021.rkt"
          "0020.rkt")
 
 (provide part:001Y)
@@ -22,7 +23,7 @@
     part:0020
     ;part:0029
     #:subsections @list[
-      ;part:0021
+      part:0021
     ]
   ])
 
