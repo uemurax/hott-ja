@@ -13,5 +13,5 @@
      String))
   (define dst-dir (string->path dst-dir/str))
   (define doc part:index)
-  (->html/publish doc dst-dir)
+  (->html/publish #:config html-config doc dst-dir)
   (->latex/publish #:config latex-config doc dst-dir))

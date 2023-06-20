@@ -58,6 +58,7 @@
          retract-section
          retract-id
          retract-rel
+         retract-rel/symb
          bi-retract-rel
          fiber
          fiber/symb
@@ -86,6 +87,9 @@
          log-equiv
          log-equiv-to
          log-equiv-from
+         pointed-type
+         pointed-type:carrier
+         pointed-type:point
          blank
          +
          -
@@ -270,8 +274,9 @@
 (define retract-retraction (const "retraction"))
 (define retract-section (const "section"))
 (define retract-id (const "r-s"))
+(define retract-rel/symb (macro "triangleleft"))
 (define retract-rel
-  (binary #:level 'relation (macro "triangleleft")))
+  (binary #:level 'relation retract-rel/symb))
 (define bi-retract-rel
   (binary #:level 'relation
           (mathrel (macro "triangleleft") (macro "triangleright"))))
@@ -332,5 +337,13 @@
 (define log-equiv (binary #:level 'relation log-equiv/symb))
 (define log-equiv-to (const "to"))
 (define log-equiv-from (const "from"))
+
+(define carrier (const "Carrier"))
+
+(define pointed-type/symb
+  (universe/symb . _ . (macro "bullet")))
+(define pointed-type (make-fun pointed-type/symb))
+(define pointed-type:carrier carrier)
+(define pointed-type:point (const "point"))
 
 (define blank "_")
