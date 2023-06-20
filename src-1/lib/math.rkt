@@ -79,6 +79,7 @@
          id-extension
          id-extension-self
          id-sym
+         id-sym-sym
          id-trans
          id-inv
          id-comp
@@ -98,6 +99,7 @@
 (define cfg
   (struct-copy config default-config
    [levels '(dot
+             unary
              comp
              *
              +
@@ -326,9 +328,10 @@
 
 (define id-sym (const "sym"))
 (define id-trans (const "trans"))
-(define (id-inv [x : MathTeXAtom+Like])
-  (x . ^ . "-1"))
+(define id-inv (sup-op #:level 'unary "-1"))
 (define id-comp (monoid #:level 'comp refl/symb fun-comp/symb))
+(define id-sym-sym/symb (const "sym-sym"))
+(define id-sym-sym (make-fun id-sym-sym/symb))
 
 (define fun-apply-id/symb (const "ap"))
 (define fun-apply-id (make-fun fun-apply-id/symb))
