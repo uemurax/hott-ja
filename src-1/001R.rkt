@@ -7,6 +7,7 @@
          "001W.rkt"
          "001X.rkt"
          "0024.rkt"
+         "0025.rkt"
          "001V.rkt")
 
 (provide part:001R)
@@ -37,7 +38,7 @@
       @ref["001S"]を適用する際に便利な補題を用意する。
     }
     part:0024
-    ;part:0025
+    part:0025
     ;part:002C
     ;part:002D
   ])
