@@ -91,6 +91,9 @@
          pointed-type
          pointed-type:carrier
          pointed-type:point
+         magma
+         magma:carrier
+         magma:operator
          blank
          +
          -
@@ -348,5 +351,10 @@
 (define pointed-type (make-fun pointed-type/symb))
 (define pointed-type:carrier carrier)
 (define pointed-type:point (const "point"))
+
+(define magma/symb (const "Magma"))
+(define magma (make-fun magma/symb))
+(define magma:carrier carrier)
+(define magma:operator (const "op"))
 
 (define blank "_")
