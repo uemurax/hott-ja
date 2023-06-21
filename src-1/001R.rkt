@@ -9,6 +9,7 @@
          "0024.rkt"
          "0025.rkt"
          "002B.rkt"
+         "002C.rkt"
          "001V.rkt")
 
 (provide part:001R)
@@ -40,7 +41,7 @@
     }
     part:0024
     part:0025
-    ;part:002C
+    part:002C
     ;part:002D
   ])
 
