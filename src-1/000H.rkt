@@ -1,6 +1,7 @@
 #lang at-exp typed/racket
 
 (require "lib/markup.rkt"
+         "lib/markup/rule.rkt"
          "lib/math.rkt")
 
 (provide part:000H)

@@ -2,6 +2,7 @@
 
 (require "lib/markup.rkt"
          "lib/math/id.rkt"
+         "lib/markup/proposition.rkt"
          "lib/math.rkt")
 
 (provide part:001L)

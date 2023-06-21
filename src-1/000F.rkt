@@ -3,6 +3,7 @@
 (require "lib/markup.rkt"
          "lib/math/level.rkt"
          "lib/math/universe.rkt"
+         "lib/markup/notation.rkt"
          "lib/math.rkt")
 
 (provide part:000F)

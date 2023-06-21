@@ -1,6 +1,7 @@
 #lang at-exp typed/racket
 
 (require "lib/math.rkt"
+         "lib/markup/exercise.rkt"
          "lib/markup.rkt")
 
 (provide part:0012)

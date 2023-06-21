@@ -1,6 +1,7 @@
 #lang at-exp typed/racket
 
-(require "lib/markup.rkt")
+(require "lib/markup.rkt"
+         "lib/markup/axiom.rkt")
 
 (provide part:0020)
 

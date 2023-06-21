@@ -2,6 +2,7 @@
 
 (require "lib/math.rkt"
          "lib/math/level.rkt"
+         "lib/markup/rule.rkt"
          "lib/markup.rkt")
 
 (provide part:000D)

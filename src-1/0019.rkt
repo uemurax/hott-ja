@@ -2,6 +2,7 @@
 
 (require "lib/math.rkt"
          "lib/math/pair.rkt"
+         "lib/markup/exercise.rkt"
          "lib/markup.rkt")
 
 (provide part:0019)
