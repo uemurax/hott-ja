@@ -2,6 +2,8 @@
 
 (require "lib/markup.rkt"
          "lib/math.rkt"
+         "lib/math/level.rkt"
+         "lib/math/refl-graph.rkt"
          morg/eq-reasoning)
 
 (provide part:002A)

@@ -1,6 +1,7 @@
 #lang at-exp typed/racket
 
 (require "lib/markup.rkt"
+         "lib/math/univalence.rkt"
          "lib/math.rkt")
 
 (require "000Y.rkt"

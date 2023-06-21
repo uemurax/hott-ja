@@ -1,6 +1,8 @@
 #lang at-exp typed/racket
 
 (require "lib/markup.rkt"
+         "lib/math/level.rkt"
+         "lib/math/universe.rkt"
          "lib/math.rkt")
 
 (provide part:000F)

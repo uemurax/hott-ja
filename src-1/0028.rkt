@@ -2,6 +2,8 @@
 
 (require "lib/markup.rkt"
          "lib/math.rkt"
+         "lib/math/level.rkt"
+         "lib/math/magma.rkt"
          morg/eq-reasoning)
 
 (provide part:0028)

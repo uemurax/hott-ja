@@ -1,6 +1,7 @@
 #lang at-exp typed/racket
 
 (require "lib/markup.rkt"
+         "lib/math/id.rkt"
          "lib/math.rkt")
 
 (require "001M.rkt"
