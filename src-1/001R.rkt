@@ -8,6 +8,7 @@
          "001X.rkt"
          "0024.rkt"
          "0025.rkt"
+         "002B.rkt"
          "001V.rkt")
 
 (provide part:001R)
@@ -33,7 +34,7 @@
     @paragraph{
       副産物として、対の同一視型の特徴付けは既に得られている。
     }
-    ;part:002B
+    part:002B
     @paragraph{
       @ref["001S"]を適用する際に便利な補題を用意する。
     }
