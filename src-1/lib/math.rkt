@@ -94,6 +94,10 @@
          magma
          magma:carrier
          magma:operator
+         refl-graph
+         refl-graph:vertex
+         refl-graph:edge
+         refl-graph:refl
          blank
          +
          -
@@ -356,5 +360,11 @@
 (define magma (make-fun magma/symb))
 (define magma:carrier carrier)
 (define magma:operator (const "op"))
+
+(define refl-graph/symb (const "ReflGraph"))
+(define refl-graph (make-fun refl-graph/symb))
+(define refl-graph:vertex (const "Vertex"))
+(define refl-graph:edge (const "Edge"))
+(define refl-graph:refl (const "refl"))
 
 (define blank "_")
