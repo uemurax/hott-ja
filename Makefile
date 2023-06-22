@@ -6,9 +6,19 @@ BUILD_SCRIPT = $(SRC_DIR)/build.rkt
 all: build
 
 .PHONY: build
-build:
+build: html pdf
+
+.PHONY: compile
+compile:
 	raco make -v $(BUILD_SCRIPT)
-	racket $(BUILD_SCRIPT) $(SITE_DIR)
+
+.PHONY: html
+html: compile
+	racket $(BUILD_SCRIPT) --html $(SITE_DIR)
+
+.PHONY: pdf
+pdf: compile
+	racket $(BUILD_SCRIPT) --pdf $(SITE_DIR)
 
 .PHONY: clean-site
 clean-site:
