@@ -52,10 +52,11 @@
          retract-rel
          retract-rel/symb
          bi-retract-rel
+         bi-retract-rel/symb
          fiber
          fiber/symb
-         fiber-elem
-         fiber-id
+         fiber:elem
+         fiber:id
          id-fun
          fun-comp
          transport
@@ -210,14 +211,16 @@
 (define retract-rel/symb (macro "triangleleft"))
 (define retract-rel
   (binary #:level 'relation retract-rel/symb))
+(define bi-retract-rel/symb
+  (mathrel (macro "triangleleft") (macro "triangleright")))
 (define bi-retract-rel
   (binary #:level 'relation
-          (mathrel (macro "triangleleft") (macro "triangleright"))))
+          bi-retract-rel/symb))
 
 (define fiber/symb (const "Fiber"))
 (define fiber (make-fun fiber/symb))
-(define fiber-elem (const "elem"))
-(define fiber-id (const "id"))
+(define fiber:elem (const "elem"))
+(define fiber:id (const "id"))
 
 (define id-fun/symb (const "id"))
 (define id-fun (make-fun id-fun/symb))
