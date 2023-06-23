@@ -25,6 +25,7 @@
       part:000A
       part:000B
       part:000C
+      (include-part "002T.rkt")
     ]
   ]
 ]
