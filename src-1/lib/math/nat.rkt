@@ -8,6 +8,7 @@
          nat:succ
          nat:succ/symb
          nat:plus
+         prim-rec
          nat:ind
          nat:ind/symb)
 
@@ -21,3 +22,5 @@
 (define nat:ind (make-fun nat:ind/symb))
 (define nat:plus/symb (const "plus"))
 (define nat:plus (make-fun nat:plus/symb))
+(define prim-rec/symb (const "prim-rec"))
+(define prim-rec (make-fun prim-rec/symb))
