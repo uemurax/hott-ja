@@ -22,7 +22,7 @@
     part:001M
     part:0027
     (include-part "002O.rkt")
-    ;part:002P
+    (include-part "002P.rkt")
     ;part:0047
     ;part:002R
     ;part:002Q
