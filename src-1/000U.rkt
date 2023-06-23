@@ -22,7 +22,7 @@
     (include-part "002E.rkt")
     ;part:002J
     ;part:002K
-    ;part:002I
+    (include-part "002I.rkt")
     (include-part "002G.rkt")
     (include-part "002F.rkt")
     (include-part "002H.rkt")
