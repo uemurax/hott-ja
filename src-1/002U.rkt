@@ -19,7 +19,7 @@
     @paragraph{
       次に簡単な帰納的型は@emph{余積}である。
     }
-    ;(include-part "002Z.rkt")
+    (include-part "002Z.rkt")
     @paragraph{
       @($ (coproduct-type:in/symb 1))と@($ (coproduct-type:in/symb 2))が@($ ("A" . coproduct-type . "B"))の構成子であり、帰納法原理はやはりこれらの構成子のみを使って得られるものだけが@($ ("A" . coproduct-type . "B"))の要素であることを表す。
     }
