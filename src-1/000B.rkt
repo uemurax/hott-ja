@@ -40,6 +40,7 @@
     part:0019
     part:001A
     part:001B
+    (include-part "002M.rkt")
     part:000O
     part:000W
     part:001T

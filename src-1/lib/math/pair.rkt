@@ -8,6 +8,7 @@
          pair-assoc
          pair-assoc-inv
          pair-sym
+         diagonal
          fun-pair-dist
          fun-pair-dist-inv)
 
@@ -29,3 +30,6 @@
 (define fun-pair-dist (make-fun fun-pair-dist/symb))
 (define fun-pair-dist-inv/symb (fun-pair-dist/symb . ^ . "-1"))
 (define fun-pair-dist-inv (make-fun fun-pair-dist-inv/symb))
+
+(define diagonal/symb (const "diag"))
+(define diagonal (make-fun diagonal/symb))
