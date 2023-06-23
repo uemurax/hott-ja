@@ -26,7 +26,7 @@
     ;part:0047
     (include-part "002R.rkt")
     (include-part "002Q.rkt")
-    ;part:002S
+    (include-part "002S.rkt")
   ])
 
 (module+ main

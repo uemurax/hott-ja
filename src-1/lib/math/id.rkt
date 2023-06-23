@@ -9,6 +9,7 @@
          id-unit-r
          fun-apply-id-comp
          fun-apply-id-inv
+         transport-comp
          id-sym
          id-sym-sym
          id-trans)
@@ -31,3 +32,5 @@
 (define fun-apply-id-inv/symb (const "ap-inv"))
 (define fun-apply-id-comp (make-fun fun-apply-id-comp/symb))
 (define fun-apply-id-inv (make-fun fun-apply-id-inv/symb))
+(define transport-comp/symb (const "transport-comp"))
+(define transport-comp (make-fun transport-comp/symb))
