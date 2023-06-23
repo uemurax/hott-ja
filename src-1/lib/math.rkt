@@ -67,6 +67,7 @@
          log-equiv
          log-equiv-to
          log-equiv-from
+         homotopy
          blank
          +
          -
@@ -240,5 +241,8 @@
 (define log-equiv (binary #:level 'relation log-equiv/symb))
 (define log-equiv-to (const "to"))
 (define log-equiv-from (const "from"))
+
+(define homotopy/symb (macro "sim"))
+(define homotopy (binary #:level 'relation homotopy/symb))
 
 (define blank "_")

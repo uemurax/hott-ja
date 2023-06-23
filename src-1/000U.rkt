@@ -23,7 +23,7 @@
     ;part:002J
     ;part:002K
     ;part:002I
-    ;part:002G
+    (include-part "002G.rkt")
     (include-part "002F.rkt")
     ;part:002H
     #:subsections @list[
