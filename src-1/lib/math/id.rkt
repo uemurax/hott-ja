@@ -4,6 +4,7 @@
 
 (provide id-extension
          id-extension-self
+         id-assoc
          id-sym
          id-sym-sym
          id-trans)
@@ -16,3 +17,5 @@
 (define id-trans (const "trans"))
 (define id-sym-sym/symb (const "sym-sym"))
 (define id-sym-sym (make-fun id-sym-sym/symb))
+(define id-assoc/symb (const "assoc"))
+(define id-assoc (make-fun id-assoc/symb))
