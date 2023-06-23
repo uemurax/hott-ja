@@ -12,7 +12,7 @@
     @paragraph{
       自然数型の他にも重要な帰納的型がある。最も簡単な帰納的型は@emph{空型}である。
     }
-    ;(include-part "0030.rkt")
+    (include-part "0030.rkt")
     @paragraph{
       空型には構成子が一つも与えられていない。よって、型理論の中の人にとっては@($ empty-type)の要素は存在しないはずである。言い換えれば、@($ empty-type)の要素は@emph{矛盾(contradiction)}を表し、帰納法原理は矛盾からはすべてを導けること、@emph{爆発原理(principle of explosionまたはex falso quodlibet)}を意味する。
     }
