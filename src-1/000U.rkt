@@ -24,7 +24,7 @@
     ;part:002K
     ;part:002I
     ;part:002G
-    ;part:002F
+    (include-part "002F.rkt")
     ;part:002H
     #:subsections @list[
       ;part:004I
