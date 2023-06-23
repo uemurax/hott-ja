@@ -24,7 +24,7 @@
     (include-part "002O.rkt")
     (include-part "002P.rkt")
     ;part:0047
-    ;part:002R
+    (include-part "002R.rkt")
     (include-part "002Q.rkt")
     ;part:002S
   ])
