@@ -7,6 +7,8 @@
          id-assoc
          id-unit-l
          id-unit-r
+         fun-apply-id-comp
+         fun-apply-id-inv
          id-sym
          id-sym-sym
          id-trans)
@@ -25,3 +27,7 @@
 (define id-unit-r/symb (const "unit-r"))
 (define id-unit-l (make-fun id-unit-l/symb))
 (define id-unit-r (make-fun id-unit-r/symb))
+(define fun-apply-id-comp/symb  (const "ap-comp"))
+(define fun-apply-id-inv/symb (const "ap-inv"))
+(define fun-apply-id-comp (make-fun fun-apply-id-comp/symb))
+(define fun-apply-id-inv (make-fun fun-apply-id-inv/symb))
