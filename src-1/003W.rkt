@@ -37,7 +37,7 @@
     @paragraph{
       @${n}型はいくつかの型の構成で閉じる。
     }
-    ;(include-part "0048.rkt")
+    (include-part "0048.rkt")
     ;(include-part "004X.rkt")
     ;(include-part "004F.rkt")
     ;(include-part "0052.rkt")
