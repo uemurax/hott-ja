@@ -33,7 +33,7 @@
       @${n}型の一般的な性質をいくつか見る。まず、@${n}型はレトラクトで閉じる(@ref["0045"])。
     }
     ;(include-part "0046.rkt")
-    ;(include-part "0045.rkt")
+    (include-part "0045.rkt")
     @paragraph{
       @${n}型はいくつかの型の構成で閉じる。
     }
