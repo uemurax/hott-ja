@@ -4,6 +4,8 @@
          (prefix-in latex:eq: (submod morg/eq-reasoning latex-config))
          (prefix-in html: morg/html/config)
          (prefix-in html:eq: (submod morg/eq-reasoning html-config))
+         morg/markup
+         morg/html/class/inline
          morg/markup/tex)
 
 (provide latex-config
@@ -32,6 +34,17 @@
      [class "ltjsbook"]
      [class-options '("a4paper")])))
 
+(define custom-css-name "custom.css")
+
+(define custom-css
+  @%{
+    .@|emph-class-name|, .@|dfn-class-name| {
+      font-style: normal;
+      font-weight: bold;
+    }
+  })
+
 (define html-config
-  (html:eq:config-update
-   html:default-config))
+  (let ([cfg html:default-config])
+    (html:eq:config-update
+     (html:config-add-css cfg custom-css-name custom-css))))
