@@ -15,7 +15,7 @@
     @paragraph{
       次数@${n}は@${-2}から数えるのが都合がよい。
     }
-    ;(include-part "003X.rkt")
+    (include-part "003X.rkt")
     @paragraph{
       @($ trunc-level)は実質@($ nat)と同じであるが、@($ nat:zero)の代わりに@($ trunc-level:-2)から数えたものである。特に、次の@emph{帰納法原理}を満たす:型の族@($ (("A" . elem-of . trunc-level) . fun-type . @universe{i}))に対して、関数@($ ("h" . elem-of . (d-fun-type ("x" . elem-of . trunc-level) ("A" . fun-apply . "x"))))を構成するためには、
       @unordered-list[
