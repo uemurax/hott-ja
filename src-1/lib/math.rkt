@@ -46,9 +46,9 @@
          contraction
          is-contr
          retract
-         retract-retraction
-         retract-section
-         retract-id
+         retract:retraction
+         retract:section
+         retract:id
          retract-rel
          retract-rel/symb
          bi-retract-rel
@@ -206,9 +206,9 @@
 
 (define retract/symb (const "Retract"))
 (define retract (make-fun retract/symb))
-(define retract-retraction (const "retraction"))
-(define retract-section (const "section"))
-(define retract-id (const "r-s"))
+(define retract:retraction (const "retraction"))
+(define retract:section (const "section"))
+(define retract:id (const "r-s"))
 (define retract-rel/symb (macro "triangleleft"))
 (define retract-rel
   (binary #:level 'relation retract-rel/symb))
