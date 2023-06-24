@@ -6,6 +6,7 @@
          trunc-level:-2
          trunc-level:-1
          trunc-level:0
+         is-trunc
          trunc-level:succ)
 
 (define trunc-level (const "TruncLevel"))
@@ -14,3 +15,6 @@
 (define trunc-level:0 "0")
 (define trunc-level:succ/symb (const "succ"))
 (define trunc-level:succ (make-fun trunc-level:succ/symb))
+
+(define is-trunc/symb (const "IsTrunc"))
+(define is-trunc (make-fun is-trunc/symb))
