@@ -30,7 +30,7 @@
     @paragraph{
       さて、これまでいくつかの型に@($ (const "IsXXX"))という形の命名をしてきたが、これは(関数外延性の下で)その型が命題であることを意図している。多くの概念が可縮性を軸に定義されるので、@${@is-contr{A}}が命題であること(@ref["0042"])が基本的である。
     }
-    ;(include-part "0042.rkt")
+    (include-part "0042.rkt")
     ;(include-part "0043.rkt")
     ;(include-part "0044.rkt")
     @paragraph{
