@@ -32,7 +32,7 @@
     }
     (include-part "0042.rkt")
     (include-part "0043.rkt")
-    ;(include-part "0044.rkt")
+    (include-part "0044.rkt")
     @paragraph{
       @ref["004N"]で諸々の同値の概念も命題であることを見る。
     }
