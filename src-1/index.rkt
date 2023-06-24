@@ -35,6 +35,7 @@
     part:0001
     part:0002
     part:0003
+    (include-part "003W.rkt")
     part:0005
     part:0004
     #:back @list[
