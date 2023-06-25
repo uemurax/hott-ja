@@ -39,7 +39,7 @@
     @paragraph{
       @($ (is-trunc (seq "n" "A")))が命題である(@ref["0043"])ということは、@($ (trunc-type "n" "i"))は@${@universe{i}}の部分型となる。一価性公理から、その同一視型を計算できる。
     }
-    ;(include-part "0054.rkt")
+    (include-part "0054.rkt")
     @paragraph{
       命題の相対版も考える。
     }
