@@ -13,6 +13,7 @@
   @section[
     #:id "007E"
     #:title @%{参考文献}
+    (include-part "Hedberg--1998-0000.rkt")
     part:HoTT-Book
     part:Lumsdaine--2010-0000
     part:Streicher--1993-0000
