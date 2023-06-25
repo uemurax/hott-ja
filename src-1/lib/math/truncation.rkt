@@ -1,9 +1,11 @@
 #lang typed/racket
 
-(require morg/math)
+(require morg/math
+         "util.rkt")
 
 (provide trunc
-         trunc:in)
+         trunc:in
+         trunc:ind)
 
 (define (trunc [n : MathTeX+Like] [A : MathTeX+Like])
   ((group
@@ -18,3 +20,9 @@
                 #:right "|")
      a))
    . _ . n))
+
+(define (trunc:ind/symb [n : MathTeX+Like] [A : MathTeX+Like])
+  ((const "ind") . _ . (trunc n A)))
+
+(define (trunc:ind [n : MathTeX+Like] [A : MathTeX+Like])
+  (make-fun (trunc:ind/symb n A)))
