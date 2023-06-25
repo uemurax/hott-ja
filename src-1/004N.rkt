@@ -12,7 +12,7 @@
     @paragraph{
       まずは両側可逆性(@ref["004J"])を考える。
     }
-    ;(include-part "004P.rkt")
+    (include-part "004P.rkt")
     ;(include-part "004Q.rkt")
     (include-part "004O.rkt")
     @paragraph{
