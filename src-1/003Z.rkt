@@ -46,7 +46,7 @@
     ;(include-part "005Y.rkt")
     ;(include-part "0062.rkt")
     #:subsections @list[
-      ;(include-part "004N.rkt")
+      (include-part "004N.rkt")
     ]
   ])
 
