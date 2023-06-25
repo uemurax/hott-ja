@@ -53,7 +53,7 @@
       ;(include-part "004Z.rkt")
       ;(inlcude-part "0057.rkt")
       ;(include-part "005T.rkt")
-      ;(include-part "004V.rkt")
+      (include-part "004V.rkt")
     ]
   ])
 
