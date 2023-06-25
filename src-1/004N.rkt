@@ -18,7 +18,7 @@
     @paragraph{
       次に、半随伴同値(@ref["004L"])を考える。
     }
-    ;(include-part "004S.rkt")
+    (include-part "004S.rkt")
     (include-part "004R.rkt")
   ])
 
