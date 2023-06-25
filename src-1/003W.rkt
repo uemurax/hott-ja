@@ -39,7 +39,7 @@
     }
     (include-part "0048.rkt")
     ;(include-part "004X.rkt")
-    ;(include-part "004F.rkt")
+    (include-part "004F.rkt")
     ;(include-part "0052.rkt")
     @paragraph{
       相対的な@${n}型の概念も導入する。
