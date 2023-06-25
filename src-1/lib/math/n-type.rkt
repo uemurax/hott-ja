@@ -10,6 +10,8 @@
          trunc-level:0
          is-trunc
          trunc-type
+         trunc-type:type
+         trunc-type:is-trunc
          trunc-level:succ)
 
 (define trunc-level (const "TruncLevel"))
@@ -28,3 +30,5 @@
            (const "-Type")))
 (define (trunc-type [n : MathTeX+Like] [i : MathTeX+Like])
   ((trunc-type/symb n) . fun-apply . i))
+(define trunc-type:type (const "Type"))
+(define trunc-type:is-trunc (const "is-trunc"))

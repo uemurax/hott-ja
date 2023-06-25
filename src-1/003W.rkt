@@ -25,7 +25,7 @@
       を構成すれば十分である。
     }
     (include-part "003Y.rkt")
-    ;(include-part "0053.rkt")
+    (include-part "0053.rkt")
     @paragraph{
       @($ trunc-level:-1)型は特別に@emph{命題}と呼ばれ、@ref["003Z"]でより詳しく調べる。@($ trunc-level:0)型は特別に@emph{集合}と呼ばれ、@ref["004B"]でより詳しく調べる。
     }
