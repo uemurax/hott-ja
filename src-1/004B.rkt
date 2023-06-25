@@ -18,7 +18,7 @@
     @paragraph{
       型が集合であることの十分条件として、同一視型が@emph{決定可能}であるというのがある(@ref["004H"])。ここで、型@${P}が決定可能とは、@($ ("P" . coproduct-type . ("P" . fun-type . empty-type)))の要素があることを言う。
     }
-    ;(include-part "004E.rkt")
+    (include-part "004E.rkt")
     ;(include-part "004H.rkt")
   ])
 
