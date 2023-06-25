@@ -24,7 +24,7 @@
     @paragraph{
       @ref["0056"]を使う例として、@($ (trunc "n" "A"))の同一視型の特徴付けを与える。@${n}が@($ trunc-level:-2)の場合は自明なので、興味があるのはそれ以外の場合である。
     }
-    ;(include-part "0055.rkt")
+    (include-part "0055.rkt")
   ])
 
 (module+ main
