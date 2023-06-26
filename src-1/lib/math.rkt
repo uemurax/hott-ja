@@ -82,6 +82,7 @@
              comp
              *
              +
+             binary
              abs
              relation
              fun-type
