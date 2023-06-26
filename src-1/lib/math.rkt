@@ -83,6 +83,7 @@
              *
              +
              binary
+             logic-impl
              abs
              relation
              fun-type
