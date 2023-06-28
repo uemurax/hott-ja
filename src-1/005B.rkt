@@ -9,7 +9,7 @@
   @section[
     #:id id
     #:title @%{圏}
-    ;(include-part "005C.rkt")
+    (include-part "005C.rkt")
     @paragraph{
       射の型@($ (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2"))))は集合であると要請される。これは、群の定義(@ref["004W"])において@($ group:carrier)は集合としたのと同様である。対して、@($ cat:obj)は集合とは限らない。
     }
