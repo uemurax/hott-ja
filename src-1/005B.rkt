@@ -21,7 +21,7 @@
     }
     (include-part "005E.rkt")
     (include-part "005G.rkt")
-    ;(include-part "005H.rkt")
+    (include-part "005H.rkt")
     (include-part "005F.rkt")
     @paragraph{
       同型の基本性質は次のようにまとめられる。
