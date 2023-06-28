@@ -30,7 +30,7 @@
     @paragraph{
       @emph{圏}とは、前圏であって対象の間の同型の型と同一視型が同値になるようなものである。
     }
-    ;(include-part "005I.rkt")
+    (include-part "005I.rkt")
     @paragraph{
       @${C}を圏とすると、恒等射は同型なので@ref["001S"]を適用できて、同値
       @disp{

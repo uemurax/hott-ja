@@ -18,6 +18,8 @@
          cat:is-iso
          cat:is-iso:linv
          cat:is-iso:rinv
+         is-cat
+         cat
          precat
          set-cat)
 
@@ -29,6 +31,7 @@
   (binary #:level 'relation (macro "cong")))
 
 (define cat/symb (const "Cat"))
+(define cat (make-fun cat/symb))
 
 (define set-cat/symb
   ((const "Set") . ^ . (paren cat/symb)))
@@ -39,7 +42,7 @@
 (define precat (make-fun precat/symb))
 
 (define cat:comp-bin
-  (monoid #:level 'fun-comp cat:id (macro "circ")))
+  (monoid #:level 'comp cat:id (macro "circ")))
 
 (define cat:linv/symb (const "LInv"))
 (define cat:linv (make-fun cat:linv/symb))
@@ -54,3 +57,6 @@
 (define cat:is-iso (make-fun cat:is-iso/symb))
 (define cat:is-iso:linv (const "linv"))
 (define cat:is-iso:rinv (const "rinv"))
+
+(define is-cat/symb (const "IsCat"))
+(define is-cat (make-fun is-cat/symb))
