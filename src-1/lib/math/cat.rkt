@@ -8,6 +8,7 @@
          cat:id
          cat:comp
          cat:iso
+         cat:comp-bin
          precat
          set-cat)
 
@@ -27,3 +28,6 @@
 
 (define precat/symb (const "PreCat"))
 (define precat (make-fun precat/symb))
+
+(define cat:comp-bin
+  (monoid #:level 'fun-comp cat:id (macro "circ")))
