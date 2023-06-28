@@ -20,7 +20,7 @@
       前圏@${C}の対象の間には、同一視型の他に@emph{同型}という同一視の概念が考えらる。
     }
     (include-part "005E.rkt")
-    ;(include-part "005G.rkt")
+    (include-part "005G.rkt")
     ;(include-part "005H.rkt")
     (include-part "005F.rkt")
     @paragraph{

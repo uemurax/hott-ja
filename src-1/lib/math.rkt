@@ -18,6 +18,7 @@
          subst-bin
          subst-apply
          id-type
+         id-type/symb
          id-ind
          is-equiv
          equiv
