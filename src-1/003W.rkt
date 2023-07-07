@@ -45,7 +45,7 @@
       相対的な@${n}型の概念も導入する。
     }
     (include-part "005Q.rkt")
-    ;(include-part "005S.rkt")
+    (include-part "005S.rkt")
     (include-part "005R.rkt")
     #:subsections @list[
       (include-part "003Z.rkt")
