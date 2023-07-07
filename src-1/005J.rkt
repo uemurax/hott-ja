@@ -15,7 +15,7 @@
     @paragraph{
       @ref["0022"]や@ref["004V"]と同様に、前圏の@emph{構造同一原理}が得られる。
     }
-    ;(include-part "005M.rkt")
+    (include-part "005M.rkt")
     ;(include-part "005N.rkt")
     @paragraph{
       従来の圏論においては、@ref["005M"]は圏の同一視の概念としては強過ぎて、次の@emph{弱圏同値}こそが「正しい」圏の同一視の概念とされる。
