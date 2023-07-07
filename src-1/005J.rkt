@@ -9,7 +9,7 @@
     @paragraph{
       @emph{関手}は前圏の間の構造を保つ関数である。
     }
-    ;(include-part "005K.rkt")
+    (include-part "005K.rkt")
     ;(include-part "005L.rkt")
     ;(include-part "0060.rkt")
     @paragraph{
