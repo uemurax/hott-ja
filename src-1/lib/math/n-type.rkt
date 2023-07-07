@@ -9,6 +9,7 @@
          trunc-level:-1
          trunc-level:0
          is-trunc
+         is-trunc-map
          trunc-type
          trunc-type:type
          trunc-type:is-trunc
@@ -23,6 +24,9 @@
 
 (define is-trunc/symb (const "IsTrunc"))
 (define is-trunc (make-fun is-trunc/symb))
+
+(define is-trunc-map/symb (const "IsTruncMap"))
+(define is-trunc-map (make-fun is-trunc-map/symb))
 
 (define mathord (macro-1 "mathord"))
 (define (trunc-type/symb [n : MathTeX+Like])
