@@ -1,6 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
 (require morg/math
+         morg/markup
          "util.rkt")
 
 (provide cat:map
@@ -37,7 +38,7 @@
 (define cat (make-fun cat/symb))
 
 (define set-cat/symb
-  ((const "Set") . ^ . (paren cat/symb)))
+  ((const "Set") . ^ . @%{(@|cat/symb|)}))
 
 (define set-cat (make-fun set-cat/symb))
 
@@ -71,5 +72,5 @@
 (define opposite-cat (make-fun opposite-cat/symb))
 
 (define cat:map/fun/symb
-  (cat:map . ^ . (paren (const "Fun"))))
+  (cat:map . ^ . @%{(@(const "Fun"))}))
 (define cat:map/fun (make-fun cat:map/fun/symb))

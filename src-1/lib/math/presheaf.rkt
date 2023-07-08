@@ -1,6 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
 (require "util.rkt"
+         morg/markup
          morg/math)
 
 (provide yoneda
@@ -32,7 +33,7 @@
 (define presheaf-hom/symb (const "Hom"))
 (define presheaf-hom (make-fun presheaf-hom/symb))
 (define presheaf-cat/symb
-  (presheaf/symb . ^ . (paren (const "Cat"))))
+  (presheaf/symb . ^ . @%{(@(const "Cat"))}))
 (define presheaf-cat (make-fun presheaf-cat/symb))
 (define id-presheaf-hom/symb (const "id"))
 (define id-presheaf-hom (make-fun id-presheaf-hom/symb))

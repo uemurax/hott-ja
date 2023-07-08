@@ -1,6 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
 (require "util.rkt"
+         morg/markup
          morg/math)
 
 (provide functor
@@ -26,5 +27,5 @@
 (define iso-fiber (make-fun iso-fiber/symb))
 
 (define functor-cat/symb
-  (functor/symb . ^ . (paren (const "Cat"))))
+  (functor/symb . ^ . @%{(@(const "Cat"))}))
 (define functor-cat (make-fun functor-cat/symb))
