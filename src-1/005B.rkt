@@ -26,7 +26,7 @@
     @paragraph{
       同型の基本性質は次のようにまとめられる。
     }
-    ;(include-part "006X.rkt")
+    (include-part "006X.rkt")
     @paragraph{
       @emph{圏}とは、前圏であって対象の間の同型の型と同一視型が同値になるようなものである。
     }
