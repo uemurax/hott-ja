@@ -11,7 +11,7 @@
     }
     (include-part "005K.rkt")
     (include-part "005L.rkt")
-    ;(include-part "0060.rkt")
+    (include-part "0060.rkt")
     @paragraph{
       @ref["0022"]や@ref["004V"]と同様に、前圏の@emph{構造同一原理}が得られる。
     }
