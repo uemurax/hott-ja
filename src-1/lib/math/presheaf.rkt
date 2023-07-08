@@ -11,6 +11,8 @@
          presheaf:act-bin
          presheaf-hom
          presheaf-cat
+         id-presheaf-hom
+         presheaf-hom-comp
          is-repr-psh)
 
 (define yoneda/symb (const "よ"))
@@ -32,3 +34,8 @@
 (define presheaf-cat/symb
   (presheaf/symb . ^ . (paren (const "Cat"))))
 (define presheaf-cat (make-fun presheaf-cat/symb))
+(define id-presheaf-hom/symb (const "id"))
+(define id-presheaf-hom (make-fun id-presheaf-hom/symb))
+(define presheaf-hom-comp/symb (macro "circ"))
+(define presheaf-hom-comp
+  (monoid #:level 'comp id-presheaf-hom/symb presheaf-hom-comp/symb))
