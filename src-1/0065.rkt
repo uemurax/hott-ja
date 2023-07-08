@@ -20,7 +20,7 @@
     @paragraph{
       @($ (functor-cat (seq "C" "D")))は@emph{普遍性}でも特徴づけられる(@ref["006R"])。
     }
-    ;(include-part "006Q.rkt")
+    (include-part "006Q.rkt")
     ;(include-part "006R.rkt")
   ])
 
