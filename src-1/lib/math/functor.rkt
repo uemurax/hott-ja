@@ -1,11 +1,13 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "util.rkt"
+         morg/math)
 
 (provide functor
          is-fully-faithful
          is-ess-surj
          is-weak-cat-equiv
+         iso-fiber
          functor:obj
          functor:map)
 
@@ -19,3 +21,5 @@
 (define is-ess-surj (make-fun is-ess-surj/symb))
 (define is-weak-cat-equiv/symb (const "IsWCatEquiv"))
 (define is-weak-cat-equiv (make-fun is-weak-cat-equiv/symb))
+(define iso-fiber/symb ((const "Fiber") . ^ . (macro "cong")))
+(define iso-fiber (make-fun iso-fiber/symb))
