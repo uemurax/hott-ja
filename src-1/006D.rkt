@@ -24,7 +24,7 @@
     }
     (include-part "006K.rkt")
     (include-part "006M.rkt")
-    ;(include-part "006O.rkt")
+    (include-part "006O.rkt")
     ;(include-part "0072.rkt")
     @paragraph{
       さて、圏論において最も重要な@emph{米田の補題}(@ref["006T"])を導入する。
