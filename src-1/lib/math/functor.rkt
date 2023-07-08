@@ -8,6 +8,7 @@
          is-ess-surj
          is-weak-cat-equiv
          iso-fiber
+         functor-cat
          functor:obj
          functor:map)
 
@@ -23,3 +24,7 @@
 (define is-weak-cat-equiv (make-fun is-weak-cat-equiv/symb))
 (define iso-fiber/symb ((const "Fiber") . ^ . (macro "cong")))
 (define iso-fiber (make-fun iso-fiber/symb))
+
+(define functor-cat/symb
+  (functor/symb . ^ . (paren (const "Cat"))))
+(define functor-cat (make-fun functor-cat/symb))
