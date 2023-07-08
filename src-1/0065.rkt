@@ -15,7 +15,7 @@
     (include-part "0067.rkt")
     (include-part "0068.rkt")
     (include-part "0069.rkt")
-    ;(include-part "006A.rkt")
+    (include-part "006A.rkt")
     ;(include-part "006C.rkt")
     @paragraph{
       @($ (functor-cat (seq "C" "D")))は@emph{普遍性}でも特徴づけられる(@ref["006R"])。
