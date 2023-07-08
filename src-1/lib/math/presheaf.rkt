@@ -10,6 +10,7 @@
          presheaf:act
          presheaf:act-bin
          presheaf-hom
+         presheaf-cat
          is-repr-psh)
 
 (define yoneda/symb (const "よ"))
@@ -28,3 +29,6 @@
           #:assoc 'left))
 (define presheaf-hom/symb (const "Hom"))
 (define presheaf-hom (make-fun presheaf-hom/symb))
+(define presheaf-cat/symb
+  (presheaf/symb . ^ . (paren (const "Cat"))))
+(define presheaf-cat (make-fun presheaf-cat/symb))
