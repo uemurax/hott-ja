@@ -12,7 +12,7 @@
     @paragraph{
       圏にとっての@emph{前層}は、群にとっての作用、環にとっての加群に相当するものである。
     }
-    ;(include-part "006E.rkt")
+    (include-part "006E.rkt")
     ;(include-part "006F.rkt")
     @paragraph{
       つまり、@${C}上の前層は@${C}の対象で添え字付けられた集合の族で、@${C}の射が右から作用しているものである。
