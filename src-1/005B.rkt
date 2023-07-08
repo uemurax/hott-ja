@@ -42,7 +42,7 @@
       圏の典型例として、@${@set-cat{i}} (@ref["006H"])が圏であることを見る。
     }
     (include-part "006I.rkt")
-    ;(include-part "006J.rkt")
+    (include-part "006J.rkt")
   ])
 
 (module+ main
