@@ -21,7 +21,7 @@
     @paragraph{
       レコード型の同一視型を決定する場面において、命題の部分は無視できることを示す(@ref["0049"])。
     }
-    ;(include-part "006B.rkt")
+    (include-part "006B.rkt")
     (include-part "0049.rkt")
     @paragraph{
       @ref["0049"]より、各@($ ("B" . fun-apply . "x"))が命題の時は、@($ (d-pair-type ("x" . elem-of . "A") ("B" . fun-apply . "x")))の要素の同一視に関しては二番目の要素は完全に無視される。そのため、@($ (d-pair-type ("x" . elem-of . "A") ("B" . fun-apply . "x")))は要素@($ ("a" . elem-of . "A"))と要素@($ ("b" . elem-of . ("B" . fun-apply . "a")))の対のなす型というよりは、要素@($ ("a" . elem-of . "A"))であって@emph{性質}@($ ("B" . fun-apply . "a"))を満たすもののなす@${A}の@emph{部分型}であると考えられる。この視点を強調するために記法を導入する。
