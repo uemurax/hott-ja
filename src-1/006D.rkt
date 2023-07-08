@@ -23,7 +23,7 @@
       前層と前層の射は前圏をなし、関手のなす前圏としても定義できる(@ref["006M"])。
     }
     (include-part "006K.rkt")
-    ;(include-part "006M.rkt")
+    (include-part "006M.rkt")
     ;(include-part "006O.rkt")
     ;(include-part "0072.rkt")
     @paragraph{
