@@ -11,7 +11,7 @@
     @paragraph{
       @${n}型は@${n}次元より上の構造が自明な型であったが、逆に@${n}次元以下の構造が自明な型を導入する。
     }
-    ;(include-part "005U.rkt")
+    (include-part "005U.rkt")
     ;(include-part "005V.rkt")
     ;(include-part "005W.rkt")
     ;(include-part "005X.rkt")
