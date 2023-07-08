@@ -14,7 +14,7 @@
       射の型@($ (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2"))))は集合であると要請される。これは、群の定義(@ref["004W"])において@($ group:carrier)は集合としたのと同様である。対して、@($ cat:obj)は集合とは限らない。
     }
     (include-part "005D.rkt")
-    ;(include-part "006H.rkt")
+    (include-part "006H.rkt")
     ;(include-part "006N.rkt")
     @paragraph{
       前圏@${C}の対象の間には、同一視型の他に@emph{同型}という同一視の概念が考えらる。
