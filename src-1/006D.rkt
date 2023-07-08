@@ -39,7 +39,7 @@
       米田の補題が主張するのは、@($ (@yoneda{C} . fun-apply . "x"))は@($ (@yoneda-gen{x} . elem-of . ((@yoneda{C} . fun-apply . "x") . fun-apply . "x")))で自由に生成された@${C}上の前層であることである。
     }
     (include-part "006T.rkt")
-    ;(include-part "006V.rkt")
+    (include-part "006V.rkt")
     @paragraph{
       多くの圏論的な概念は、ある前層が@emph{表現可能}であるという性質で定義される。
     }
