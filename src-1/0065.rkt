@@ -14,7 +14,7 @@
     (include-part "0066.rkt")
     (include-part "0067.rkt")
     (include-part "0068.rkt")
-    ;(include-part "0069.rkt")
+    (include-part "0069.rkt")
     ;(include-part "006A.rkt")
     ;(include-part "006C.rkt")
     @paragraph{
