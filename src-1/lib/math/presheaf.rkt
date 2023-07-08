@@ -9,6 +9,7 @@
          presheaf:carrier
          presheaf:act
          presheaf:act-bin
+         presheaf-hom
          is-repr-psh)
 
 (define yoneda/symb (const "よ"))
@@ -25,3 +26,5 @@
 (define presheaf:act-bin
   (binary #:level 'comp presheaf:act-bin/symb
           #:assoc 'left))
+(define presheaf-hom/symb (const "Hom"))
+(define presheaf-hom (make-fun presheaf-hom/symb))
