@@ -18,7 +18,7 @@
     @paragraph{
       定義から、任意の関数は@($ trunc-level:-2)連結である。@($ trunc-level:-1)連結な関数は@emph{全射}であると考える。
     }
-    ;(include-part "005Z.rkt")
+    (include-part "005Z.rkt")
     ;(include-part "0074.rkt")
   ])
 
