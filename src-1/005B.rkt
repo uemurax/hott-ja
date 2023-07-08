@@ -15,7 +15,7 @@
     }
     (include-part "005D.rkt")
     (include-part "006H.rkt")
-    ;(include-part "006N.rkt")
+    (include-part "006N.rkt")
     @paragraph{
       前圏@${C}の対象の間には、同一視型の他に@emph{同型}という同一視の概念が考えらる。
     }
