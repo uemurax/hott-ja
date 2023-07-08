@@ -30,7 +30,7 @@
       さて、圏論において最も重要な@emph{米田の補題}(@ref["006T"])を導入する。
     }
     ;(include-part "006S.rkt")
-    ;(include-part "006P.rkt")
+    (include-part "006P.rkt")
     @paragraph{
       @${@yoneda{C}}が埋め込みと呼ばれるのは@ref["006V"]による。定義から、任意の対象@($ ("x" . elem-of . "C"))と@($ ("y" . elem-of . "C"))に対して@($ (((@yoneda{C} . fun-apply . "x") . fun-apply . "y") . def-eq . (cat:map . fun-apply . (seq "y" "x"))))である。特に、@($ ((cat:id . fun-apply . "x") . elem-of . (cat:map . fun-apply . (seq "x" "x"))))は@($ ((@yoneda{C} . fun-apply . "x") . fun-apply . "x"))の要素とも思える。@($ (cat:id . fun-apply . "x"))をどのように見ているかを区別するために別の表記を導入する。
     }

@@ -23,6 +23,7 @@
          precat
          is-precat-equiv
          opposite-cat
+         cat:map/fun
          set-cat)
 
 (define cat:map (const "Map"))
@@ -68,3 +69,7 @@
 
 (define opposite-cat/symb (const "Op"))
 (define opposite-cat (make-fun opposite-cat/symb))
+
+(define cat:map/fun/symb
+  (cat:map . ^ . (paren (const "Fun"))))
+(define cat:map/fun (make-fun cat:map/fun/symb))
