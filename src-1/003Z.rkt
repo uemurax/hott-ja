@@ -43,7 +43,7 @@
     @paragraph{
       命題の相対版も考える。
     }
-    ;(include-part "005Y.rkt")
+    (include-part "005Y.rkt")
     ;(include-part "0062.rkt")
     #:subsections @list[
       (include-part "004N.rkt")
