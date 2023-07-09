@@ -15,7 +15,7 @@
     (include-part "007A.rkt")
     (include-part "007B.rkt")
     (include-part "007C.rkt")
-    ;part:007D
+    (include-part "007D.rkt")
   ])
 
 (module+ main
