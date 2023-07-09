@@ -14,7 +14,7 @@
     (include-part "0079.rkt")
     (include-part "007A.rkt")
     (include-part "007B.rkt")
-    ;part:007C
+    (include-part "007C.rkt")
     ;part:007D
   ])
 
