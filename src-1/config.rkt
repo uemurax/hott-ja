@@ -6,6 +6,7 @@
          (prefix-in html:eq: (submod morg/eq-reasoning html-config))
          morg/markup
          morg/html/class/inline
+         morg/html/class/toc
          morg/markup/tex)
 
 (provide latex-config
@@ -41,6 +42,13 @@
     .@|emph-class-name|, .@|dfn-class-name| {
       font-style: normal;
       font-weight: bold;
+    }
+    body {
+      background-color: #FDF6E3;
+      color: #002B36;
+    }
+    .@|toc-edge-summary-selected-class-name| {
+      background-color: #DDFCC3;
     }
   })
 
