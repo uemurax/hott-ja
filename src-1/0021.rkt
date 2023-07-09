@@ -11,13 +11,11 @@
     @paragraph{
       実は、一価性公理から関数外延性公理が導出される(@ref["007D"])。
     }
-    #:subsections @list[
-      ;part:0079
-      ;part:007A
-      ;part:007B
-      ;part:007C
-      ;part:007D
-    ]
+    (include-part "0079.rkt")
+    ;part:007A
+    ;part:007B
+    ;part:007C
+    ;part:007D
   ])
 
 (module+ main
