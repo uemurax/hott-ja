@@ -11,13 +11,11 @@
          "007F.rkt"
          "007E.rkt")
 
-(provide part:index)
-
 (define me @%{上村 太一})
 
-@define[part:index
+(provide-part (id)
   @document[
-    #:id "index"
+    #:id id
     #:title @%{ホモトピー型理論}
     #:author @list[me]
     #:contents @%[
@@ -45,9 +43,8 @@
       part:007E
       part:007F
     ]
-  ]
-]
+  ])
 
 (module+ main
   (require morg/text)
-  (display (->text part:index)))
+  (preview))

@@ -1,6 +1,8 @@
 SRC_DIR = src-1
 SITE_DIR = _site
-BUILD_SCRIPT = $(SRC_DIR)/build.rkt
+INDEX_FILE = $(SRC_DIR)/index.rkt
+HTML_CONFIG_FILE = $(SRC_DIR)/html-config.rkt
+LATEX_CONFIG_FILE = $(SRC_DIR)/latex-config.rkt
 
 .PHONY: all
 all: build
@@ -10,15 +12,15 @@ build: html pdf
 
 .PHONY: compile
 compile:
-	raco make -v $(BUILD_SCRIPT)
+	raco make -v $(INDEX_FILE) $(HTML_CONFIG_FILE) $(LATEX_CONFIG_FILE)
 
 .PHONY: html
 html: compile
-	racket $(BUILD_SCRIPT) --html $(SITE_DIR)
+	raco morg --html-config $(HTML_CONFIG_FILE) $(INDEX_FILE) $(SITE_DIR)
 
 .PHONY: pdf
 pdf: compile
-	racket $(BUILD_SCRIPT) --pdf $(SITE_DIR)
+	raco morg --pdf-config $(LATEX_CONFIG_FILE) $(INDEX_FILE) $(SITE_DIR)
 
 .PHONY: clean-site
 clean-site:
