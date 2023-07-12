@@ -1,4 +1,4 @@
-SRC_DIR = src-1
+SRC_DIR = src
 SITE_DIR = _site
 INDEX_FILE = $(SRC_DIR)/index.rkt
 HTML_CONFIG_FILE = $(SRC_DIR)/html-config.rkt
