@@ -51,6 +51,7 @@ runs:
           marginnote
           luatexja
           amsfonts
+          xkeyval
 
     - name: Compile document
       run: raco make -v src/index.rkt src/html-config.rkt src/latex-config.rkt
