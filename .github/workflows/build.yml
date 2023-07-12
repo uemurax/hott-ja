@@ -4,12 +4,13 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - morg
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    container: ghcr.io/uemurax/docker-texlive-ja:latest
 
     steps:
       - name: Checkout

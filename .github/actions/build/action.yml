@@ -3,6 +3,69 @@ description: Build site
 runs:
   using: "composite"
   steps:
-    - name: Build
-      run: make
+    - name: Set up racket
+      uses: Bogdanp/setup-racket@v1.10
+      with:
+        architecture: x64
+        distribution: full
+        variant: CS
+        version: stable
+
+    - name : Racket version
+      run : racket --version > .racket-version
       shell: sh
+
+    - name: Cache Racket dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cache/racket
+          ~/.local/share/racket
+        key: ${{ runner.os }}-racket-stable-${{ hashFiles('.racket-version') }}
+
+    - name: Cache bytecode files
+      uses: actions/cache@v3
+      with:
+        path: ./src/**/compiled
+        key: ${{ runner.os }}-racket-stable-${{ hashFiles('.racket-version') }}
+
+    - name: Installing morg and its dependencies
+      run: raco pkg install --no-docs --auto --skip-installed https://github.com/uemurax/morg.git
+      shell: sh
+
+    - name: Update racket packages
+      run: raco pkg update -a
+      shell: sh
+
+    - name: Set up TeXLive
+      uses: teatimeguest/setup-texlive-action@v2
+      with:
+        packages: >-
+          scheme-basic
+          etoolbox
+          latexmk
+          luatex
+          hyperref
+          xcolor
+          tools
+          marginnote
+          luatexja
+          amsfonts
+
+    - name: Compile document
+      run: raco make -v src/index.rkt src/html-config.rkt src/latex-config.rkt
+      shell: sh
+
+    - name: Build document
+      run: raco morg --html-config src/html-config.rkt --pdf-config src/latex-config.rkt src/index.rkt _site
+      shell: sh
+
+    - name: Archive artifacts
+      run: tar -cvf _site.tar _site
+      shell: sh
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: site
+        path: _site.tar
