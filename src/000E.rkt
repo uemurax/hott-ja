@@ -6,11 +6,9 @@
          "lib/markup/rule.rkt"
          "lib/markup.rkt")
 
-(provide part:000E)
-
-(define part:000E
+(provide-part (id)
   @rule[
-    #:id "000E"
+    #:id id
     #:indexes @list[
       @index[#:key "うちゅう"]{宇宙}
     ]
@@ -29,4 +27,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000E)))
+  (preview))

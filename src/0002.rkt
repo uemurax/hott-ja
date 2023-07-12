@@ -3,18 +3,9 @@
 (require "lib/markup.rkt"
          "lib/math.rkt")
 
-(require "000S.rkt"
-         "000X.rkt"
-         "001R.rkt"
-         "001Y.rkt"
-         "0022.rkt"
-         "000U.rkt")
-
-(provide part:0002)
-
-(define part:0002
+(provide-part (id)
   @section[
-    #:id "0002"
+    #:id id
     #:title @%{一価性公理}
     @paragraph{
       @emph{一価性公理}(univalence axiom)はホモトピー型理論において最も重要な公理で、型理論をまさに「ホモトピー論的」なものに強制する公理である。非形式的には、型@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))に対して同一視型@($ ("A" . id-type . "B"))と@emph{同値}のなす型@($ ("A" . equiv . "B"))が同値になることを要請する。
@@ -32,15 +23,15 @@
       @ref["000U"]はやや技術的な話で、同値の概念の基本性質を見る。
     }
     #:subsections @list[
-      part:000S
-      part:001R
-      part:000X
-      part:001Y
-      part:0022
-      part:000U
+      (include-part "000S.rkt")
+      (include-part "001R.rkt")
+      (include-part "000X.rkt")
+      (include-part "001Y.rkt")
+      (include-part "0022.rkt")
+      (include-part "000U.rkt")
     ]
   ])
 
 (module+ main
   (require morg/text)
-  (display (->text part:0002)))
+  (preview))

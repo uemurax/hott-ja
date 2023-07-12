@@ -2,15 +2,12 @@
 
 (require "lib/markup.rkt")
 
-(provide part:0003)
-
-@define[part:0003
+(provide-part (id)
   @section[
-    #:id "0003"
+    #:id id
     #:title @%{高次帰納的型}
-  ]
-]
+  ])
 
 (module+ main
   (require morg/text)
-  (display (->text part:0003)))
+  (preview))

@@ -8,11 +8,9 @@
          "0026.rkt"
          "000Z.rkt")
 
-(provide part:000X)
-
-(define part:000X
+(provide-part (id)
   @section[
-    #:id "000X"
+    #:id id
     #:title @%{一価性}
     @paragraph{
       同値@($ ("A" . equiv . "B"))は型@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))の「正しい」同一視のしかたと考えられる。つまり、同値@($ (("A" . id-type . "B") . equiv . ("A" . equiv . "B")))が期待される。しかし、関数@($ (("A" . equiv . "B") . fun-type . ("A" . id-type . "B")))は宇宙、関数型、対型、同一視型の規則からは導出できない。実際、型を従来の意味での集合と解釈するモデルを考えると、@($ ("A" . equiv . "B"))は@${A}から@${B}への全単射のなす集合と解釈される一方、@($ ("A" . id-type . "B"))は@${A}と@${B}が等しい時に限り(一つだけ)要素を持つような集合と解釈される。異なる集合の間にも全単射は存在する場合があり、その時には関数@($ (("A" . equiv . "B") . fun-type . ("A" . id-type . "B")))は存在しない。
@@ -38,4 +36,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000X)))
+  (preview))

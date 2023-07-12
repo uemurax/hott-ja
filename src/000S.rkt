@@ -13,11 +13,9 @@
          "001Q.rkt"
          "000V.rkt")
 
-(provide part:000S)
-
-(define part:000S
+(provide-part (id)
   @section[
-    #:id "000S"
+    #:id id
     #:title @%{可縮性}
     @paragraph{
       @emph{可縮性}はホモトピー型理論において中心的な役割を果たす概念である。
@@ -62,4 +60,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000S)))
+  (preview))

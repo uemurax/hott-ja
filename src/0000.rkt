@@ -2,13 +2,9 @@
 
 (require "lib/markup.rkt")
 
-(require "000R.rkt")
-
-(provide part:0000)
-
-(define part:0000
+(provide-part (id)
   @section[
-    #:id "0000"
+    #:id id
     #:title @%{はじめに}
     @paragraph{
       @emph{ホモトピー型理論}(homotopy type theory, HoTT) @ref["HoTT-Book"]は@emph{ホモトピー論}(homotopy theory)と@emph{型理論}(type theory)が融合した分野である。ホモトピー論は古典的には空間のホモトピー型(良い位相空間をホモトピー同値で同一視したもの)を調べる分野で、現代ではより一般的、抽象的になんらかの「ホモトピー」と呼ばれる緩い同一視の概念がある状況に使われる。一方、型理論は形式体系の一種で、数学の基礎言語、の内部言語、プログラミング言語、定理証明支援系などに使われる。
@@ -26,10 +22,10 @@
       (include-part "0077.rkt")
       (include-part "0076.rkt")
       (include-part "0078.rkt")
-      part:000R
+      (include-part "000R.rkt")
     ]
   ])
 
 (module+ main
   (require morg/text)
-  (display (->text part:0000)))
+  (preview))

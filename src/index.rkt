@@ -2,15 +2,6 @@
 
 (require morg/markup)
 
-(require "0000.rkt"
-         "0001.rkt"
-         "0002.rkt"
-         "0003.rkt"
-         "0004.rkt"
-         "0005.rkt"
-         "007F.rkt"
-         "007E.rkt")
-
 (define me @%{上村 太一})
 
 (provide-part (id)
@@ -32,16 +23,16 @@
     #:front @list[
       (include-part "007H.rkt")
     ]
-    part:0000
-    part:0001
-    part:0002
-    part:0003
+    (include-part "0000.rkt")
+    (include-part "0001.rkt")
+    (include-part "0002.rkt")
+    (include-part "0003.rkt")
     (include-part "003W.rkt")
-    part:0005
-    part:0004
+    (include-part "0005.rkt")
+    (include-part "0004.rkt")
     #:back @list[
-      part:007E
-      part:007F
+      (include-part "007E.rkt")
+      (include-part "007F.rkt")
     ]
   ])
 

@@ -3,11 +3,9 @@
 (require "lib/markup.rkt"
          "lib/math.rkt")
 
-(provide part:000U)
-
-(define part:000U
+(provide-part (id)
   @section[
-    #:id "000U"
+    #:id id
     #:title @%{同値}
     @paragraph{
       同値の定義(@ref["001Q"])が妥当なものであることを見る。同値の概念にふさわしい性質として次を示す。
@@ -33,4 +31,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000U)))
+  (preview))

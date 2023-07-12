@@ -13,11 +13,9 @@
          "002D.rkt"
          "001V.rkt")
 
-(provide part:001R)
-
-(define part:001R
+(provide-part (id)
   @section[
-    #:id "001R"
+    #:id id
     #:title @%{同一視型の基本定理}
     @paragraph{
       同一視型はすべての型に対して一様に定義されているが、個々の型については具体的な同一視のしかたが期待される。例えば、対型の要素@($ (("c" . _ . "1") . elem-of . ("A" . pair-type . "B")))と@($ (("c" . _ . "2") . elem-of . ("A" . pair-type . "B")))の「自然な」同一視のしかたは@($ ((proj 1) ("c" . _ . "1")))と@($ ((proj 1) ("c" . _ . "2")))を同一視しかつ@($ ((proj 2) ("c" . _ . "1")))と@($ ((proj 2) ("c" . _ . "2")))を同一視することである。つまり、同値@($ ((("c" . _ . "1") . id-type . ("c" . _ . "2")) . equiv . ((((proj 1) ("c" . _ . "1")) . id-type . ((proj 1) ("c" . _ . "2"))) . pair-type . (((proj 2) ("c" . _ . "1")) . id-type . ((proj 2) ("c" . _ . "2"))))))を構成できると期待される(@ref["002D"])。@emph{同一視型の基本定理}(@ref["001S"])は、この手の同値を構成する手順を与える。
@@ -48,4 +46,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001R)))
+  (preview))

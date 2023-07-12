@@ -7,11 +7,9 @@
          "002A.rkt"
          "0028.rkt")
 
-(provide part:0022)
-
-(define part:0022
+(provide-part (id)
   @section[
-    #:id "0022"
+    #:id id
     #:title @%{構造同一原理}
     @paragraph{
       一価性(と関数外延性)の帰結として、@emph{構造同一原理(structure identity principle)}をいくつか例示する。構造とは厳密に定義はしないが、なんらかの数学的構造を表すレコード型のこととする。構造同一原理は、構造の同一視型は構造を保つ同値の型と同値であることを主張する。
@@ -29,4 +27,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:0022)))
+  (preview))

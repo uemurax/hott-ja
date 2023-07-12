@@ -8,11 +8,9 @@
          "0029.rkt"
          "0020.rkt")
 
-(provide part:001Y)
-
-(define part:001Y
+(provide-part (id)
   @section[
-    #:id "001Y"
+    #:id id
     #:title @%{関数外延性}
     @paragraph{
       関数@($ ("f" . elem-of . (d-fun-type ("x" . elem-of . "A") ("B" . fun-apply . "x"))))と@($ ("g" . elem-of . (d-fun-type ("x" . elem-of . "A") ("B" . fun-apply ."x"))))の「正しい」同一視のしかたは任意の@($ ("x" . elem-of . "A"))に対して@($ ("f" . fun-apply . "x"))と@($ ("g" . fun-apply . "x"))を同一視することである。つまり、同値@($ (("f" . id-type . "g") . equiv . (d-fun-type ("x" . elem-of . "A") (("f" . fun-apply . "x") . id-type . ("g" . fun-apply . "x")))))が期待される。しかし、関数@($ ((d-fun-type ("x" . elem-of . "A") (("f" . fun-apply . "x") . id-type . ("g" . fun-apply . "x"))) . fun-type . ("f" . id-type . "g")))は関数型の規則と同一視型の規則からは構成できないことが知られている@ref["Streicher--1993-0000"]。そのため、この同値を得るためには何らかの公理が必要である。
@@ -30,4 +28,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001Y)))
+  (preview))

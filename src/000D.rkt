@@ -5,11 +5,9 @@
          "lib/markup/rule.rkt"
          "lib/markup.rkt")
 
-(provide part:000D)
-
-(define part:000D
+(provide-part (id)
   @rule[
-    #:id "000D"
+    #:id id
     #:indexes @list[
       @index[#:key "かいすう"]{階数}
     ]
@@ -24,4 +22,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000D)))
+  (preview))

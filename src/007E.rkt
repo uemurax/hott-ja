@@ -7,11 +7,9 @@
          "Streicher--1993-0000.rkt"
          "Lumsdaine--2010-0000.rkt")
 
-(provide part:007E)
-
-(define part:007E
+(provide-part (id)
   @section[
-    #:id "007E"
+    #:id id
     #:title @%{参考文献}
     (include-part "Church--1940-0000.rkt")
     (include-part "Hedberg--1998-0000.rkt")
@@ -30,4 +28,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:007E)))
+  (preview))

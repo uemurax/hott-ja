@@ -2,15 +2,12 @@
 
 (require "lib/markup.rkt")
 
-(provide part:0005)
-
-@define[part:0005
+(provide-part (id)
   @section[
-    #:id "0005"
+    #:id id
     #:title @%{ホモトピー論}
-  ]
-]
+  ])
 
 (module+ main
   (require morg/text)
-  (display (->text part:0005)))
+  (preview))

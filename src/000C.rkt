@@ -13,11 +13,9 @@
          "002N.rkt"
          "001C.rkt")
 
-(provide part:000C)
-
-(define part:000C
+(provide-part (id)
   @section[
-    #:id "000C"
+    #:id id
     #:title @%{同一視型}
     @paragraph{
       @emph{同一視型}はホモトピー型理論において最も特徴的な型である。
@@ -46,4 +44,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000C)))
+  (preview))

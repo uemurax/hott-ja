@@ -6,11 +6,9 @@
          "lib/markup/notation.rkt"
          "lib/math.rkt")
 
-(provide part:000F)
-
-(define part:000F
+(provide-part (id)
   @notation[
-    #:id "000F"
+    #:id id
     @paragraph{
       @unordered-list[
         @list-item{@${@universe:el/symb}はよく省略する。つまり、要素@($ ("A" . elem-of . @universe{i}))そのものを型とみなす。}
@@ -22,4 +20,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000F)))
+  (preview))

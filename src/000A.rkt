@@ -13,11 +13,9 @@
          "000Q.rkt"
          "000H.rkt")
 
-(provide part:000A)
-
-(define part:000A
+(provide-part (id)
   @section[
-    #:id "000A"
+    #:id id
     #:title @%{関数型}
     @paragraph{
       @emph{関数}は型理論において最も基本的な概念である。
@@ -38,4 +36,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000A)))
+  (preview))

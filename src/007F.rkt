@@ -2,15 +2,13 @@
 
 (require "lib/markup.rkt")
 
-(provide part:007F)
-
-(define part:007F
+(provide-part (id)
   @section[
-    #:id "007F"
+    #:id id
     #:title @%{索引}
     @print-index[]
   ])
 
 (module+ main
   (require morg/text)
-  (display (->text part:007F)))
+  (preview))
