@@ -1,69 +1,40 @@
 # ノード
 
-ノード毎にファイルを作り、 `subfile` で読み込む。ファイル名は `src/node-<id>.tex` または `src/node-<id>-<name>.tex` とする。 `<id>` は `0000` から `ZZZZ` までで、*被りがあってはならない*。
+## セクション、定義、定理など
 
-## セクション
+ファイル名は`src/<id>.rkt`とする。
+`<id>`は`0000`から`ZZZZ`までで、*被りがあってはならない*。
 
-セクション毎にファイルを作り、 `subfile` で読み込む。ファイル名は `src/node-<id>-<name>.tex` とする。セクションの始まりには `\mySection{<id>}{<title>}` を使う。サブセクションは `myShiftSections` 環境内で `subfile` で読み込む。 `mySubsections` 環境を代わりに使うと HTML 版でサブセクションの目次を表示する。
+## 文献
 
-## ブロック
+ファイル名は`src/<authors>--<year>-<id>.rkt`とする。
+`<authors>`は`<author-1>--<author-2>--...--<author-n>`の形式とする。
+`<author-i>`は著者の名字。
+空白は`-`で置き換える(例: [van-den-Berg--Garner--2011-0000.rkt](src/van-den-Berg--Garner--2011-0000.rkt))。
+`<year>`は西暦。
+`<id>`は`0000`から`ZZZZ`までで、`<authors>`と`<year>`が同一のものの間では被りがあってはならない。
 
-ブロック毎にファイルを作り、 `subfile` で読み込む。ファイル名は `src/node-<id>.tex` または `src/node-<id>-<name>.tex` とする。ブロックの記述には `myBlock` 環境を使う。使い方は `\begin{myBlock}{<id>}{<environment>}[<title>]`。
+プレプリント版があれば必ずそのリンクを含める。
 
-## 一番上のファイル
+# 定数、関数
 
-本文の一番上のファイルは `src/main.tex` で、ここではチャプターを `subfile` で読み込むことしかしない。
+文書全体を通して一貫しているべきものには専用の定数や関数を用意する。
 
-# コマンド、環境
+# 文献リスト
 
-文書全体を通して一貫しているべきものには専用のコマンドや環境を用意する。
+[007E.rkt](src/007E.rkt)に手動で文献を並べる。
+よく考えたら分かりやすいファイル名にしてもよかったかもしれない。
 
-# 数式
-
-簡単な数式には `\myInlineMath{<math>}` または `\myDisplayMath{<math>}` を使う。これは `<math>` を展開してから数式環境に入れることと同値で、 html 版で数式に自前のマクロを出現させないためである。
-
-# プリアンブル
-
-ファイル名 `src/my-<name>.sty` でファイルを作り、 `src/my-preamble.sty` から `\usepackage{my-<name>}` で読み込む。
-
-# 参考文献
-
-`src/my-references.bib` に文献情報を置き、 `\myCiteParen`, `\myCiteText`, `\myCiteAuthor` で参照する。これらのマクロはそれぞれ `biblatex` パッケージの `\parencite`, `\textcite`, `\citeauthor` と同等。
-
-プレプリント版のリンクは含める。
-
-# 用語
-
-新しい用語を導入する際は `\myNewTerm[<読み>]{<語>}` を使う。内部で `<語>` を索引に登録するので `\index` は使わない。
-
-## 訳語
+# 訳語
 
 できるだけ用語は日本語に訳す。導入の際に英語名を併記する。
 
-# 相互参照
-
-`\myRef`, `\myRefLabel` を使う。それぞれ `cleveref` パッケージの `\cref`, `\labelcref` と同等。ノードの参照には `\myRef{<id>}` を使う。その他の参照に使うラベルは衝突が無ければ特に制約は無い。
-
-# 外部リンク
-
-`\myHRef{<url>}{<text>}` を使う。 HTML版では普通のリンクになり、 PDF版では脚注に URL を表示する。
-
 # 名前
-
-## コマンド、環境
-
-前置詞 `my` をつける。
 
 ## 定数
 
-定数にはそれぞれ専用のコマンドを用意する。
+おおむね[HoTT Book](https://homotopytypetheory.org/book/)に従う。
 
 ## (メタ)変数
 
 ブロック内で衝突が無ければ特に制約は無い。慣習としては英アルファベット1文字を変数名に使う。型には `A`, `B`, `X`, `Y` 等をよく使い、要素には `a`, `b`, `x`, `y` 等をよく使う。
-
-# その他
-
-## テーブル
-
-ブロックがテーブル環境を含む場合、 `\StartDefiningTabulars` と `\StopDefiningTabulars` で囲う必要があるみたい。 lwarp のマニュアルを参照。
