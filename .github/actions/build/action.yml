@@ -52,6 +52,7 @@ runs:
           luatexja
           amsfonts
           xkeyval
+          haranoaji
 
     - name: Compile document
       run: raco make -v src/index.rkt src/html-config.rkt src/latex-config.rkt
