@@ -4,11 +4,9 @@
          "lib/markup/lemma.rkt"
          "lib/math.rkt")
 
-(provide part:0026)
-
-(define part:0026
+(provide-part (id)
   @lemma[
-    #:id "0026"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型とすると、関数@($ (@id-fun{A} . elem-of . ("A" . fun-type . "A")))は同値である。
     }
@@ -21,4 +19,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:0026)))
+  (preview))

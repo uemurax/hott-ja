@@ -5,11 +5,9 @@
          "lib/markup/definition.rkt"
          "lib/markup.rkt")
 
-(provide part:001E)
-
-(define part:001E
+(provide-part (id)
   @definition[
-    #:id "001E"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型とする。
       @unordered-list[
@@ -21,4 +19,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001E)))
+  (preview))

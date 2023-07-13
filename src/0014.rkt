@@ -5,11 +5,9 @@
          "lib/markup/example.rkt"
          "lib/markup.rkt")
 
-(provide part:0014)
-
-(define part:0014
+(provide-part (id)
   @example[
-    #:id "0014"
+    #:id id
     #:indexes @list[
       @index[#:key "かりーか"]{カリー化}
       @index[#:key "ぎゃくかりーか"]{逆カリー化}
@@ -29,4 +27,4 @@
 
   (module+ main
     (require morg/text)
-    (display (->text part:0014)))
+    (preview))

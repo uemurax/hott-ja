@@ -4,11 +4,9 @@
          "lib/markup/example.rkt"
          "lib/markup.rkt")
 
-(provide part:0011)
-
-(define part:0011
+(provide-part (id)
   @example[
-    #:id "0011"
+    #:id id
     #:indexes @list[
       @index[#:key "ごうせいかんすう"]{合成関数}
     ]
@@ -19,4 +17,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:0011)))
+  (preview))

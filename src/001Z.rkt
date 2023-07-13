@@ -4,11 +4,9 @@
          "lib/markup/definition.rkt"
          "lib/math.rkt")
 
-(provide part:001Z)
-
-(define part:001Z
+(provide-part (id)
   @definition[
-    #:id "001Z"
+    #:id id
     #:indexes @list[
       @index[#:key "かんすうがいえんせい"]{関数外延性}
     ]
@@ -19,4 +17,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001Z)))
+  (preview))

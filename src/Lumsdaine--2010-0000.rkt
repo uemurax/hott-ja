@@ -3,11 +3,9 @@
 (require "lib/markup.rkt"
          (prefix-in b: "lib/bibliography.rkt"))
 
-(provide part:Lumsdaine--2010-0000)
-
-(define part:Lumsdaine--2010-0000
+(provide-part (id)
   @b:bibliography[
-    #:id "Lumsdaine--2010-0000"
+    #:id id
     @b:article[
 	  #:author @list[@%{Peter LeFanu Lumsdaine}]
 	  #:title @%{Weak ω-categories from intensional type theory}
@@ -22,4 +20,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:Lumsdaine--2010-0000)))
+  (preview))

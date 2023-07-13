@@ -5,11 +5,9 @@
          "lib/markup/proposition.rkt"
          "lib/math.rkt")
 
-(provide part:001L)
-
-(define part:001L
+(provide-part (id)
   @proposition[
-    #:id "001L"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ (("a" . _ . "1") . elem-of . "A"))と@($ (("a" . _ . "2") . elem-of . "A"))を要素とする。@${A}が可縮ならば@($ (("a" . _ . "1") . id-type . ("a" . _ . "2")))も可縮である。
     }
@@ -22,4 +20,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001L)))
+  (preview))

@@ -4,11 +4,9 @@
          "lib/markup/rule.rkt"
          "lib/math.rkt")
 
-(provide part:000H)
-
-(define part:000H
+(provide-part (id)
   @rule[
-    #:id "000H"
+    #:id id
     #:indexes @list[
       @index[#:key "かんすうがた"]{関数型}
       @index[#:key "かんすう"]{関数}
@@ -29,4 +27,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000H)))
+  (preview))

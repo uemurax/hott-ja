@@ -4,11 +4,9 @@
          "lib/markup/definition.rkt"
          "lib/markup.rkt")
 
-(provide part:001F)
-
-(define part:001F
+(provide-part (id)
   @definition[
-    #:id "001F"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型、@($ ("f" . elem-of . ("A" . fun-type . "B")))を関数とする。関数@disp{
         @($ (@fun-apply-id{f} . elem-of . (d-fun-type (implicit (("x" . _ . "1") . elem-of . "A")) (d-fun-type (implicit (("x" . _ . "2") . elem-of . "A")) ((("x" . _ . "1") . id-type . ("x" . _ . "2")) . fun-type . (("f" . fun-apply . ("x" . _ . "1")) . id-type . ("f" . fun-apply . ("x" . _ . "2"))))))))
@@ -18,4 +16,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001F)))
+  (preview))

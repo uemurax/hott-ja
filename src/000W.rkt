@@ -4,11 +4,9 @@
          "lib/markup/notation.rkt"
          "lib/markup.rkt")
 
-(provide part:000W)
-
-(define part:000W
+(provide-part (id)
   @notation[
-    #:id "000W"
+    #:id id
     @paragraph{
       大きなレコード型を定義する際には、文章内で@($ (record-type (seq (("x" . _ . "1") . elem-of . ("A" . _ . "1")) dots (("x" . _ . "n") . elem-of . ("A" . _ . "n")))))と書く代わりに縦に並べて
       @unordered-list[
@@ -22,4 +20,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000W)))
+  (preview))

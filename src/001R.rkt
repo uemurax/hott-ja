@@ -3,16 +3,6 @@
 (require "lib/markup.rkt"
          "lib/math.rkt")
 
-(require "001S.rkt"
-         "001W.rkt"
-         "001X.rkt"
-         "0024.rkt"
-         "0025.rkt"
-         "002B.rkt"
-         "002C.rkt"
-         "002D.rkt"
-         "001V.rkt")
-
 (provide-part (id)
   @section[
     #:id id
@@ -27,21 +17,21 @@
         @list-item{@($ (d-pair-type ("x" . elem-of . "A") ("B" . fun-apply . "x")))の可縮性は@${a}や@${b}や@${b'}に依らない性質である。}
       ]
     }
-    part:001V
-    part:001X
-    part:001W
-    part:001S
+    (include-part "001V.rkt")
+    (include-part "001X.rkt")
+    (include-part "001W.rkt")
+    (include-part "001S.rkt")
     @paragraph{
       副産物として、対の同一視型の特徴付けは既に得られている。
     }
-    part:002B
+    (include-part "002B.rkt")
     @paragraph{
       @ref["001S"]を適用する際に便利な補題を用意する。
     }
-    part:0024
-    part:0025
-    part:002C
-    part:002D
+    (include-part "0024.rkt")
+    (include-part "0025.rkt")
+    (include-part "002C.rkt")
+    (include-part "002D.rkt")
   ])
 
 (module+ main

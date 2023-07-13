@@ -5,11 +5,9 @@
          "lib/math.rkt"
          morg/eq-reasoning)
 
-(provide part:002D)
-
-(define part:002D
+(provide-part (id)
   @example[
-    #:id "002D"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型、@($ (("c" . _ . "1") . elem-of . ("A" . pair-type . "B")))と@($ (("c" . _ . "2") . elem-of . ("A" . pair-type . "B")))を要素とする。同値@($ ((("c" . _ . "1") . id-type . ("c" . _ . "2")) . equiv . ((((proj 1) ("c" . _ . "1")) . id-type . ((proj 1) ("c" . _ . "2"))) . pair-type . (((proj 2) ("c" . _ . "1")) . id-type . ((proj 2) ("c" . _ . "2"))))))を構成しよう。@ref["001S"]を適用する。@($ ("E" . elem-of . (("A" . pair-type . "B") . fun-type . @universe{i})))を@($ (abs "z" ((((proj 1) ("c" . _ . "1")) . id-type . ((proj 1) "z")) . pair-type . (((proj 2) ("c" . _ . "1")) . id-type . ((proj 2) "z")))))と定義する。要素@($ ((pair (seq (refl blank) (refl blank))) . elem-of . ("E" . fun-apply . ("c" . _ . "1"))))を得る。レトラクトの列
       @disp{
@@ -27,4 +25,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:002D)))
+  (preview))

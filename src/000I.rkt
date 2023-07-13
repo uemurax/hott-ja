@@ -4,11 +4,9 @@
          "lib/markup/terminology.rkt"
          "lib/math.rkt")
 
-(provide part:000I)
-
-(define part:000I
+(provide-part (id)
   @terminology[
-    #:id "000I"
+    #:id id
     #:indexes @list[
       @index[#:key "かたのぞく"]{型の族}
     ]
@@ -19,4 +17,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000I)))
+  (preview))

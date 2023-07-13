@@ -2,23 +2,6 @@
 
 (require "lib/markup.rkt")
 
-(require "000K.rkt"
-         "000M.rkt"
-         "000N.rkt"
-         "000O.rkt"
-         "000W.rkt"
-         "0014.rkt"
-         "0015.rkt"
-         "0016.rkt"
-         "0017.rkt"
-         "0018.rkt"
-         "0019.rkt"
-         "001A.rkt"
-         "001B.rkt"
-         "001T.rkt"
-         "001U.rkt"
-         "000L.rkt")
-
 (provide-part (id)
   @section[
     #:id id
@@ -26,23 +9,23 @@
     @paragraph{
       @emph{レコード型}は構造を記述するのに便利な型である。本書では、組み込み型としては単位型と対型を導入し、レコード型は記法として実現する。これは体系を単純なものに抑えるためである。
     }
-    part:000K
-    part:000L
-    part:000M
-    part:000N
-    part:0014
-    part:0015
-    part:0016
-    part:0017
-    part:0018
-    part:0019
-    part:001A
-    part:001B
+    (include-part "000K.rkt")
+    (include-part "000L.rkt")
+    (include-part "000M.rkt")
+    (include-part "000N.rkt")
+    (include-part "0014.rkt")
+    (include-part "0015.rkt")
+    (include-part "0016.rkt")
+    (include-part "0017.rkt")
+    (include-part "0018.rkt")
+    (include-part "0019.rkt")
+    (include-part "001A.rkt")
+    (include-part "001B.rkt")
     (include-part "002M.rkt")
-    part:000O
-    part:000W
-    part:001T
-    part:001U
+    (include-part "000O.rkt")
+    (include-part "000W.rkt")
+    (include-part "001T.rkt")
+    (include-part "001U.rkt")
   ])
 
 (module+ main

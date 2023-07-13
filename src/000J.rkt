@@ -4,11 +4,9 @@
          "lib/markup/notation.rkt"
          "lib/math.rkt")
 
-(provide part:000J)
-
-(define part:000J
+(provide-part (id)
   @notation[
-    #:id "000J"
+    #:id id
     @paragraph{
       @unordered-list[
         @list-item{@($ fun-type/symb)は右結合の演算子である。例えば、@($ ("A" . fun-type . ("B" . fun-type . "C")))は@($ ("A" . fun-type . (paren ("B" . fun-type . "C"))))と読む。}
@@ -21,4 +19,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000J)))
+  (preview))

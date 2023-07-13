@@ -7,11 +7,9 @@
          "lib/math/pointed-type.rkt"
          morg/eq-reasoning)
 
-(provide part:0023)
-
-(define part:0023
+(provide-part (id)
   @example[
-    #:id "0023"
+    #:id id
     #:indexes @list[
       @index[#:key "てんつきかた"]{点付き型}
     ]
@@ -37,4 +35,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:0023)))
+  (preview))

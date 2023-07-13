@@ -3,11 +3,9 @@
 (require "lib/markup.rkt"
          "lib/markup/axiom.rkt")
 
-(provide part:0020)
-
-(define part:0020
+(provide-part (id)
   @axiom[
-    #:id "0020"
+    #:id id
     #:title @%{関数外延性公理}
     #:indexes @list[
       @index[#:key "かんすうがいえんせいこうり"]{関数外延性公理}
@@ -19,4 +17,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:0020)))
+  (preview))

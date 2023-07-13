@@ -4,11 +4,9 @@
          "lib/markup/definition.rkt"
          "lib/markup.rkt")
 
-(provide part:001J)
-
-(define part:001J
+(provide-part (id)
   @definition[
-    #:id "001J"
+    #:id id
     #:indexes @list[
       @index[#:key "れとらくと"]{レトラクト}
     ]
@@ -25,4 +23,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001J)))
+  (preview))

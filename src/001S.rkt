@@ -4,11 +4,9 @@
          "lib/markup/theorem.rkt"
          "lib/math.rkt")
 
-(provide part:001S)
-
-(define part:001S
+(provide-part (id)
   @theorem[
-    #:id "001S"
+    #:id id
     #:indexes @list[
       @index[#:key "どういつしがたのきほんていり"]{同一視型の基本定理}
     ]
@@ -40,4 +38,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001S)))
+  (preview))

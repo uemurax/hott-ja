@@ -4,11 +4,9 @@
          "lib/markup/rule.rkt"
          "lib/math.rkt")
 
-(provide part:000P)
-
-(define part:000P
+(provide-part (id)
   @rule[
-    #:id "000P"
+    #:id id
     #:indexes @list[
       @index[#:key "どういつしがた"]{同一視型}
       @index[#:key "どういつし"]{同一視}
@@ -26,4 +24,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000P)))
+  (preview))

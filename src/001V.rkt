@@ -4,11 +4,9 @@
          "lib/markup/lemma.rkt"
          "lib/math.rkt")
 
-(provide part:001V)
-
-(define part:001V
+(provide-part (id)
   @lemma[
-    #:id "001V"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型、@($ ("e" . elem-of . ("A" . equiv . "B")))を同値とすると、@($ (retract (seq "B" "A")))の要素を構成できる。
     }
@@ -21,4 +19,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001V)))
+  (preview))

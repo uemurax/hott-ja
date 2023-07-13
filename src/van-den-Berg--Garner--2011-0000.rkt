@@ -3,11 +3,9 @@
 (require "lib/markup.rkt"
          (prefix-in b: "lib/bibliography.rkt"))
 
-(provide part:van-den-Berg--Garner--2011-0000)
-
-(define part:van-den-Berg--Garner--2011-0000
+(provide-part (id)
   @b:bibliography[
-    #:id "van-den-Berg--Garner--2011-0000"
+    #:id id
     @b:article[
       #:author @list[@%{Benno van den Berg} @%{Richard Garner}]
       #:title @%{Types are weak ω-groupoids}
@@ -23,4 +21,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:van-den-Berg--Garner--2011-0000)))
+  (preview))

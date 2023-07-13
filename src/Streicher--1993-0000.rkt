@@ -3,11 +3,9 @@
 (require "lib/markup.rkt"
          (prefix-in b: "lib/bibliography.rkt"))
 
-(provide part:Streicher--1993-0000)
-
-(define part:Streicher--1993-0000
+(provide-part (id)
   @b:bibliography[
-    #:id "Streicher--1993-0000"
+    #:id id
     @b:thesis[
       #:author @list[@%{Thomas Streicher}]
       #:title @%{Investigations into Intensional Type Theory}
@@ -20,4 +18,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:Streicher--1993-0000)))
+  (preview))

@@ -4,11 +4,9 @@
          "lib/markup/lemma.rkt"
          "lib/math.rkt")
 
-(provide part:001X)
-
-(define part:001X
+(provide-part (id)
   @lemma[
-    #:id "001X"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ ("B" . elem-of . ("A" . fun-type . @universe{i})))を型の族、@($ (("c" . _ . "1") . elem-of . (d-pair-type ("x" . elem-of . "A") ("B" . fun-apply . "x"))))と@($ (("c" . _ . "2") . elem-of . (d-pair-type ("x" . elem-of . "A") ("B" . fun-apply . "x"))))を要素とすると、@disp{
         @($ (retract (seq (d-pair-type ("z" . elem-of . (((proj 1) ("c" . _ . "1")) . id-type . ((proj 1) ("c" . _ . "2")))) ((transport (seq "B" "z" ((proj 2) ("c" . _ . "1")))) . id-type . ((proj 2) ("c" . _ . "2")))) (("c" . _ . "1") . id-type . ("c" . _ . "2")))))
@@ -29,4 +27,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001X)))
+  (preview))

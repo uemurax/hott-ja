@@ -5,11 +5,9 @@
          "lib/markup/example.rkt"
          "lib/markup.rkt")
 
-(provide part:0016)
-
-(define part:0016
+(provide-part (id)
   @example[
-    #:id "0016"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ ("B" . elem-of . ("A" . fun-type . @universe{i})))を型の族、@($ ("C" . elem-of . (d-fun-type ("x" . elem-of . "A") (("B" . fun-apply . "x") . fun-type . @universe{i}))))を型の族とする。
       @unordered-list[
@@ -21,4 +19,4 @@
 
   (module+ main
     (require morg/text)
-    (display (->text part:0016)))
+    (preview))

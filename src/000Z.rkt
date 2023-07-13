@@ -3,11 +3,9 @@
 (require "lib/markup.rkt"
          "lib/markup/axiom.rkt")
 
-(provide part:000Z)
-
-(define part:000Z
+(provide-part (id)
   @axiom[
-    #:id "000Z"
+    #:id id
     #:title @%{一価性公理}
     #:indexes @list[
       @index[#:key "いっかせいこうり"]{一価性公理}
@@ -19,4 +17,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000Z)))
+  (preview))

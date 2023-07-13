@@ -3,16 +3,6 @@
 (require "lib/markup.rkt"
          "lib/math.rkt")
 
-(require "000P.rkt"
-         "001D.rkt"
-         "001E.rkt"
-         "001F.rkt"
-         "001G.rkt"
-         "001H.rkt"
-         "001I.rkt"
-         "002N.rkt"
-         "001C.rkt")
-
 (provide-part (id)
   @section[
     #:id id
@@ -20,7 +10,7 @@
     @paragraph{
       @emph{同一視型}はホモトピー型理論において最も特徴的な型である。
     }
-    part:000P
+    (include-part "000P.rkt")
     @paragraph{
       @ref["HoTT-Book"]にならって同一視型に等号の記号を使うが、その意味は従来の数学の等号とは大きく異なる。従来の数学では、@($ (("a" . _ . "1") . id-type . ("a" . _ . "2")))といえば@($ ("a" . _ . "1"))と@($ ("a" . _ . "2"))が等しいという命題であるが、型理論では@($ (("a" . _ . "1") . id-type . ("a" . _ . "2")))はあくまで型である。従って、@($ (("a" . _ . "1") . id-type . ("a" . _ . "2")))の要素というものを考えることができ、それは非形式的には@($ ("a" . _ . "1"))と@($ ("a" . _ . "2"))の同一視のしかたと解釈される。
     }
@@ -30,15 +20,15 @@
     @paragraph{
       @($ (("a" . _ . "1") . id-type . ("a" . _ . "2")))が同一視型と呼ぶに価することを確認するために、いくつかの期待される関数を構成しよう。
     }
-    part:001C
-    part:001G
-    part:001D
-    part:001E
-    part:001H
-    part:001F
-    part:001I
+    (include-part "001C.rkt")
+    (include-part "001G.rkt")
+    (include-part "001D.rkt")
+    (include-part "001E.rkt")
+    (include-part "001H.rkt")
+    (include-part "001F.rkt")
+    (include-part "001I.rkt")
     #:subsections @list[
-      part:002N
+      (include-part "002N.rkt")
     ]
   ])
 

@@ -4,11 +4,9 @@
          "lib/markup/notation.rkt"
          "lib/math.rkt")
 
-(provide part:000O)
-
-(define part:000O
+(provide-part (id)
   @notation[
-    #:id "000O"
+    #:id id
     #:indexes @list[
       @index[#:key "れこーどがた"]{レコード型}
     ]
@@ -34,4 +32,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000O)))
+  (preview))

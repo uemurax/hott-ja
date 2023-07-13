@@ -4,11 +4,9 @@
          "lib/markup/lemma.rkt"
          "lib/math.rkt")
 
-(provide part:0024)
-
-(define part:0024
+(provide-part (id)
   @lemma[
-    #:id "0024"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ ("B" . elem-of . ("A" . fun-type . @universe{i})))を型の族、@($ ("a" . elem-of . "A"))を要素とする。@${A}が可縮ならば@($ ((d-pair-type ("x" . elem-of . "A") ("B" . fun-apply . "x")) . bi-retract-rel . ("B" . fun-apply . "a")))の要素を構成できる。
     }
@@ -21,4 +19,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:0024)))
+  (preview))

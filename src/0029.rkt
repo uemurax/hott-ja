@@ -4,11 +4,9 @@
          "lib/markup/proposition.rkt"
          "lib/math.rkt")
 
-(provide part:0029)
-
-(define part:0029
+(provide-part (id)
   @proposition[
-    #:id "0029"
+    #:id id
     @paragraph{
       @${i}を階数とする。次は論理的に同値である。
       @ordered-list[
@@ -28,4 +26,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:0029)))
+  (preview))

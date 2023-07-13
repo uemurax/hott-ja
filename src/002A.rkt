@@ -7,11 +7,9 @@
          "lib/math/refl-graph.rkt"
          morg/eq-reasoning)
 
-(provide part:002A)
-
-(define part:002A
+(provide-part (id)
   @example[
-    #:id "002A"
+    #:id id
     #:indexes @list[
       @index[#:key "はんしゃてきぐらふ"]{反射的グラフ}
     ]
@@ -46,4 +44,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:002A)))
+  (preview))

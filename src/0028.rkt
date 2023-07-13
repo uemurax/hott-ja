@@ -7,11 +7,9 @@
          "lib/math/magma.rkt"
          morg/eq-reasoning)
 
-(provide part:0028)
-
-(define part:0028
+(provide-part (id)
   @example[
-    #:id "0028"
+    #:id id
     #:indexes @list[
       @index[#:key "まぐま"]{マグマ}
     ]
@@ -41,4 +39,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:0028)))
+  (preview))

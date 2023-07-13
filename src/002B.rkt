@@ -4,11 +4,9 @@
          "lib/markup/corollary.rkt"
          "lib/math.rkt")
 
-(provide part:002B)
-
-(define part:002B
+(provide-part (id)
   @corollary[
-    #:id "002B"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ ("B" . elem-of . ("A" . fun-type . @universe{i})))を型の族、@($ (("c" . _ . "1") . elem-of . (d-pair-type ("x" . elem-of . "A") ("B" . fun-apply . "x"))))と@($ (("c" . _ . "2") . elem-of . (d-pair-type ("x" . elem-of . "A") ("B" . fun-apply . "x"))))を要素とすると、同値
       @disp{
@@ -24,4 +22,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:002B)))
+  (preview))

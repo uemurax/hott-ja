@@ -4,10 +4,6 @@
          "lib/math/univalence.rkt"
          "lib/math.rkt")
 
-(require "000Y.rkt"
-         "0026.rkt"
-         "000Z.rkt")
-
 (provide-part (id)
   @section[
     #:id id
@@ -18,12 +14,12 @@
     @paragraph{
       @emph{一価性公理}は同値@($ (("A" . id-type . "B") . equiv . ("A" . equiv . "B")))を導出する公理である。先に説明したように、この同値は型理論の集合論的解釈とは相反するものである。一価性公理の下では、型は空間のホモトピー型のように振る舞う。その意味で、一価性公理は型理論をホモトピー論的なものに強制する公理と言える。
     }
-    part:0026
-    part:000Y
+    (include-part "0026.rkt")
+    (include-part "000Y.rkt")
     @paragraph{
       @ref["0026"]から@ref["001S"]を適用できて、@${@universe{i}}が一価性を満たす時、任意の型@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))に対して同値@($ (("A" . id-type . "B") . equiv . ("A" . equiv . "B")))を構成できる。
     }
-    part:000Z
+    (include-part "000Z.rkt")
     @paragraph{
       ここで公理という言葉を使ったが、規則と公理に本質的な違いは無い。つまり、@ref["000Z"]は任意の階数@${i}に対して要素@($ (@ua{i} . elem-of . (d-fun-type ("X" . elem-of . @universe{i}) (is-contr (d-pair-type ("Y" . elem-of . @universe{i}) ("X" . equiv . "Y"))))))を構成できるという規則だとも言える。本書では、次のように感覚的に使い分ける。
       @unordered-list[

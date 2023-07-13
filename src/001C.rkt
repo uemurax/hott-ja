@@ -4,11 +4,9 @@
          "lib/markup/definition.rkt"
          "lib/math.rkt")
 
-(provide part:001C)
-
-(define part:001C
+(provide-part (id)
   @definition[
-    #:id "001C"
+    #:id id
     #:indexes @list[
       @index[#:key "ゆそうかんすう"]{輸送関数}
     ]
@@ -21,4 +19,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001C)))
+  (preview))

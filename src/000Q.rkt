@@ -4,11 +4,9 @@
          "lib/markup/notation.rkt"
          "lib/math.rkt")
 
-(provide part:000Q)
-
-(define part:000Q
+(provide-part (id)
   @notation[
-    #:id "000Q"
+    #:id id
     #:indexes @list[
       @index[#:key "あんもくてきひきすう"]{暗黙的引数}
     ]
@@ -19,4 +17,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000Q)))
+  (preview))

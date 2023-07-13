@@ -4,11 +4,9 @@
          "lib/markup/proposition.rkt"
          "lib/math.rkt")
 
-(provide part:001N)
-
-(define part:001N
+(provide-part (id)
   @proposition[
-    #:id "001N"
+    #:id id
     @paragraph{
       @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ ("a" . elem-of . "A"))を要素とする。型@($ (d-pair-type ("x" . elem-of . "A") ("a" . id-type . "x")))は可縮である。
     }
@@ -21,4 +19,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001N)))
+  (preview))

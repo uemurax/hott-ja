@@ -4,11 +4,9 @@
          "lib/markup/definition.rkt"
          "lib/markup.rkt")
 
-(provide part:000T)
-
-(define part:000T
+(provide-part (id)
   @definition[
-    #:id "000T"
+    #:id id
     #:indexes @list[
       @index[#:key "かしゅく"]{可縮}
     ]
@@ -24,4 +22,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000T)))
+  (preview))

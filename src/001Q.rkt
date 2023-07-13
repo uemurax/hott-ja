@@ -4,11 +4,9 @@
          "lib/markup/definition.rkt"
          "lib/math.rkt")
 
-(provide part:001Q)
-
-(define part:001Q
+(provide-part (id)
   @definition[
-    #:id "001Q"
+    #:id id
     #:indexes @list[
       @index[#:key "どうち"]{同値}
     ]
@@ -19,4 +17,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001Q)))
+  (preview))

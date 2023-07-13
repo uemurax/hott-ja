@@ -5,11 +5,9 @@
          "lib/markup/rule.rkt"
          "lib/math.rkt")
 
-(provide part:000K)
-
-(define part:000K
+(provide-part (id)
   @rule[
-    #:id "000K"
+    #:id id
     #:indexes @list[
       @index[#:key "たんいがた"]{単位型}
     ]
@@ -24,4 +22,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:000K)))
+  (preview))

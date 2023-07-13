@@ -3,11 +3,9 @@
 (require morg/markup
          (prefix-in b: "lib/bibliography.rkt"))
 
-(provide part:HoTT-Book)
-
-(define part:HoTT-Book
+(provide-part (id)
   @b:bibliography[
-    #:id "HoTT-Book"
+    #:id id
     @b:book[
       #:author @list[@%{The Univalent Foundations Program}]
       #:title @%{Homotopy Type Theory: Univalent Foundations of Mathematics}
@@ -19,4 +17,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:HoTT-Book)))
+  (preview))

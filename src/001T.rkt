@@ -4,11 +4,9 @@
          "lib/markup/example.rkt"
          "lib/math.rkt")
 
-(provide part:001T)
-
-(define part:001T
+(provide-part (id)
   @example[
-    #:id "001T"
+    #:id id
     #:indexes @list[
       @index[#:key "ろんりてきにどうち"]{論理的に同値}
     ]
@@ -24,4 +22,4 @@
 
 (module+ main
   (require morg/text)
-  (display (->text part:001T)))
+  (preview))
