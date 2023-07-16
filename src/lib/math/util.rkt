@@ -1,7 +1,7 @@
 #lang typed/racket
 
 (require morg/math
-         morg/markup
+         morg
          "core/function.rkt")
 
 (provide make-fun

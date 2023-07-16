@@ -1,7 +1,7 @@
 #lang at-exp typed/racket
 
 (require "util.rkt"
-         morg/markup
+         morg
          morg/math)
 
 (provide functor

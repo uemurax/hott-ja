@@ -1,7 +1,7 @@
 #lang at-exp typed/racket
 
 (require morg/math
-         morg/markup
+         morg
          "util.rkt")
 
 (provide cat:map

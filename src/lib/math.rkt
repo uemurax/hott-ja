@@ -1,6 +1,6 @@
 #lang at-exp typed/racket
 
-(require morg/markup
+(require morg
          morg/math
          "math/core/function.rkt"
          "math/core/universe.rkt"
