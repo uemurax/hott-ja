@@ -2,7 +2,7 @@
 
 (require morg/latex/config
          (prefix-in eq: (submod morg/eq-reasoning latex-config))
-         morg/markup
+         morg
          morg/markup/tex)
 
 (define (latex-config:make-section-ref [depth : Natural] [num : String])

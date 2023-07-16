@@ -2,7 +2,7 @@
 
 (require morg/html/config
          (prefix-in eq: (submod morg/eq-reasoning html-config))
-         morg/markup
+         morg
          morg/html/class/inline
          morg/html/class/toc)
 
