@@ -1,20 +1,14 @@
-#lang at-exp typed/racket
+#lang morg
 
 (require "lib/math.rkt"
-         "lib/markup/example.rkt"
-         "lib/markup.rkt")
+         "lib/markup/example.rkt")
 
-(provide-part (id)
-  @example[
-    #:id id
-    #:indexes @list[
-      @index[#:key "こうとうかんすう"]{恒等関数}
-    ]
-    @paragraph{
-      @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型とする。@dfn{恒等関数(identity function)}@($ (@id-fun{A} . elem-of . ("A" . fun-type . "A")))を@($ (abs "x" "x"))と定義する。
-    }
-  ])
-
-(module+ main
-  (require morg/text)
-  (preview))
+@example[
+  #:id (current-id)
+  #:indexes @list[
+    @index[#:key "こうとうかんすう"]{恒等関数}
+  ]
+  @paragraph{
+    @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型とする。@dfn{恒等関数(identity function)}@($ (@id-fun{A} . elem-of . ("A" . fun-type . "A")))を@($ (abs "x" "x"))と定義する。
+  }
+]

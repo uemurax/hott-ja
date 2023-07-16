@@ -1,17 +1,11 @@
-#lang at-exp typed/racket
+#lang morg
 
 (require "lib/math.rkt"
-         "lib/markup/definition.rkt"
-         "lib/markup.rkt")
+         "lib/markup/definition.rkt")
 
-(provide-part (id)
-  @definition[
-    #:id id
-    @paragraph{
-      @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型とする。このとき、@($ (("A" . fun-type . "B") . elem-of . @universe{i}))を@($ @d-fun-type[("x" . elem-of . "A")]{B})と定義する。
-    }
-  ])
-
-(module+ main
-  (require morg/text)
-  (preview))
+@definition[
+  #:id (current-id)
+  @paragraph{
+    @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型とする。このとき、@($ (("A" . fun-type . "B") . elem-of . @universe{i}))を@($ @d-fun-type[("x" . elem-of . "A")]{B})と定義する。
+  }
+]

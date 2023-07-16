@@ -1,20 +1,14 @@
-#lang at-exp typed/racket
+#lang morg
 
-(require morg/markup
-         (prefix-in b: "lib/bibliography.rkt"))
+(require "lib/bibliography.rkt")
 
-(provide-part (id)
-  @b:bibliography[
-    #:id id
-    @b:book[
-      #:author @list[@%{The Univalent Foundations Program}]
-      #:title @%{Homotopy Type Theory: Univalent Foundations of Mathematics}
-      #:date (date 2013)
-      #:address @%{Institute for Advanced Study}
-      #:url "http://homotopytypetheory.org/book/"
-    ]
-  ])
-
-(module+ main
-  (require morg/text)
-  (preview))
+@bibliography[
+  #:id (current-id)
+  @book[
+    #:author @list[@%{The Univalent Foundations Program}]
+    #:title @%{Homotopy Type Theory: Univalent Foundations of Mathematics}
+    #:date (date 2013)
+    #:address @%{Institute for Advanced Study}
+    #:url "http://homotopytypetheory.org/book/"
+  ]
+]

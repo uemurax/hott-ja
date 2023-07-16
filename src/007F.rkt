@@ -1,14 +1,7 @@
-#lang at-exp typed/racket
+#lang morg
 
-(require "lib/markup.rkt")
-
-(provide-part (id)
-  @section[
-    #:id id
-    #:title @%{索引}
-    @print-index[]
-  ])
-
-(module+ main
-  (require morg/text)
-  (preview))
+@section[
+  #:id (current-id)
+  #:title @%{索引}
+  @print-index[]
+]

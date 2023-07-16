@@ -1,16 +1,10 @@
-#lang at-exp typed/racket
+#lang morg
 
-(require "lib/markup.rkt"
-         "lib/markup/exercise.rkt")
+(require "lib/markup/exercise.rkt")
 
-(provide-part (id)
-  @exercise[
-    #:id id
-    @paragraph{
-      いわゆる@emph{Mac Lane五角形}を表す型とその要素を構成せよ。
-    }
-  ])
-
-(module+ main
-  (require morg/text)
-  (preview))
+@exercise[
+  #:id (current-id)
+  @paragraph{
+    いわゆる@emph{Mac Lane五角形}を表す型とその要素を構成せよ。
+  }
+]

@@ -1,13 +1,6 @@
-#lang at-exp typed/racket
+#lang morg
 
-(require "lib/markup.rkt")
-
-(provide-part (id)
-  @section[
-    #:id id
-    #:title @%{ホモトピー論}
-  ])
-
-(module+ main
-  (require morg/text)
-  (preview))
+@section[
+  #:id (current-id)
+  #:title @%{ホモトピー論}
+]
