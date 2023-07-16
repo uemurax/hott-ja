@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide lemma)
 
-(define lemma (article/curried "補題"))
+(define lemma @make-article{補題})

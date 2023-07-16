@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide proposition)
 
-(define proposition (article/curried "命題"))
+(define proposition @make-article{命題})

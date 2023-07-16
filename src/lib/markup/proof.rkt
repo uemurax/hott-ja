@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/proof)
 
-(provide (rename-out [my-proof proof]))
+(provide proof)
 
-(define my-proof (proof/curried "証明"))
+(define proof @make-proof{証明})

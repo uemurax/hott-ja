@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide theorem)
 
-(define theorem (article/curried "定理"))
+(define theorem @make-article{定理})

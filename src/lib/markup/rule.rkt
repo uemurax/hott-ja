@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide rule)
 
-(define rule (article/curried "規則"))
+(define rule @make-article{規則})

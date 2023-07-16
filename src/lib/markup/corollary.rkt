@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide corollary)
 
-(define corollary (article/curried "系"))
+(define corollary @make-article{系})

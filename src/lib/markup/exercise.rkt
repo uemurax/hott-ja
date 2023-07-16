@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide exercise)
 
-(define exercise (article/curried "演習"))
+(define exercise @make-article{演習})

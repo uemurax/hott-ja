@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide example)
 
-(define example (article/curried "例"))
+(define example @make-article{例})

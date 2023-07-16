@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide comparison)
 
-(define comparison (article/curried "比較"))
+(define comparison @make-article{比較})

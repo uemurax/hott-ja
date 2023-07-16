@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide definition)
 
-(define definition (article/curried "定義"))
+(define definition @make-article{定義})

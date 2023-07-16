@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide axiom)
 
-(define axiom (article/curried "公理"))
+(define axiom @make-article{公理})

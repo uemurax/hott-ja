@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide remark)
 
-(define remark (article/curried "注意"))
+(define remark @make-article{注意})

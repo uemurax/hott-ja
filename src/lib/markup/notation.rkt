@@ -1,7 +1,7 @@
-#lang typed/racket
+#lang at-exp typed/racket
 
-(require morg/markup)
+(require morg/article)
 
 (provide notation)
 
-(define notation (article/curried "記法"))
+(define notation @make-article{記法})
