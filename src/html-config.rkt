@@ -1,10 +1,8 @@
 #lang at-exp typed/racket
 
-(require morg/html/config
+(require morg/html
          (prefix-in eq: (submod morg/eq-reasoning html-config))
-         morg
-         morg/html/class/inline
-         morg/html/class/toc)
+         morg)
 
 (define custom-css-name "custom.css")
 
