@@ -1,7 +1,7 @@
 #lang at-exp typed/racket
 
 (require morg/latex
-         (prefix-in eq: (submod morg/eq-reasoning latex-config)))
+         (prefix-in eq: morg/eq-reasoning/latex))
 
 (define (latex-config:make-section-ref [depth : Natural] [num : String])
   (define x : String
