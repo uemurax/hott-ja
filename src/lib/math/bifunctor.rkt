@@ -1,6 +1,7 @@
 #lang typed/racket
 
 (require morg/math
+         (prefix-in l: "paren-level.rkt")
          "util.rkt")
 
 (provide bifunctor
@@ -12,8 +13,8 @@
 
 (define (bifunctor [C1 : MathTeX+Like] [C2 : MathTeX+Like] [D : MathTeX+Like])
   ((make-fun bifunctor/symb)
-   ((C1 . (binary #:level 'punctuation ",") . C2)
-    . (binary #:level 'punctuation ";" #:assoc 'left) .
+   ((C1 . (binary #:level l:comma ",") . C2)
+    . (binary #:level l:semicolon ";") .
     D)))
 
 (define bifunctor:obj (const "obj"))

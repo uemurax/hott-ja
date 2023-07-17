@@ -2,6 +2,7 @@
 
 (require morg/math
          morg
+         (prefix-in l: "paren-level.rkt")
          "util.rkt")
 
 (provide cat:map
@@ -32,7 +33,7 @@
 (define cat:id (const "id"))
 (define cat:comp (const "comp"))
 (define cat:iso
-  (binary #:level 'relation (macro "cong")))
+  (binary #:level l:relation (macro "cong")))
 
 (define cat/symb (const "Cat"))
 (define cat (make-fun cat/symb))
@@ -46,7 +47,7 @@
 (define precat (make-fun precat/symb))
 
 (define cat:comp-bin
-  (monoid #:level 'comp cat:id (macro "circ")))
+  (monoid #:level l:comp cat:id (macro "circ")))
 
 (define cat:linv/symb (const "LInv"))
 (define cat:linv (make-fun cat:linv/symb))

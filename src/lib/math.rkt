@@ -4,6 +4,7 @@
          morg/math
          "math/core/function.rkt"
          "math/core/universe.rkt"
+         (prefix-in l: "math/paren-level.rkt")
          "math/util.rkt")
 
 (provide paren
@@ -76,25 +77,7 @@
          (all-from-out "math/core/function.rkt"
                        "math/core/universe.rkt"))
 
-(define cfg
-  (struct-copy config default-config
-   [levels '(dot
-             unary
-             comp
-             *
-             +
-             binary
-             logic-impl
-             abs
-             relation
-             fun-type
-             big-op
-             subst-arrow
-             def-eq
-             elem-of
-             punctuation)]))
-
-(define $ (make-math cfg))
+(define $ math)
 
 (define mathbf (macro-1 "mathbf"))
 (define mathord (macro-1 "mathord"))
@@ -102,16 +85,16 @@
 (define phantom (macro-1 "phantom"))
 
 (define def-eq
-  (binary #:level 'def-eq (macro "equiv")))
+  (binary #:level l:def-eq (macro "equiv")))
 
 (define seq
-  (monoid #:level 'punctuation "" ","))
+  (monoid #:level l:punctuation "" ","))
 
 (define elem-of
-  (binary #:level 'elem-of ":"))
+  (binary #:level l:: ":"))
 
 (define elem-of/chain
-  (monoid #:level 'elem-of "" ":"))
+  (monoid #:level l:: "" ":"))
 
 (define dots (macro "dots"))
 (define vdots (macro "vdots"))
@@ -123,29 +106,29 @@
     (seq (f from) dots (f to))))
 
 (define subst-bin
-  (binary #:level 'subst-arrow @%{@macro["mapsto"]}))
+  (binary #:level l:subst-arrow @%{@macro["mapsto"]}))
 
 (define subst-apply
-  (apply-with-parens #:left "[" #:right "]"))
+  (apply-with-parens #:level l:$ #:left "[" #:right "]"))
 
 (define id-type/symb "=")
 (define id-type
-  (binary #:level 'relation id-type/symb))
+  (binary #:level l:relation id-type/symb))
 
 (define is-equiv/symb (const "IsEquiv"))
 (define is-equiv (make-fun is-equiv/symb))
 
 (define equiv/symb (macro "simeq"))
 (define equiv
-  (binary #:level 'relation equiv/symb))
+  (binary #:level l:relation equiv/symb))
 (define equiv:fun (const "fun"))
 (define equiv:is-equiv (const "is-equiv"))
 
 (define prod
-  (big-op #:level 'big-op (macro "prod")))
+  (big-op #:level l:big-op (macro "prod")))
 
 (define sum
-  (big-op #:level 'big-op (macro "sum")))
+  (big-op #:level l:big-op (macro "sum")))
 
 (define (d-fun-type [A : MathTeX+Like] . [B : MathTeX+Like *])
   (prod #:_ A (apply % B)))
@@ -162,12 +145,12 @@
 (define id-ind (make-fun id-ind/symb))
 
 (define (abs [x : MathTeX+Like] . [b : MathTeX+Like *])
-  (paren #:level 'abs
-         "λ" x "." (dec-degree (apply % b))))
+  (paren #:level l:abs
+         (macro "lambda") x "." (dec-degree (apply % b))))
 
 (define fun-type/symb (macro "to"))
 (define fun-type
-  (binary #:level 'fun-type #:assoc 'right
+  (binary #:level l:-> #:assoc 'right
           fun-type/symb))
 
 (define unit-type @mathbf{1})
@@ -185,10 +168,10 @@
 
 (define pair-type/symb (macro "times"))
 (define pair-type
-  (monoid #:level '* unit-type pair-type/symb))
+  (monoid #:level l:* unit-type pair-type/symb))
 
 (define record-apply
-  (apply-with-parens #:left (macro "lbrace") #:right (macro "rbrace")))
+  (apply-with-parens #:level l:$ #:left (macro "lbrace") #:right (macro "rbrace")))
 (define record-type/symb (const "Record"))
 (define (record-type . [xs : MathTeX+Like *])
   (record-apply record-type/symb (apply seq xs)))
@@ -196,11 +179,11 @@
 (define (record-elem . [xs : MathTeX+Like *])
   (record-apply record-elem/symb (apply seq xs)))
 (define record-field
-  (binary #:level 'dot "."))
+  (binary #:level l:dot "."))
 
-(define + (monoid #:level '+ "0" "+"))
+(define + (monoid #:level l:+ "0" "+"))
 
-(define - (binary #:level '+ "-"))
+(define - (binary #:level l:+ "-"))
 
 (define center (const "center"))
 (define contraction (const "contr"))
@@ -214,11 +197,11 @@
 (define retract:id (const "r-s"))
 (define retract-rel/symb (macro "triangleleft"))
 (define retract-rel
-  (binary #:level 'relation retract-rel/symb))
+  (binary #:level l:relation retract-rel/symb))
 (define bi-retract-rel/symb
   (mathrel (macro "triangleleft") (macro "triangleright")))
 (define bi-retract-rel
-  (binary #:level 'relation
+  (binary #:level l:relation
           bi-retract-rel/symb))
 
 (define fiber/symb (const "Fiber"))
@@ -229,23 +212,23 @@
 (define id-fun/symb (const "id"))
 (define id-fun (make-fun id-fun/symb))
 (define fun-comp/symb (macro "circ"))
-(define fun-comp (monoid #:level 'comp id-fun/symb fun-comp/symb))
+(define fun-comp (monoid #:level l:comp id-fun/symb fun-comp/symb))
 
 (define transport/symb (const "transport"))
 (define transport (make-fun transport/symb))
 
-(define id-inv (sup-op #:level 'unary "-1"))
-(define id-comp (monoid #:level 'comp refl/symb fun-comp/symb))
+(define id-inv (sup-op #:level l:unary "-1"))
+(define id-comp (monoid #:level l:comp refl/symb fun-comp/symb))
 
 (define fun-apply-id/symb (const "ap"))
 (define fun-apply-id (make-fun fun-apply-id/symb))
 
 (define log-equiv/symb (macro "leftrightarrow"))
-(define log-equiv (binary #:level 'relation log-equiv/symb))
+(define log-equiv (binary #:level l:relation log-equiv/symb))
 (define log-equiv-to (const "to"))
 (define log-equiv-from (const "from"))
 
 (define homotopy/symb (macro "sim"))
-(define homotopy (binary #:level 'relation homotopy/symb))
+(define homotopy (binary #:level l:relation homotopy/symb))
 
 (define blank "_")

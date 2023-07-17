@@ -1,11 +1,12 @@
 #lang morg
 
 (require "lib/math.rkt"
+         (prefix-in l: "lib/math/paren-level.rkt")
          morg/math)
 
 (define times/symb (macro "times"))
 (define times
-  (binary #:level '* times/symb))
+  (binary #:level l:* times/symb))
 
 @section[
   #:id (current-id)

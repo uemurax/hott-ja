@@ -1,6 +1,7 @@
 #lang typed/racket
 
-(require morg/math)
+(require morg/math
+         (prefix-in l: "../paren-level.rkt"))
 
 (provide fun-apply
          fun-apply/implicit
@@ -11,7 +12,7 @@
 (define implicit (delimiter #:left implicit-left #:right implicit-right))
 
 (define fun-apply
-  (apply-with-parens))
+  (apply-with-parens #:level l:$))
 
 (define fun-apply/implicit
-  (apply-with-parens #:left implicit-left #:right implicit-right))
+  (apply-with-parens #:level l:$ #:left implicit-left #:right implicit-right))

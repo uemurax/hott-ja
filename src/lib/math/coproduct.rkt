@@ -1,6 +1,7 @@
 #lang typed/racket
 
 (require morg/math
+         (prefix-in l: "paren-level.rkt")
          "util.rkt"
          "empty.rkt")
 
@@ -12,7 +13,7 @@
 (define coproduct-type/symb "+")
 
 (define coproduct-type
-  (monoid #:level '+ empty-type coproduct-type/symb))
+  (monoid #:level l:+ empty-type coproduct-type/symb))
 
 (define (coproduct-type:in/symb [n : Natural])
   ((const "in") . _ . (number->string n)))

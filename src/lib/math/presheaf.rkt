@@ -1,6 +1,7 @@
 #lang at-exp typed/racket
 
 (require "util.rkt"
+         (prefix-in l: "paren-level.rkt")
          morg
          morg/math)
 
@@ -32,7 +33,7 @@
 (define presheaf:act (const "act"))
 (define presheaf:act-bin/symb (macro "cdot"))
 (define presheaf:act-bin
-  (binary #:level 'comp presheaf:act-bin/symb
+  (binary #:level l:comp presheaf:act-bin/symb
           #:assoc 'left))
 (define presheaf-hom/symb (const "Hom"))
 (define presheaf-hom (make-fun presheaf-hom/symb))
@@ -43,4 +44,4 @@
 (define id-presheaf-hom (make-fun id-presheaf-hom/symb))
 (define presheaf-hom-comp/symb (macro "circ"))
 (define presheaf-hom-comp
-  (monoid #:level 'comp id-presheaf-hom/symb presheaf-hom-comp/symb))
+  (monoid #:level l:comp id-presheaf-hom/symb presheaf-hom-comp/symb))
