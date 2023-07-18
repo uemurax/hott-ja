@@ -3,18 +3,23 @@
 (require "lib/math.rkt"
          "lib/markup/definition.rkt")
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define x "x")
+
 @definition[
   #:id (current-id)
   #:indexes @list[
     @index[#:key "れとらくと"]{レトラクト}
   ]
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型とする。型@($ ((retract (seq "A" "B")) . elem-of . @universe{i}))を次のレコード型と定義する。
+    @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型とする。型@(math ((retract . $* . A B) . elem-of . (universe . $ . i)))を次のレコード型と定義する。
     @unordered-list[
-      @list-item{@($ (retract:retraction . elem-of . ("B" . fun-type . "A")))}
-      @list-item{@($ (retract:section . elem-of . ("A" . fun-type . "B")))}
-      @list-item{@($ (retract:id . elem-of . (d-fun-type ("x" . elem-of . "A") ((retract:retraction . fun-apply  . (retract:section . fun-apply . "x")) . id-type . "x"))))}
+      @list-item{@(math (retract:retraction . elem-of . (B . fun-type . A)))}
+      @list-item{@(math (retract:section . elem-of . (A . fun-type . B)))}
+      @list-item{@(math (retract:id . elem-of . (d-fun-type (x . elem-of . A) ((retract:retraction . $  . (retract:section . $ . x)) . id-type . x))))}
     ]
-    @($ (retract (seq "A" "B")))は@($ ("A" . retract-rel . "B"))と書くこともある。@($ ("A" . retract-rel . "B"))の要素がある時、@${A}は@${B}の@dfn{レトラクト(retract)}であると言う。また、@($ ("A" . bi-retract-rel . "B"))を@($ (("A" . retract-rel . "B") . pair-type . ("B" . retract-rel . "A")))と定義する。
+    @(math (retract . $* . A B))は@(math (A . retract-rel . B))と書くこともある。@(math (A . retract-rel . B))の要素がある時、@(math A)は@(math B)の@dfn{レトラクト(retract)}であると言う。また、@(math (A . bi-retract-rel . B))を@(math ((A . retract-rel . B) . pair-type . (B . retract-rel . A)))と定義する。
   }
 ]

@@ -5,10 +5,15 @@
          "lib/math.rkt"
          "lib/math/biinv.rkt")
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define f "f")
+
 @proposition[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型、@($ ("f" . elem-of . ("A" . fun-type . "B")))を関数とする。型@${@is-equiv{f}}と@${@is-biinv{f}}は論理的に同値である。
+    @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型、@(math (f . elem-of . (A . fun-type . B)))を関数とする。型@(math (is-equiv . $ . f))と@(math (is-biinv . $ . f))は論理的に同値である。
   }
   #:proof @proof[
     @paragraph{

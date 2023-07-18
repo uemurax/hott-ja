@@ -4,9 +4,20 @@
          "lib/math.rkt"
          "lib/math/id.rkt")
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define a "a")
+(define a1 (a . _ . "1"))
+(define a2 (a . _ . "2"))
+(define a3 (a . _ . "3"))
+(define p "p")
+(define p1 (p . _ . "1"))
+(define p2 (p . _ . "2"))
+
 @example[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ ("B" . elem-of . ("A" . fun-type . @universe{i})))を型の族とする。要素@($ (("a" . _ . "1") . elem-of . "A"))と@($ (("a" . _ . "2") . elem-of . "A"))と@($ (("a" . _ . "3") . elem-of . "A"))と同一視@($ (("p" . _ . "1") . elem-of . (("a" . _ . "1") . id-type . ("a" . _ ."2"))))と@($ (("p" . _ . "2") . elem-of . (("a" . _ . "2") . id-type . ("a" . _ . "3"))))に対して、同一視@($ ((transport-comp (seq "B" ("p" . _ . "2") ("p" . _ . "1"))) . elem-of . ((transport (seq "B" (("p" . _ . "2") . id-comp . ("p" . _ . "1")))) . id-type . ((transport (seq "B" ("p" . _ . "2"))) . fun-comp . (transport (seq "B" ("p" . _ . "1")))))))を構成できる。実際、@($ ((transport-comp (seq "B" ("p" . _ . "2") (refl ("a" . _ . "1")))) . def-eq . (refl blank)))と定義すればよい。
+    @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (B . elem-of . (A . fun-type . (universe . $ . i))))を型の族とする。要素@(math (a1 a2 a3 . elem-of* . A))と同一視@(math (p1 . elem-of . (a1 . id-type . a2)))と@(math (p2 . elem-of . (a2 . id-type . a3)))に対して、同一視@(math ((transport-comp . $* . B p2 p1) . elem-of . ((transport . $* . B (p2 . id-comp . p1)) . id-type . ((transport . $* . B p2) . fun-comp . (transport . $* . B p1)))))を構成できる。実際、@(math ((transport-comp . $* . B p2 refl) . def-eq . refl))と定義すればよい。
   }
 ]

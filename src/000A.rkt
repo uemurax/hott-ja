@@ -2,6 +2,10 @@
 
 (require "lib/math.rkt")
 
+(define x "x")
+(define A "A")
+(define B "B")
+
 @section[
   #:id (current-id)
   #:title @%{関数型}
@@ -10,7 +14,7 @@
   }
   (include-part "000H.rkt")
   @paragraph{
-    関数型の導入により、仮定@($ ("x" . elem-of . "A"))の下での@${B}の要素と@($ (d-fun-type ("x" . elem-of . "A") "B"))型の関数は同じように振る舞う。以降は仮定の下での要素の代わりに関数を使う。
+    関数型の導入により、仮定@(math (x . elem-of . A))の下での@(math B)の要素と@(math (d-fun-type (x . elem-of . A) B))型の関数は同じように振る舞う。以降は仮定の下での要素の代わりに関数を使う。
   }
   (include-part "000G.rkt")
   (include-part "000J.rkt")

@@ -3,14 +3,24 @@
 (require "lib/markup/notation.rkt"
          "lib/math.rkt")
 
+(define A "A")
+(define B "B")
+(define C "C")
+(define D "D")
+(define x "x")
+(define y "y")
+(define b "b")
+(define a "a")
+(define f "f")
+
 @notation[
   #:id (current-id)
   @paragraph{
     @unordered-list[
-      @list-item{@($ fun-type/symb)は右結合の演算子である。例えば、@($ ("A" . fun-type . ("B" . fun-type . "C")))は@($ ("A" . fun-type . (paren ("B" . fun-type . "C"))))と読む。}
-      @list-item{@($ (abs ("x" . _ . "1") dots (abs ("x" . _ . "n") "b")))は@($ (abs (seq ("x" . _ . "1") dots ("x" . _ . "n")) "b"))と略記することがある。}
-      @list-item{@($ (fun-apply (% (fun-apply "f" ("a" . _ . "1")) dots) ("a" . _ . "n")))は@($ (fun-apply "f" (seq ("a" . _ . "1") dots ("a" . _ . "n"))))と略記することがある。}
-      @list-item{@${@d-fun-type[("x" . elem-of . "A")]{}}の結合は弱い。例えば、@($ (d-fun-type ("x" . elem-of . "A") (d-fun-type ("y" . elem-of . "B") ("C" . fun-type . "D"))))は@($ (d-fun-type ("x" . elem-of . "A") (paren (d-fun-type ("y" . elem-of . "B") (paren ("C" . fun-type . "D"))))))と読む。}
+      @list-item{@(math fun-type/symb)は右結合の演算子である。例えば、@(math (A . fun-type . (B . fun-type . C)))は@(math (A . fun-type . (paren (B . fun-type . C))))と読む。}
+      @list-item{@(math (abs (x . _ . "1") (% dots (abs (x . _ . "n") b))))は@(math (abs* (x . _ . "1") dots (x . _ . "n") b))と略記することがある。}
+      @list-item{@(math ((% (f . $ . (a . _ . "1")) dots) . $ . (a . _ . "n")))は@(math (f . $* . (a . _ . "1") dots (a . _ . "n")))と略記することがある。}
+      @list-item{@(math (d-fun-type (x . elem-of . A) ""))の結合は弱い。例えば、@(math (d-fun-type (x . elem-of . A) (d-fun-type (y . elem-of . B) (C . fun-type . D))))は@(math (d-fun-type (x . elem-of . A) (paren (d-fun-type (y . elem-of . B) (paren (C . fun-type . D))))))と読む。}
     ]
   }
 ]

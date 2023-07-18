@@ -4,13 +4,25 @@
          "lib/math.rkt"
          "lib/math/id.rkt")
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define f "f")
+(define a "a")
+(define a1 (a . _ . "1"))
+(define a2 (a . _ . "2"))
+(define a3 (a . _ . "3"))
+(define p "p")
+(define p1 (p . _ . "1"))
+(define p2 (p . _ . "2"))
+
 @example[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型、@($ ("f" . elem-of . ("A" . fun-type . "B")))を関数とする。
+    @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型、@(math (f . elem-of . (A . fun-type . B)))を関数とする。
     @ordered-list[
-      @list-item{要素@($ (("a" . _ . "1") . elem-of . "A"))と@($ (("a" . _ . "2") . elem-of . "A"))と@($ (("a" . _ . "3") . elem-of . "A"))と同一視@($ (("p" . _ . "1") . elem-of . (("a" . _ . "1") . id-type . ("a" . _ . "2"))))と@($ (("p" . _ . "2") . elem-of . (("a" . _ . "2") . id-type . ("a" . _ . "3"))))に対して、同一視@($ ((fun-apply-id-comp (seq "f" ("p" . _ . "2") ("p" . _ . "1"))) . elem-of . ((fun-apply-id (seq "f" (("p" . _ . "2") . id-comp . ("p" . _ . "1")))) . id-type . ((fun-apply-id (seq "f" ("p" . _ . "2"))) . id-comp . (fun-apply-id "f" ("p" . _ . "1"))))))を構成できる。実際、@($ ((fun-apply-id-comp (seq "f" ("p" . _ . "2") (refl ("a" . _ . "1")))) . def-eq . (refl (fun-apply-id (seq "f" ("p" . _ . "2"))))))と定義すればよい。}
-      @list-item{要素@($ (("a" . _ . "1") . elem-of . "A"))と@($ (("a" . _ . "2") . elem-of . "A"))と同一視@($ ("p" . elem-of . (("a" . _ . "1") . id-type . ("a" . _ . "2"))))に対して、同一視@($ ((fun-apply-id-inv (seq "f" "p")) . elem-of . ((fun-apply-id (seq "f" @id-inv{p})) . id-type . (id-inv (fun-apply-id (seq "f" "p"))))))を構成できる。実際、@($ ((fun-apply-id-inv (seq "f" (refl ("a" . _ . "1")))) . def-eq . (refl blank)))と定義すればよい。}
+      @list-item{要素@(math (a1 a2 a3 . elem-of* . A))と同一視@(math (p1 . elem-of . (a1 . id-type . a2)))と@(math (p2 . elem-of . (a2 . id-type . a3)))に対して、同一視@(math ((fun-apply-id-comp . $* . f p2 p1) . elem-of . ((fun-apply-id . $* . f (p2 . id-comp . p1)) . id-type . ((fun-apply-id . $* . f p2) . id-comp . (fun-apply-id . $* . f p1)))))を構成できる。実際、@(math ((fun-apply-id-comp . $* . f p2 refl) . def-eq . refl))と定義すればよい。}
+      @list-item{要素@(math  (a1 a2 . elem-of* . A))と同一視@(math (p . elem-of . (a1 . id-type . a2)))に対して、同一視@(math ((fun-apply-id-inv . $* . f p) . elem-of . ((fun-apply-id . $* . f (id-inv p)) . id-type . (id-inv (fun-apply-id . $* . f p)))))を構成できる。実際、@(math ((fun-apply-id-inv . $* . f refl) . def-eq . refl))と定義すればよい。}
     ]
   }
 ]

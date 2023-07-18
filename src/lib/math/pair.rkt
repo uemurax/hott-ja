@@ -1,7 +1,7 @@
 #lang typed/racket
 
 (require morg/math
-         "util.rkt")
+         "core.rkt")
 
 (provide curry
          uncurry
@@ -12,24 +12,16 @@
          fun-pair-dist
          fun-pair-dist-inv)
 
-(define curry/symb (const "curry"))
-(define curry (make-fun curry/symb))
+(define curry (const "curry"))
 
-(define uncurry/symb (const "uncurry"))
-(define uncurry (make-fun uncurry/symb))
+(define uncurry (const "uncurry"))
 
-(define pair-assoc/symb (const "assoc"))
-(define pair-assoc (make-fun pair-assoc/symb))
-(define pair-assoc-inv/symb (pair-assoc/symb . ^ . "-1"))
-(define pair-assoc-inv (make-fun pair-assoc-inv/symb))
+(define pair-assoc (const "assoc"))
+(define pair-assoc-inv (pair-assoc . ^ . "-1"))
 
-(define pair-sym/symb (const "sym"))
-(define pair-sym (make-fun pair-sym/symb))
+(define pair-sym (const "sym"))
 
-(define fun-pair-dist/symb (const "dist"))
-(define fun-pair-dist (make-fun fun-pair-dist/symb))
-(define fun-pair-dist-inv/symb (fun-pair-dist/symb . ^ . "-1"))
-(define fun-pair-dist-inv (make-fun fun-pair-dist-inv/symb))
+(define fun-pair-dist (const "dist"))
+(define fun-pair-dist-inv (fun-pair-dist . ^ . "-1"))
 
-(define diagonal/symb (const "diag"))
-(define diagonal (make-fun diagonal/symb))
+(define diagonal (const "diag"))

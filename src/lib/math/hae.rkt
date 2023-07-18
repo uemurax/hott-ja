@@ -1,6 +1,6 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "core.rkt")
 
 (provide is-hae:coh
          is-hae:inv
@@ -10,8 +10,7 @@
 
 (define is-hae:coh (const "coh"))
 
-(define is-hae/symb (const "IsHAE"))
-(define is-hae (make-fun is-hae/symb))
+(define is-hae (const "IsHAE"))
 (define is-hae:inv (const "inv"))
 (define is-hae:unit (const "unit"))
 (define is-hae:counit (const "counit"))

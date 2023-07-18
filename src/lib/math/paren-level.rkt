@@ -20,6 +20,7 @@
    big-op
    subst-arrow
    def-eq
+   weak-comma
    :
    comma
    semicolon

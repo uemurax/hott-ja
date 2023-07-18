@@ -1,6 +1,6 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "core.rkt")
 
 (provide ackermann)
 

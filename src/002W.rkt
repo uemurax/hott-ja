@@ -4,9 +4,15 @@
          "lib/math.rkt"
          "lib/math/nat.rkt")
 
+(define n "n")
+(define n1 (n . _ . "1"))
+(define n2 (n . _ . "2"))
+(define x "x")
+(define y "y")
+
 @example[
   #:id (current-id)
   @paragraph{
-    @($ (("n" . _ . "1") . elem-of . nat))と@($ (("n" . _ . "2") . elem-of . nat))を要素とする。要素@($ ((nat:plus (seq ("n" . _ . "1") ("n" . _ . "2"))) . elem-of . nat))を構成する。自然数の帰納法を使い、@($ ((nat:plus (seq nat:zero ("n" . _ . "2"))) . def-eq . ("n" . _ . "2")))と@($ ((nat:plus (seq (nat:succ ("n" . _ . "1") ) ("n" . _ . "2"))) . def-eq . (nat:succ (nat:plus (seq ("n" . _ . "1") ("n" . _ . "2"))))))と定義する。形式的には@($ ((nat:plus (seq ("n" . _ . "1") ("n" . _ . "2"))) . def-eq . (nat:ind (seq ("n" . _ . "1") (abs "x" nat) ("n" . _ . "2") (abs (seq "x" "y") @nat:succ{y})))))と定義できる。
+    @(math (n1 n2 . elem-of* . nat))を要素とする。要素@(math ((nat:plus . $* . n1 n2) . elem-of . nat))を構成する。自然数の帰納法を使い、@(math ((nat:plus . $* . nat:zero n2) . def-eq . n2))と@(math ((nat:plus . $* . (nat:succ . $ . n1) n2) . def-eq . (nat:succ . $ . (nat:plus . $* . n1 n2))))と定義する。形式的には@(math ((nat:plus . $* . n1 n2) . def-eq . (nat:ind . $* . n1 (abs x nat) n2 (abs* x y (nat:succ . $ . y)))))と定義できる。
   }
 ]

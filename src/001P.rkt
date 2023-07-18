@@ -3,9 +3,15 @@
 (require "lib/markup/definition.rkt"
          "lib/math.rkt")
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define f "f")
+(define b "b")
+
 @definition[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型、@($ ("f" . elem-of . ("A" . fun-type . "B")))を関数、@($ ("b" . elem-of . "B"))を要素とする。型@($ ((fiber (seq "f" "b")) . elem-of . @universe{i}))を@($ (record-type (seq (fiber:elem . elem-of . "A") (fiber:id . elem-of . (("f" . fun-apply . fiber:elem) . id-type . "b")))))と定義する。
+    @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型、@(math (f . elem-of . (A . fun-type . B)))を関数、@(math (b . elem-of . B))を要素とする。型@(math ((fiber . $* . f b) . elem-of . (universe . $ . i)))を@(math (record-type (list fiber:elem A) (list fiber:id ((f . $ . fiber:elem) . id-type . b))))と定義する。
   }
 ]

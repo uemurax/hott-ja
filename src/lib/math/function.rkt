@@ -1,8 +1,7 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "core.rkt")
 
 (provide swap)
 
-(define swap/symb (const "swap"))
-(define swap (make-fun swap/symb))
+(define swap (const "swap"))
