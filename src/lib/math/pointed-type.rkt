@@ -1,6 +1,7 @@
 #lang typed/racket
 
 (require morg/math
+         (prefix-in tex: morg/math/tex)
          "util.rkt"
          "core/universe.rkt")
 
@@ -9,7 +10,7 @@
          pointed-type:point)
 
 (define pointed-type/symb
-  (universe/symb . _ . (macro "bullet")))
+  (universe/symb . _ . tex:bullet))
 (define pointed-type (make-fun pointed-type/symb))
 (define pointed-type:carrier carrier/symb)
 (define pointed-type:point (const "point"))

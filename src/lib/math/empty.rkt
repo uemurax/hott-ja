@@ -1,14 +1,13 @@
 #lang at-exp typed/racket
 
 (require morg/math
+         (prefix-in tex: morg/math/tex)
          "util.rkt")
 
 (provide empty-type
          empty-type:ind)
 
-(define mathbf (macro-1 "mathbf"))
-
-(define empty-type @mathbf{0})
+(define empty-type @tex:mathbf{0})
 
 (define empty-type:ind/symb
   ((const "ind") . _ . empty-type))

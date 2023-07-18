@@ -1,6 +1,7 @@
 #lang at-exp typed/racket
 
 (require morg/math
+         (prefix-in tex: morg/math/tex)
          "util.rkt"
          "core/universe.rkt")
 
@@ -12,8 +13,8 @@
 
 (define name-of
   (delimiter
-   #:left (macro "lceil")
-   #:right (macro "rceil")))
+   #:left tex:lceil
+   #:right tex:rceil))
 
 (define universe:el/symb @const{El})
 (define universe:el (make-fun universe:el/symb))

@@ -2,6 +2,7 @@
 
 (require morg/math
          morg
+         (prefix-in tex: morg/math/tex)
          "core/function.rkt")
 
 (provide make-fun
@@ -12,6 +13,6 @@
   (fun-apply f (apply % xs)))
 
 (define const
-  ((macro-1 "mathord") . compose . ((macro-1 "textnormal") . compose . (macro-1 "textsf"))))
+  (tex:mathord . compose . (tex:textnormal . compose . tex:textsf)))
 
 (define carrier/symb (const "Carrier"))

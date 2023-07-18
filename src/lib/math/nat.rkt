@@ -1,6 +1,7 @@
 #lang at-exp typed/racket
 
 (require morg/math
+         (prefix-in tex: "tex.rkt")
          "util.rkt")
 
 (provide nat
@@ -12,9 +13,7 @@
          nat:ind
          nat:ind/symb)
 
-(define mathbb (macro-1 "mathbb"))
-
-(define nat @mathbb{N})
+(define nat @tex:mathbb{N})
 (define nat:zero "0")
 (define nat:succ/symb (const "succ"))
 (define nat:succ (make-fun nat:succ/symb))

@@ -2,6 +2,7 @@
 
 (require "util.rkt"
          (prefix-in l: "paren-level.rkt")
+         (prefix-in tex: morg/math/tex)
          morg
          morg/math)
 
@@ -31,7 +32,7 @@
 (define presheaf (make-fun presheaf/symb))
 (define presheaf:carrier (const "Carrier"))
 (define presheaf:act (const "act"))
-(define presheaf:act-bin/symb (macro "cdot"))
+(define presheaf:act-bin/symb tex:cdot)
 (define presheaf:act-bin
   (binary #:level l:comp presheaf:act-bin/symb
           #:assoc 'left))
@@ -42,6 +43,6 @@
 (define presheaf-cat (make-fun presheaf-cat/symb))
 (define id-presheaf-hom/symb (const "id"))
 (define id-presheaf-hom (make-fun id-presheaf-hom/symb))
-(define presheaf-hom-comp/symb (macro "circ"))
+(define presheaf-hom-comp/symb tex:circ)
 (define presheaf-hom-comp
   (monoid #:level l:comp id-presheaf-hom/symb presheaf-hom-comp/symb))

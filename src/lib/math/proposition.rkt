@@ -1,6 +1,7 @@
 #lang typed/racket
 
 (require morg/math
+         (prefix-in tex: morg/math/tex)
          "util.rkt")
 
 (provide is-prop
@@ -10,6 +11,6 @@
 (define is-prop (make-fun is-prop/symb))
 
 (define (prop-compr [A : MathTeX+Like] [P : MathTeX+Like])
-  ((delimiter #:left (macro "lbrace")
-              #:right (macro "rbrace"))
-   A (macro "mid") P))
+  ((delimiter #:left tex:lbrace
+              #:right tex:rbrace)
+   A tex:mid P))

@@ -1,6 +1,7 @@
 #lang typed/racket
 
 (require morg/math
+         (prefix-in tex: morg/math/tex)
          (prefix-in l: "paren-level.rkt"))
 
 (provide logic-false
@@ -13,29 +14,29 @@
          exists
          logic-neg)
 
-(define logic-false (macro "bot"))
-(define logic-true (macro "top"))
+(define logic-false tex:bot)
+(define logic-true tex:top)
 
 (define logic-or
-  (monoid #:level l:binary logic-false (macro "lor")))
+  (monoid #:level l:binary logic-false tex:lor))
 
 (define logic-and
-  (monoid #:level l:binary logic-true (macro "land")))
+  (monoid #:level l:binary logic-true tex:land))
 
 (define logic-impl
   (binary #:level l:logic-impl #:assoc 'right
-          (macro "Rightarrow")))
+          tex:Rightarrow))
 
 (define logic-equiv
-  (binary #:level l:binary (macro "Leftrightarrow")))
+  (binary #:level l:binary tex:Leftrightarrow))
 
 (define logic-neg
-  (unary #:level l:unary (macro "neg")))
+  (unary #:level l:unary tex:neg))
 
 (define (forall [x : MathTeX+Like] [P : MathTeX+Like])
-  ((big-op #:level l:big-op (macro "forall"))
+  ((big-op #:level l:big-op tex:forall)
    #:_ x P))
 
 (define (exists [x : MathTeX+Like] [P : MathTeX+Like])
-  ((big-op #:level l:big-op (macro "exists"))
+  ((big-op #:level l:big-op tex:exists)
    #:_ x P))

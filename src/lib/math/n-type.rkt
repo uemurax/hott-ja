@@ -1,6 +1,7 @@
 #lang typed/racket
 
 (require morg/math
+         (prefix-in tex: morg/math/tex)
          "core/function.rkt"
          "util.rkt")
 
@@ -28,10 +29,9 @@
 (define is-trunc-map/symb (const "IsTruncMap"))
 (define is-trunc-map (make-fun is-trunc-map/symb))
 
-(define mathord (macro-1 "mathord"))
 (define (trunc-type/symb [n : MathTeX+Like])
-  (mathord (macro "langle") n (macro "rangle")
-           (const "-Type")))
+  (tex:mathord tex:langle n tex:rangle
+               (const "-Type")))
 (define (trunc-type [n : MathTeX+Like] [i : MathTeX+Like])
   ((trunc-type/symb n) . fun-apply . i))
 (define trunc-type:type (const "Type"))

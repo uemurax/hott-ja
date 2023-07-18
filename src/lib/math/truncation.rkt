@@ -1,6 +1,7 @@
 #lang typed/racket
 
 (require morg/math
+         (prefix-in tex: morg/math/tex)
          "util.rkt")
 
 (provide trunc
@@ -9,8 +10,8 @@
 
 (define (trunc [n : MathTeX+Like] [A : MathTeX+Like])
   ((group
-    ((delimiter #:left (macro "|")
-                #:right (macro "|"))
+    ((delimiter #:left tex:\|
+                #:right tex:\|)
      A))
    . _ . n))
 
