@@ -1,6 +1,6 @@
 #lang at-exp typed/racket
 
-(require "util.rkt"
+(require "core.rkt"
          (prefix-in l: "paren-level.rkt")
          (prefix-in tex: morg/math/tex)
          morg
@@ -20,29 +20,21 @@
          is-repr-psh:elem
          is-repr-psh)
 
-(define yoneda/symb (const "よ"))
-(define yoneda (make-fun yoneda/symb))
-(define yoneda-gen/symb (const "gen"))
-(define yoneda-gen (make-fun yoneda-gen/symb))
-(define is-repr-psh/symb (const "IsRepr"))
-(define is-repr-psh (make-fun is-repr-psh/symb))
+(define yoneda (const "よ"))
+(define yoneda-gen (const "gen"))
+(define is-repr-psh (const "IsRepr"))
 (define is-repr-psh:obj (const "obj"))
 (define is-repr-psh:elem (const "elem"))
-(define presheaf/symb (const "Psh"))
-(define presheaf (make-fun presheaf/symb))
+(define presheaf (const "Psh"))
 (define presheaf:carrier (const "Carrier"))
 (define presheaf:act (const "act"))
 (define presheaf:act-bin/symb tex:cdot)
 (define presheaf:act-bin
   (binary #:level l:comp presheaf:act-bin/symb
           #:assoc 'left))
-(define presheaf-hom/symb (const "Hom"))
-(define presheaf-hom (make-fun presheaf-hom/symb))
-(define presheaf-cat/symb
-  (presheaf/symb . ^ . @%{(@(const "Cat"))}))
-(define presheaf-cat (make-fun presheaf-cat/symb))
-(define id-presheaf-hom/symb (const "id"))
-(define id-presheaf-hom (make-fun id-presheaf-hom/symb))
+(define presheaf-hom (const "Hom"))
+(define presheaf-cat (presheaf . ^ . @%{(@(const "Cat"))}))
+(define id-presheaf-hom (const "id"))
 (define presheaf-hom-comp/symb tex:circ)
 (define presheaf-hom-comp
-  (monoid #:level l:comp id-presheaf-hom/symb presheaf-hom-comp/symb))
+  (monoid #:level l:comp id-presheaf-hom presheaf-hom-comp/symb))

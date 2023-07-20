@@ -5,13 +5,18 @@
          "lib/math.rkt"
          "lib/math/cat.rkt")
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define f "f")
+
 @lemma[
   #:id (current-id)
   @paragraph{
-    関数外延性を仮定する。@${i}を階数、@($ ("A" . elem-of . @set-cat{i}))と@($ ("B" . elem-of . @set-cat{i}))を対象、@($ ("f" . elem-of . (cat:map . fun-apply . (seq "A" "B"))))を射とする。次は論理的に同値である。
+    関数外延性を仮定する。@(math i)を階数、@(math (A B . elem-of* . (set-cat . $ . i)))を対象、@(math (f . elem-of . (cat:map . $* . A B)))を射とする。次は論理的に同値である。
     @ordered-list[
-      @list-item[#:id "0000"]{@${f}は@${@set-cat{i}}の射として同型である。}
-      @list-item[#:id "0001"]{@${f}は関数として同値である。}
+      @list-item[#:id "0000"]{@(math f)は@(math (set-cat . $ . i))の射として同型である。}
+      @list-item[#:id "0001"]{@(math f)は関数として同値である。}
     ]
   }
   #:proof @proof[

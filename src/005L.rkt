@@ -5,13 +5,22 @@
          "lib/math/cat.rkt"
          "lib/math/functor.rkt")
 
+(define i "i")
+(define C "C")
+(define D "D")
+(define F "F")
+(define x "x")
+(define x1 (x . _ . "1"))
+(define x2 (x . _ . "2"))
+(define f "f")
+
 @notation[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("C" . elem-of . @precat{i}))と@($ ("D" . elem-of . @precat{i}))を前圏、@($ ("F" . elem-of . (functor (seq "C" "D"))))を関手とする。
+    @(math i)を階数、@(math (C D . elem-of* . (precat . $ . i)))を前圏、@(math (F . elem-of . (functor . $* . C D)))を関手とする。
     @unordered-list[
-      @list-item{対象@($ ("x" . elem-of . "C"))に対して、@($ ((("F" . record-field . functor:obj) . fun-apply . "x") . elem-of . "D"))の代わりに単に@($ ("F" . fun-apply . "x"))と書く。}
-      @list-item{対象@($ (("x" . _ . "1") . elem-of . "C"))と@($ (("x" . _ . "2") . elem-of . "C"))と射@($ ("f" . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2")))))に対して、@($ ((("F" . record-field . functor:map) . fun-apply . "f") . elem-of . (cat:map . fun-apply . (seq ("F" . fun-apply . ("x" . _ . "1")) ("F" . fun-apply . ("x" . _ . "2"))))))の代わりに単に@($ ("F" . fun-apply . "f"))と書く。}
+      @list-item{対象@(math (x . elem-of . C))に対して、@(math (((F . record-field . functor:obj) . $ . x) . elem-of . D))の代わりに単に@(math (F . $ . x))と書く。}
+      @list-item{対象@(math (x1 x2 . elem-of* . C))と射@(math (f . elem-of . (cat:map . $* . x1 x2)))に対して、@(math (((F . record-field . functor:map) . $ . f) . elem-of . (cat:map . $* . (F . $ . x1) (F . $ . x2))))の代わりに単に@(math (F . $ . f))と書く。}
     ]
   }
 ]

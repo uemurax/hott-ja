@@ -7,13 +7,18 @@
          "lib/math/functor.rkt"
          "lib/math/proposition.rkt")
 
+(define i "i")
+(define C "C")
+(define D "D")
+(define F "F")
+
 @corollary[
   #:id (current-id)
   #:title @%{圏の構造同一原理}
   @paragraph{
-    一価性と関数外延性を仮定する。@${i}を階数、@($ ("C" . elem-of . @cat{i}))と@($ ("D" . elem-of . @cat{i}))を圏とすると、同値
+    一価性と関数外延性を仮定する。@(math i)を階数、@(math (C D . elem-of* . (cat . $ . i)))を圏とすると、同値
     @disp{
-      @($ (("C" . id-type . "D") . equiv . (prop-compr ("F" . elem-of . (functor (seq "C" "D"))) (is-weak-cat-equiv "F"))))
+      @(math ((C . id-type . D) . equiv . (prop-compr (F . elem-of . (functor . $* . C D)) (is-weak-cat-equiv . $ . F))))
     }
     を得る。
   }

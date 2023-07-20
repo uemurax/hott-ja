@@ -8,20 +8,31 @@
          "lib/math/logic.rkt"
          "lib/math/set.rkt")
 
+(define i "i")
+(define C "C")
+(define x "x")
+(define x1 (x . _ . "1"))
+(define x2 (x . _ . "2"))
+(define x3 (x . _ . "3"))
+(define a "a")
+(define f "f")
+(define f1 (f . _ . "1"))
+(define f2 (f . _ . "2"))
+
 @definition[
   #:id (current-id)
   #:indexes @list[
     @index[#:key "ぜんそう"]{前層}
   ]
   @paragraph{
-    @${i}を階数、@($ ("C" . elem-of . @precat{i}))を前圏とする。型@($ (@presheaf{C} . elem-of . @universe{@level:succ{i}}))を次のレコード型と定義する。
+    @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏とする。型@(math ((presheaf . $ . C) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。
     @unordered-list[
-      @list-item{@($ (presheaf:carrier . elem-of . (("C" . record-field . cat:obj) . fun-type . @universe{i})))}
-      @list-item{@($ (presheaf:act . elem-of . (d-fun-type (implicit (seq ("x" . _ . "1") ("x" . _ . "2"))) ((presheaf:carrier . fun-apply . ("x" . _ . "2")) . fun-type . ((cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2"))) . fun-type . (presheaf:carrier . fun-apply . ("x" . _ . "1")))))))}
-      @list-item{@($ (blank . elem-of . (forall ("x" . elem-of . "C") (is-set (presheaf:carrier . fun-apply . "x")))))}
-      @list-item{@($ (blank . elem-of . (forall ("x" . elem-of . "C") (forall ("a" . elem-of . (presheaf:carrier . fun-apply . "x")) ((presheaf:act . fun-apply . (seq "a" (cat:id . fun-apply . "x"))) . id-type . "a")))))}
-      @list-item{@($ (blank . elem-of . (forall (seq ("x" . _ . "1") ("x" . _ . "2") ("x" . _ . "3")) (forall (("f" . _ . "1") . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2")))) (forall (("f" . _ . "2") . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "2") ("x" . _ . "3")))) (forall ("a" . elem-of . (presheaf:carrier . fun-apply . ("x" . _ . "3"))) ((presheaf:act . fun-apply . (seq "a" (("f" . _ . "2") . cat:comp-bin . ("f" . _ . "1")))) . id-type . (presheaf:act . fun-apply . (seq (presheaf:act . fun-apply . (seq "a" ("f" . _ . "2"))) ("f" . _ . "1"))))))))))}
+      @list-item{@(math (presheaf:carrier . elem-of . ((C . record-field . cat:obj) . fun-type . (universe . $ . i))))}
+      @list-item{@(math (presheaf:act . elem-of . (d-fun-type (implicit (x1 x2 . elem-of* . C)) ((presheaf:carrier . $ . x2) . fun-type . ((cat:map . $* . x1 x2) . fun-type . (presheaf:carrier . $ . x1))))))}
+      @list-item{@(math (blank . elem-of . (forall (x . elem-of . C) (is-set . $ . (presheaf:carrier . $ . x)))))}
+      @list-item{@(math (blank . elem-of . (forall (x . elem-of . C) (forall (a . elem-of . (presheaf:carrier . $ . x)) ((presheaf:act . $* . a cat:id) . id-type . a)))))}
+      @list-item{@(math (blank . elem-of . (forall (x1 x2 x3 . elem-of* . C) (forall (f1 . elem-of . (cat:map . $* . x1 x2)) (forall (f2 . elem-of . (cat:map . $* . x2 x3)) (forall (a . elem-of . (presheaf:carrier . $ . x3)) ((presheaf:act . $* . a (f2 . cat:comp-bin . f1)) . id-type . (presheaf:act . $* . (presheaf:act . $* . a f2) f1))))))))}
     ]
-    @${@presheaf{C}}の要素を@${C}上の@dfn{前層(presheaf)}と呼ぶ。
+    @(math (presheaf . $ . C))の要素を@(math C)上の@dfn{前層(presheaf)}と呼ぶ。
   }
 ]

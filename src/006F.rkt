@@ -5,13 +5,22 @@
          "lib/math/cat.rkt"
          "lib/math/presheaf.rkt")
 
+(define i "i")
+(define C "C")
+(define A "A")
+(define x "x")
+(define x1 (x . _ . "1"))
+(define x2 (x . _ . "2"))
+(define f "f")
+(define a "a")
+
 @notation[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("C" . elem-of . @precat{i}))を前圏、@($ ("A" . elem-of . @presheaf{C}))を前層とする。
+    @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏、@(math (A . elem-of . (presheaf . $ . C)))を前層とする。
     @unordered-list[
-      @list-item{対象@($ ("x" . elem-of . "C"))に対して、@($ (("A" . record-field . presheaf:carrier) . fun-apply . "x"))の代わりに単に@($ ("A" . fun-apply . "x"))と書く。}
-      @list-item{対象@($ (("x" . _ . "1") . elem-of . "C"))と@($ (("x" . _ . "2") . elem-of . "C"))と射@($ ("f" . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2")))))と要素@($ ("a" . elem-of . ("A" . fun-apply . ("x" . _ . "2"))))に対して、要素@($ (("a" . presheaf:act-bin . "f") . elem-of . ("A" . fun-apply . ("x" . _ . "1"))))を@($ (("A" . record-field . presheaf:act) . fun-apply . (seq "a" "f")))と定義する。}
+      @list-item{対象@(math (x . elem-of . C))に対して、@(math ((A . record-field . presheaf:carrier) . $ . x))の代わりに単に@(math (A . $ . x))と書く。}
+      @list-item{対象@(math (x1 x2 . elem-of* . C))と射@(math (f . elem-of . (cat:map . $* . x1 x2)))と要素@(math (a . elem-of . (A . $ . x2)))に対して、要素@(math ((a . presheaf:act-bin . f) . elem-of . (A . $ . x1)))を@(math ((A . record-field . presheaf:act) . $* . a f))と定義する。}
     ]
   }
 ]

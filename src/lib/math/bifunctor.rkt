@@ -2,7 +2,7 @@
 
 (require morg/math
          (prefix-in l: "paren-level.rkt")
-         "util.rkt")
+         "core.rkt")
 
 (provide bifunctor
          bifunctor:obj
@@ -12,7 +12,8 @@
 (define bifunctor/symb (const "BiFun"))
 
 (define (bifunctor [C1 : MathTeX+Like] [C2 : MathTeX+Like] [D : MathTeX+Like])
-  ((make-fun bifunctor/symb)
+  (bifunctor/symb
+   . $ .
    ((C1 . (binary #:level l:comma ",") . C2)
     . (binary #:level l:semicolon ";") .
     D)))

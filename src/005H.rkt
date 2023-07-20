@@ -5,14 +5,21 @@
          "lib/math.rkt"
          "lib/math/cat.rkt")
 
+(define i "i")
+(define C "C")
+(define x "x")
+(define x1 (x . _ . "1"))
+(define x2 (x . _ . "2"))
+(define f "f")
+
 @proposition[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("C" . elem-of . @precat{i}))を前圏、@($ (("x" . _ . "1") . elem-of . "C"))と@($ (("x" . _ . "2") . elem-of . "C"))を対象、@($ ("f" . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2")))))を射とすると、型@${@cat:is-iso{f}}は命題である。
+    @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏、@(math (x1 x2 . elem-of* . C))を対象、@(math (f . elem-of . (cat:map . $* . x1 x2)))を射とすると、型@(math (cat:is-iso . $ . f))は命題である。
   }
   #:proof @proof[
     @paragraph{
-      @ref["0041"]より、@${f}が同型であると仮定して@${@cat:is-iso{f}}が可縮であることを示せばよいが、これは@ref["005G"]からすぐに従う。
+      @ref["0041"]より、@(math f)が同型であると仮定して@(math (cat:is-iso . $ . f))が可縮であることを示せばよいが、これは@ref["005G"]からすぐに従う。
     }
   ]
 ]

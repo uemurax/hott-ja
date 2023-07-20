@@ -1,8 +1,7 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "core.rkt")
 
 (provide is-set)
 
-(define is-set/symb (const "IsSet"))
-(define is-set (make-fun is-set/symb))
+(define is-set (const "IsSet"))

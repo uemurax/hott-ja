@@ -9,18 +9,33 @@
          "lib/math/logic.rkt"
          "lib/math/proposition.rkt")
 
+(define i "i")
+(define C "C")
+(define D "D")
+(define F "F")
+(define G "G")
+(define G0 (G . _ . "0"))
+(define G1 (G . _ . "1"))
+(define t "t")
+(define x "x")
+(define x1 (x . _ . "1"))
+(define x2 (x . _ . "2"))
+(define y "y")
+(define f "f")
+(define g "g")
+
 @proposition[
   #:id (current-id)
   @paragraph{
-    関数外延性を仮定する。@${i}を階数、@($ ("C" . elem-of . @precat{i}))と@($ ("D" . elem-of . @precat{i}))を前圏とする。@${D}が圏ならば、@($ (functor-cat (seq "C" "D")))は圏である。
+    関数外延性を仮定する。@(math i)を階数、@(math (C D . elem-of* . (precat . $ . i)))を前圏とする。@(math D)が圏ならば、@(math (functor-cat . $* . C D))は圏である。
   }
   #:proof @proof[
     @paragraph{
-      @($ ("F" . elem-of . (functor-cat (seq "C" "D"))))を対象とする。@ref["006A"]よりレトラクト@($ ((d-pair-type ("G" . elem-of . (functor-cat (seq "C" "D"))) ("F" . cat:iso . "G")) . retract-rel . (d-pair-type ("G" . elem-of . (functor (seq "C" "D"))) (prop-compr ("t" . elem-of . (nat-trans (seq "F" "G"))) (forall ("x" . elem-of . "C") (cat:is-iso ("t" . fun-apply . "x")))))))を得る。後者が可縮であることを示すには、@ref["006B"]より
+      @(math (F . elem-of . (functor-cat . $* . C D)))を対象とする。@ref["006A"]よりレトラクト@(math ((d-pair-type (G . elem-of . (functor-cat . $* . C D)) (F . cat:iso . G)) . retract-rel . (d-pair-type (G . elem-of . (functor . $* . C D)) (prop-compr (t . elem-of . (nat-trans . $* . F G)) (forall (x . elem-of . C) (cat:is-iso . $ . (t . $ . x)))))))を得る。後者が可縮であることを示すには、@ref["006B"]より
       @disp{
-        @($ (d-pair-type (("G" . _ . "0") . elem-of . (("C" . record-field . cat:obj) . fun-type . ("D" . record-field . cat:obj))) (d-pair-type (("G" . _ . "1") . elem-of . (d-fun-type (implicit (seq ("x" . _ . "1") ("x" . _ . "2"))) ((cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2"))) . fun-type . (cat:map . fun-apply . (seq (("G" . _ . "0") . fun-apply . ("x" . _ . "1")) (("G" . _ . "0") . fun-apply . ("x" . _ . "2"))))))) (prop-compr ("t" . elem-of . (d-fun-type ("x" . elem-of . "C") (("F" . fun-apply . "x") . cat:iso . (("G" . _ . "0") . fun-apply . "x")))) (forall (seq ("x" . _ . "1") ("x" . _ . "2")) (forall ("f" . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2")))) (((("G" . _ . "1") . fun-apply . "f") . cat:comp-bin . ("t" . fun-apply . ("x" . _ . "1"))) . id-type . (("t" . fun-apply . ("x" . _ . "2")) . cat:comp-bin . ("F" . fun-apply . "f")))))))))
+        @(math (d-pair-type (G0 . elem-of . ((C . record-field . cat:obj) . fun-type . (D . record-field . cat:obj))) (d-pair-type (G1 . elem-of . (d-fun-type (implicit (x1 x2 . elem-of* . C)) ((cat:map . $* . x1 x2) . fun-type . (cat:map . $* . (G0 . $ . x1) (G0 . $ . x2))))) (prop-compr (t . elem-of . (d-fun-type (x . elem-of . C) ((F . $ . x) . cat:iso . (G0 . $ . x)))) (forall (x1 x2 . elem-of* . C) (forall (f . elem-of . (cat:map . $* . x1 x2)) (((G1 . $ . f) . cat:comp-bin . (t . $ . x1)) . id-type . ((t . $ . x2) . cat:comp-bin . (F . $ . f)))))))))
       }
-      が可縮であることを示せばよい。@($ (d-pair-type (("G" . _ . "0") . elem-of . (("C" . record-field . cat:obj) . fun-type . ("D" . record-field . cat:obj))) (d-fun-type ("x" . elem-of . "C") (("F" . fun-apply . "x") . cat:iso . (("G" . _ . "0") . fun-apply . "x")))))の部分は@($ (d-fun-type ("x" . elem-of . "C") (d-pair-type ("y" . elem-of . "D") (("F" . fun-apply . "x") . cat:iso . "y"))))のレトラクトなので、@ref["0029"]と@${D}が圏であるという仮定から可縮である。よって、件の型は@($ (prop-compr (("G" . _ . "1") . elem-of . (d-fun-type (implicit (seq ("x" . _ . "1") ("x" . _ . "2"))) ((cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2"))) . fun-type . (cat:map . fun-apply . (seq ("F" . fun-apply . ("x" . _ . "1")) ("F" . fun-apply . ("x" . _ . "2"))))))) (forall (seq ("x" . _ . "1") ("x" . _ . "2")) (forall ("f" . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2")))) (((("G" . _ . "1") . fun-apply . "f") . cat:comp-bin . (cat:id . fun-apply . ("x" . _ . "1"))) . id-type . ((cat:id . fun-apply . ("x" . _ . "2")) . cat:comp-bin . ("F" . fun-apply . "f")))))))のレトラクトである。この型はさらに@($ (d-fun-type (seq ("x" . _ . "1") ("x" . _ . "2")) (d-fun-type ("f" . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2")))) (prop-compr ("g" . elem-of . (cat:map . fun-apply . (seq ("F" . fun-apply . ("x" . _ . "1")) ("F" . fun-apply . ("x" . _ . "2"))))) ("g" . id-type . ("F" . fun-apply . "f"))))))のレトラクトであるが、これは@ref["0029"]と@ref["0026"]より可縮である。
+      が可縮であることを示せばよい。@(math (d-pair-type (G0 . elem-of . ((C . record-field . cat:obj) . fun-type . (D . record-field . cat:obj))) (d-fun-type (x . elem-of . C) ((F . $ . x) . cat:iso . (G0 . $ . x)))))の部分は@(math (d-fun-type (x . elem-of . C) (d-pair-type (y . elem-of . D) ((F . $ . x) . cat:iso . y))))のレトラクトなので、@ref["0029"]と@(math D)が圏であるという仮定から可縮である。よって、件の型は@(math (prop-compr (G1 . elem-of . (d-fun-type (implicit (x1 x2 . elem-of* . C)) ((cat:map . $* . x1 x2) . fun-type . (cat:map . $* . (F . $ . x1) (F . $ . x2))))) (forall (x1 x2 . elem-of* . C) (forall (f . elem-of . (cat:map . $* . x1 x2)) (((G1 . $ . f) . cat:comp-bin . cat:id) . id-type . (cat:id . cat:comp-bin . (F . $ . f)))))))のレトラクトである。この型はさらに@(math (d-fun-type (x1 x2 . elem-of* . C) (d-fun-type (f . elem-of . (cat:map . $* . x1 x2)) (prop-compr (g . elem-of . (cat:map . $* . (F . $ . x1) (F . $ . x2))) (g . id-type . (F . $ . f))))))のレトラクトであるが、これは@ref["0029"]と@ref["0026"]より可縮である。
     }
   ]
 ]

@@ -2,13 +2,12 @@
 
 (require morg/math
          (prefix-in tex: morg/math/tex)
-         "util.rkt")
+         "core.rkt")
 
 (provide is-prop
          prop-compr)
 
-(define is-prop/symb (const "IsProp"))
-(define is-prop (make-fun is-prop/symb))
+(define is-prop (const "IsProp"))
 
 (define (prop-compr [A : MathTeX+Like] [P : MathTeX+Like])
   ((delimiter #:left tex:lbrace

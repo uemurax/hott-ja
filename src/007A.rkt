@@ -5,22 +5,32 @@
          "lib/math.rkt"
          "lib/math/funext.rkt")
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define x "x")
+(define z "z")
+(define F "F")
+(define G "G")
+(define f "f")
+(define g "g")
+
 @lemma[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ ("B" . elem-of . ("A" . fun-type . @universe{i})))を型の族とすると、@($ (d-fun-type ("x" . elem-of . "A") ("B" . fun-apply . "x")))は@($ (section-of-proj (seq "A" "B")))のレトラクトである。
+    @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (B . elem-of . (A . fun-type . (universe . $ . i))))を型の族とすると、@(math (d-fun-type (x . elem-of . A) (B . $ . x)))は@(math (section-of-proj . $* . A B))のレトラクトである。
   }
   #:proof @proof[
     @paragraph{
-      関数@($ ("F" . elem-of . ((d-fun-type ("x" . elem-of . "A") ("B" . fun-apply . "x")) . fun-type . (section-of-proj (seq "A" "B")))))を
+      関数@(math (F . elem-of . ((d-fun-type (x . elem-of . A) (B . $ . x)) . fun-type . (section-of-proj . $* . A B))))を
       @disp{
-        @($ (abs "f" (record-elem (seq (fiber:elem . def-eq . (abs "x" (pair (seq "x" ("f" . fun-apply . "x"))))) (fiber:id . def-eq . @refl{@id-fun{A}})))))
+        @(math (abs f (record-elem (list fiber:elem (abs x (pair . $* . x (f . $ . x)))) (list fiber:id refl))))
       }
-      と定義し、関数@($ ("G" . elem-of . ((section-of-proj (seq "A" "B")) . fun-type . (d-fun-type ("x" . elem-of . "A") ("B" . fun-apply . "x")))))を
+      と定義し、関数@(math (G . elem-of . ((section-of-proj . $* . A B) . fun-type . (d-fun-type (x . elem-of . A) (B . $ . x)))))を
       @disp{
-        @($ (abs "z" (abs "x" (transport (seq (abs "g" ("B" . fun-apply . ("g" . fun-apply . "x"))) ("z" . record-field . fiber:id) ((proj 2) (("z" . record-field . fiber:elem) . fun-apply . "x")))))))
+        @(math (abs z (abs x (transport . $* . (abs g (B . $ . (g . $ . x))) (z . record-field . fiber:id) ((proj 2) . $ . ((z . record-field . fiber:elem) . $ . x))))))
       }
-      と定義すると、@($ (("G" . fun-comp . "F") . def-eq . (id-fun blank)))である。
+      と定義すると、@(math ((G . fun-comp . F) . def-eq . id-fun))である。
     }
   ]
 ]

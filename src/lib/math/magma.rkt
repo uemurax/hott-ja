@@ -1,12 +1,11 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "core.rkt")
 
 (provide magma
          magma:carrier
          magma:operator)
 
-(define magma/symb (const "Magma"))
-(define magma (make-fun magma/symb))
-(define magma:carrier carrier/symb)
+(define magma (const "Magma"))
+(define magma:carrier (const "Carrier"))
 (define magma:operator (const "op"))

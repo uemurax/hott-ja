@@ -4,7 +4,7 @@
          morg
          (prefix-in tex: morg/math/tex)
          (prefix-in l: "paren-level.rkt")
-         "util.rkt")
+         "core.rkt")
 
 (provide cat:map
          cat:obj
@@ -36,43 +36,31 @@
 (define cat:iso
   (binary #:level l:relation tex:cong))
 
-(define cat/symb (const "Cat"))
-(define cat (make-fun cat/symb))
+(define cat (const "Cat"))
 
-(define set-cat/symb
-  ((const "Set") . ^ . @%{(@|cat/symb|)}))
+(define set-cat
+  ((const "Set") . ^ . @%{(@|cat|)}))
 
-(define set-cat (make-fun set-cat/symb))
-
-(define precat/symb (const "PreCat"))
-(define precat (make-fun precat/symb))
+(define precat (const "PreCat"))
 
 (define cat:comp-bin
   (monoid #:level l:comp cat:id tex:circ))
 
-(define cat:linv/symb (const "LInv"))
-(define cat:linv (make-fun cat:linv/symb))
+(define cat:linv (const "LInv"))
 (define cat:linv:inv (const "inv"))
 (define cat:linv:id (const "id"))
-(define cat:rinv/symb (const "RInv"))
-(define cat:rinv (make-fun cat:rinv/symb))
+(define cat:rinv (const "RInv"))
 (define cat:rinv:inv (const "inv"))
 (define cat:rinv:id (const "id"))
 
-(define cat:is-iso/symb (const "IsIso"))
-(define cat:is-iso (make-fun cat:is-iso/symb))
+(define cat:is-iso (const "IsIso"))
 (define cat:is-iso:linv (const "linv"))
 (define cat:is-iso:rinv (const "rinv"))
 
-(define is-cat/symb (const "IsCat"))
-(define is-cat (make-fun is-cat/symb))
+(define is-cat (const "IsCat"))
 
-(define is-precat-equiv/symb (const "IsIso"))
-(define is-precat-equiv (make-fun is-precat-equiv/symb))
+(define is-precat-equiv (const "IsIso"))
 
-(define opposite-cat/symb (const "Op"))
-(define opposite-cat (make-fun opposite-cat/symb))
+(define opposite-cat (const "Op"))
 
-(define cat:map/fun/symb
-  (cat:map . ^ . @%{(@(const "Fun"))}))
-(define cat:map/fun (make-fun cat:map/fun/symb))
+(define cat:map/fun (cat:map . ^ . @%{(@(const "Fun"))}))

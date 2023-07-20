@@ -7,16 +7,27 @@
          "lib/math/proposition.rkt"
          "lib/math/logic.rkt")
 
+(define i "i")
+(define C "C")
+(define A "A")
+(define B "B")
+(define h "h")
+(define x "x")
+(define x1 (x . _ . "1"))
+(define x2 (x . _ . "2"))
+(define f "f")
+(define a "a")
+
 @definition[
   #:id (current-id)
   #:indexes @list[
     @index[#:key "ぜんそうのしゃ"]{前層の射}
   ]
   @paragraph{
-    @${i}を階数、@($ ("C" . elem-of . @precat{i}))を前圏、@($ ("A" . elem-of . @presheaf{C}))と@($ ("B" . elem-of . @presheaf{C}))を前層とする。型@($ ((presheaf-hom (seq "A" "B")) . elem-of . @universe{i}))を
+    @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏、@(math (A B . elem-of* . (presheaf . $ . C)))を前層とする。型@(math ((presheaf-hom . $* . A B) . elem-of . (universe . $ . i)))を
     @disp{
-      @($ (prop-compr ("h" . elem-of . (d-fun-type (implicit ("x" . elem-of . "C")) (("A" . fun-apply . "x") . fun-type . ("B" . fun-apply . "x")))) (forall (seq ("x" . _ . "1") ("x" . _ . "2")) (forall ("f" . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2")))) (forall ("a" . elem-of . ("A" . fun-apply . ("x" . _ . "2"))) (("h" . fun-apply . ("a" . presheaf:act-bin . "f")) . id-type . (("h" . fun-apply . "a") . presheaf:act-bin . "f")))))))
+      @(math (prop-compr (h . elem-of . (d-fun-type (implicit (x . elem-of . C)) ((A . $ . x) . fun-type . (B . $ . x)))) (forall (x1 x2 . elem-of* . C) (forall (f . elem-of . (cat:map . $* . x1 x2)) (forall (a . elem-of . (A . $ . x2)) ((h . $ . (a . presheaf:act-bin . f)) . id-type . ((h . $ . a) . presheaf:act-bin . f)))))))
     }
-    と定義する。@($ (presheaf-hom (seq "A" "B")))の要素を@dfn{前層の射(morphism of presheaves)}と呼ぶ。
+    と定義する。@(math (presheaf-hom . $* . A B))の要素を@dfn{前層の射(morphism of presheaves)}と呼ぶ。
   }
 ]

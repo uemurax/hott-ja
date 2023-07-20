@@ -6,27 +6,35 @@
          "lib/math/pointed-type.rkt"
          morg/eq-reasoning)
 
+(define i "i")
+(define A "A")
+(define E "E")
+(define X "X")
+(define Z "Z")
+(define e "e")
+(define x "x")
+
 @example[
   #:id (current-id)
   #:indexes @list[
     @index[#:key "てんつきかた"]{点付き型}
   ]
   @paragraph{
-    @${i}を階数とする。型@($ (@pointed-type{i} . elem-of . @universe{@level:succ{i}}))を次のレコード型と定義する。
+    @(math i)を階数とする。型@(math ((pointed-type . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。
     @unordered-list[
-      @list-item{@($ (pointed-type:carrier . elem-of . @universe{i}))}
-      @list-item{@($ (pointed-type:point . elem-of . pointed-type:carrier))}
+      @list-item{@(math (pointed-type:carrier . elem-of . (universe . $ . i)))}
+      @list-item{@(math (pointed-type:point . elem-of . pointed-type:carrier))}
     ]
-    @${@pointed-type{i}}の要素を(階数@${i}の)@dfn{点付き型(pointed type)}と呼ぶ。@($ ("A" . elem-of . @pointed-type{i}))に対し、@($ ("E" . elem-of . (@pointed-type{i} . fun-type . @universe{i})))を@($ (abs "Z" (d-pair-type ("e" . elem-of . (("A" . record-field . pointed-type:carrier) . equiv . ("Z" . record-field . pointed-type:carrier))) (("e" . fun-apply . ("A" . record-field . pointed-type:point)) . id-type . ("Z" . record-field . pointed-type:point)))))と定義する。要素@($ ((pair (seq (id-fun ("A" . record-field . pointed-type:carrier)) (refl ("A" . record-field . pointed-type:point)))) . elem-of . ("E" . fun-apply . "A")))を得る。レトラクトの列
+    @(math (pointed-type . $ . i))の要素を(階数@(math i)の)@dfn{点付き型(pointed type)}と呼ぶ。@(math (A . elem-of . (pointed-type . $ . i)))に対し、@(math (E . elem-of . ((pointed-type . $ . i) . fun-type . (universe . $ . i))))を@(math (abs Z (d-pair-type (e . elem-of . ((A . record-field . pointed-type:carrier) . equiv . (Z . record-field . pointed-type:carrier))) ((e . $ . (A . record-field . pointed-type:point)) . id-type . (Z . record-field . pointed-type:point)))))と定義する。要素@(math ((pair . $* . id-fun refl) . elem-of . (E . $ . A)))を得る。レトラクトの列
     @disp{
       @eq-reasoning[
-        @($ (d-pair-type ("Z" . elem-of . @pointed-type{i}) ("E" . fun-apply ."Z")))
-        @($ retract-rel/symb) @%{並び換え}
-        @($ (d-pair-type ("X" . elem-of . @universe{i}) (d-pair-type ("e" . elem-of . (("A" . record-field . pointed-type:carrier) . equiv . "X")) (d-pair-type ("x" . elem-of . "X") (("e" . fun-apply . ("A" . record-field . pointed-type:point)) . id-type . "x")))))
-        @($ retract-rel/symb) @%{一価性}
-        @($ (d-pair-type ("x" . elem-of . ("A" . record-field . pointed-type:carrier)) (("A" . record-field . pointed-type:point) . id-type . "x")))
+        @(math (d-pair-type (Z . elem-of . (pointed-type . $ . i)) (E . $ . Z)))
+        @(math retract-rel/symb) @%{並び換え}
+        @(math (d-pair-type (X . elem-of . (universe . $ . i)) (d-pair-type (e . elem-of . ((A . record-field . pointed-type:carrier) . equiv . X)) (d-pair-type (x . elem-of . X) ((e . $ . (A . record-field . pointed-type:point)) . id-type . x)))))
+        @(math retract-rel/symb) @%{一価性}
+        @(math (d-pair-type (x . elem-of . (A . record-field . pointed-type:carrier)) ((A . record-field . pointed-type:point) . id-type . x)))
       ]
     }
-    を得て、最後の型は@ref["001N"]より可縮なので、@($ (d-pair-type ("Z" . elem-of . @pointed-type{i}) ("E" . fun-apply . "Z")))は可縮である。
+    を得て、最後の型は@ref["001N"]より可縮なので、@(math (d-pair-type (Z . elem-of . (pointed-type . $ . i)) (E . $ . Z)))は可縮である。
   }
 ]

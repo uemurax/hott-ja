@@ -5,9 +5,18 @@
          "lib/math/cat.rkt"
          "lib/math/functor.rkt")
 
+(define i "i")
+(define C "C")
+(define D "D")
+(define F "F")
+(define x "x")
+(define x1 (x . _ . "1"))
+(define x2 (x . _ . "2"))
+(define f "f")
+
 @exercise[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("C" . elem-of . @precat{i}))と@($ ("D" . elem-of . @precat{i}))を前圏、@($ ("F" . elem-of . (functor (seq "C" "D"))))を関手、@($ (("x" . _ . "1") . elem-of . "C"))と@($ (("x" . _ . "2") . elem-of . "C"))を対象、@($ ("f" . elem-of . (cat:map . fun-apply . (seq ("x" . _ . "1") ("x" . _ . "2")))))を射とする。@${F}は充満忠実であると仮定する。@($ ("F" . fun-apply . "f"))が同型ならば@${f}は同型であることを示せ。
+    @(math i)を階数、@(math (C D . elem-of* . (precat . $ . i)))を前圏、@(math (F . elem-of . (functor . $* . C D)))を関手、@(math (x1 x2 . elem-of* . C))を対象、@(math (f . elem-of . (cat:map . $* . x1 x2)))を射とする。@(math F)は充満忠実であると仮定する。@(math (F . $ . f))が同型ならば@(math f)は同型であることを示せ。
   }
 ]

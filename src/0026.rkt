@@ -4,14 +4,19 @@
          "lib/markup/proof.rkt"
          "lib/math.rkt")
 
+(define i "i")
+(define A "A")
+(define a "a")
+(define x "x")
+
 @lemma[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型とすると、関数@($ (@id-fun{A} . elem-of . ("A" . fun-type . "A")))は同値である。
+    @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型とすると、関数@(math (id-fun . elem-of . (A . fun-type . A)))は同値である。
   }
   #:proof @proof[
     @paragraph{
-      @($ ("a" . elem-of . "A"))を要素とする。@($ (fiber (seq @id-fun{A} "a")))の定義から、@($ (d-pair-type ("x" . elem-of . "A") ("x" . id-type . "a")))が可縮であることを示せばよい。@ref["0027"]より@($ ("x" . id-type . "a"))は@($ ("a" . id-type . "x"))のレトラクトなので、@ref["001S"]より@($ (d-pair-type ("x" . elem-of . "A") ("x" . id-type . "a")))は可縮である。
+      @(math (a . elem-of . A))を要素とする。@(math (fiber . $* . id-fun a))の定義から、@(math (d-pair-type (x . elem-of . A) (x . id-type . a)))が可縮であることを示せばよい。@ref["0027"]より@(math (x . id-type . a))は@(math (a . id-type . x))のレトラクトなので、@ref["001S"]より@(math (d-pair-type (x . elem-of . A) (x . id-type . a)))は可縮である。
     }
   ]
 ]

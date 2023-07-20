@@ -1,8 +1,7 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "core.rkt")
 
 (provide ua)
 
-(define ua/symb (const "ua"))
-(define ua (make-fun ua/symb))
+(define ua (const "ua"))
