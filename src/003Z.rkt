@@ -1,8 +1,7 @@
 #lang morg
 
 (require "lib/math.rkt"
-         "lib/math/n-type.rkt"
-         "lib/math/util.rkt")
+         "lib/math/n-type.rkt")
 
 (define A "A")
 (define x "x")
