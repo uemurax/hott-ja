@@ -2,7 +2,7 @@
 
 (require morg/math
          (prefix-in tex: morg/math/tex)
-         "util.rkt")
+         "core.rkt")
 
 (provide trunc
          trunc:in
@@ -22,8 +22,5 @@
      a))
    . _ . n))
 
-(define (trunc:ind/symb [n : MathTeX+Like] [A : MathTeX+Like])
-  ((const "ind") . _ . (trunc n A)))
-
 (define (trunc:ind [n : MathTeX+Like] [A : MathTeX+Like])
-  (make-fun (trunc:ind/symb n A)))
+  (ind/symb . _ . (trunc n A)))

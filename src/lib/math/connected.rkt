@@ -1,11 +1,9 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "core.rkt")
 
 (provide is-connected
          is-connected-map)
 
-(define is-connected/symb (const "IsConnected"))
-(define is-connected (make-fun is-connected/symb))
-(define is-connected-map/symb (const "IsConnMap"))
-(define is-connected-map (make-fun is-connected-map/symb))
+(define is-connected (const "IsConnected"))
+(define is-connected-map (const "IsConnMap"))

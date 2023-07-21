@@ -7,12 +7,16 @@
          "lib/math/presheaf.rkt"
          "lib/math/functor.rkt")
 
+(define i "i")
+(define C "C")
+(define A "A")
+
 @lemma[
   #:id (current-id)
   @paragraph{
-    関数外延性を仮定する。@${i}を階数、@($ ("C" . elem-of . @precat{i}))を前圏、@($ ("A" . elem-of . @presheaf{C}))を前層とすると、同値
+    関数外延性を仮定する。@(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏、@(math (A . elem-of . (presheaf . $ . C)))を前層とすると、同値
     @disp{
-      @($ (@is-repr-psh{A} . equiv . (iso-fiber (seq @yoneda{C} "A"))))
+      @(math ((is-repr-psh . $ . A) . equiv . (iso-fiber . $* . (yoneda . $ . C) A)))
     }
     を構成できる。
   }

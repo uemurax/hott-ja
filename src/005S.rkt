@@ -5,12 +5,23 @@
          "lib/math.rkt"
          morg/eq-reasoning)
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define f "f")
+(define a "a")
+(define c "c")
+(define z "z")
+(define x "x")
+(define p "p")
+(define q "q")
+
 @lemma[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型、@($ ("f" . elem-of . ("A" . fun-type . "B")))を関数、@($ ("a" . elem-of . "A"))と@($ ("c" . elem-of . (fiber (seq "f" ("f" . fun-apply . "a")))))を要素とすると、同値
+    @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型、@(math (f . elem-of . (A . fun-type . B)))を関数、@(math (a . elem-of . A))と@(math (c . elem-of . (fiber . $* . f (f . $ . a))))を要素とすると、同値
     @disp{
-      @($ (((record-elem (seq (fiber:elem . def-eq . "a") (fiber:id . def-eq . (refl ("f" . fun-apply . "a"))))) . id-type . "c") . equiv . (fiber (seq ((fun-apply-id "f") . fun-apply/implicit . (seq ((proj 1) "c") "a")) ((proj 2) "c")))))
+      @(math (((record-elem (list fiber:elem a) (list fiber:id refl)) . id-type . c) . equiv . (fiber . $* . ((fun-apply-id . $ . f) . $i* . ((proj 1) . $ . c) a) ((proj 2) . $ . c))))
     }
     を構成できる。
   }
@@ -19,11 +30,11 @@
       @ref["001S"]を適用する。レトラクト
       @disp{
         @eq-reasoning[
-          @($ (d-pair-type ("z" . elem-of . (fiber (seq "f" ("f" . fun-apply . "a")))) (fiber (seq ((fun-apply-id "f") . fun-apply/implicit . (seq ((proj 1) "c") "a")) ((proj 2) "c")))))
-          @($ retract-rel/symb) @%{並び替え}
-          @($ (d-pair-type ("x" . elem-of . "A") (d-pair-type ("p" . elem-of . ("x" . id-type . "a")) (d-pair-type ("q" . elem-of . (("f" . fun-apply . "x") . id-type . ("f" . fun-apply . "a"))) (("f" . fun-apply . "p") . id-type . "q")))))
-          @($ retract-rel/symb) @%{@ref["0026"]}
-          @($ (d-pair-type ("q" . elem-of . (("f" . fun-apply . "a") . id-type . ("f" . fun-apply . "a"))) (("f" . fun-apply . @refl{a}) . id-type . "q")))
+          @(math (d-pair-type (z . elem-of . (fiber . $* . f (f . $ . a))) (fiber . $* . ((fun-apply-id . $ . f) . $i* . ((proj 1) . $ . c) a) ((proj 2) . $ . c))))
+          @(math retract-rel/symb) @%{並び替え}
+          @(math (d-pair-type (x . elem-of . A) (d-pair-type (p . elem-of . (x . id-type . a)) (d-pair-type (q . elem-of . ((f . $ . x) . id-type . (f . $ . a))) ((f . $ . p) . id-type . q)))))
+          @(math retract-rel/symb) @%{@ref["0026"]}
+          @(math (d-pair-type (q . elem-of . ((f . $ . a) . id-type . (f . $ . a))) ((f . $ . refl) . id-type . q)))
         ]
       }
       を得て、最後の型は@ref["001N"]より可縮である。

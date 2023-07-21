@@ -7,6 +7,6 @@
 @example[
   #:id (current-id)
   @paragraph{
-    @($ empty-type)は命題である。実際、帰納法で直ちに示せる。
+    @(math empty-type)は命題である。実際、帰納法で直ちに示せる。
   }
 ]

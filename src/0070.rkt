@@ -6,6 +6,12 @@
          "lib/math/presheaf.rkt"
          "lib/math/logic.rkt")
 
+(define i "i")
+(define C "C")
+(define A "A")
+(define x "x")
+(define f "f")
+
 @definition[
   #:id (current-id)
   #:indexes @list[
@@ -13,12 +19,12 @@
     @index[#:key "ふへんようそ"]{普遍要素}
   ]
   @paragraph{
-    @${i}を階数、@($ ("C" . elem-of . @precat{i}))を前圏、@($ ("A" . elem-of . @presheaf{C}))を前層とする。型@($ (@is-repr-psh{A} . elem-of . @universe{i}))を次のレコード型と定義する。
+    @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏、@(math (A . elem-of . (presheaf . $ . C)))を前層とする。型@(math ((is-repr-psh . $ . A) . elem-of . (universe . $ . i)))を次のレコード型と定義する。
     @unordered-list[
-      @list-item{@($ (is-repr-psh:obj . elem-of . "C"))}
-      @list-item{@($ (is-repr-psh:elem . elem-of . ("A" . fun-apply . is-repr-psh:obj)))}
-      @list-item{@($ (blank . elem-of . (forall ("x" . elem-of . "C") (is-equiv (abs ("f" . elem-of . (cat:map . fun-apply . (seq "x" is-repr-psh:obj))) (is-repr-psh:elem . presheaf:act-bin . "f"))))))}
+      @list-item{@(math (is-repr-psh:obj . elem-of . C))}
+      @list-item{@(math (is-repr-psh:elem . elem-of . (A . $ . is-repr-psh:obj)))}
+      @list-item{@(math (blank . elem-of . (forall (x . elem-of . C) (is-equiv . $ . (abs (f . elem-of . (cat:map . $* . x is-repr-psh:obj)) (is-repr-psh:elem . presheaf:act-bin . f))))))}
     ]
-    @${@is-repr-psh{A}}の要素がある時、@${A}は@dfn{表現可能(representable)}であると言う。また、@${@is-repr-psh{A}}の要素のことを@${A}の@dfn{普遍要素(universal element)}と呼ぶ。
+    @(math (is-repr-psh . $ . A))の要素がある時、@(math A)は@dfn{表現可能(representable)}であると言う。また、@(math (is-repr-psh . $ . A))の要素のことを@(math A)の@dfn{普遍要素(universal element)}と呼ぶ。
   }
 ]

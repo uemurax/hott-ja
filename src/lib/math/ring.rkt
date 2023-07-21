@@ -1,6 +1,6 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "core.rkt")
 
 (provide ring-str
          ring:carrier
@@ -12,15 +12,12 @@
          ring-axiom
          ring)
 
-(define ring-str/symb (const "RingStr"))
-(define ring-str (make-fun ring-str/symb))
+(define ring-str (const "RingStr"))
 (define ring:carrier (const "Carrier"))
 (define ring:zero (const "zero"))
 (define ring:plus (const "plus"))
 (define ring:minus (const "neg"))
 (define ring:mul (const "mul"))
 (define ring:one (const "one"))
-(define ring-axiom/symb (const "RingAxiom"))
-(define ring-axiom (make-fun ring-axiom/symb))
-(define ring/symb (const "Ring"))
-(define ring (make-fun ring/symb))
+(define ring-axiom (const "RingAxiom"))
+(define ring (const "Ring"))

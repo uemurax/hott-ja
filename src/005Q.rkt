@@ -4,9 +4,16 @@
          "lib/math.rkt"
          "lib/math/n-type.rkt")
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define f "f")
+(define n "n")
+(define y "y")
+
 @definition[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型、@($ ("f" . elem-of . ("A" . fun-type . "B")))を関数、@($ ("n" . elem-of . trunc-level))を要素とする。型@($ ((is-trunc-map (seq "n" "f")) . elem-of . @universe{i}))を@($ (d-fun-type ("y" . elem-of . "B") (is-trunc (seq "n" (fiber (seq "f" "y"))))))と定義する。
+    @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型、@(math (f . elem-of . (A . fun-type . B)))を関数、@(math (n . elem-of . trunc-level))を要素とする。型@(math ((is-trunc-map . $* . n f) . elem-of . (universe . $ . i)))を@(math (d-fun-type (y . elem-of . B) (is-trunc . $* . n (fiber . $* . f y))))と定義する。
   }
 ]

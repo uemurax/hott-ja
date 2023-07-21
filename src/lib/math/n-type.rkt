@@ -2,8 +2,7 @@
 
 (require morg/math
          (prefix-in tex: morg/math/tex)
-         "core/function.rkt"
-         "util.rkt")
+         "core.rkt")
 
 (provide trunc-level
          trunc-level:-2
@@ -20,19 +19,14 @@
 (define trunc-level:-2 "-2")
 (define trunc-level:-1 "-1")
 (define trunc-level:0 "0")
-(define trunc-level:succ/symb (const "succ"))
-(define trunc-level:succ (make-fun trunc-level:succ/symb))
+(define trunc-level:succ (const "succ"))
 
-(define is-trunc/symb (const "IsTrunc"))
-(define is-trunc (make-fun is-trunc/symb))
+(define is-trunc (const "IsTrunc"))
 
-(define is-trunc-map/symb (const "IsTruncMap"))
-(define is-trunc-map (make-fun is-trunc-map/symb))
+(define is-trunc-map (const "IsTruncMap"))
 
-(define (trunc-type/symb [n : MathTeX+Like])
+(define (trunc-type [n : MathTeX+Like])
   (tex:mathord tex:langle n tex:rangle
                (const "-Type")))
-(define (trunc-type [n : MathTeX+Like] [i : MathTeX+Like])
-  ((trunc-type/symb n) . fun-apply . i))
 (define trunc-type:type (const "Type"))
 (define trunc-type:is-trunc (const "is-trunc"))

@@ -1,8 +1,7 @@
 #lang typed/racket
 
-(require "util.rkt")
+(require "core.rkt")
 
 (provide is-surjective)
 
-(define is-surjective/symb (const "IsSurj"))
-(define is-surjective (make-fun is-surjective/symb))
+(define is-surjective (const "IsSurj"))

@@ -4,14 +4,29 @@
          "lib/markup/proof.rkt"
          "lib/math.rkt")
 
+(define i "i")
+(define A "A")
+(define B "B")
+(define r "r")
+(define a "a")
+(define a1 (a . _ . "1"))
+(define a2 (a . _ . "2"))
+(define f "f")
+(define g "g")
+(define p "p")
+(define F "F")
+(define G "G")
+(define q "q")
+(define z "z")
+
 @lemma[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))と@($ ("B" . elem-of . @universe{i}))を型、@($ ("r" . elem-of . (retract (seq "A" "B"))))を要素、@($ (("a" . _ . "1") . elem-of . "A"))と@($ (("a" . _ . "2") . elem-of . "A"))を要素とすると、@($ (retract (seq (("a" . _ . "1") . id-type . ("a" . _ . "2")) ((("r" . record-field . retract:section) . fun-apply . ("a" . _ . "1")) . id-type . (("r" . record-field . retract:section) . fun-apply . ("a" . _ . "2"))))))の要素を構成できる。
+    @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型、@(math (r . elem-of . (retract . $* . A B)))を要素、@(math (a1 a2 . elem-of* . A))を要素とすると、@(math (retract . $* . (a1 . id-type . a2) (((r . record-field . retract:section) . $ . a1) . id-type . ((r . record-field . retract:section) . $ . a2))))の要素を構成できる。
   }
   #:proof @proof[
     @paragraph{
-      @($ ("f" . def-eq . ("r" . record-field . retract:section)))と@($ ("g" . def-eq . ("r" . record-field . retract:retraction)))と@($ ("p" . def-eq . ("r" . record-field . retract:id)))と定義する。@($ ("F" . elem-of . ((("a" . _ . "1") . id-type . ("a" . _ . "2")) . fun-type . (("f" . fun-apply . ("a" . _ . "1")) . id-type . ("f" . fun-apply . ("a" . _ . "2"))))))を@($ (fun-apply-id "f"))と定義する。@($ ("G" . elem-of . ((("f" . fun-apply . ("a" . _ . "1")) . id-type . ("f" . fun-apply . ("a" . _ . "2"))) . fun-type . (("a" . _ . "1") . id-type . ("a" . _ . "2")))))を@($ (abs "q" ((("p" . fun-apply . ("a" . _ . "2")) . id-comp . (fun-apply-id (seq "g" "q"))) . id-comp . (id-inv ("p" . fun-apply . ("a" . _ . "1"))))))と定義する。@($ (d-fun-type ("z" . elem-of . (("a" . _ . "1") . id-type . ("a" . _ . "2"))) (("G" . fun-apply . ("F" . fun-apply . "z")) . id-type . "z")))を示すには、同一視型の帰納法により@($ (("G" . fun-apply . ("F" . fun-apply . (refl ("a" . _ . "1")))) . id-type . (refl ("a" . _ . "1"))))を示せばよいが、@($ (("G" . fun-apply . ("F" . fun-apply . (refl ("a" . _ . "1")))) . def-eq . (id-comp ("p" . fun-apply . ("a" . _ . "1")) (id-inv ("p" . fun-apply . ("a" . _ . "1"))))))なので@ref["0047"]を適用すればよい。
+      @(math (f . def-eq . (r . record-field . retract:section)))と@(math (g . def-eq . (r . record-field . retract:retraction)))と@(math (p . def-eq . (r . record-field . retract:id)))と定義する。@(math (F . elem-of . ((a1 . id-type . a2) . fun-type . ((f . $ . a1) . id-type . (f . $ . a2)))))を@(math (fun-apply-id . $ . f))と定義する。@(math (G . elem-of . (((f . $ . a1) . id-type . (f . $ . a2)) . fun-type . (a1 . id-type . a2))))を@(math (abs q (((p . $ . a2) . id-comp . (fun-apply-id . $* . g q)) . id-comp . (id-inv (p . $ . a1)))))と定義する。@(math (d-fun-type (z . elem-of . (a1 . id-type . a2)) ((G . $ . (F . $ . z)) . id-type . z)))を示すには、同一視型の帰納法により@(math ((G . $ . (F . $ . (refl . $i . a1))) . id-type . (refl . $i . a1)))を示せばよいが、@(math ((G . $ . (F . $ . (refl . $i . a1))) . def-eq . (id-comp (p . $ . a1) (id-inv (p . $ . a1)))))なので@ref["0047"]を適用すればよい。
     }
   ]
 ]

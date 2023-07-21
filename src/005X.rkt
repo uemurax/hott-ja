@@ -5,10 +5,14 @@
          "lib/math.rkt"
          "lib/math/n-type.rkt")
 
+(define i "i")
+(define A "A")
+(define n "n")
+
 @proposition[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ ("n" . elem-of . trunc-level))を要素とする。@${A}が@${n}型かつ@${n}連結ならば、@${A}は可縮である。
+    @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (n . elem-of . trunc-level))を要素とする。@(math A)が@(math n)型かつ@(math n)連結ならば、@(math A)は可縮である。
   }
   #:proof @proof[
     @paragraph{

@@ -5,9 +5,12 @@
          "lib/math/n-type.rkt"
          "lib/math/level.rkt")
 
+(define i "i")
+(define n "n")
+
 @definition[
   #:id (current-id)
   @paragraph{
-    @${i}を階数、@($ ("n" . elem-of . trunc-level))を要素とする。型@($ ((trunc-type "n" "i") . elem-of . @universe{@level:succ{i}}))を@($ (record-type (seq (trunc-type:type . elem-of . @universe{i}) (trunc-type:is-trunc . elem-of . (is-trunc (seq "n" trunc-type:type))))))と定義する。
+    @(math i)を階数、@(math (n . elem-of . trunc-level))を要素とする。型@(math (((trunc-type n) . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を@(math (record-type (list trunc-type:type (universe . $ . i)) (list trunc-type:is-trunc (is-trunc . $* . n trunc-type:type))))と定義する。
   }
 ]

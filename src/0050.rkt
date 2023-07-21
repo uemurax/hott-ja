@@ -5,19 +5,30 @@
          "lib/math/truncation.rkt"
          "lib/math/n-type.rkt")
 
+(define i "i")
+(define j "j")
+(define A "A")
+(define B "B")
+(define n "n")
+(define a "a")
+(define c "c")
+(define f "f")
+(define x "x")
+(define z "z")
+
 @rule[
   #:id (current-id)
   #:indexes @list[
-    @index[#:key "[nきりつめ]"]{@${n}切り詰め}
+    @index[#:key "[nきりつめ]"]{@(math n)切り詰め}
   ]
   @paragraph{
-    @${i}を階数、@($ ("A" . elem-of . @universe{i}))を型、@($ ("n" . elem-of . trunc-level))を要素とする。
+    @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (n . elem-of . trunc-level))を要素とする。
     @unordered-list[
-      @list-item{@dfn{@${n}切り詰め(@${n}-truncation)}@($ ((trunc "n" "A") . elem-of . @universe{i}))を構成できる。}
-      @list-item{@($ (trunc "n" "A"))は@${n}型である(ことを示す要素を構成できる)。}
-      @list-item{要素@($ ("a" . elem-of . "A"))に対して、要素@($ ((trunc:in "n" "a") . elem-of . (trunc "n" "A")))を構成できる。}
-      @list-item{@($ ("c" . elem-of . (trunc "n" "A")))を要素、@${j}を階数、@($ ("B" . elem-of . ((trunc "n" "A") . fun-type . @universe{j})))を型の族、@($ ("f" . elem-of . (d-fun-type ("x" . elem-of . "A") ("B" . fun-apply . (trunc:in "n" "x")))))を関数とする。@($ (d-fun-type ("z" . elem-of . (trunc "n" "A")) (is-trunc (seq "n" ("B" . fun-apply . "z")))))の要素があるなら、要素@($ (((trunc:ind "n" "A") (seq "c" "B" "f")) . elem-of . ("B" . fun-apply . "c")))を構成できる。}
-      @list-item{@($ ("a" . elem-of . "A"))を要素、@${j}を階数、@($ ("B" . elem-of . ((trunc "n" "A") . fun-type . @universe{j})))を型の族、@($ ("f" . elem-of . (d-fun-type ("x" . elem-of . "A") ("B" . fun-apply . (trunc:in "n" "x")))))を関数とする。@($ (d-fun-type ("z" . elem-of . (trunc "n" "A")) (is-trunc (seq "n" ("B" . fun-apply . "z")))))の要素があるなら、@($ (((trunc:ind "n" "A") (seq "a" "B" "f")) . def-eq . ("f" . fun-apply . "a")))を定義される。}
+      @list-item{@dfn{@(math n)切り詰め(@(math n)-truncation)}@(math ((trunc n A) . elem-of . (universe . $ . i)))を構成できる。}
+      @list-item{@(math (trunc n A))は@(math n)型である(ことを示す要素を構成できる)。}
+      @list-item{要素@(math (a . elem-of . A))に対して、要素@(math ((trunc:in n a) . elem-of . (trunc n A)))を構成できる。}
+      @list-item{@(math (c . elem-of . (trunc n A)))を要素、@(math j)を階数、@(math (B . elem-of . ((trunc n A) . fun-type . (universe . $ . j))))を型の族、@(math (f . elem-of . (d-fun-type (x . elem-of . A) (B . $ . (trunc:in n x)))))を関数とする。@(math (d-fun-type (z . elem-of . (trunc n A)) (is-trunc . $* . n (B . $ . z))))の要素があるなら、要素@(math (((trunc:ind n A) . $* . c B f) . elem-of . (B . $ . c)))を構成できる。}
+      @list-item{@(math (a . elem-of . A))を要素、@(math j)を階数、@(math (B . elem-of . ((trunc n A) . fun-type . (universe . $ . j))))を型の族、@(math (f . elem-of . (d-fun-type (x . elem-of . A) (B . $ . (trunc:in n x)))))を関数とする。@(math (d-fun-type (z . elem-of . (trunc n A)) (is-trunc . $* . n (B . $ . z))))の要素があるなら、@(math (((trunc:ind n A) . $* . a B f) . def-eq . (f . $ . a)))を定義される。}
     ]
   }
 ]
