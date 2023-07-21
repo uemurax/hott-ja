@@ -31,7 +31,10 @@
 (provide
  (except-out
   (all-from-out 'levels)
-  big-op)
- (rename-out [big-op-lv big-op]))
+  big-op
+  $)
+ (rename-out [big-op-lv big-op]
+             [$-lv $]))
 
 (define big-op-lv (make-level big-op))
+(define $-lv (make-level $))
