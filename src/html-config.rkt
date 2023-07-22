@@ -31,6 +31,9 @@
       background-color: #F4F8F8;
       padding: 0.5em;
     }
+    .@|katex-class-name| {
+      margin-inline: 0.25em;
+    }
   })
 
 (provide-config
