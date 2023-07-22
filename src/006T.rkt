@@ -34,7 +34,7 @@
           @(math id-type/symb) @%{前圏の公理}
           @(math (h . $ . ((yoneda-gen . $ . x) . presheaf:act-bin . f)))
           @(math id-type/symb) @%{前層の公理}
-          @(math (h . $ . ((yoneda-gen . $ . x) . presheaf:act-bin . f)))
+          @(math ((h . $ . (yoneda-gen . $ . x)) . presheaf:act-bin . f))
         ]
       }
       を得るので、@(math h)は@(math (yoneda-gen . $ . x))における値のみで決まる。つまり、任意の要素@(math (a . elem-of . (A . $ . x)))に対して、@(math (fiber . $* . (abs h (h . $ . (yoneda-gen . $ . x))) a))は命題であることが分かる。この型が要素を持つことを確認するには、@(math ((abs* y f (a . presheaf:act-bin . f)) . elem-of . (d-fun-type (y . elem-of . C) ((((yoneda . $ . C) . $ . x) . $ . y) . fun-type . (A . $ . y)))))が前層の射であることを確かめればよいが、それは前層の公理から容易である。
