@@ -13,11 +13,23 @@
       font-weight: bold;
     }
     body {
-      background-color: #FDF6E3;
+      background-color: #FDFCF7;
       color: #002B36;
     }
     .@|toc-edge-summary-selected-class-name| {
-      background-color: #DDFCC3;
+      background-color: #ECFCC3;
+    }
+    .@|statement-body-class-name| {
+      background-color: #F4FDFD;
+      padding: 0.5em;
+    }
+    .@|statement-header-class-name| {
+      padding: 0.5em;
+      background-color: #E3FDFD;
+    }
+    .@|proof-class-name| {
+      background-color: #F4F8F8;
+      padding: 0.5em;
     }
   })
 
