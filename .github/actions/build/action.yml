@@ -15,19 +15,13 @@ runs:
       run : racket --version > .racket-version
       shell: sh
 
-    - name: Cache Racket dependencies
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cache/racket
-          ~/.local/share/racket
-        key: ${{ runner.os }}-racket-stable-${{ hashFiles('.racket-version') }}
-
     - name: Cache bytecode files
       uses: actions/cache@v3
       with:
         path: ./src/**/compiled
-        key: ${{ runner.os }}-racket-stable-${{ hashFiles('.racket-version') }}
+        key: ${{ runner.os }}-build-racket-stable-${{ hashFiles('.racket-version') }}-${{ hashFiles('./src/**/*.rkt') }}
+        restore-keys: |
+          ${{ runner.os }}-build-racket-stable-${{ hashFiles('.racket-version') }}-
 
     - name: Installing morg and its dependencies
       run: raco pkg install --no-docs --auto --skip-installed https://github.com/uemurax/morg.git
