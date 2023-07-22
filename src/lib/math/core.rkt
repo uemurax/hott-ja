@@ -215,8 +215,14 @@
 (define pair-type
   (monoid #:level l:* unit-type pair-type/symb))
 
+(define record-left
+  (tex:mathopen tex:\{ tex:negmedspace "|"))
+
+(define record-right
+  (tex:mathclose "|" tex:negmedspace tex:\}))
+
 (define record-apply
-  (apply-with-parens #:level l:$ #:left tex:lbrace #:right tex:rbrace))
+  (apply-with-parens #:level l:$ #:left record-left #:right record-right))
 
 (define (record-1 [x : MathTeX+Like] [a : MathTeX+Like])
   (list x a))
