@@ -36,7 +36,7 @@ runs:
     - name: Installing dependencies
       run: |
         raco pkg install --no-docs --auto --update-deps --name hott-ja-dependency ./dependency
-        raco pkg remove hott-ja-dependency
+        raco pkg remove --no-docs hott-ja-dependency
       shell: sh
 
     - name: Set up TeXLive
