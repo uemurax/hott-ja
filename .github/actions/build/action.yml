@@ -15,6 +15,16 @@ runs:
       run : racket --version > .racket-version
       shell: sh
 
+    - name: Cache dependency
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cache/racket
+          ~/.local/share/racket
+        key: ${{ runner.os }}-deps-racket-stable-${{ hashFiles('.racket-version') }}-${{ hashFiles('./dependency/info.rkt') }}
+        restore-keys: |
+          ${{ runner.os }}-deps-racket-stable-${{ hashFiles('.racket-version') }}-
+
     - name: Cache bytecode files
       uses: actions/cache@v3
       with:
@@ -23,12 +33,8 @@ runs:
         restore-keys: |
           ${{ runner.os }}-build-racket-stable-${{ hashFiles('.racket-version') }}-
 
-    - name: Installing morg and its dependencies
-      run: raco pkg install --no-docs --auto --skip-installed https://github.com/uemurax/morg.git
-      shell: sh
-
-    - name: Update racket packages
-      run: raco pkg update -a
+    - name: Installing dependencies
+      run: raco pkg install --no-docs --auto --skip-installed --name hott-ja-dependency ./dependency
       shell: sh
 
     - name: Set up TeXLive
