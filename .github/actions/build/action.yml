@@ -55,7 +55,7 @@ runs:
           haranoaji
 
     - name: Compile document
-      run: raco make -v src/index.rkt src/html-config.rkt src/latex-config.rkt
+      run: raco make --vv src/index.rkt src/html-config.rkt src/latex-config.rkt
       shell: sh
 
     - name: Build document
