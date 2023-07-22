@@ -34,7 +34,9 @@ runs:
           ${{ runner.os }}-build-racket-stable-${{ hashFiles('.racket-version') }}-
 
     - name: Installing dependencies
-      run: raco pkg install --no-docs --auto --skip-installed --update-deps --name hott-ja-dependency ./dependency
+      run: |
+        raco pkg install --no-docs --auto --update-deps --name hott-ja-dependency ./dependency
+        raco pkg remove hott-ja-dependency
       shell: sh
 
     - name: Set up TeXLive
