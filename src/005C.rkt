@@ -36,7 +36,7 @@
       @list-item{@(math (blank . elem-of . (d-fun-type (x1 x2 . elem-of* . cat:obj) (is-set . $ . (cat:map . $* . x1 x2)))))}
       @list-item{@(math (blank . elem-of . (d-fun-type (x1 x2 . elem-of* . cat:obj) (d-fun-type (f . elem-of . (cat:map . $* . x1 x2)) ((cat:comp . $* . cat:id f) . id-type . f)))))}
       @list-item{@(math (blank . elem-of . (d-fun-type (x1 x2 . elem-of* . cat:obj) (d-fun-type (f . elem-of . (cat:map . $* . x1 x2)) ((cat:comp . $* . f cat:id) . id-type . f)))))}
-      @list-item{@(math (blank . elem-of . (d-fun-type (x1 x2 x3 x4 . elem-of* . cat:obj) (d-fun-type (f1 . elem-of . (cat:map . $* . x1 x2)) (d-fun-type (f2 . elem-of . (cat:map . $* . x2 x3)) (d-fun-type (f3 . elem-of . (cat:map . $* . x3 x4)) ((cat:comp . $* . (cat:comp . $* . f3 f2) f1) . id-type . (cat:map . $* . f3 (cat:comp . $* . f2 f1)))))))))}
+      @list-item{@(math (blank . elem-of . (d-fun-type (x1 x2 x3 x4 . elem-of* . cat:obj) (d-fun-type (f1 . elem-of . (cat:map . $* . x1 x2)) (d-fun-type (f2 . elem-of . (cat:map . $* . x2 x3)) (d-fun-type (f3 . elem-of . (cat:map . $* . x3 x4)) ((cat:comp . $* . (cat:comp . $* . f3 f2) f1) . id-type . (cat:comp . $* . f3 (cat:comp . $* . f2 f1)))))))))}
     ]
     @(math (precat . $ . i))の要素を(階数@(math i)の)@dfn{前圏(precategory)}と呼ぶ。
   }

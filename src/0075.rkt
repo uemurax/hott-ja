@@ -8,7 +8,7 @@
 
 (define i "i")
 (define C "C")
-(define D "C")
+(define D "D")
 (define F "F")
 
 @lemma[
