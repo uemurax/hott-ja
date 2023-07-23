@@ -14,10 +14,6 @@
   (define cfg book-config)
   (eq:config-update
    (struct-copy config cfg
-     [packages @list[
-       (package "amsmath" '())
-       (package "amssymb" '())
-     ]]
      [make-section-ref latex-config:make-section-ref]
      [class "ltjsbook"]
      [class-options '("a4paper")])))
