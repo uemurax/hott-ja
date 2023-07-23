@@ -16,7 +16,7 @@
 (define (fiber-coproduct-type/symb [f : MathTeX+Like] [g : MathTeX+Like])
   (tex:mathbin
    ((group) . _ . f)
-   ((group coproduct-type/symb) . _ . g)))
+   ((tex:smash coproduct-type/symb) . _ . g)))
 
 (define (fiber-coproduct-type [f : MathTeX+Like] [g : MathTeX+Like])
   (binary #:level l:+
@@ -25,7 +25,7 @@
 (define fiber-coproduct-type:glue (const "glue"))
 
 (define fiber-coproduct-type:ind
-  (ind/symb . _ . (fiber-coproduct-type/symb tex:cdot tex:cdot)))
+  (ind/symb . _ . (fiber-coproduct-type/symb "." ".")))
 
 (define fiber-coproduct-type:ind-glue
   (tex:mathord
