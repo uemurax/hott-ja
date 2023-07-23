@@ -53,6 +53,7 @@ runs:
           marginnote
           luatexja
           amsfonts
+          amsmath
           xkeyval
           haranoaji
 

@@ -15,5 +15,8 @@
   (eq:config-update
    (struct-copy config cfg
      [make-section-ref latex-config:make-section-ref]
+     [packages @list[
+       (package "amsmath" '())
+     ]]
      [class "ltjsbook"]
      [class-options '("a4paper")])))
