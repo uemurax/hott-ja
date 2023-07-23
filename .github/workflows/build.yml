@@ -9,8 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    container: ghcr.io/uemurax/docker-texlive-ja:latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3

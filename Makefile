@@ -1,56 +1,35 @@
-.ONESHELL:
-
-ROOT_DIR = $(PWD)
-SOURCE_DIR = src
-BUILD_DIR = _build
+SRC_DIR = src
 SITE_DIR = _site
-IMAGE_DIR = index-images
-CORE_FILES = main.tex custom.ist latexmkrc
-CSS_FILES = custom.css
-BIB_FILES = my-references.bib
-SOURCE_NODE_FILES = $(wildcard $(SOURCE_DIR)/node-*.tex)
-SOURCE_STYLE_FILES = $(wildcard $(SOURCE_DIR)/my-*.sty)
-SOURCE_CORE_FILES = $(patsubst %,$(SOURCE_DIR)/%,$(CORE_FILES))
-SOURCE_CSS_FILES = $(patsubst %,$(SOURCE_DIR)/%,$(CSS_FILES))
-SOURCE_BIB_FILES = $(patsubst %,$(SOURCE_DIR)/%,$(BIB_FILES))
-SOURCE_FILES = $(SOURCE_CORE_FILES) $(SOURCE_NODE_FILES) $(SOURCE_STYLE_FILES) $(SOURCE_CSS_FILES) $(SOURCE_BIB_FILES)
-BUILD_CSS_FILES = $(patsubst %,$(BUILD_DIR)/%,$(CSS_FILES)) $(BUILD_DIR)/lwarp.css
-NODE_PREFIX = node-
+INDEX_FILE = $(SRC_DIR)/index.rkt
+HTML_CONFIG_FILE = $(SRC_DIR)/html-config.rkt
+LATEX_CONFIG_FILE = $(SRC_DIR)/latex-config.rkt
 
 .PHONY: all
 all: build
 
-$(BUILD_DIR)/index.tex: $(SOURCE_DIR)/index.tex
-	mkdir -p $(BUILD_DIR)
-	cat $< \
-	| sed -e 's/%[[:space:]]*HTMLFilename={}/HTMLFilename={$(NODE_PREFIX)}/' \
-	> $@
-
-$(BUILD_DIR)/lwarpmk.conf: $(BUILD_DIR)/index.tex
-	cp -t $(BUILD_DIR) $(SOURCE_FILES)
-	cd $(BUILD_DIR)
-	latexmk index
-
 .PHONY: build
-build: $(BUILD_DIR)/lwarpmk.conf
-	cp -t $(BUILD_DIR) $(SOURCE_FILES)
-	cd $(BUILD_DIR)
-	lwarpmk print
-	lwarpmk html
-	lwarpmk limages
-	lwarpmk html
-	sleep 1
-	cd $(ROOT_DIR)
-	mkdir -p $(SITE_DIR)
-	cp -r -t $(SITE_DIR) $(BUILD_DIR)/index.html $(BUILD_DIR)/$(NODE_PREFIX)*.html $(BUILD_CSS_FILES) $(BUILD_DIR)/$(IMAGE_DIR) $(BUILD_DIR)/index.pdf
+build: html pdf
 
-.PHONY: clean-build
-clean-build:
-	rm -rf $(BUILD_DIR)
+.PHONY: compile
+compile:
+	raco make -v $(INDEX_FILE) $(HTML_CONFIG_FILE) $(LATEX_CONFIG_FILE)
+
+.PHONY: html
+html: compile
+	raco morg --html-config $(HTML_CONFIG_FILE) $(INDEX_FILE) $(SITE_DIR)
+
+.PHONY: pdf
+pdf: compile
+	raco morg --pdf-config $(LATEX_CONFIG_FILE) $(INDEX_FILE) $(SITE_DIR)
 
 .PHONY: clean-site
 clean-site:
 	rm -rf $(SITE_DIR)
 
-.PHONY: clean
-clean: clean-site clean-build
+.PHONY: clean-compiled
+clean-compiled:
+	find $(SRC_DIR) -name '*.zo' -print -delete
+	find $(SRC_DIR) -name '*.dep' -print -delete
+
+.PHONY: clean-all
+clean-all: clean-site clean-compiled

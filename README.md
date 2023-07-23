@@ -4,18 +4,26 @@
 
 ## 準備
 
-### Docker
+### Racket
 
-[ghcr.io/uemurax/docker-texlive-ja:latest](https://github.com/uemurax/docker-texlive-ja/pkgs/container/docker-texlive-ja)
-に十分にパッケージをインストールしたイメージを用意してあります。
+適当に[Racket](https://racket-lang.org/)をインストールします。
 
-### Debian/Ubuntu
+### MOrg
 
-`latexmk`, `biber` と `texlive` 関連のパッケージを必要に応じてインストールします。
+[MOrg](https://github.com/uemurax/morg)をインストールします。
+
+```shell
+raco pkg install https://github.com/uemurax/morg
+```
+
+### LaTeX
+
+`latexmk`と`luatexja`が要ります。
+足りないパッケージがあれば[action.yml](.github/actions/build/action.yml)を参考にします。
 
 ## ビルド
 
-`make` を実行すると `_build/` 内で pdf 版と html 版を生成し、 `_site/` に必要なファイルをコピーします。
+`make`を実行するとHTML版とPDF版を生成し`_site/`にコピーします。
 
 ## ライセンス
 

@@ -9,23 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    container: ghcr.io/uemurax/docker-texlive-ja:latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Build
         uses: ./.github/actions/build
-
-      - name: Archive artifacts
-        run: tar -cvf _site.tar _site
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: site
-          path: _site.tar
 
   publish:
     runs-on: ubuntu-latest

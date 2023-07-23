@@ -1,0 +1,55 @@
+#lang morg
+
+(require "lib/math.rkt")
+
+(define A "A")
+(define B "B")
+(define a "a")
+(define b "b")
+(define x "x")
+(define i "i")
+(define f "f")
+
+@section[
+  #:id (current-id)
+  #:title @%{可縮性}
+  @paragraph{
+    @emph{可縮性}はホモトピー型理論において中心的な役割を果たす概念である。
+  }
+  (include-part "000T.rkt")
+  @paragraph{
+    つまり、型@(math A)が可縮であるとは、ある要素@(math (center . elem-of . A))があり、すべての@(math A)の要素は@(math center)と同一視されるということである。やや非形式的に言うと、@(math A)はただ一つの要素を持つということである。
+  }
+  @paragraph{
+    後に示すことだが、@(math (is-contr . $ . A))の任意の二つの要素は(関数外延性の下で)同一視される(@ref["0042"])。したがって、@(math A)が可縮であると言った場合、@(math (is-contr . $ . A))の要素があることは重要だが、その要素の具体的な定義は気にしなくてよい。あるいは、可縮性は型についての@emph{命題}であり、それを@emph{証明}できることは重要だがどのように証明されたかは重要ではないとも言える。
+  }
+  (include-part "001O.rkt")
+  @paragraph{
+    型は∞グルーポイドの構造を持っているので、ただ一つの要素を持つとはいっても異なる同一視のしかたがある可能性が懸念される。次の@ref["001L"]は、可縮性は見た目よりもずっと強い条件で、任意の二つの要素の同一視もただ一つだけあることを示す。@ref["001L"]を繰り返し使えば、任意に高次の同一視もただ一つだけあることが分かる。
+  }
+  (include-part "001L.rkt")
+  @paragraph{
+    型の可縮性は次の@ref["001N"]や@ref["001K"]を使って示される場合が多い。
+  }
+  (include-part "001N.rkt")
+  @paragraph{
+    @ref["001N"]は同一視型の帰納法の別表現と考えられる。同一視型の帰納法は型の族@(math ((abs x (a . id-type . x)) . elem-of . (A . fun-type . (universe . $ . i))))が@(math (refl . elem-of . (a . id-type . a)))で自由に生成されることを表す。これは、対型@(math (d-pair-type (x . elem-of . A) (a . id-type . x)))が@(math (pair . $* . a refl))で自由に生成されると言い換えられる。一つの要素で生成される型はその要素しか持たないと期待され、@ref["001N"]は実際にそうだと言っている。
+  }
+  @paragraph{
+    @ref["001K"]は可縮性が@emph{レトラクト}で閉じることを主張する。
+  }
+  (include-part "001J.rkt")
+  @paragraph{
+    @(math (retract . $* . A B))は@(math (is-contr . $ . A))と違って命題ではないが、実用上は@(math (retract . $* . A B))の要素の具体的な定義は重要ではない場合が多い。これは@ref["001K"]のように、ある性質がレトラクトで閉じるという使われ方をする場合が多いからである。
+  }
+  (include-part "001K.rkt")
+  @paragraph{
+    可縮性を使って型の@emph{同値}が定義される。
+  }
+  (include-part "001P.rkt")
+  (include-part "001Q.rkt")
+  (include-part "000V.rkt")
+  @paragraph{
+    この定義による同値の概念が妥当なものであるかは自明ではない。直観的には、@(math (fiber . $* . f b))は@(math b)の@(math f)による逆像であり、@(math (is-contr . $ . (fiber . $* . f b)))は逆像がただ一つの要素を持つことを表す。これはもっともらしい定義だが、@(math equiv/symb)が反射的、対称、推移的であることすら@ref["000V"]から直ちに分かることではない。@ref["000U"]でこの同値の概念が妥当であることを説明するが、その前にいくつか重要な定理と概念を導入する。
+  }
+]

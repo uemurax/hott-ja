@@ -3,6 +3,74 @@ description: Build site
 runs:
   using: "composite"
   steps:
-    - name: Build
-      run: make
+    - name: Set up racket
+      uses: Bogdanp/setup-racket@v1.10
+      with:
+        architecture: x64
+        distribution: full
+        variant: CS
+        version: stable
+
+    - name : Racket version
+      run : racket --version > .racket-version
       shell: sh
+
+    - name: Cache dependency
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cache/racket
+          ~/.local/share/racket
+        key: ${{ runner.os }}-deps-racket-stable-${{ hashFiles('.racket-version') }}-${{ hashFiles('./dependency/info.rkt') }}
+        restore-keys: |
+          ${{ runner.os }}-deps-racket-stable-${{ hashFiles('.racket-version') }}-
+
+    - name: Cache bytecode files
+      uses: actions/cache@v3
+      with:
+        path: ./src/**/compiled
+        key: ${{ runner.os }}-build-racket-stable-${{ hashFiles('.racket-version') }}-${{ hashFiles('./src/**/*.rkt') }}-${{ hashFiles('./dependency/info.rkt') }}
+        restore-keys: |
+          ${{ runner.os }}-build-racket-stable-${{ hashFiles('.racket-version') }}-
+
+    - name: Installing dependencies
+      run: |
+        raco pkg install --no-docs --auto --update-deps --name hott-ja-dependency ./dependency
+        raco pkg remove --no-docs hott-ja-dependency
+      shell: sh
+
+    - name: Set up TeXLive
+      uses: teatimeguest/setup-texlive-action@v2
+      with:
+        packages: >-
+          scheme-basic
+          etoolbox
+          latexmk
+          luatex
+          hyperref
+          xcolor
+          tools
+          marginnote
+          luatexja
+          amsfonts
+          amsmath
+          xkeyval
+          haranoaji
+
+    - name: Compile document
+      run: raco make -v src/index.rkt src/html-config.rkt src/latex-config.rkt
+      shell: sh
+
+    - name: Build document
+      run: raco morg --html-config src/html-config.rkt --pdf-config src/latex-config.rkt src/index.rkt _site
+      shell: sh
+
+    - name: Archive artifacts
+      run: tar -cvf _site.tar _site
+      shell: sh
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: site
+        path: _site.tar
