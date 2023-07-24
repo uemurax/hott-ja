@@ -10,6 +10,13 @@
          span:center
          span:leg-l
          span:leg-r
+         span-over
+         (rename-out
+          [span:left span-over:left]
+          [span:right span-over:right]
+          [span:center span-over:center]
+          [span:leg-l span-over:leg-l]
+          [span:leg-r span-over:leg-r])
          span/cocone:comparison
          span/cocone-is-universal
          span/cocone
@@ -37,3 +44,5 @@
 
 (define span/cocone:comparison (const "cmp"))
 (define span/cocone-is-universal (const "IsUniversal"))
+
+(define span-over (const "SpanOver"))
