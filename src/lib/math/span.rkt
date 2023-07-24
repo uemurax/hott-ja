@@ -17,6 +17,14 @@
           [span:center span-over:center]
           [span:leg-l span-over:leg-l]
           [span:leg-r span-over:leg-r])
+         span/cocone-over
+         (rename-out
+          [span/cocone:vertex span/cocone-over:vertex]
+          [span/cocone:in-left span/cocone-over:in-left]
+          [span/cocone:in-right span/cocone-over:in-right]
+          [span/cocone:in-center span/cocone-over:in-center]
+          [span/cocone:in-leg-l span/cocone-over:in-leg-l]
+          [span/cocone:in-leg-r span/cocone-over:in-leg-r])
          span/cocone:comparison
          span/cocone-is-universal
          span/cocone
@@ -46,3 +54,4 @@
 (define span/cocone-is-universal (const "IsUniversal"))
 
 (define span-over (const "SpanOver"))
+(define span/cocone-over (const "CoconeOver"))
