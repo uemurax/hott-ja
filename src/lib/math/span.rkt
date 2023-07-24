@@ -11,6 +11,7 @@
          span:leg-l
          span:leg-r
          span/cocone:comparison
+         span/cocone-is-universal
          span/cocone
          span/cocone:vertex
          span/cocone:in-left
@@ -35,3 +36,4 @@
 (define span/cocone:in-leg-r (cocone:in . _ . span:leg-r))
 
 (define span/cocone:comparison (const "cmp"))
+(define span/cocone-is-universal (const "IsUniversal"))
