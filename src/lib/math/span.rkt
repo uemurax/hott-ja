@@ -10,6 +10,7 @@
          span:center
          span:leg-l
          span:leg-r
+         span/cocone:comparison
          span/cocone
          span/cocone:vertex
          span/cocone:in-left
@@ -32,3 +33,5 @@
 (define span/cocone:in-center (cocone:in . _ . span:center))
 (define span/cocone:in-leg-l (cocone:in . _ . span:leg-l))
 (define span/cocone:in-leg-r (cocone:in . _ . span:leg-r))
+
+(define span/cocone:comparison (const "cmp"))
