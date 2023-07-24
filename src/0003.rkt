@@ -7,5 +7,6 @@
   (include-part "007I.rkt")
   #:subsections @list[
     (include-part "0033.rkt")
+    (include-part "0034.rkt")
   ]
 ]
