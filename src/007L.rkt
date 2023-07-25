@@ -21,7 +21,7 @@
     @unordered-list[
       @list-item{@(math (x . elem-of . (A . record-field . span:left)))に対して@(math ((span/cocone:comparison . $* . C ((fiber-coproduct-type:in 1) . $ . x)) . def-eq . ((C . record-field . span/cocone:in-left) . $ . x)))}
       @list-item{@(math (y . elem-of . (A . record-field . span:right)))に対して@(math ((span/cocone:comparison . $* . C ((fiber-coproduct-type:in 2) . $ . y)) . def-eq . ((C . record-field . span/cocone:in-right) . $ . y)))}
-      @list-item{@(math (z . elem-of . (A . record-field . span:center)))に対して@(math ((span/cocone:comparison . $* . C (fiber-coproduct-type:glue . $ . z)) . id-type . ((id-inv ((C . record-field . span/cocone:in-leg-r) . $ . z)) . id-comp . ((C . record-field . span/cocone:in-leg-l) . $ . z))))}
+      @list-item{@(math (z . elem-of . (A . record-field . span:center)))に対して@(math ((span/cocone:comparison . $* . C (fiber-coproduct-type:glue . $ . z)) . id-type . (((C . record-field . span/cocone:in-leg-r) . $ . z) . id-comp . (id-inv ((C . record-field . span/cocone:in-leg-l) . $ . z)))))}
     ]
   }
 ]

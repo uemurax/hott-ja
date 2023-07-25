@@ -21,8 +21,8 @@
       @list-item{@(math (span/cocone:in-left . elem-of . ((A . record-field . span:left) . fun-type . span/cocone:vertex)))}
       @list-item{@(math (span/cocone:in-right . elem-of . ((A . record-field . span:right) . fun-type . span/cocone:vertex)))}
       @list-item{@(math (span/cocone:in-center . elem-of . ((A . record-field . span:center) . fun-type . span/cocone:vertex)))}
-      @list-item{@(math (span/cocone:in-leg-l . elem-of . (d-fun-type (x . elem-of . (A . record-field . span:center)) ((span/cocone:in-left . $ . ((A . record-field . span:leg-l) . $ . x)) . id-type . (span/cocone:in-center . $ . x)))))}
-      @list-item{@(math (span/cocone:in-leg-r . elem-of . (d-fun-type (x . elem-of . (A . record-field . span:center)) ((span/cocone:in-right . $ . ((A . record-field . span:leg-r) . $ . x)) . id-type . (span/cocone:in-center . $ . x)))))}
+      @list-item{@(math (span/cocone:in-leg-l . elem-of . (d-fun-type (x . elem-of . (A . record-field . span:center)) ((span/cocone:in-center . $ . x) . id-type . (span/cocone:in-left . $ . ((A . record-field . span:leg-l) . $ . x))))))}
+      @list-item{@(math (span/cocone:in-leg-r . elem-of . (d-fun-type (x . elem-of . (A . record-field . span:center)) ((span/cocone:in-center . $ . x) . id-type . (span/cocone:in-right . $ . ((A . record-field . span:leg-r) . $ . x))))))}
     ]
     @(math (span/cocone . $ . A))の要素を@(math A)下の@dfn{余錐(cocone)}と呼ぶ。
   }
