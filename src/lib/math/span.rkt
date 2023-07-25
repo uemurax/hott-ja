@@ -26,6 +26,7 @@
           [span/cocone:in-leg-l span/cocone-over:in-leg-l]
           [span/cocone:in-leg-r span/cocone-over:in-leg-r])
          total-span
+         total-span/cocone
          span/cocone:comparison
          span/cocone-is-universal
          span/cocone
@@ -58,3 +59,4 @@
 (define span/cocone-over (const "CoconeOver"))
 
 (define total-span (const "Total"))
+(define total-span/cocone (const "Total"))
