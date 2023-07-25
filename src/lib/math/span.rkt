@@ -28,6 +28,7 @@
          total-span
          total-span/cocone
          span-is-cartesian
+         span/cocone-is-cartesian
          span/cocone:comparison
          span/cocone-is-universal
          span/cocone
@@ -63,3 +64,4 @@
 (define total-span/cocone (const "Total"))
 
 (define span-is-cartesian (const "IsCart"))
+(define span/cocone-is-cartesian (const "IsCart"))
