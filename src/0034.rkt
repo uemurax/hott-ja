@@ -8,6 +8,7 @@
   (include-part "007L.rkt")
   (include-part "007M.rkt")
   (include-part "007N.rkt")
+  (include-part "007R.rkt")
   (include-part "007P.rkt")
   (include-part "007O.rkt")
   (include-part "007Q.rkt")
