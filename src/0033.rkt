@@ -2,7 +2,8 @@
 
 (require "lib/math.rkt"
          "lib/math/fiber-coproduct.rkt"
-         "lib/math/id-over.rkt")
+         "lib/math/id-over.rkt"
+         "lib/math/sphere.rkt")
 
 (define A "A")
 (define B "B")
@@ -18,6 +19,8 @@
 (define b "b")
 (define c "c")
 (define d "d")
+(define n "n")
+(define X "X")
 
 @section[
   #:id (current-id)
@@ -38,4 +41,7 @@
   (include-part "007V.rkt")
   (include-part "003M.rkt")
   (include-part "007W.rkt")
+  @paragraph{
+    位相幾何学において、@emph{CW複体}は、@(math n)次元球を境界(@(math (n . - . "1"))次元球面)に沿って貼り付ける操作を繰り返して得られる空間である。@(math n)次元球が可縮であることをふまえると、@(math n)次元球を境界@(math (f . elem-of . ((sphere (n . - . "1")) . fun-type . X)))に沿って空間@(math X)に貼り付けたものは@(math f)のコファイバーとホモトピー同値である。したがって、型理論において、@(math (f . elem-of . ((sphere (n . - . "1")) . fun-type . X)))の形の関数のコファイバーを取る操作を繰り返すことで有限CW複体(のホモトピー型)を構成できる。
+  }
 ]
