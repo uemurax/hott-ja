@@ -3,6 +3,7 @@
 (require "lib/math.rkt"
          "lib/math/level.rkt"
          "lib/math/universe.rkt"
+         "lib/index/notation.rkt"
          "lib/markup/rule.rkt")
 
 (define i "i")
@@ -12,6 +13,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "うちゅう"]{宇宙}
+    @notation-index[#:key "U(i)"]{@(math (universe . $ . i))}
   ]
   @paragraph{
     @dfn{宇宙(universe)}についての規則は次で与えられる。

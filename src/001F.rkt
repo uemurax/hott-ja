@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/math.rkt"
+         "lib/index/notation.rkt"
          "lib/markup/definition.rkt")
 
 (define i "i")
@@ -15,6 +16,10 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "ap(f)"]{@(math (fun-apply-id . $ . f))}
+    @notation-index[#:key "f(p)"]{@(math (f . $ . p)) (関数を同一視に適用)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型、@(math (f . elem-of . (A . fun-type . B)))を関数とする。関数@disp{
       @(math ((fun-apply-id . $ . f) . elem-of . (d-fun-type (implicit (x1 x2 . elem-of* . A)) ((x1 . id-type . x2) . fun-type . ((f . $ . x1) . id-type . (f . $ . x2))))))

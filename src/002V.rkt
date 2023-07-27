@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/rule.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/nat.rkt"
          "lib/math/level.rkt")
@@ -17,6 +18,10 @@
   #:indexes @list[
     @index[#:key "しぜんすうがた"]{自然数型}
     @index[#:key "しぜんすう"]{自然数}
+    @notation-index[#:key "N"]{@(math nat)}
+    @notation-index[#:key "0"]{@(math nat:zero) (自然数)}
+    @notation-index[#:key "succ"]{@(math nat:succ) (自然数)}
+    @notation-index[#:key "indN"]{@(math nat:ind)}
   ]
   @paragraph{
     @unordered-list[

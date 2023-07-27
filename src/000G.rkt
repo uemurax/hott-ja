@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/math.rkt"
+         "lib/index/notation.rkt"
          "lib/markup/definition.rkt")
 
 (define i "i")
@@ -10,6 +11,9 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "A->B"]{@(math (A . fun-type . B))}
+  ]
   @paragraph{
     @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型とする。このとき、@(math ((A . fun-type . B) . elem-of . (universe . $ . i)))を@(math (d-fun-type (x . elem-of . A) B))と定義する。
   }

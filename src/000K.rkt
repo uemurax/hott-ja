@@ -2,6 +2,7 @@
 
 (require "lib/math/level.rkt"
          "lib/markup/rule.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt")
 
 (define a "a")
@@ -10,6 +11,8 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "たんいがた"]{単位型}
+    @notation-index[#:key "1"]{@(math unit-type)}
+    @notation-index[#:key "★"]{@(math unit-elem)}
   ]
   @paragraph{
     @unordered-list[

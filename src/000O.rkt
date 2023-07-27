@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/notation.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt")
 
 (define x "x")
@@ -14,6 +15,9 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "れこーどがた"]{レコード型}
+    @notation-index[#:key "Record{...}"]{@(math (record-type... (list (x . _ . "1") (A . _ . "1")) (list (x . _ . n) (A . _ . n))))}
+    @notation-index[#:key "record{...}"]{@(math (record-elem... (list (x . _ . "1") (a . _ . "1")) (list (x . _ . n) (a . _ . n))))}
+    @notation-index[#:key "a.x"]{@(math (a . record-field . x))}
   ]
   @paragraph{
     記法@(math (record-type... (list (x . _ . "1") (A . _ . "1")) (list (x . _ . n) (A . _ . n))))を次のように定める。
@@ -21,7 +25,7 @@
       @list-item{@(math (record-type))は@(math unit-type)のこととする。}
       @list-item{@(math (record-type... (list (x . _ . "1") (A . _ . "1")) (list (x . _ . (n . + . "1")) (A . _ . (n . + . "1")))))は@(math (d-pair-type ((x . _ . "1") . elem-of . (A . _ . "1")) (record-type... (list (x . _ . "2") (A . _ . "2")) (list (x . _ . (n . + . "1")) (A . _ . (n . + . "1"))))))のこととする。}
     ]
-    この形の型を@dfn{レコード型(record type)}と呼ぶ。また、記法@(math (record-elem... (list (x . _ . "1") (a . _ . "1")) (list (x . _ . n) (A . _ . n))))を次のように定める。
+    この形の型を@dfn{レコード型(record type)}と呼ぶ。また、記法@(math (record-elem... (list (x . _ . "1") (a . _ . "1")) (list (x . _ . n) (a . _ . n))))を次のように定める。
     @unordered-list[
       @list-item{@(math (record-elem))は@(math unit-elem)のこととする。}
       @list-item{@(math (record-elem... (list (x . _ . "1") (a . _ . "1")) (list (x . _ . (n . + . "1")) (a . _ . (n . + . "1")))))は@(math (pair . $* . (a . _ . "1") (record-elem... (list (x . _ . "2") (a . _ . "2")) (list (x . _ . (n . + . "1")) (a . _ . (n . + . "1"))))))のこととする。}

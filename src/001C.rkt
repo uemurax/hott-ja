@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt")
 
 (define i "i")
@@ -18,6 +19,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "ゆそうかんすう"]{輸送関数}
+    @notation-index[#:key "transport"]{@(math transport)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math j)を階数、@(math (B . elem-of . (A . fun-type . (universe . $ . j))))を型の族とする。@(math (a1 a2 . elem-of* . A))と@(math (p . elem-of . (a1 . id-type . a2)))を要素とする。@dfn{輸送関数(transport function)}@disp{

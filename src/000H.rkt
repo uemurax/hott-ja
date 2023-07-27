@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/rule.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt")
 
 (define i "i")
@@ -18,6 +19,9 @@
     @index[#:key "かんすう"]{関数}
     @index[#:key "らむだちゅうしょう"]{ラムダ抽象}
     @index[#:key "かんすうてきよう"]{関数適用}
+    @notation-index[#:key "Pi A B"]{@(math (d-fun-type (x . elem-of . A) B))}
+    @notation-index[#:key "λx.b"]{@(math (abs x b))}
+    @notation-index[#:key "f(a)"]{@(math (f . $ . a)) (関数適用)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (B . elem-of . (universe . $ . i)))を仮定@(math (x . elem-of . A))の下での型とする。
