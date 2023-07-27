@@ -23,7 +23,7 @@
   }
   (include-part "003X.rkt")
   @paragraph{
-    @(math trunc-level)は実質@(math nat)と同じであるが、@(math nat:zero)の代わりに@(math trunc-level:-2)から数えたものである。特に、次の@emph{帰納法原理}を満たす:型の族@(math ((A . elem-of . trunc-level) . fun-type . (universe . $ . i)))に対して、関数@(math (h . elem-of . (d-fun-type (x . elem-of . trunc-level) (A . $ . x))))を構成するためには、
+    @(math trunc-level)は実質@(math nat)と同じであるが、@(math nat:zero)の代わりに@(math trunc-level:-2)から数えたものである。特に、次の@emph{帰納法原理}を満たす:型の族@(math (A . elem-of . (trunc-level . fun-type . (universe . $ . i))))に対して、関数@(math (h . elem-of . (d-fun-type (x . elem-of . trunc-level) (A . $ . x))))を構成するためには、
     @unordered-list[
       @list-item{@(math (a . elem-of . (A . $ . trunc-level:-2)))}
       @list-item{@(math (f . elem-of . (d-fun-type (x . elem-of . trunc-level) ((A . $ . x) . fun-type . (A . $ . (trunc-level:succ . $ . x))))))}
