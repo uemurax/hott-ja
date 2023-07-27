@@ -36,4 +36,5 @@
     ファイバー余積を使って構成できる型には次のようなものがある。
   }
   (include-part "007V.rkt")
+  (include-part "003M.rkt")
 ]
