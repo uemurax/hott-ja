@@ -10,6 +10,7 @@
   (include-part "Kapulkin--Lumsdaine--2021-0000.rkt")
   (include-part "Lambek--Scott--1986-0000.rkt")
   (include-part "Lumsdaine--2010-0000.rkt")
+  (include-part "Lurie--2009-0000.rkt")
   (include-part "Martin-Loef--1975-0000.rkt")
   (include-part "Pierce--2002-0000.rkt")
   (include-part "Quillen--1967-0000.rkt")

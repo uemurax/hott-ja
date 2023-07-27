@@ -6,6 +6,7 @@
          "empty.rkt")
 
 (provide coproduct-type
+         coproduct-type/symb
          coproduct-type:ind
          coproduct-type:in)
 
