@@ -32,4 +32,8 @@
   @paragraph{
     残りの規則はファイバー余積の@emph{帰納法原理}で、型@(math (A . (fiber-coproduct-type f g) . B))が@(math (fiber-coproduct-type:in 1))と@(math (fiber-coproduct-type:in 2))と@(math fiber-coproduct-type:glue)で自由に生成されることを表す。ただし、@(math ((fiber-coproduct-type:ind . $* . ((fiber-coproduct-type:in 1) . $ . a) E e1 e2 p) . def-eq . (e1 . $ . a)))と@(math ((fiber-coproduct-type:ind . $* . ((fiber-coproduct-type:in 2) . $ . b) E e1 e2 p) . def-eq . (e2 . $ . b)))は定義であるのに対し、@(math ((fun-apply-id/d . $* . (abs d (fiber-coproduct-type:ind . $* . d E e1 e2 p)) (fiber-coproduct-type:glue . $ . c)) . id-type . (p . $ . c)))は同一視を構成する。理想的には@(math ((fun-apply-id/d . $* . (abs d (fiber-coproduct-type:ind . $* . d E e1 e2 p)) (fiber-coproduct-type:glue . $ . c)) . def-eq . (p . $ . c)))と定義したいところだが、これは単なる@(math fiber-coproduct-type:ind)の定義ではなく@(math fiber-coproduct-type:ind)と@(math fun-apply-id/d)に関する複合的な定義である。@(math fun-apply-id/d)はプリミティヴではなく我々が構成した関数(@ref["007I"])なので、それに関する新たな定義の正当性は無い。
   }
+  @paragraph{
+    ファイバー余積を使って構成できる型には次のようなものがある。
+  }
+  (include-part "007V.rkt")
 ]
