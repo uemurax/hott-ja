@@ -3,6 +3,7 @@
 (require "core.rkt")
 
 (provide local-generator
+         is-local
          local-generator:index
          local-generator:domain
          local-generator:codomain
@@ -13,3 +14,5 @@
 (define local-generator:domain (const "Dom"))
 (define local-generator:codomain (const "Cod"))
 (define local-generator:fun (const "fun"))
+
+(define is-local (const "IsLocal"))
