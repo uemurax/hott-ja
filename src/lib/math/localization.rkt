@@ -4,6 +4,10 @@
 
 (provide local-generator
          is-local
+         weak-localization
+         weak-localization:in
+         weak-localization:ext
+         weak-localization:is-ext
          local-generator:index
          local-generator:domain
          local-generator:codomain
@@ -16,3 +20,8 @@
 (define local-generator:fun (const "fun"))
 
 (define is-local (const "IsLocal"))
+
+(define weak-localization (const "WLoc"))
+(define weak-localization:in (const "in"))
+(define weak-localization:ext (const "ext"))
+(define weak-localization:is-ext (const "is-ext"))
