@@ -2,6 +2,7 @@
 
 (require "lib/math.rkt"
          "lib/math/id.rkt"
+         "lib/index/notation.rkt"
          "lib/markup/definition.rkt")
 
 (define i "i")
@@ -17,6 +18,10 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "p^-1"]{@(math (id-inv p))}
+    @notation-index[#:key "qop"]{@(math (q . id-comp . p)) (同一視)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型とする。
     @unordered-list[

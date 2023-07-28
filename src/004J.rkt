@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/biinv.rkt")
 
@@ -13,6 +14,9 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "りょうがわかぎゃく"]{両側可逆}
+    @notation-index[#:key "IsBiinv"]{@(math is-biinv)}
+    @notation-index[#:key "LInv"]{@(math linv)}
+    @notation-index[#:key "RInv"]{@(math rinv)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型、@(math (f . elem-of . (A . fun-type . B)))を関数とする。

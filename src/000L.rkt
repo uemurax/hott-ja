@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/rule.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt")
 
 (define i "i")
@@ -17,6 +18,10 @@
     @index[#:key "ついがた"]{対型}
     @index[#:key "つい"]{対}
     @index[#:key "しゃえい"]{射影}
+    @notation-index[#:key "Sigma A B"]{@(math (d-pair-type (x . elem-of . A) B))}
+    @notation-index[#:key "pair"]{@(math pair)}
+    @notation-index[#:key "proj1"]{@(math (proj 1))}
+    @notation-index[#:key "proj2"]{@(math (proj 2))}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (B . elem-of . (A . fun-type . (universe . $ . i))))を型の族とする。

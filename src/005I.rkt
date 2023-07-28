@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/level.rkt"
@@ -15,6 +16,8 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "けん"]{圏}
+    @notation-index[#:key "IsCat"]{@(math is-cat)}
+    @notation-index[#:key "Cat(i)"]{@(math (cat . $ . i))}
   ]
   @paragraph{
     @(math i)を階数とする。

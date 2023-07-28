@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/notation.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt")
 
 (define A "A")
@@ -15,6 +16,10 @@
 
 @notation[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "λ(x..).b"]{@(math (abs* (x . _ . "1") dots (x . _ . "n") b))}
+    @notation-index[#:key "f(a..)"]{@(math (f . $* . (a . _ . "1") dots (a . _ . "n"))) (関数適用)}
+  ]
   @paragraph{
     @unordered-list[
       @list-item{@(math fun-type/symb)は右結合の演算子である。例えば、@(math (A . fun-type . (B . fun-type . C)))は@(math (A . fun-type . (paren (B . fun-type . C))))と読む。}

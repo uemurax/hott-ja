@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/span.rkt"
          "lib/math/fiber-coproduct.rkt")
@@ -14,6 +15,9 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "cmp"]{@(math span/cocone:comparison)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (span . $ . i)))をスパン、@(math (C . elem-of . (span/cocone . $ . A)))を余錐とする。関数@disp{
       @(math ((span/cocone:comparison . $ . C) . elem-of . (((A . record-field . span:left) . (fiber-coproduct-type (A . record-field . span:leg-l) (A . record-field . span:leg-r)) . (A . record-field . span:right)) . fun-type . (C . record-field . span/cocone:vertex))))

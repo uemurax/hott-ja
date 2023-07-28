@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/rule.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/empty.rkt"
          "lib/math/level.rkt")
@@ -13,6 +14,8 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "くうがた"]{空型}
+    @notation-index[#:key "0"]{@(math empty-type)}
+    @notation-index[#:key "ind0"]{@(math empty-type:ind)}
   ]
   @paragraph{
     @unordered-list[

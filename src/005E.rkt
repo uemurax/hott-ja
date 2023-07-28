@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt")
 
@@ -15,6 +16,9 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "どうけい"]{同型}
+    @notation-index[#:key "IsIso"]{@(math cat:is-iso)}
+    @notation-index[#:key "LInv"]{@(math cat:linv) (前圏)}
+    @notation-index[#:key "RInv"]{@(math cat:rinv) (前圏)}
   ]
   @paragraph{
     @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏、@(math (x1 x2 . elem-of* . C))を対象、@(math (f . elem-of . (cat:map . $* . x1 x2)))を射とする。

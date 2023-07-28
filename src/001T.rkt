@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/example.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt")
 
 (define i "i")
@@ -14,6 +15,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "ろんりてきにどうち"]{論理的に同値}
+    @notation-index[#:key "A<->B"]{@(math (A . log-equiv . B))}
   ]
   @paragraph{
     @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型とする。型@(math ((A . log-equiv . B) . elem-of . (universe . $ . i)))を@(math (record-type (list log-equiv-to (A . fun-type . B)) (list log-equiv-from (B . fun-type . A))))と定義する。@(math (A . log-equiv . B))の要素がある時、@(math A)と@(math B)は@dfn{論理的に同値(logically equivalent)}であると言う。@emph{反射律}、@emph{対称律}、@emph{推移律}を次のように構成できる。

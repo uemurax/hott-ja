@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/notation.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/logic.rkt"
          "lib/math/level.rkt"
@@ -18,6 +19,17 @@
 
 @notation[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "T"]{@(math logic-true)}
+    @notation-index[#:key "P/\\Q"]{@(math (P . logic-and . Q))}
+    @notation-index[#:key "_|_"]{@(math logic-false)}
+    @notation-index[#:key "P\\/Q"]{@(math (P . logic-or . Q))}
+    @notation-index[#:key "P=>Q"]{@(math (P . logic-impl . Q))}
+    @notation-index[#:key "!P"]{@(math (logic-neg P))}
+    @notation-index[#:key "P<=>Q"]{@(math (P . logic-equiv . Q))}
+    @notation-index[#:key "forall x:A P"]{@(math (forall (x . elem-of . A) (P . $ . x)))}
+    @notation-index[#:key "exists x:A P"]{@(math (exists (x . elem-of . A) (P . $ . x)))}
+  ]
   @paragraph{
     @(math i)を階数とする。
     @unordered-list[

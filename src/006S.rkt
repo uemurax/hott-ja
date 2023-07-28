@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/bifunctor.rkt")
@@ -19,6 +20,9 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "Map(Fun)"]{@(math cat:map/fun)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏とする。@(math ((cat:map/fun . $ . C) . elem-of . (bifunctor (opposite-cat . $ . C) C (set-cat . $ . i))))を次のように定義する。
     @unordered-list[

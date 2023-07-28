@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/math.rkt"
+         "lib/index/notation.rkt"
          "lib/markup/definition.rkt")
 
 (define i "i")
@@ -12,6 +13,9 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "れとらくと"]{レトラクト}
+    @notation-index[#:key "Retract"]{@(math retract)}
+    @notation-index[#:key "A<|B"]{@(math (A . retract-rel . B))}
+    @notation-index[#:key "A<|>B"]{@(math (A . bi-retract-rel . B))}
   ]
   @paragraph{
     @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型とする。型@(math ((retract . $* . A B) . elem-of . (universe . $ . i)))を次のレコード型と定義する。

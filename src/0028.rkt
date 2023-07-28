@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/example.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/level.rkt"
          "lib/math/magma.rkt"
@@ -21,6 +22,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "まぐま"]{マグマ}
+    @notation-index[#:key "Magma(i)"]{@(math (magma . $ . i))}
   ]
   @paragraph{
     @(math i)を階数とする。型@(math ((magma . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。

@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/n-type.rkt"
          "lib/math/connected.rkt"
@@ -14,6 +15,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "nれんけつ"]{@(math n)連結}
+    @notation-index[#:key "IsConnected"]{@(math is-connected)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (n . elem-of . trunc-level))を要素とする。型@(math ((is-connected . $* . n A) . elem-of . (universe . $ . i)))を@(math (is-contr . $ . (trunc n A)))と定義する。@(math (is-connected . $* . n A))の要素がある時、@(math A)は@dfn{@(math n)連結(@(math n)-connected)}であると言う。

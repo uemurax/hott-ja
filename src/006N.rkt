@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/example.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt")
 
@@ -15,6 +16,9 @@
 
 @example[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "Op(C)"]{@(math opposite-cat)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏とする。前圏@(math ((opposite-cat . $ . C) . elem-of . (precat . $ . i)))を次のように定義する。
     @unordered-list[

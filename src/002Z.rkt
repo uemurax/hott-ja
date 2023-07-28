@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/rule.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/coproduct.rkt")
 
@@ -22,6 +23,10 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "よせき"]{余積}
+    @notation-index[#:key "A+B"]{@(math (A . coproduct-type . B))}
+    @notation-index[#:key "in1"]{@(math (coproduct-type:in 1)) (余積)}
+    @notation-index[#:key "in2"]{@(math (coproduct-type:in 2)) (余積)}
+    @notation-index[#:key "ind+"]{@(math coproduct-type:ind)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型とする。

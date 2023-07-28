@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/example.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/level.rkt"
@@ -13,6 +14,9 @@
 
 @example[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "Set(Cat)(i)"]{@(math (set-cat . $ . i))}
+  ]
   @paragraph{
     関数外延性を仮定する。@(math i)を階数とする。前圏@(math ((set-cat . $ . i) . elem-of . (precat . $ . (level:succ . $ . i))))を次のように定義する。
     @unordered-list[

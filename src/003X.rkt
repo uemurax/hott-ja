@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/level.rkt"
          "lib/math/n-type.rkt"
@@ -11,6 +12,11 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "TruncLevel"]{@(math trunc-level)}
+    @notation-index[#:key "-2"]{@(math trunc-level:-2) (truncation level)}
+    @notation-index[#:key "-1"]{@(math trunc-level:-1) (truncation level)}
+  ]
   @paragraph{
     @unordered-list[
       @list-item{型@(math (trunc-level . elem-of . (universe . $ . level:zero)))を@(math (nat . coproduct-type . (unit-type . coproduct-type . unit-type)))と定義する。}

@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/hae.rkt")
 
@@ -14,6 +15,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "はんずいはんどうち"]{半随伴同値}
+    @notation-index[#:key "IsHAE"]{@(math is-hae)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A B . elem-of* . (universe . $ . i)))を型、@(math (f . elem-of . (A . fun-type . B)))を関数とする。型@(math ((is-hae . $ . f) . elem-of . (universe . $ . i)))を次のレコード型と定義する。

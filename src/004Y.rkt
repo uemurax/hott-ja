@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/example.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/level.rkt"
          "lib/math/ring.rkt"
@@ -25,6 +26,7 @@
   #:indexes @list[
     @index[#:key "かん"]{環}
     @index[#:key "かんどうけい"]{環同型}
+    @notation-index[#:key "Ring(i)"]{@(math (ring . $ . i))}
   ]
   @paragraph{
     @(math i)を階数とする。型@(math ((ring-str . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。

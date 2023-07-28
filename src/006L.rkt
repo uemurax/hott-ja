@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/exercise.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/presheaf.rkt")
@@ -18,6 +19,10 @@
 
 @exercise[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "id"]{@(math id-presheaf-hom) (前層の射)}
+    @notation-index[#:key "gof"]{@(math (f2 . presheaf-hom-comp . f1)) (前層の射)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏とする。
     @ordered-list[

@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/n-type.rkt")
 
@@ -15,6 +16,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "nかた"]{@(math n)型}
+    @notation-index[#:key "IsTrunc"]{@(math is-trunc)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型とする。@(math (n . elem-of . trunc-level))に対して、型@(math ((is-trunc . $* . n A) . elem-of . (universe . $ . i)))を次のように定義する。

@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/functor.rkt"
@@ -21,6 +22,9 @@
     @index[#:key "じゅうまんちゅうじつ"]{充満忠実}
     @index[#:key "ほんしつてきぜんしゃ"]{本質的全射}
     @index[#:key "じゃくけんどうち"]{弱圏同値}
+    @notation-index[#:key "IsFF"]{@(math is-fully-faithful)}
+    @notation-index[#:key "IsEssSurj"]{@(math is-ess-surj)}
+    @notation-index[#:key "IsWCatEquiv"]{@(math is-weak-cat-equiv)}
   ]
   @paragraph{
     @(math i)を階数、@(math (C D . elem-of* . (precat . $ . i)))を前圏、@(math (F . elem-of . (functor . $* . C D)))を関手とする。

@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/presheaf.rkt"
@@ -22,6 +23,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "ぜんそうのしゃ"]{前層の射}
+    @notation-index[#:key "Hom"]{@(math presheaf-hom)}
   ]
   @paragraph{
     @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏、@(math (A B . elem-of* . (presheaf . $ . C)))を前層とする。型@(math ((presheaf-hom . $* . A B) . elem-of . (universe . $ . i)))を

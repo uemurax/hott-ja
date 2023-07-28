@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/rule.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt")
 
 (define i "i")
@@ -19,6 +20,9 @@
   #:indexes @list[
     @index[#:key "どういつしがた"]{同一視型}
     @index[#:key "どういつし"]{同一視}
+    @notation-index[#:key "a1=a2"]{@(math (a1 . id-type . a2))}
+    @notation-index[#:key "refl"]{@(math refl)}
+    @notation-index[#:key "ind="]{@(math id-ind)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (a1 . elem-of . A))を要素とする。

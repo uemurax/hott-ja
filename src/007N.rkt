@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/span.rkt"
          "lib/math/level.rkt")
@@ -13,6 +14,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "Aじょうのすぱん"]{@(math A)上のスパン}
+    @notation-index[#:key "SpanOver"]{@(math span-over)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (span . $ . i)))をスパンとする。型@(math ((span-over . $ . A) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。
