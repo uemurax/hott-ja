@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/span.rkt")
 
@@ -11,6 +12,9 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "Total"]{@(math total-span) (スパン)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (span . $ . i)))をスパン、@(math (B . elem-of . (span-over . $ . A)))を@(math A)上のスパンとする。スパン@(math ((total-span . $ . B) . elem-of . (span . $ . i)))を次のように定義する。
     @unordered-list[

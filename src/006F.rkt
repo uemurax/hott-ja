@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/notation.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/presheaf.rkt")
@@ -16,6 +17,10 @@
 
 @notation[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "A(x)"]{@(math (A . $ . x)) (前層)}
+    @notation-index[#:key "a.f"]{@(math (a . presheaf:act-bin . f))}
+  ]
   @paragraph{
     @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏、@(math (A . elem-of . (presheaf . $ . C)))を前層とする。
     @unordered-list[

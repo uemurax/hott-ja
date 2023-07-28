@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/span.rkt"
          "lib/math/level.rkt"
@@ -17,6 +18,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "BじょうCかのよすい"]{@(math B)上@(math C)下の余錐}
+    @notation-index[#:key "CoconeOver"]{@(math span/cocone-over)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (span . $ . i)))をスパン、@(math (B . elem-of . (span-over . $ . A)))を@(math A)上のスパン、@(math (C . elem-of . (span/cocone . $ . A)))を余錐とする。型@(math ((span/cocone-over . $* . B C) . elem-of . (universe . $ . (level:succ . $ . i))))と次のレコード型と定義する。

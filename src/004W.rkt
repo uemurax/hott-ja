@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/example.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/level.rkt"
          "lib/math/group.rkt"
@@ -22,6 +23,7 @@
   #:indexes @list[
     @index[#:key "ぐん"]{群}
     @index[#:key "ぐんどうけい"]{群同型}
+    @notation-index[#:key "Group(i)"]{@(math (group . $ . i))}
   ]
   @paragraph{
     @(math i)を階数とする。型@(math ((group-str . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。

@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/math.rkt"
+         "lib/index/notation.rkt"
          "lib/markup/definition.rkt")
 
 (define i "i")
@@ -11,6 +12,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "かしゅく"]{可縮}
+    @notation-index[#:key "IsContr"]{@(math is-contr)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型とする。型@(math ((is-contr . $ . A) . elem-of . (universe . $ . i)))を次のレコード型と定義する。

@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/level.rkt"
@@ -23,6 +24,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "ぜんそう"]{前層}
+    @notation-index[#:key "Psh"]{@(math presheaf)}
   ]
   @paragraph{
     @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏とする。型@(math ((presheaf . $ . C) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。

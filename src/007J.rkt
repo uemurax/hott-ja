@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/span.rkt"
          "lib/math/level.rkt")
@@ -11,6 +12,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "すぱん"]{スパン}
+    @notation-index[#:key "Span(i)"]{@(math (span . $ . i))}
   ]
   @paragraph{
     @(math i)を階数とする。型@(math ((span . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。

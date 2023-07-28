@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/presheaf.rkt"
@@ -17,6 +18,7 @@
   #:indexes @list[
     @index[#:key "ひょうげんかのう"]{表現可能}
     @index[#:key "ふへんようそ"]{普遍要素}
+    @notation-index[#:key "IsRepr"]{@(math is-repr-psh)}
   ]
   @paragraph{
     @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏、@(math (A . elem-of . (presheaf . $ . C)))を前層とする。型@(math ((is-repr-psh . $ . A) . elem-of . (universe . $ . i)))を次のレコード型と定義する。

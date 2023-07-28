@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/id-over.rkt")
 
@@ -15,6 +16,9 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "apd"]{@(math fun-apply-id/d)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (B . elem-of . (A . fun-type . (universe . $ . i))))を型の族、@(math (f . elem-of . (d-fun-type (x . elem-of . A) (B . $ . x))))を関数とする。関数@disp{
       @(math ((fun-apply-id/d . $ . f) . elem-of . (d-fun-type (implicit (x1 x2 . elem-of* . A)) (d-fun-type (p . elem-of . (x1 . id-type . x2)) ((f . $ . x1) . (id-type-over B p) . (f . $ . x2))))))

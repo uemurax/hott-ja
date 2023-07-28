@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/level.rkt"
          "lib/math/set.rkt"
@@ -25,6 +26,7 @@
     @index[#:key "こうとうしゃ"]{恒等射}
     @index[#:key "ごうせい"]{合成}
     @index[#:key "ぜんけん"]{前圏}
+    @notation-index[#:key "PreCat(i)"]{@(math (precat . $ . i))}
   ]
   @paragraph{
     @(math i)を階数とする。型@(math ((precat . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。

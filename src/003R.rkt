@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/rule.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/fiber-coproduct.rkt"
          "lib/math/id-over.rkt")
@@ -29,6 +30,12 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "ふぁいばーよせき"]{ファイバー余積}
+    @notation-index[#:key "A f+g B"]{@(math (A . (fiber-coproduct-type f g) . B))}
+    @notation-index[#:key "in1"]{@(math (fiber-coproduct-type:in 1)) (ファイバー余積)}
+    @notation-index[#:key "in2"]{@(math (fiber-coproduct-type:in 2)) (ファイバー余積)}
+    @notation-index[#:key "glue"]{@(math fiber-coproduct-type:glue)}
+    @notation-index[#:key "ind.+."]{@(math fiber-coproduct-type:ind)}
+    @notation-index[#:key "ind.+.-glue"]{@(math fiber-coproduct-type:ind-glue)}
   ]
   @paragraph{
     @(math i)を階数、@(math (A B C . elem-of* . (universe . $ . i)))を型、@(math (f . elem-of . (C . fun-type . A)))と@(math (g . elem-of . (C . fun-type . B)))を関数とする。

@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/presheaf.rkt"
@@ -13,6 +14,9 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "Psh(Cat)"]{@(math presheaf-cat)}
+  ]
   @paragraph{
     関数外延性を仮定する。@(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏とする。前圏@(math ((presheaf-cat . $ . C) . elem-of . (universe . $ . (level:succ . $ . i))))を次のように定義する。
     @unordered-list[

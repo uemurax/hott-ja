@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/exercise.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/functor.rkt"
@@ -23,6 +24,8 @@
   #:indexes @list[
     @index[#:key "こうとうしぜんへんかん"]{恒等自然変換}
     @index[#:key "ごうせいしぜんへんかん"]{合成自然変換}
+    @notation-index[#:key "id"]{@(math id-nat-trans) (自然変換)}
+    @notation-index[#:key "tos"]{@(math (t2 . nat-trans-comp . t1)) (自然変換)}
   ]
   @paragraph{
     @(math i)を階数、@(math (C D . elem-of* . (precat . $ . i)))を前圏とする。

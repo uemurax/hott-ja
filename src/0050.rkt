@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/rule.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/truncation.rkt"
          "lib/math/n-type.rkt")
@@ -20,6 +21,9 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "[nきりつめ]"]{@(math n)切り詰め}
+    @notation-index[#:key "||A||n"]{@(math (trunc n A))}
+    @notation-index[#:key "|a|n"]{@(math (trunc:in n a))}
+    @notation-index[#:key "ind||A||n"]{@(math (trunc:ind n A))}
   ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型、@(math (n . elem-of . trunc-level))を要素とする。

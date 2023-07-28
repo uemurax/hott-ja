@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/nat.rkt"
          "lib/math/sphere.rkt"
@@ -15,6 +16,8 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "nじげんきゅうめん"]{@(math n)次元球面}
+    @notation-index[#:key "S-1"]{@(math (sphere "-1"))}
+    @notation-index[#:key "Sn"]{@(math (sphere n))}
   ]
   @paragraph{
     自然数@(math (n . elem-of . nat))に対して、@dfn{@(math n)次元球面(@(math n)-dimensional sphere)} @(math ((sphere n) . elem-of . (universe . $ . level:zero)))を次のように定義する。

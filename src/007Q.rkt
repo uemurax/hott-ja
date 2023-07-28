@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/span.rkt")
 
@@ -13,6 +14,9 @@
 
 @definition[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "Total"]{@(math total-span/cocone) (余錐)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (A . elem-of . (span . $ . i)))をスパン、@(math (B . elem-of . (span-over . $ . A)))を@(math A)上のスパン、@(math (C . elem-of . (span/cocone . $ . A)))を余錐、@(math (D . elem-of . (span/cocone-over . $* . B C)))を@(math C)上の余錐とする。余錐@(math ((total-span/cocone . $ . D) . elem-of . (span/cocone . $ . (total-span . $ . B))))を次のように定義する。
     @unordered-list[

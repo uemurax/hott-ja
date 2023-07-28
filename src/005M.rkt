@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt"
          "lib/math/functor.rkt")
@@ -17,6 +18,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "ぜんけんのどうち"]{前圏の同型}
+    @notation-index[#:key "IsIso"]{@(math is-precat-equiv) (前圏の同型)}
   ]
   @paragraph{
     @(math i)を階数、@(math (C D . elem-of* . (precat . $ . i)))を前圏、@(math (F . elem-of . (functor . $* . C D)))を関手とする。型@(math ((is-precat-equiv . $ . F) . elem-of . (universe . $ . i)))を次のレコード型と定義する。

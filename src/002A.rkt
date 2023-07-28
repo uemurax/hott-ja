@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/example.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/level.rkt"
          "lib/math/refl-graph.rkt"
@@ -24,6 +25,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "はんしゃてきぐらふ"]{反射的グラフ}
+    @notation-index[#:key "ReflGraph(i)"]{@(math (refl-graph . $ . i))}
   ]
   @paragraph{
     @(math i)を階数とする。型@(math ((refl-graph . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。

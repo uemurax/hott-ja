@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/notation.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/cat.rkt")
 
@@ -15,6 +16,10 @@
 
 @notation[
   #:id (current-id)
+  #:indexes @list[
+    @notation-index[#:key "id"]{@(math cat:id) (前圏)}
+    @notation-index[#:key "gof"]{@(math (f2 . cat:comp-bin . f1)) (前圏)}
+  ]
   @paragraph{
     @(math i)を階数、@(math (C . elem-of . (precat . $ . i)))を前圏とする。@(math x)が@(math C)の対象であることを@(math (x . elem-of . (C . record-field . cat:obj)))の代わりに単に@(math (x . elem-of . C))と書く。対象@(math (x1 x2 . elem-of* . C))に対して、@(math ((C . record-field . cat:map) . $* . x1 x2))の代わりに単に@(math (cat:map . $* . x1 x2))と書く。@(math (x1 . elem-of . C))と書いた時点で@(math C)の前圏の構造が暗黙に了解されるのでこの表記で曖昧性はない。同様に、対象@(math (x . elem-of . C))に対して、@(math ((C . record-field . cat:id) . $i . x))の代わりに単に@(math (cat:id . $i . x))と書く。合成@(math (cat:comp . $* . f2 f1))は二項演算子を使って@(math (f2 . cat:comp-bin . f1))と書く。
   }

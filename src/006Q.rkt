@@ -1,6 +1,7 @@
 #lang morg
 
 (require "lib/markup/definition.rkt"
+         "lib/index/notation.rkt"
          "lib/math.rkt"
          "lib/math/bifunctor.rkt"
          "lib/math/cat.rkt"
@@ -28,6 +29,7 @@
   #:id (current-id)
   #:indexes @list[
     @index[#:key "そうかんしゅ"]{双関手}
+    @notation-index[#:key "BiFun(C1,C2;D)"]{@(math (bifunctor C1 C2 D))}
   ]
   @paragraph{
     @(math i)を階数、@(math (C1 C2 D . elem-of* . (precat . $ . i)))を前圏とする。型@(math ((bifunctor C1 C2 D) . elem-of . (universe . $ . i)))を次のレコード型と定義する。
