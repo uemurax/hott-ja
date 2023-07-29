@@ -9,6 +9,7 @@
          weak-localization:ext
          weak-localization:is-ext
          localization
+         (rename-out [weak-localization:in localization:in])
          local-generator-add-codiagonal
          local-generator:index
          local-generator:domain
