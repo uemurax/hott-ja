@@ -8,6 +8,7 @@
          weak-localization:in
          weak-localization:ext
          weak-localization:is-ext
+         local-generator-add-codiagonal
          local-generator:index
          local-generator:domain
          local-generator:codomain
@@ -25,3 +26,5 @@
 (define weak-localization:in (const "in"))
 (define weak-localization:ext (const "ext"))
 (define weak-localization:is-ext (const "is-ext"))
+
+(define local-generator-add-codiagonal (const "D"))
