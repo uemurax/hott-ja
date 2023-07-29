@@ -9,6 +9,7 @@
 (provide fiber-coproduct-type
          (rename-out
           [coproduct-type:in fiber-coproduct-type:in])
+         codiagonal
          fiber-coproduct-type:glue
          fiber-coproduct-type:ind
          fiber-coproduct-type:ind-glue)
@@ -32,3 +33,5 @@
    fiber-coproduct-type:ind
    (const "-")
    fiber-coproduct-type:glue))
+
+(define codiagonal (const "codiag"))
