@@ -1,6 +1,8 @@
 #lang typed/racket
 
-(require "core.rkt")
+(require "core.rkt"
+         (prefix-in tex: morg/math/tex)
+         morg/math)
 
 (provide local-generator
          is-local
@@ -8,6 +10,8 @@
          weak-localization:in
          weak-localization:ext
          weak-localization:is-ext
+         weak-localization:ind
+         weak-localization:ind-is-ext
          localization
          (rename-out [weak-localization:in localization:in])
          local-generator-add-codiagonal
@@ -28,6 +32,12 @@
 (define weak-localization:in (const "in"))
 (define weak-localization:ext (const "ext"))
 (define weak-localization:is-ext (const "is-ext"))
+(define weak-localization:ind (ind/symb . _ . weak-localization))
+(define weak-localization:ind-is-ext
+  (tex:mathord
+   weak-localization:ind
+   (const "-")
+   weak-localization:is-ext))
 
 (define localization (const "Loc"))
 
