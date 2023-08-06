@@ -33,6 +33,7 @@
   @paragraph{
     いくつかの簡単な関数の例を挙げる。
   }
+  (include-part "0089.rkt")
   (include-part "0010.rkt")
   (include-part "0011.rkt")
   (include-part "0012.rkt")
