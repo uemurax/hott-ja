@@ -15,7 +15,7 @@
     関数を定義するには次のような言い回しをする。
     @unordered-list[
       @list-item{
-        関数@(math (f . elem-of . (d-fun-type (x . elem-of . A) (B . $ . x))))を@(math (f . def-eq . (abs x b)))と定義する。
+        関数@(math (f . elem-of . (d-fun-type (x . elem-of . A) (B . $ . x))))を@(math (abs x b))と定義する。
       }
       @list-item{
         関数@(math (f . elem-of . (d-fun-type (x . elem-of . A) (B . $ . x))))を@(math ((f . $ . x) . def-eq . b))と定義する。
