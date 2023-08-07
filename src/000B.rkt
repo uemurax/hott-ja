@@ -24,6 +24,7 @@
   (include-part "001T.rkt")
   (include-part "001U.rkt")
   (include-part "008A.rkt")
+  (include-part "008B.rkt")
   @paragraph{
     対型に関する基本的な関数をいくつか定義する。
   }
