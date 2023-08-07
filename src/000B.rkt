@@ -1,5 +1,7 @@
 #lang morg
 
+(require "lib/math.rkt")
+
 @section[
   #:id (current-id)
   #:title @%{レコード型}
@@ -25,6 +27,9 @@
   (include-part "001U.rkt")
   (include-part "008A.rkt")
   (include-part "008B.rkt")
+  @paragraph{
+    @ref["008A"]と@ref["008B"]で名前の衝突がある(@(math (const "Carrier")))が、型によってどの構造について話しているのか分かるので混乱は無いだろう。
+  }
   (include-part "008C.rkt")
   @paragraph{
     対型に関する基本的な関数をいくつか定義する。
