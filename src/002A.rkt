@@ -3,7 +3,6 @@
 (require "lib/markup/example.rkt"
          "lib/index/notation.rkt"
          "lib/math.rkt"
-         "lib/math/level.rkt"
          "lib/math/refl-graph.rkt"
          morg/eq-reasoning)
 
@@ -23,18 +22,8 @@
 
 @example[
   #:id (current-id)
-  #:indexes @list[
-    @index[#:key "はんしゃてきぐらふ"]{反射的グラフ}
-    @notation-index[#:key "ReflGraph(i)"]{@(math (refl-graph . $ . i))}
-  ]
   @paragraph{
-    @(math i)を階数とする。型@(math ((refl-graph . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。
-    @unordered-list[
-      @list-item{@(math (refl-graph:vertex . elem-of . (universe . $ . i)))}
-      @list-item{@(math (refl-graph:edge . elem-of . (refl-graph:vertex . fun-type . (refl-graph:vertex . fun-type . (universe . $ . i)))))}
-      @list-item{@(math (refl-graph:refl . elem-of . (d-fun-type (x . elem-of . refl-graph:vertex) (refl-graph:edge . $* . x x))))}
-    ]
-    @(math (refl-graph . $ . i))の要素は@dfn{反射的グラフ(reflexive graph)}と呼ばれる。@(math (A . elem-of . (refl-graph . $ . i)))と@(math (Z . elem-of . (refl-graph . $ . i)))に対し、@(math ((E . $ . Z) . elem-of . (universe . $ . i)))を次のレコード型と定義する。
+    @(math i)を階数とする。@(math (refl-graph . $ . i)) (@ref["008C"])の同一視型を特徴付ける。@(math (A . elem-of . (refl-graph . $ . i)))と@(math (Z . elem-of . (refl-graph . $ . i)))に対し、@(math ((E . $ . Z) . elem-of . (universe . $ . i)))を次のレコード型と定義する。
     @unordered-list[
       @list-item{@(math (v . elem-of . ((A . record-field . refl-graph:vertex) . equiv . (Z . record-field . refl-graph:vertex))))}
       @list-item{@(math (e . elem-of . (d-fun-type (implicit (x1 x2 . elem-of* . (A . record-field . refl-graph:vertex))) (((A . record-field . refl-graph:edge) . $* . x1 x2) . equiv . ((Z . record-field . refl-graph:edge) . $* . (v . $ . x1) (v . $ . x2))))))}
