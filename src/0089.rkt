@@ -12,7 +12,7 @@
 @notation[
   #:id (current-id)
   @paragraph{
-    関数を定義するには次のような言い回しをする。
+    関数を定義するには次のいずれかような言い回しをする。
     @unordered-list[
       @list-item{
         関数@(math (f . elem-of . (d-fun-type (x . elem-of . A) (B . $ . x))))を@(math (abs x b))と定義する。

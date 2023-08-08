@@ -28,6 +28,7 @@
   @paragraph{
     @(math (a1 . id-type . a2))が同一視型と呼ぶに価することを確認するために、いくつかの期待される関数を構成しよう。
   }
+  (include-part "008D.rkt")
   (include-part "001C.rkt")
   (include-part "001G.rkt")
   (include-part "001D.rkt")
