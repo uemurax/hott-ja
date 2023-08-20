@@ -1,9 +1,7 @@
 #lang morg
 
 (require "lib/markup/example.rkt"
-         "lib/index/notation.rkt"
          "lib/math.rkt"
-         "lib/math/level.rkt"
          "lib/math/magma.rkt"
          morg/eq-reasoning)
 
@@ -20,17 +18,8 @@
 
 @example[
   #:id (current-id)
-  #:indexes @list[
-    @index[#:key "まぐま"]{マグマ}
-    @notation-index[#:key "Magma(i)"]{@(math (magma . $ . i))}
-  ]
   @paragraph{
-    @(math i)を階数とする。型@(math ((magma . $ . i) . elem-of . (universe . $ . (level:succ . $ . i))))を次のレコード型と定義する。
-    @unordered-list[
-      @list-item{@(math (magma:carrier . elem-of . (universe . $ . i)))}
-      @list-item{@(math (magma:operator . elem-of . (magma:carrier . fun-type . (magma:carrier . fun-type . magma:carrier))))}
-    ]
-    @(math (magma . $ . i))の要素は@dfn{マグマ(magma)}と呼ばれることがある。@(math (A . elem-of . (magma . $ . i)))に対し、@(math (E . elem-of . ((magma . $ . i) . fun-type . (universe . $ . i))))を
+    @(math i)を階数とする。@(math (magma . $ . i)) (@ref["008B"])の同一視型を特徴付ける。@(math (A . elem-of . (magma . $ . i)))に対し、@(math (E . elem-of . ((magma . $ . i) . fun-type . (universe . $ . i))))を
     @disp{
       @(math (abs Z (d-pair-type (e . elem-of . ((A . record-field . magma:carrier) . equiv . (Z . record-field . magma:carrier))) (d-fun-type (x1 x2 . elem-of* . (A . record-field . magma:carrier)) ((e . $ . ((A . record-field . magma:operator) . $* . x1 x2)) . id-type . ((Z . record-field . magma:operator) . $* . (e . $ . x1) (e . $ . x2)))))))
     }

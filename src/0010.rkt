@@ -15,6 +15,6 @@
     @index[#:key "id"]{@(math id-fun) (関数)}
   ]
   @paragraph{
-    @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型とする。@dfn{恒等関数(identity function)}@(math ((id-fun . $i . A) . elem-of . (A . fun-type . A)))を@(math (abs x x))と定義する。
+    @(math i)を階数、@(math (A . elem-of . (universe . $ . i)))を型とする。@dfn{恒等関数(identity function)}@(math (id-fun . elem-of . (A . fun-type . A)))を@(math ((id-fun . $ . x) . def-eq . x))と定義する。
   }
 ]

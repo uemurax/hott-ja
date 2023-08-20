@@ -24,4 +24,8 @@
   @paragraph{
     @(math (coproduct-type:in 1))と@(math (coproduct-type:in 2))が@(math (A . coproduct-type . B))の構成子であり、帰納法原理はやはりこれらの構成子のみを使って得られるものだけが@(math (A . coproduct-type . B))の要素であることを表す。
   }
+  @paragraph{
+    余積のパターンマッチは次のようになる。
+  }
+  (include-part "008F.rkt")
 ]

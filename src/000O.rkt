@@ -35,6 +35,6 @@
       @list-item{@(math y)が@(math (x . _ . "1"))の時、@(math (a . record-field . (x . _ . "1")))は@(math ((proj 1) . $ . a))のこととする。}
       @list-item{@(math y)が@(math (x . _ . "2"))から@(math (x . _ . n))のいずれかの時、@(math (a . record-field . y))は@(math (((proj 2) . $ . a) . record-field . y))のこととする。}
     ]
-    この記法は@(math ((a . record-field . (x . _ . i)) . elem-of . ((A . _ . i) . subst-apply... . (list (x . _ . "1") (a . _ . "1")) (list (x . _ . (i . - . "1")) (a . _ . (i . - . "1"))))))となるように設計されている。また、@(math (((record-elem... (list (x . _ . "1") (a . _ . "1")) (list (x . _ . n) (a . _ . n))) . record-field . (x . _ . i)) . def-eq . (a . _ . i)))であることと@(math (a . def-eq . (record-elem... (list (x . _ . "1") (a . record-field . (x . _ . "1"))) (list (x . _ . n) (a . record-field . (x . _ . n))))))であることを確かめられる。
+    この記法は@(math ((a . record-field . (x . _ . i)) . elem-of . ((A . _ . i) . subst-apply... . (list (x . _ . "1") (a . record-field . (x . _ . "1"))) (list (x . _ . (i . - . "1")) (a . record-field . (x . _ . (i . - . "1")))))))となるように設計されている。また、@(math (((record-elem... (list (x . _ . "1") (a . _ . "1")) (list (x . _ . n) (a . _ . n))) . record-field . (x . _ . i)) . def-eq . (a . _ . i)))であることと@(math (a . def-eq . (record-elem... (list (x . _ . "1") (a . record-field . (x . _ . "1"))) (list (x . _ . n) (a . record-field . (x . _ . n))))))であることを確かめられる。
   }
 ]
