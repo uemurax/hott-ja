@@ -9,6 +9,7 @@
 (define x "x")
 (define y "y")
 (define f "f")
+(define h "h")
 
 @section[
   #:id (current-id)
@@ -19,6 +20,13 @@
   (include-part "002V.rkt")
   @paragraph{
     一般に帰納的型はいくつかの@emph{構成子(constructor)}によって定められる。@(math nat)の場合、@(math nat:zero)と@(math nat:succ)が構成子である。これらは@(math nat)の要素を構成する方法を与える。任意の@(math nat)の要素がこれらの構成子のみを使って構成されることを表すために、@emph{帰納法原理(induction principle)}を規則として認める。@(math nat:ind)に関する規則は、自然数@(math n)を使ってなんらかを構成するには、@(math nat:zero)の場合の構成(@(math (a . elem-of . (A . $ . nat:zero))))と@(math (nat:succ . $ . x))の場合の構成(@(math (f . elem-of . (d-fun-type (implicit (x . elem-of . nat)) ((A . $ . x) . fun-type . (A . $ . (nat:succ . $ . x)))))))を与えれば十分であることを意味する。つまり、型理論の中の人にとっては自然数とは@(math nat:zero)と@(math nat:succ)のみを使って構成されたものである。さらに、@(math nat:succ)の場合の構成においては、@(math x)の場合の構成(@(math f)の引数@(math (y . elem-of . (A . $ . x))))は既に定義されたと仮定してよい。これは@emph{再帰的定義(recursive definition)}を可能にする。
+  }
+  @paragraph{
+    自然数型からの関数を定義するには@emph{パターンマッチ}が便利である。
+  }
+  (include-part "008E.rkt")
+  @paragraph{
+    現実では多変数の関数の引数の一つにパターンマッチを使う場合がある。自然数のパターンマッチの@(math nat:succ)の場合@(math ((h . $ . (nat:succ . $ . x)) . def-eq . (f . $ . (h . $ . x))))では右辺に@(math (h . $ . x))のパターンを見出すのに慣れが要ることもある。
   }
   (include-part "002W.rkt")
   (include-part "002X.rkt")
