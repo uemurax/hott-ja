@@ -37,6 +37,7 @@
   })
 
 (provide-config
-  (define cfg default-config)
-  (eq:config-update
-   (config-add-css cfg custom-css-name custom-css)))
+ (compose-config
+  eq:config-update
+  (config-add-css custom-css-name custom-css)
+  (config-set-base-url "https://uemurax.github.io/hott-ja")))
