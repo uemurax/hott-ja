@@ -1,0 +1,26 @@
+.morg-generated-emph, .morg-generated-dfn {
+  font-style: normal;
+  font-weight: bold;
+}
+body {
+  background-color: #FDFCF7;
+  color: #002B36;
+}
+.morg-generated-toc-edge-summary-selected {
+  background-color: #ECFCC3;
+}
+.morg-generated-statement-body {
+  background-color: #F4FDFD;
+  padding: 0.5em;
+}
+.morg-generated-statement-header {
+  padding: 0.5em;
+  background-color: #E3FDFD;
+}
+.morg-generated-proof {
+  background-color: #F4F8F8;
+  padding: 0.5em;
+}
+.morg-generated-katex {
+  margin-inline: 0.25em;
+}
