@@ -6,6 +6,9 @@
   #:id (current-id)
   #:title @%{ホモトピー型理論}
   #:author @list[me]
+  #:description @%{
+    ホモトピー型理論についての文書
+  }
   #:contents @%[
     @paragraph{
       @unordered-list[
